@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Bard Simulator"
-run/main_scene="res://scenes/ui/menu.tscn"
+run/main_scene="res://test.tscn"
 config/features=PackedStringArray("4.2", "Mobile")
 config/icon="res://icon.svg"
 
@@ -27,7 +27,7 @@ enabled=PackedStringArray("res://addons/dialogue_manager/plugin.cfg")
 
 [internationalization]
 
-locale/translations_pot_files=PackedStringArray("res://dialogue/test.dialogue", "res://test3.dialogue")
+locale/translations_pot_files=PackedStringArray("res://dialogue/test.dialogue")
 
 [rendering]
 

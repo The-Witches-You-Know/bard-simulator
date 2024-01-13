@@ -5,24 +5,40 @@ extends Node
 @onready var speechPlayer: AudioStreamPlayer = $SpeechPlayer
 @onready var SFXPlayer: AudioStreamPlayer = $SFXPlayer
 
-var talkDuration: float = 0.0
-var talkTime: float = 0.0
+var isTalking: bool
+var balloonReference: Node
+var balloonDialogueLabel: DialogueLabel
 
 var speechStreamPaths = {
 	"Test": "res://assets/audio/squeak2.mp3"
 }
 
-func talk(speaker: String, duration: float):
+func setSpeaker(speaker: String):
 	speechPlayer.stream = load(speechStreamPaths[speaker])
-	speak(duration)
 
 func speak(duration: float):	
-	talkTime = 0
-	talkDuration = duration
 	_on_speech_player_finished()
 
 func _on_speech_player_finished():	
-	if (talkTime <= talkDuration):
+	if (isTalking):
 		speechPlayer.pitch_scale = randf_range(0.9, 1.1)
 		speechPlayer.play()
-		talkTime += speechPlayer.stream.get_length()
+		
+func setBalloonReference(balloon: Node):
+	balloonReference = balloon
+	balloonDialogueLabel = balloonReference.dialogue_label
+	balloonDialogueLabel.paused_typing.connect(onTypingPaused)
+	balloonDialogueLabel.spoke.connect(onTypingStarted)
+	balloonDialogueLabel.finished_typing.connect(onTypingStopped)
+	
+func onTypingStopped():
+	isTalking = false
+	
+func onTypingPaused(_delay):
+	isTalking = false
+	
+func onTypingStarted(_a, _b, _c):
+	if(!isTalking):
+		isTalking = true
+		_on_speech_player_finished()
+	
