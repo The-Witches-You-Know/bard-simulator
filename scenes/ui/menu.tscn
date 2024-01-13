@@ -1,0 +1,71 @@
+[gd_scene load_steps=4 format=3 uid="uid://d4ael31b245pr"]
+
+[ext_resource type="Script" path="res://scripts/ui/menu.gd" id="1_n0sgf"]
+[ext_resource type="PackedScene" uid="uid://bnkohuub8o8g7" path="res://scenes/levels/world_map.tscn" id="2_n8ga8"]
+[ext_resource type="PackedScene" uid="uid://dvy7hwe5bmrsd" path="res://scenes/ui/confirmation_popup.tscn" id="2_sjupi"]
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_n0sgf")
+starting_scene = ExtResource("2_n8ga8")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Continue" type="Button" parent="Panel"]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -75.0
+offset_top = -57.0
+offset_right = 75.0
+offset_bottom = -7.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Continue"
+
+[node name="NewGame" type="Button" parent="Panel"]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -75.0
+offset_top = 7.0
+offset_right = 75.0
+offset_bottom = 57.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "New Game"
+
+[node name="ConfirmationPopup" parent="." instance=ExtResource("2_sjupi")]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_top = -104.0
+offset_bottom = -104.0
+message = "Are you sure you want to start a new game?"
+
+[connection signal="button_up" from="Panel/Continue" to="." method="_on_continue_button_up"]
+[connection signal="button_up" from="Panel/NewGame" to="." method="_on_new_game_button_up"]
+[connection signal="_on_confirmation_popup" from="ConfirmationPopup" to="." method="_on_confirmation_popup"]
