@@ -11,9 +11,13 @@ config_version=5
 [application]
 
 config/name="Bard Simulator"
-run/main_scene="res://scenes/levels/main.tscn"
+run/main_scene="res://scenes/ui/menu.tscn"
 config/features=PackedStringArray("4.2", "Mobile")
 config/icon="res://icon.svg"
+
+[audio]
+
+buses/default_bus_layout="res://scripts/audioPlayer/audioBusLayout.tres"
 
 [autoload]
 

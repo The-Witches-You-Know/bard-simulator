@@ -1,7 +1,9 @@
 extends Control
 
+
 func _ready():
-	$ConfirmationPopup.visible = false	
+	$ConfirmationPopup.visible = false
+	$Panel/MarginContainer/VBoxContainer/SettingsMenuPanel.returnButton.button_up.connect(_on_return_button_button_up)
 
 func _on_continue_button_up():
 	var main = get_node("/root/Main") as Manager

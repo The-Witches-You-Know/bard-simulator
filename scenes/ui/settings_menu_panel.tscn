@@ -1,0 +1,101 @@
+[gd_scene load_steps=2 format=3 uid="uid://daqlbvtppcfs"]
+
+[ext_resource type="Script" path="res://scripts/settings_menu_panel.gd" id="1_4cjws"]
+
+[node name="SettingsMenuPanel" type="VBoxContainer"]
+visible = false
+size_flags_horizontal = 4
+size_flags_vertical = 6
+script = ExtResource("1_4cjws")
+
+[node name="MasterVolume" type="Control" parent="."]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+
+[node name="MasterVolumeSlider" type="HSlider" parent="MasterVolume"]
+layout_mode = 2
+offset_top = 20.0
+offset_right = 200.0
+offset_bottom = 45.0
+max_value = 10.0
+
+[node name="Label" type="Label" parent="MasterVolume"]
+custom_minimum_size = Vector2(0, 25)
+layout_mode = 0
+offset_right = 200.0
+offset_bottom = 25.0
+text = "Master Volume"
+horizontal_alignment = 1
+
+[node name="MusicVolume" type="Control" parent="."]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+
+[node name="MusicVolumeSlider" type="HSlider" parent="MusicVolume"]
+layout_mode = 2
+offset_top = 20.0
+offset_right = 200.0
+offset_bottom = 45.0
+max_value = 10.0
+
+[node name="Label" type="Label" parent="MusicVolume"]
+custom_minimum_size = Vector2(0, 25)
+layout_mode = 0
+offset_right = 200.0
+offset_bottom = 25.0
+text = "Music Volume"
+horizontal_alignment = 1
+
+[node name="AmbientVolume" type="Control" parent="."]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+
+[node name="AmbientVolumeSlider" type="HSlider" parent="AmbientVolume"]
+layout_mode = 2
+offset_top = 20.0
+offset_right = 200.0
+offset_bottom = 45.0
+max_value = 10.0
+
+[node name="Label" type="Label" parent="AmbientVolume"]
+custom_minimum_size = Vector2(0, 25)
+layout_mode = 0
+offset_right = 200.0
+offset_bottom = 25.0
+text = "Ambient Volume"
+horizontal_alignment = 1
+
+[node name="SFXVolume" type="Control" parent="."]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+
+[node name="SFXVolumeSlider" type="HSlider" parent="SFXVolume"]
+layout_mode = 2
+offset_top = 20.0
+offset_right = 200.0
+offset_bottom = 45.0
+max_value = 10.0
+
+[node name="Label" type="Label" parent="SFXVolume"]
+custom_minimum_size = Vector2(0, 25)
+layout_mode = 0
+offset_right = 200.0
+offset_bottom = 25.0
+text = "SFX Volume"
+horizontal_alignment = 1
+
+[node name="Spacer" type="Control" parent="."]
+custom_minimum_size = Vector2(0, 25)
+layout_mode = 2
+
+[node name="ReturnButton" type="Button" parent="."]
+custom_minimum_size = Vector2(200, 60)
+layout_mode = 2
+text = "Return"
+
+[connection signal="value_changed" from="MasterVolume/MasterVolumeSlider" to="." method="_on_master_volume_slider_value_changed"]
+[connection signal="value_changed" from="MusicVolume/MusicVolumeSlider" to="." method="_on_music_volume_slider_value_changed"]
+[connection signal="value_changed" from="AmbientVolume/AmbientVolumeSlider" to="." method="_on_ambient_volume_slider_value_changed"]
+[connection signal="drag_ended" from="SFXVolume/SFXVolumeSlider" to="." method="_on_sfx_volume_slider_drag_ended"]
+[connection signal="drag_started" from="SFXVolume/SFXVolumeSlider" to="." method="_on_sfx_volume_slider_drag_started"]
+[connection signal="value_changed" from="SFXVolume/SFXVolumeSlider" to="." method="_on_sfx_volume_slider_value_changed"]

@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://d4ael31b245pr"]
+[gd_scene load_steps=5 format=3 uid="uid://d4ael31b245pr"]
 
 [ext_resource type="Script" path="res://scripts/ui/menu.gd" id="1_n0sgf"]
 [ext_resource type="PackedScene" uid="uid://dvy7hwe5bmrsd" path="res://scenes/ui/confirmation_popup.tscn" id="2_sjupi"]
 [ext_resource type="Texture2D" uid="uid://bwgxsltfsteal" path="res://icon.svg" id="3_d8ulh"]
+[ext_resource type="PackedScene" uid="uid://daqlbvtppcfs" path="res://scenes/ui/settings_menu_panel.tscn" id="3_n6igi"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -64,77 +65,8 @@ custom_minimum_size = Vector2(200, 50)
 layout_mode = 2
 text = "Options"
 
-[node name="SettingsMenuPanel" type="VBoxContainer" parent="Panel/MarginContainer/VBoxContainer"]
-visible = false
+[node name="SettingsMenuPanel" parent="Panel/MarginContainer/VBoxContainer" instance=ExtResource("3_n6igi")]
 layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 6
-
-[node name="SliderContainer" type="Control" parent="Panel/MarginContainer/VBoxContainer/SettingsMenuPanel"]
-custom_minimum_size = Vector2(200, 50)
-layout_mode = 2
-
-[node name="MasterVolumeSlider" type="HSlider" parent="Panel/MarginContainer/VBoxContainer/SettingsMenuPanel/SliderContainer"]
-layout_mode = 2
-offset_top = 20.0
-offset_right = 200.0
-offset_bottom = 45.0
-max_value = 10.0
-
-[node name="Label" type="Label" parent="Panel/MarginContainer/VBoxContainer/SettingsMenuPanel/SliderContainer"]
-custom_minimum_size = Vector2(0, 25)
-layout_mode = 0
-offset_right = 200.0
-offset_bottom = 25.0
-text = "Master Volume"
-horizontal_alignment = 1
-
-[node name="SliderContainer2" type="Control" parent="Panel/MarginContainer/VBoxContainer/SettingsMenuPanel"]
-custom_minimum_size = Vector2(200, 50)
-layout_mode = 2
-
-[node name="MusicVolumeSlider" type="HSlider" parent="Panel/MarginContainer/VBoxContainer/SettingsMenuPanel/SliderContainer2"]
-layout_mode = 2
-offset_top = 20.0
-offset_right = 200.0
-offset_bottom = 45.0
-max_value = 10.0
-
-[node name="Label" type="Label" parent="Panel/MarginContainer/VBoxContainer/SettingsMenuPanel/SliderContainer2"]
-custom_minimum_size = Vector2(0, 25)
-layout_mode = 0
-offset_right = 200.0
-offset_bottom = 25.0
-text = "Music Volume"
-horizontal_alignment = 1
-
-[node name="SliderContainer3" type="Control" parent="Panel/MarginContainer/VBoxContainer/SettingsMenuPanel"]
-custom_minimum_size = Vector2(200, 50)
-layout_mode = 2
-
-[node name="SFXVolumeSlider" type="HSlider" parent="Panel/MarginContainer/VBoxContainer/SettingsMenuPanel/SliderContainer3"]
-layout_mode = 2
-offset_top = 20.0
-offset_right = 200.0
-offset_bottom = 45.0
-max_value = 10.0
-
-[node name="Label" type="Label" parent="Panel/MarginContainer/VBoxContainer/SettingsMenuPanel/SliderContainer3"]
-custom_minimum_size = Vector2(0, 25)
-layout_mode = 0
-offset_right = 200.0
-offset_bottom = 25.0
-text = "SFX Volume"
-horizontal_alignment = 1
-
-[node name="Spacer" type="Control" parent="Panel/MarginContainer/VBoxContainer/SettingsMenuPanel"]
-custom_minimum_size = Vector2(0, 25)
-layout_mode = 2
-
-[node name="ReturnButton" type="Button" parent="Panel/MarginContainer/VBoxContainer/SettingsMenuPanel"]
-custom_minimum_size = Vector2(200, 60)
-layout_mode = 2
-text = "Return"
 
 [node name="Label" type="Label" parent="Panel/MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -156,5 +88,4 @@ message = "Are you sure you want to start a new game?"
 [connection signal="button_up" from="Panel/MarginContainer/VBoxContainer/MainMenuPanel/Continue" to="." method="_on_continue_button_up"]
 [connection signal="button_up" from="Panel/MarginContainer/VBoxContainer/MainMenuPanel/NewGame" to="." method="_on_new_game_button_up"]
 [connection signal="button_up" from="Panel/MarginContainer/VBoxContainer/MainMenuPanel/Options" to="." method="_on_options_button_up"]
-[connection signal="button_up" from="Panel/MarginContainer/VBoxContainer/SettingsMenuPanel/ReturnButton" to="." method="_on_return_button_button_up"]
 [connection signal="_on_confirmation_popup" from="ConfirmationPopup" to="." method="_on_confirmation_popup"]
