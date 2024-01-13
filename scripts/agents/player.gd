@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 const SPEED = 300.0
 
-func _physics_process(delta):
+func _physics_process(_delta):
 
 	var inputX = Input.get_axis("character_left", "character_right")
 	var inputY = Input.get_axis ("character_up" , "character_down")

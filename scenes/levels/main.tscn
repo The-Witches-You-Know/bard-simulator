@@ -9,5 +9,3 @@ script = ExtResource("1_yr65x")
 game_world_scene = ExtResource("2_tghxx")
 
 [node name="UI" parent="." instance=ExtResource("2_6fda6")]
-
-[node name="BGMusic" type="AudioStreamPlayer" parent="."]
