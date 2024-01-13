@@ -16,9 +16,6 @@ var speechStreamPaths = {
 func setSpeaker(speaker: String):
 	speechPlayer.stream = load(speechStreamPaths[speaker])
 
-func speak(duration: float):	
-	_on_speech_player_finished()
-
 func _on_speech_player_finished():	
 	if (isTalking):
 		speechPlayer.pitch_scale = randf_range(0.9, 1.1)
