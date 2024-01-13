@@ -1,6 +1,6 @@
 extends StaticBody2D
 
-@export var scene_to_load : PackedScene
+@export var location_name : String
 @export var texture : Texture2D
 
 func _ready():
@@ -8,7 +8,8 @@ func _ready():
 
 func _input_event(_viewport, event, _shape_idx):
 	if (event is InputEventMouseButton and event.is_pressed() and event.button_index == MOUSE_BUTTON_LEFT):
-		get_tree().change_scene_to_packed(scene_to_load)
+		var game_world = get_node("/root/Main/GameWorld") as GameWorld
+		game_world.switch_level(location_name)
 		print("Loading a scene")
 
 # When the mouse enters we set the outline size to 2

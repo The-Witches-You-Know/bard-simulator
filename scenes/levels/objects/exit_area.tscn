@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://by276q5li4uq4"]
+
+[ext_resource type="Script" path="res://scripts/levels/locations/objects/ExitArea.gd" id="1_m4opa"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ecujl"]
+
+[node name="ExitArea" type="Area2D"]
+script = ExtResource("1_m4opa")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_ecujl")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="area_exited" from="." to="." method="_on_area_exited"]

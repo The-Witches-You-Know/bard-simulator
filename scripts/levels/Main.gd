@@ -1,10 +1,10 @@
 extends Node
 class_name Manager
 
-@export var game_world : PackedScene
+@export var game_world_scene : PackedScene
 
 var ui : interface
-var current : Node2D
+var current : Node
 var current_state = global.MENU
 
 func _ready():
@@ -23,7 +23,7 @@ func switch_state(state):
 			current_state = global.MENU
 		global.GAME_WORLD:
 			current_state = global.GAME_WORLD
-			current = game_world.instantiate()
+			current = game_world_scene.instantiate()
 			add_child(current)
 		global.PAUSED:
 			current_state = global.PAUSED
