@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://djbuy4xg064kh"]
+[gd_scene load_steps=3 format=3 uid="uid://djbuy4xg064kh"]
 
 [ext_resource type="Texture2D" uid="uid://bwgxsltfsteal" path="res://icon.svg" id="1_bmsor"]
+[ext_resource type="PackedScene" uid="uid://ddnkxck5qdfcv" path="res://scenes/agents/player.tscn" id="2_kvnnx"]
 
 [node name="Town" type="Node2D"]
 
@@ -8,3 +9,6 @@
 position = Vector2(710, 337)
 rotation = 2.41451
 texture = ExtResource("1_bmsor")
+
+[node name="player" parent="." instance=ExtResource("2_kvnnx")]
+position = Vector2(76, 541)
