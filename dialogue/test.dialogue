@@ -1,25 +1,18 @@
 ~ start
 
+do Audio_Player.talk("Test", 0.6)
 Nathan: [[Hi|Hello|Howdy]], this is some dialogue.
-if Save_Loader.gameData.safeGet("Test123", true):
-	Nathan: Here are some choices.
-	- First one
-		Nathan: You picked the first one.
-	- Second one
-		Nathan: You picked the second one.
-		do Save_Loader.gameData.setOrPut("Test123", false)
-	- Start again => start
-	- End the conversation => END
-	Nathan: For more information see the online documentation.
-else:
-	Nathan: Here are some different choices.
-	- First option
-		Nathan: You picked the first option.
-	- Second option
-		Nathan: You picked the second option.
-		do Save_Loader.gameData.setOrPut("Test123", true)
-	- Start all over => start
-	- End the convo => END
-	Nathan: For more please take a look at the online docs.
+do Audio_Player.speak(0.5)
+Nathan: Here are some choices.	
+- First one
+	do Audio_Player.speak(0.6)
+	Nathan: You picked the first one.
+- Second one
+	do Audio_Player.speak(0.6)
+	Nathan: You picked the second one.
+- Start again => start
+- End the conversation => END
+do Audio_Player.speak(1.1)
+Nathan: For more information, please refer to the online documentation.
 
 => END

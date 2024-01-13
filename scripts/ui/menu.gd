@@ -3,7 +3,7 @@ extends Control
 @export var starting_scene: PackedScene
 
 func _ready():
-	$ConfirmationPopup.visible = false
+	$ConfirmationPopup.visible = false	
 
 func _on_continue_button_up():
 	get_tree().change_scene_to_packed(starting_scene)
