@@ -1,9 +1,17 @@
-[gd_scene load_steps=2 format=3 uid="uid://bnkohuub8o8g7"]
+[gd_scene load_steps=5 format=3 uid="uid://bnkohuub8o8g7"]
 
 [ext_resource type="Texture2D" uid="uid://bwgxsltfsteal" path="res://icon.svg" id="1_6twsc"]
+[ext_resource type="PackedScene" uid="uid://b631gg2mdlrgq" path="res://scenes/levels/map/map_interactable.tscn" id="2_lfmy5"]
+[ext_resource type="PackedScene" uid="uid://djbuy4xg064kh" path="res://scenes/levels/locations/town.tscn" id="3_40rns"]
+[ext_resource type="Texture2D" uid="uid://cpu70ar8xuvnp" path="res://assets/placeholder/testsprite.png" id="4_glyv1"]
 
 [node name="WorldMap" type="Node2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(566, 307)
 texture = ExtResource("1_6twsc")
+
+[node name="MapInteractable" parent="." instance=ExtResource("2_lfmy5")]
+position = Vector2(298, 422)
+scene_to_load = ExtResource("3_40rns")
+texture = ExtResource("4_glyv1")
