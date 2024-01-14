@@ -12,6 +12,11 @@ var current : Node2D
 func _ready():
 	switch_level("map")
 
+func _process(_delta):
+	if Input.is_action_just_released("pause"):
+		var main = get_node("/root/Main") as Manager
+		main.switch_state(global.PAUSED)
+
 func switch_level(level):
 	if current != null:
 		current.queue_free()
