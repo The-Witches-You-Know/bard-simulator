@@ -1,0 +1,40 @@
+~ start
+
+Orc: Oh, you're a new face. Wanna hear how I killed a Dragon?
+- Dragon? Really?
+	Orc: Yes, Dragon. Really. To be fair it wasn't mountained sized, more like a big house. Still, first kill I got as an adventurer!
+	- Alright then, how'd you do it?
+		Orc: Scared it real good. Gave me an opening to stab it nice. It tried to get away, you know. Smashed down a whole windmill. Real shame that.
+		- And next?
+			Orc: Well, next I went and reported in the notice to the guild. I'm gonna get a huge payout tonight. 
+			- congratulations. => END 
+			- Guild? Didn't think they were established around here. 
+				Orc: They are, they are. But it's like a self reporting system. No official branch you know. Set up a board here in the tavern, where we adventurers can go and do our stuff.
+				- Let me take a look => END 
+		- Where did this happen? 
+			Orc: Out in the fields. Body's still there. Only took it's teeth.
+			She pulls two large fangs from her pack. 
+			- Impressive!
+				Orc: Right? 
+				- Don't mind if I take a look myself then => END 
+	- I don't believe you. 
+		Orc: Why don't you go to the fields then? Its body is still there, for everyone to see and gawk at. 
+		- I will. => END
+		- Fine. I believe you. How'd you do it?
+		Orc: Scared it real good. Gave me an opening to stab it right nice. It tried to get away, you know. Smashed down a whole windmill. Real shame that. 
+- Give me all the details, every little bit. 
+	Orc: So I as in a Field right? I was talking to a Farmer cause they said it's been annoying them, right? So I am there and this beast flies overhead. 
+	Orc: It's super red. Like I thought at first the sun was falling. Then bam, it's wings beat and I can feel it's powerful gust.
+	Orc: It goes for one of the cows, I can tell by it's direction. So I just start running. I get there before it does, and slash, I catch it by the chest. 
+	Orc: I don't think it even saw me! Maybe my green skin blended in with the grass, that would be something wouldn't it?
+	Orc: So it's wounded now, and it tries to get away! And it does! 
+	Orc: But it's super clumsy, and there's blood dripping everywhere. Then Bam! Right into the windmill. 
+	Orc: Stones came tumbling down, the wings pierced its wings. Real ugly sight. No one was hurt though. I call that a win.
+	- Thanks for the Story. Mind if I retell it to the whole town?
+		Orc: Bard, right? Please do. Everyone should know my Legend. And keep in mind, this is only the start! Only up from here.
+	- Out in the fields? Is that farmer still around?
+		Orc: Sure. He'll tell you the exact same though. I wouldn't waste my time with him. 
+
+
+
+=> END
