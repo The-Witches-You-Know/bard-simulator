@@ -22,8 +22,9 @@ buses/default_bus_layout="res://scripts/audioPlayer/audioBusLayout.tres"
 [autoload]
 
 DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
-Save_Loader="*res://autoload/saveLoader.tscn"
+GameStateHolder="*res://autoload/gameState.tscn"
 Audio_Player="*res://autoload/audioPlayer.tscn"
+Save_Loader="*res://autoload/saveLoader.tscn"
 
 [editor_plugins]
 
