@@ -19,14 +19,12 @@ func _on_music_volume_slider_value_changed(value):
 	Save_Loader.settingsData.setMusicVolume(value)
 func _on_sfx_volume_slider_value_changed(value):
 	Save_Loader.settingsData.setSFXVolume(value)
+	Audio_Player.triggerSpeechPlayer()
 func _on_ambient_volume_slider_value_changed(value):
 	Save_Loader.settingsData.setAmbienceVolume(value)
 
 func _on_sfx_volume_slider_drag_started():
 	Audio_Player.setSpeaker("Test")
-	Audio_Player.onTypingStarted(0,0,0)
-
-func _on_sfx_volume_slider_drag_ended(_value_changed):
-	Audio_Player.onTypingStopped()
+	Audio_Player.triggerSpeechPlayer()
 
 

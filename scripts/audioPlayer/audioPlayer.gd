@@ -25,9 +25,7 @@ func setSpeaker(speaker: String):
 
 func _on_speech_player_finished():	
 	if (isTalking and len(speechStreamResources) > 0):
-		speechPlayer.stream = speechStreamResources.pick_random()
-		speechPlayer.pitch_scale = randf_range(0.88, 1.15)
-		speechPlayer.play()
+		triggerSpeechPlayer()
 		
 func setBalloonReference(balloon: Node):
 	balloonReference = balloon
@@ -46,4 +44,10 @@ func onTypingStarted(_a, _b, _c):
 	if(!isTalking):
 		isTalking = true
 		_on_speech_player_finished()
+		
+func triggerSpeechPlayer():
+	speechPlayer.stream = speechStreamResources.pick_random()
+	speechPlayer.pitch_scale = randf_range(0.88, 1.15)
+	speechPlayer.play()
+	
 	
