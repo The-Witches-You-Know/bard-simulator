@@ -22,9 +22,10 @@ buses/default_bus_layout="res://scripts/audioPlayer/audioBusLayout.tres"
 [autoload]
 
 DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
-Save_Loader="*res://autoload/saveLoader.tscn"
+GameStateHolder="*res://autoload/gameState.tscn"
 Audio_Player="*res://autoload/audioPlayer.tscn"
 CallbackHandler="*res://autoload/callback_handler.tscn"
+Save_Loader="*res://autoload/saveLoader.tscn"
 
 [editor_plugins]
 
@@ -64,7 +65,7 @@ interact={
 
 [internationalization]
 
-locale/translations_pot_files=PackedStringArray("res://dialogue/test.dialogue", "res://dialogue/OldBardDayOneMorning.dialogue", "res://dialogue/confirm_travel.dialogue", "res://dialogue/confirm_return.dialogue")
+locale/translations_pot_files=PackedStringArray("res://dialogue/test.dialogue", "res://dialogue/OldBardDayOneMorning.dialogue", "res://dialogue/TavernkeepDayOneMorning.dialogue", "res://dialogue/OrcDayOneMorning.dialogue", "res://dialogue/confirm_travel.dialogue", "res://dialogue/confirm_return.dialogue")
 
 [rendering]
 

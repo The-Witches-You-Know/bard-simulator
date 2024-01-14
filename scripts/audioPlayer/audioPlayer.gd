@@ -10,15 +10,23 @@ var balloonReference: Node
 var balloonDialogueLabel: DialogueLabel
 
 var speechStreamPaths = {
-	"Test": "res://assets/audio/squeak2.mp3"
+	"Test": [
+		"res://assets/audio/speakers/Voice_Test_-_Boh4.wav",
+		"res://assets/audio/speakers/Voice_Test_-_Ee4.wav",
+		"res://assets/audio/speakers/Voice_Test_-_Zuh4.wav",
+		]
 }
 
+var speechStreamResources: Array[AudioStream] = []
+
 func setSpeaker(speaker: String):
-	speechPlayer.stream = load(speechStreamPaths[speaker])
+	for path in speechStreamPaths[speaker]:
+		speechStreamResources.append(load(path))
 
 func _on_speech_player_finished():	
-	if (isTalking):
-		speechPlayer.pitch_scale = randf_range(0.9, 1.1)
+	if (isTalking and len(speechStreamResources) > 0):
+		speechPlayer.stream = speechStreamResources.pick_random()
+		speechPlayer.pitch_scale = randf_range(0.88, 1.15)
 		speechPlayer.play()
 		
 func setBalloonReference(balloon: Node):

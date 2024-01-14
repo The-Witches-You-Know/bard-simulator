@@ -1,0 +1,64 @@
+~ start
+
+Tavernkeep: Howdy there Sport. What can I get you?
+- Something strong
+	Tavernkeep: Coming right up!
+	He places a beermug with a red liquid in it in front of you, which you assume to be Wine.
+	- Thanks! 
+		Tavnerkeep: Of course. 
+		=> ToTheStories
+	- Something even stronger?
+		Tavernkeep: One of peculiar tastes then. If you want something stronger you'll need to fork over.
+		- I could tell some of my stories here. 
+			Tavernkeep: Hm. That entirely depends on what kind of story. Last Bard that came through here tried to tell horror stories all night long
+			Tavernkeep: The people come here to unwind, relax. Have some fun. 
+			Tavernkeep: Give them something to laugh or cheer about and I'll be happy. 
+			- I'll try my best 
+				Tavernkeep: Alright, Anything else I can do you for then? 
+				=> ToTheStories
+- Not here for a drink 
+	Tavernkeep: Alright, what can I do you for then?
+	 => ToTheStories
+
+~ ToTheStories
+- Have you got any stories for me?
+	Tavernkeep: Some kinda Bard to come waltzing in and ask me about MY stories. 
+	Tavernkeep: Sure, I've got some, but they're no use to you. Everyone here has already had them thrice over. Come around again when you leave town and I'll tell you of my adventuring days
+	Tavernkeep: Who knows, maybe some schmucks out there haven't heard of me yet. 
+	- I just might
+		Tavernkeep: Do what you will.
+	- I won't forget. 
+		Tavernkeep: Glad to hear it.
+- You must hear plenty of rumors, anything juicy?
+	Tavernkeep: Oh I know stuff that could start civil wars around here. 
+	Tavernkeep: Don't take it the wrong way, I'm not gonna tell them to a stranger. 
+	Tavernkeep: But come around to the forest at night if you're interested anyways. I might just share a few tidbits now and again. 
+	- Not even a tease?
+		Tavernkeep: No, not even a tease.
+	- Why would I go into the forest at night? Isn't it dangerous out there?
+		Tavernkeep: Sure is, if we actually went in. We just sit around a campfire out in the fields. The atmosphere keeps the lighthearted ones away
+		- Count on me to be there. 
+			Tavernkeep: I mean when I say this, don't be early. Half the fun is not knowing whose there, and talking into the darkness.
+		- I have better places to be at night.
+			Tavernkeep: Suit yourself.
+
+Tavernkeep: If you're in desperate need of material, I could let you in on some of my jokes. Real Knee slappers those.
+- Sure! I love Jokes. 
+	Tavernkeep: Alright alright 
+	Tavernkeep: What did the scarecrow do to earn a promotion? 
+	Tavernkeep: Eh? 
+	Tavernkeep: It was out standing in its field!
+	Tavernkeep: Get it?
+	- I get it. 
+		Tavernkeep: Great! 
+	- Fake laugh 
+		Tavernkeep: Come on, it was better than that. 
+	- Groan
+		The Tavernkeep grins wide.
+	- Laugh wholeheartedly 
+		He joins in your laughter. 
+	Tavernkeep: Feel free to use it yourself. => END
+- Please no. 
+	Tavernkeep: Suit yourself. 
+
+=> END

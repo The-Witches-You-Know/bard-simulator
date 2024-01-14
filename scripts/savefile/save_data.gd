@@ -28,9 +28,7 @@ func setOrPut(key: String, value: Variant):
 # Use this function to safely retrieve any value from the save file.
 # Supply a default value in case info cannot be found.
 func safeGet(key: String, defaultValue: Variant) -> Variant:
-	if data.has(key):
-		return data[key]
-	return defaultValue
+	return data.get(key, defaultValue)
 
 # clears the entire file
 func clear():
