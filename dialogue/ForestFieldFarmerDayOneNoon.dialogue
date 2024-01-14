@@ -5,29 +5,49 @@ Farmer: What's with all the new faces? First those adventurers, then the Orc, no
 - What do you mean, "Now me"?
 	Farmer: Look at you. You look like trouble and nothing else. 
 	- Hurtful
+		=> Drake
 	- Fair
-	Farmer: Either way, what did you want? Let's get it over with. 
-	=> Questions
+		=> Drake
+
+		
 - The Orc actually sent me to you. 
 	Farmer: What did she do that for? 
 	- She's worried about you. 
-		Farmer: Is she now. Never thought her the caring type. She sure left in a hurry after she stabbed that already dead drake. 
-		- Already dead?
-		- Left?
-		Farmer: Dammit, I wasn't supposed to say that. Actually... 
+		Farmer: Is she now. Never thought her the caring type. She sure left in a hurry after she stabbed that drake. 
+		- Not the caring type?
+		- She told me she saved you.
+		Farmer: Dammit, I probably wasn't supposed to say that. Actually... 
 		- Go on. 
 			Farmer: She didn't kill it. 
 			- What do you mean?
 				Farmer: It basically killed itself, and she is just claiming that she was the one to cause his death. Don't ask me, adventurers are weird like that. 
+				Farmer: Just don't tell her. She swore bad things would happen if I spilled the tea.
 				Farmer: Can you leave me alone now?
-				- Sure
-				- Actually, one more question. 
-				=> Questions
+				- Sure => END
+				- What happened to it?
+					Farmer: Flew into the windmill, impaled itself on the wood. She just stabbed it after so it looks like she did it.
+					Farmer: If she finds out I said that I'm dead meat. Go. I already said too much. => END
 		- Why weren't you supposed to say that?
 			Farmer: So, truth is, she didn't kill it. It flew into the windmill on its own and she stabbed it after. Claimed it as her kill, and then threatened me to never tell anyone. 
 	- She told me a story. I thought you might have some details to add. 
 - What adventurers?
+	Farmer: The trio of bumbling idiots that wanted to solve the drake idiot
+	Farmer: Said they were from the guild, but when I asked if they could prove that they didn't show me anyhting
+	- What did they look like?
+	- Where are they now?
+		Farmer: Gods know where they are. Said they'd back later to try again. I hope not. 
+		Farmer: But if you wanna stick around, they might actually keep their word. 
+		- Will do. 
+		- I'd rather not. 
+		Farmer: Suit yourself. 
+		=> Drake
 
 
-
+~ Drake
+Farmer: Either way, you wanted something. Let's get it over with. 
+- I wanted to ask about that Drake.
+	Farmer: Okay? What about it?
+- Actually, I'll just leave you to it. 
+	Farmer: Thank you kindly. Pray the rest of the day will be just as peaceful. => END 
+	
 => END
