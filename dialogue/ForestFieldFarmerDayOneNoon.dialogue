@@ -1,13 +1,32 @@
-~ this_is_a_node_title
+~ start
 
-Nathan: [[Hi|Hello|Howdy]], this is some dialogue.
-Nathan: Here are some choices.
-- First one
-	Nathan: You picked the first one.
-- Second one
-	Nathan: You picked the second one.
-- Start again => this_is_a_node_title
-- End the conversation => END
-Nathan: For more information see the online documentation.
+Farmer: What's with all the new faces? First those adventurers, then the Orc, now you.
+~ Questions
+- What do you mean, "Now me"?
+	Farmer: Look at you. You look like trouble and nothing else. 
+	- Hurtful
+	- Fair
+	Farmer: Either way, what did you want? Let's get it over with. 
+- The Orc actually sent me to you. 
+	Farmer: What did she do that for? 
+	- She's worried about you. 
+		Farmer: Is she now. Never thought her the caring type. She sure left in a hurry after she stabbed that already dead drake. 
+		- Already dead?
+		- Left?
+		Farmer: Dammit, I wasn't supposed to say that. Actually... 
+		- Go on. 
+			Farmer: She didn't kill it. 
+			- What do you mean?
+				Farmer: It basically killed itself, and she is just claiming that she was the one to cause his death. Don't ask me, adventurers are weird like that. 
+				Farmer: Can you leave me alone now?
+				- Sure
+				- Actually, one more question. 
+					=> Questions
+		- Why weren't you supposed to say that?
+			Farmer: So, truth is, she didn't kill it. It flew into the windmill on its own and she stabbed it after. Claimed it as her kill, and then threatened me to never tell anyone. 
+	- She told me a story. I thought you might have some details to add. 
+- What adventurers?
+
+
 
 => END
