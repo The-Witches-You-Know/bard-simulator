@@ -8,6 +8,7 @@
 size = Vector2(128, 129)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_incsl"]
+resource_local_to_scene = true
 shader = ExtResource("2_ifbqe")
 shader_parameter/width = 0.0
 shader_parameter/outline_color = Color(0.803922, 0.662745, 0.0313726, 1)

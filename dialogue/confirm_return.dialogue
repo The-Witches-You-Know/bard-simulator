@@ -1,0 +1,10 @@
+~ start
+
+Narrator: Are you sure you want to leave (doing so will pass time)
+
+- Yes 
+	Narrator: [next=auto]Good travels... [do CallbackHandler.LoadMap()]
+- No 
+	Narrator: [next=auto]Get back to it then...
+
+=> END

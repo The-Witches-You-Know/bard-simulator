@@ -5,10 +5,9 @@ var in_range = false
 func _process(_delta):
 	if in_range:
 		if Input.is_action_just_released("interact"):
-			# Should we use the dialogue system for confirmation stuff... probably
-			var game_world = get_node("/root/Main/GameWorld") as GameWorld
-			game_world.pass_time()
-			game_world.switch_level("map")
+			create_tween().tween_callback(func():
+				Audio_Player.setBalloonReference(DialogueManager.show_example_dialogue_balloon(load("res://dialogue/confirm_return.dialogue"), "start"))
+				).set_delay(0.4)
 
 func _on_body_entered(_body):
 	in_range = true

@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://bq8ii7lsyceq2"]
+
+[ext_resource type="PackedScene" uid="uid://ddnkxck5qdfcv" path="res://scenes/agents/player.tscn" id="1_vntnn"]
+[ext_resource type="PackedScene" uid="uid://by276q5li4uq4" path="res://scenes/levels/objects/exit_area.tscn" id="2_esgww"]
+
+[node name="graveyard" type="Node2D"]
+
+[node name="ExitArea" parent="." instance=ExtResource("2_esgww")]
+position = Vector2(575, 651)
+
+[node name="player" parent="." instance=ExtResource("1_vntnn")]
+position = Vector2(682, 521)
