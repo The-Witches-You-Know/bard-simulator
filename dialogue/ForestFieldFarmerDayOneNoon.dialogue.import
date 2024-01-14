@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_11"
+type="Resource"
+uid="uid://div13srwwpvur"
+path="res://.godot/imported/ForestFieldFarmerDayOneNoon.dialogue-462a13dec93b737e33b47c4e1a270d87.tres"
+
+[deps]
+
+source_file="res://dialogue/ForestFieldFarmerDayOneNoon.dialogue"
+dest_files=["res://.godot/imported/ForestFieldFarmerDayOneNoon.dialogue-462a13dec93b737e33b47c4e1a270d87.tres"]
+
+[params]
+
+defaults=true
