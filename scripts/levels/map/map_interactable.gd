@@ -9,6 +9,7 @@ func _ready():
 func _input_event(_viewport, event, _shape_idx):
 	if (event is InputEventMouseButton and event.is_pressed() and event.button_index == MOUSE_BUTTON_LEFT):
 		var game_world = get_node("/root/Main/GameWorld") as GameWorld
+		print(location_name)
 		game_world.switch_level(location_name)
 
 # When the mouse enters we set the outline size to 2
