@@ -26,7 +26,8 @@ func onAreaExited():
 	talkPanel.visible = false
 
 func _ready():
-	talkPanelLabel.text = "["+InputMap.action_get_events("interact")[0].as_text().substr(0, 1)+"] Talk"
+	if not Engine.is_editor_hint():
+		talkPanelLabel.text = "["+InputMap.action_get_events("interact")[0].as_text().substr(0, 1)+"] Talk"
 
 func onInteract():
 	var balloon = DialogueManager.show_example_dialogue_balloon(dialogue, "start")
