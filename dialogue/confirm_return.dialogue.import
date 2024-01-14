@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_11"
+type="Resource"
+uid="uid://blml1lj23u85p"
+path="res://.godot/imported/confirm_return.dialogue-f08ceb7ad316b466d4d1452fda6cb124.tres"
+
+[deps]
+
+source_file="res://dialogue/confirm_return.dialogue"
+dest_files=["res://.godot/imported/confirm_return.dialogue-f08ceb7ad316b466d4d1452fda6cb124.tres"]
+
+[params]
+
+defaults=true
