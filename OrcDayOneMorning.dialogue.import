@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_11"
+type="Resource"
+uid="uid://bpmrpir7x7wiq"
+path="res://.godot/imported/OrcDayOneMorning.dialogue-e712a39de479d5c1bef7aeb655b43088.tres"
+
+[deps]
+
+source_file="res://OrcDayOneMorning.dialogue"
+dest_files=["res://.godot/imported/OrcDayOneMorning.dialogue-e712a39de479d5c1bef7aeb655b43088.tres"]
+
+[params]
+
+defaults=true
