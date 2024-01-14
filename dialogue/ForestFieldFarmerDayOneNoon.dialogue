@@ -7,6 +7,7 @@ Farmer: What's with all the new faces? First those adventurers, then the Orc, no
 	- Hurtful
 	- Fair
 	Farmer: Either way, what did you want? Let's get it over with. 
+	=> Questions
 - The Orc actually sent me to you. 
 	Farmer: What did she do that for? 
 	- She's worried about you. 
@@ -21,7 +22,7 @@ Farmer: What's with all the new faces? First those adventurers, then the Orc, no
 				Farmer: Can you leave me alone now?
 				- Sure
 				- Actually, one more question. 
-					=> Questions
+				=> Questions
 		- Why weren't you supposed to say that?
 			Farmer: So, truth is, she didn't kill it. It flew into the windmill on its own and she stabbed it after. Claimed it as her kill, and then threatened me to never tell anyone. 
 	- She told me a story. I thought you might have some details to add. 
