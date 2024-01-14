@@ -1,0 +1,20 @@
+~ start
+
+
+Old Bard: So you are the new bard, eh? The new tale spreader?
+
+- Yes 
+	Old Bard: Good, good. I've been doing this for a little while. Would you like me to give you some pointers? Help a young grasshopper out, so to say?
+	- Yeah, why not?
+		Old Bard: Amazing! Lovely even. 
+	- No (Skip Tutorial) => END
+- Maybe 
+	Old Bard: Got a bit of snark! I like that. Would you like me to give you some pointers? Help a young grasshopper out, so to say?
+	- Yeah, why not?
+		Old Bard: Amazing! Lovely even. Your new profession is wordsmith. You are to either gather or experience the extraordinaury, and then let the common populace take part in the grandeur of your memory. Spread those stories, and don't be afraid of embellishing them a little. 
+	- No (Skip Tutorial) => END 
+Old Bard: Your new profession is wordsmith. You are to either gather or experience the extraordinaury, and then let the common populace take part in the grandeur of your memory. Spread those stories, and don't be afraid of embellishing them a little. 
+
+
+
+=> END

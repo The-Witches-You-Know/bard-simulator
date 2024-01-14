@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://ddnkxck5qdfcv"]
+
+[ext_resource type="Texture2D" uid="uid://csdpftn2u4j6t" path="res://assets/placeholder/shannon_placeholder.png" id="1_5hqkx"]
+[ext_resource type="Script" path="res://scripts/agents/player.gd" id="1_6450g"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hrlk0"]
+size = Vector2(60, 149)
+
+[node name="player" type="CharacterBody2D"]
+script = ExtResource("1_6450g")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(2, 2.5)
+shape = SubResource("RectangleShape2D_hrlk0")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_5hqkx")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="Camera2D" type="Camera2D" parent="."]
