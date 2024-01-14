@@ -1,6 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://dffqmqdhcwhq6"]
+[gd_scene load_steps=2 format=3 uid="uid://bdptp2sugeo5"]
 
-[ext_resource type="Script" path="res://scripts/savefile/save_loader.gd" id="1_1juk2"]
+[ext_resource type="Script" path="res://scripts/savefile/save_loader.gd" id="1_1xxdu"]
 
 [node name="SaveLoader" type="Node"]
-script = ExtResource("1_1juk2")
+script = ExtResource("1_1xxdu")

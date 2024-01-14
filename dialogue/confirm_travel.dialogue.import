@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_11"
+type="Resource"
+uid="uid://bl41hxwnjn5nv"
+path="res://.godot/imported/confirm_travel.dialogue-0488f4fd81c178932935b875c2d034a3.tres"
+
+[deps]
+
+source_file="res://dialogue/confirm_travel.dialogue"
+dest_files=["res://.godot/imported/confirm_travel.dialogue-0488f4fd81c178932935b875c2d034a3.tres"]
+
+[params]
+
+defaults=true

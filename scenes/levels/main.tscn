@@ -2,12 +2,10 @@
 
 [ext_resource type="Script" path="res://scripts/levels/Main.gd" id="1_yr65x"]
 [ext_resource type="PackedScene" uid="uid://davjuaj1ffvtd" path="res://scenes/ui/ui.tscn" id="2_6fda6"]
-[ext_resource type="PackedScene" uid="uid://oiwitscsf5sr" path="res://scenes/levels/game_world.tscn" id="2_tghxx"]
+[ext_resource type="PackedScene" path="res://scenes/levels/game_world.tscn" id="2_tghxx"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_yr65x")
 game_world_scene = ExtResource("2_tghxx")
 
 [node name="UI" parent="." instance=ExtResource("2_6fda6")]
-
-[node name="BGMusic" type="AudioStreamPlayer" parent="."]
