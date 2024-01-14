@@ -1,9 +1,12 @@
-[gd_scene load_steps=5 format=3 uid="uid://djbuy4xg064kh"]
+[gd_scene load_steps=6 format=3 uid="uid://djbuy4xg064kh"]
 
 [ext_resource type="Texture2D" uid="uid://bwgxsltfsteal" path="res://icon.svg" id="1_bmsor"]
 [ext_resource type="PackedScene" uid="uid://ddnkxck5qdfcv" path="res://scenes/agents/player.tscn" id="2_kvnnx"]
 [ext_resource type="PackedScene" uid="uid://by276q5li4uq4" path="res://scenes/levels/objects/exit_area.tscn" id="3_odhgs"]
 [ext_resource type="PackedScene" uid="uid://cou5jrmy23vew" path="res://scenes/agents/speaker.tscn" id="4_ex7mm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uvnwh"]
+size = Vector2(70, 160)
 
 [node name="Town" type="Node2D"]
 
@@ -21,3 +24,4 @@ position = Vector2(76, 541)
 
 [node name="speaker" parent="." instance=ExtResource("4_ex7mm")]
 position = Vector2(308.416, 79.8147)
+collider = SubResource("RectangleShape2D_uvnwh")

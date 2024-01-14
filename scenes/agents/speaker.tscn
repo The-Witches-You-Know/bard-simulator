@@ -10,7 +10,7 @@ size = Vector2(60, 149)
 [sub_resource type="LabelSettings" id="LabelSettings_gsp8t"]
 font_size = 24
 
-[node name="speaker" type="CharacterBody2D"]
+[node name="speaker" type="StaticBody2D"]
 script = ExtResource("1_siml4")
 speakerName = "Test"
 dialogue = ExtResource("2_o5qem")
@@ -19,12 +19,11 @@ dialogue = ExtResource("2_o5qem")
 shape = SubResource("RectangleShape2D_hrlk0")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(-1, 1)
+rotation = -3.14159
+scale = Vector2(1, -1)
 texture = ExtResource("2_ybtke")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-
-[node name="Camera2D" type="Camera2D" parent="."]
 
 [node name="TalkPanel" type="Panel" parent="."]
 visible = false
