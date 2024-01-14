@@ -2,6 +2,8 @@ extends CharacterBody2D
 
 const SPEED = 300.0
 
+var speaker: Speaker = null
+
 func _physics_process(_delta):
 
 	var inputX = Input.get_axis("character_left", "character_right")
@@ -26,3 +28,19 @@ func _physics_process(_delta):
 		pass
 
 	move_and_slide()
+	if Input.is_action_just_pressed("interact") and speaker != null:
+		speaker.onInteract()
+
+
+func _on_area_2d_area_entered(area):
+	var parent = area.get_parent()
+	if parent is Speaker:
+		speaker = parent
+		speaker.onAreaEntered()
+
+
+func _on_area_2d_area_exited(area):
+	var parent = area.get_parent()
+	if parent == speaker:
+		speaker.onAreaExited()
+		speaker = null
