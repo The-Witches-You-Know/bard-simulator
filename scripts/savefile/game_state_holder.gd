@@ -3,26 +3,60 @@ extends Node
 class_name GameState
 
 var SpokeToOrcDayOneMorning: bool = false: set = setSpokeToOrcDayOneMorning
+var SpokeToOrcDayOneEvening: bool = false: set = setSpokeToOrcDayOneEvening
 var KnowsAboutOrcStory: bool = false: set = setKnowsAboutOrcStory
 var KnowsOrcLied: bool = false: set = setKnowsOrcLied
 var OrcLie: bool = false: set = setOrcLie
 
+var Day1PeopleSpokenTo = [
+	[ #morning
+		false, #orc
+		false, #tavernkeep
+		false, #bard
+	],
+	[ #afternoon
+		
+	],
+	[ #evening
+		false, #orc
+	]
+]
+var Day1StoryChoices = [ # If specific story choice chains not listed out - choices have little meaning
+	0, # [0|1|2|3|4]  - [Heroic Orc|Orc claimed kill|Orc Superhero|Drake Diseased|Drake flew into windmill] 
+	0, # [Heroic Orc] - [0|1|2] [Middle of action | Exposition | Tragic Backstory]
+	0, # [Heroic Orc] - [Middle of action] - [0|1] [Senseless action | Orc monologue]
+	   #                [Exposition] - [0|1] [Actual Beginning | Embellish]
+	   #                [Tragic Backstory] - [0|1] [Buildup | Close to truth]
+	0, # [Heroic Orc] - [Exposition, Embellish] or [Tragic Backstory, Buildup] - [0|1] [Epic clash, Cut the tension]
+	   #                [Tragic Backstory, Close to truth] - [0|1] [Remain true | Embellish the Ending]
+	0
+]
 
 var SpokeToTavernkeepDayOneMorning: bool = false: set = setSpokeToTavernkeepDayOneMorning
 var SpokeToOldBardDayOneMorning: bool = false: set = setSpokeToOldBardDayOneMorning
 
 func initGameState():
 	var savedData = Save_Loader.gameData
-	SpokeToOrcDayOneMorning = savedData.safeGet("Orc.SpokeTo.Day1.Morning", false)
+	Day1PeopleSpokenTo = savedData.safeGet("Day1.PeopleSpokenTo", [[false,false,false],[],[false]])
+	
+	SpokeToOrcDayOneMorning = Day1PeopleSpokenTo[0][0]
+	SpokeToTavernkeepDayOneMorning = Day1PeopleSpokenTo[0][1]
+	SpokeToOldBardDayOneMorning = Day1PeopleSpokenTo[0][2]
+	SpokeToOrcDayOneEvening = Day1PeopleSpokenTo[2][0]
+	
 	KnowsAboutOrcStory = savedData.safeGet("KnowsAboutOrcStory", false)
 	KnowsOrcLied = savedData.safeGet("KnowsOrcLied", false)
 	OrcLie = savedData.safeGet("OrcLie", false)
-	SpokeToTavernkeepDayOneMorning = savedData.safeGet("Tavernkeep.SpokeTo.Day1.Morning", false)
-	SpokeToOldBardDayOneMorning = savedData.safeGet("OldBard.SpokeTo.Day1.Morning", false)
 	
 func setSpokeToOrcDayOneMorning(newValue):
 	SpokeToOrcDayOneMorning = newValue
-	SaveLoader.gameData.setOrPut("Orc.SpokeTo.Day1.Morning", newValue)
+	Day1PeopleSpokenTo[0][0] = true
+	SaveLoader.gameData.setOrPut("Day1.PeopleSpokenTo", Day1PeopleSpokenTo)
+	
+func setSpokeToOrcDayOneEvening(newValue):
+	SpokeToOrcDayOneEvening = newValue
+	Day1PeopleSpokenTo[2][0] = true
+	SaveLoader.gameData.setOrPut("Day1.PeopleSpokenTo", Day1PeopleSpokenTo)
 	
 func setKnowsAboutOrcStory(newValue):
 	KnowsAboutOrcStory = newValue
@@ -38,8 +72,10 @@ func setOrcLie(newValue):
 	
 func setSpokeToTavernkeepDayOneMorning(newValue):
 	SpokeToTavernkeepDayOneMorning = newValue
-	SaveLoader.gameData.setOrPut("Tavernkeep.SpokeTo.Day1.Morning", newValue)
+	Day1PeopleSpokenTo[0][1] = true
+	SaveLoader.gameData.setOrPut("Day1.PeopleSpokenTo", Day1PeopleSpokenTo)
 	
 func setSpokeToOldBardDayOneMorning(newValue):
 	SpokeToOldBardDayOneMorning = newValue
-	SaveLoader.gameData.setOrPut("OldBard.SpokeTo.Day1.Morning", newValue)
+	Day1PeopleSpokenTo[0][2] = true
+	SaveLoader.gameData.setOrPut("Day1.PeopleSpokenTo", Day1PeopleSpokenTo)
