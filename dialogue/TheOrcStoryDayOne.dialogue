@@ -10,22 +10,22 @@ Where do you wish to tell it?
 		=> ORCTAVERN
 	- No
 		=> start
-- Around the forest campfire
-	The Campfire is a place to share rumors, embesslished lies and maybe one or another entirely fabricated stories. 
-	Horror stories and the supernatural are also welcome.
-	Just be sure not to hog too much of the spotlight, the others there are just as much interested in spreading their own tales as you are.
-	Are you sure?
-	- Yes
-		=> ORCFOREST
-	- No
-		=> start
-- On the Marketplace
-	The Marketplace also functions are the townsquare, and is used for either public announcements, or matter of fact stories.
-	Are you sure?
-	- Yes
-		=> ORCMARKET
-	- No
-		=> start
+#- Around the forest campfire
+#	The Campfire is a place to share rumors, embesslished lies and maybe one or another entirely fabricated stories. 
+#	Horror stories and the supernatural are also welcome.
+#	Just be sure not to hog too much of the spotlight, the others there are just as much interested in spreading their own tales as you are.
+#	Are you sure?
+#	- Yes
+#		=> ORCFOREST
+#	- No
+#		=> start
+#- On the Marketplace
+#	The Marketplace also functions are the townsquare, and is used for either public announcements, or matter of fact stories.
+#	Are you sure?
+#	- Yes
+#		=> ORCMARKET
+#	- No
+#		=> start
 
 ~ ORCTAVERN
 How do you wish to tell the Orc's story
@@ -37,7 +37,7 @@ How do you wish to tell the Orc's story
 	- Simply begin speaking your tale. 
 		One or two eyes turn to you, a conversation here or there comes to a close to pay more attention to you
 	The Tavern as a whole is still just as loud as before. 
-	- Begin your tale in the middle of the action, to try and capture the taverns attention
+	- Begin your tale in the middle of the action
 		Confusion is abound. One or two patrons turn to their neighbours, a loudmouth asks a question into the room that doesn't get answered
 		Still, a few patrons don't really care. They hear action, and their attention is captured. 
 		- Lean into the senseless Action and draw out the fight for as long as you possible can.
@@ -47,6 +47,7 @@ How do you wish to tell the Orc's story
 				There are cheers here and there. 
 				You managed to make a few peoples night, but were nothing but pleasent background noise for the rest
 				=> END 
+
 		- Pause and let the Orc monologue to explain the situation
 			You've chosen the worst of both worlds. Those with an interest in action tune out, and those who already didn't pay attention aren't interested anymore. 
 			- Continue to try and tell your story. 
@@ -56,6 +57,7 @@ How do you wish to tell the Orc's story
 					=> END 
 				- You could have done so much better. You failed
 					=> END 
+
 			- Stop, you've done enough harm to your reputation. 
 	- Start slow and steady with exposition. 
 		As expected, not many turn to you. Their loss, this payoff is going to be much better for it.
@@ -66,7 +68,22 @@ How do you wish to tell the Orc's story
 			The Orc Draws her weapon, which you've decided to be a broadsword. 
 			The Tavern is getting into it.
 			- Nows your chance. Describe an epic clash of titanic forces!
+				As you describe an entirely made up fight with slashes and swings and one liners galore, the Tavern begins cheering loudly
+				You have to almost scream your throat out to describe the last fatal stab, and your description of the Dragon tumbling into the windmill is drowned out by cheers and hoorays
+				You Succesfully told an uprorous story. 
+				As you sit back down, you see a few interested Patrons sit down next to the Orc, trying to be as close to the Hero of the hour as they can. 
+				You spend the rest of the night answering questions and adding some detail. 
+				Flagons upon flagons of Ale are purchased for the both of you, and the night comes to a high-spirited end. 
+				=> END 
+				
 			- Dial back the lies a tiny bit, and describe the quick but fatal end of the Dragon.
+				You cut the tension short, let the Orc spout one last one liner, and describe it's quick end. 
+				The Tavern cheers and laughs. 
+				An overly drunk patron lounges over to the Orc, and starts asking questions. 
+				You've made her at least a little bit more of a Hero. 
+				Someone buys you a mug of mead, and you enjoy your time in the spotlight for a while before it's time to end the night
+				=> END 
+			
 	- Come up with a devestating backstory for the Orc on the fly
 		The Orc herself glances your way dubiously, she seems to be confused by your words. 
 		The rest of the Tavern however pays you more and more attention. 
@@ -81,6 +98,7 @@ How do you wish to tell the Orc's story
 				You spend the rest of the night answering questions and adding some detail. 
 				Flagons upon flagons of Ale are purchased for the both of you, and the night comes to a high-spirited end. 
 				=> END 
+
 			- Dial back the lies a tiny bit, and describe the quick but fatal end of the Dragon. 
 				You cut the tension short, let the Orc spout one last one liner, and describe it's quick end. 
 				The Tavern cheers and laughs. 
@@ -88,6 +106,7 @@ How do you wish to tell the Orc's story
 				You've made her at least a little bit more of a Hero. 
 				Someone buys you a mug of mead, and you enjoy your time in the spotlight for a while before it's time to end the night
 				=> END 
+				
 		- Keep it grounded and recall how the Orc described the start of the fight. 
 			The Orc is a bit confused, but satisfied you chose not to embellish the tale with more lies.
 			Only a whisper here or there is heard now. The tavern is trying to pay attention to every detail of your tale.
@@ -98,6 +117,8 @@ How do you wish to tell the Orc's story
 				Still, a story successfully told, and an Orc satisfied. 
 				You finish the night with the Orc buying a round of drinks for the whole tavern. 
 				=> END 
+				
+				
 			- Emebellish the story a tiny bit. Give the fight some back and forth. 
 				There's cheers and laughs abound!
 				Seems everyone really liked the tale, The Orc especially. 
@@ -105,24 +126,25 @@ How do you wish to tell the Orc's story
 				Then there's another one!
 				The night ends with everyone well and truly drunk, ready for the hangover the next day.
 				=> END 
+				
 			
-- (If KnowTruth = True) Let everyone know she claimed a kill not her own
-- (If ConversationOrcEvening = true) Make her out to be a superhero. 
-- (If KnowOfDisease = True) Tell Everyone the drake was infected, and the Orc might be as well now. 
-- (If KnowTruth = true) Tell a humorous tale of how a Drake flew into a windmill without mentioned the Orc was involved at all.
+# - (If KnowTruth = True) Let everyone know she claimed a kill not her own
+#- (If ConversationOrcEvening = true) Make her out to be a superhero. 
+#- (If KnowOfDisease = True) Tell Everyone the drake was infected, and the Orc might be as well now. 
+#- (If KnowTruth = true) Tell a humorous tale of how a Drake flew into a windmill without mentioned the Orc was involved at all.
 
-~ ORCFOREST
-- (If Orc morning conversation) Make the Orc out to be the Hero. 
-- (If KnowTruth = True) Let everyone know she claimed a kill not her own
-- (If ConversationOrcEvening = true) Make her out to be a superhero. 
-- (If KnowOfDisease = True) Tell Everyone the drake was infected, and the Orc might be as well now. 
-- (If KnowTruth = true) Tell a humorous tale of how a Drake flew into a windmill without mentioned the Orc was involved at all.
+#~ ORCFOREST
+#- (If Orc morning conversation) Make the Orc out to be the Hero. 
+#- (If KnowTruth = True) Let everyone know she claimed a kill not her own
+#- (If ConversationOrcEvening = true) Make her out to be a superhero. 
+#- (If KnowOfDisease = True) Tell Everyone the drake was infected, and the Orc might be as well now. 
+#- (If KnowTruth = true) Tell a humorous tale of how a Drake flew into a windmill without mentioned the Orc was involved at all.
 
-~ ORCMARKET
-- (If Orc morning conversation = true) Make the Orc out to be the Hero. 
-- (If KnowTruth = True) Let everyone know she claimed a kill not her own
-- (If ConversationOrcEvening = true) Make her out to be a superhero. 
-- (If KnowOfDisease = True) Tell Everyone the drake was infected, and the Orc might be as well now. 
-- (If KnowTruth = true) Tell a humorous tale of how a Drake flew into a windmill without mentioned the Orc was involved at all.
+#~ ORCMARKET
+#- (If Orc morning conversation = true) Make the Orc out to be the Hero. 
+#- (If KnowTruth = True) Let everyone know she claimed a kill not her own
+#- (If ConversationOrcEvening = true) Make her out to be a superhero. 
+#- (If KnowOfDisease = True) Tell Everyone the drake was infected, and the Orc might be as well now. 
+#- (If KnowTruth = true) Tell a humorous tale of how a Drake flew into a windmill without mentioned the Orc was involved at all.
 
 => END
