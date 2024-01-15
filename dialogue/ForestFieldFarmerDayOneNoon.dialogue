@@ -23,10 +23,12 @@ Farmer: What's with all the new faces? First those adventurers, then the Orc, no
 				Farmer: It basically killed itself, and she is just claiming that she was the one to cause his death. Don't ask me, adventurers are weird like that. 
 				Farmer: Just don't tell her. She swore bad things would happen if I spilled the tea.
 				Farmer: Can you leave me alone now?
-				- Sure => END
+				- Sure 
+					=> END
 				- What happened to it?
 					Farmer: Flew into the windmill, impaled itself on the wood. She just stabbed it after so it looks like she did it.
-					Farmer: If she finds out I said that I'm dead meat. Go. I already said too much. => END
+					Farmer: If she finds out I said that I'm dead meat. Go. I already said too much. 
+					=> END
 		- Why weren't you supposed to say that?
 			Farmer: So, truth is, she didn't kill it. It flew into the windmill on its own and she stabbed it after. Claimed it as her kill, and then threatened me to never tell anyone. 
 	- She told me a story. I thought you might have some details to add. 
@@ -34,6 +36,27 @@ Farmer: What's with all the new faces? First those adventurers, then the Orc, no
 	Farmer: The trio of bumbling idiots that wanted to solve the drake idiot
 	Farmer: Said they were from the guild, but when I asked if they could prove that they didn't show me anyhting
 	- What did they look like?
+		Farmer: One large man in armor so heavy not three of me could lift it. 
+		Farmer: A sly looking guy that I wouldn't trust with taking care of a pile of scraps
+		Farmer: A twitchy girl that was way too warmly dressed for the season.
+		- So an incredibly suspicious crew. Understood. 
+			Farmer: Yeah. You don't have it out for them do you?
+			Farmer: They might have been a bit sketchy, but I would trust them to be much stronger than you
+			- No interest. 
+			- They could have some fun stories to tell. 
+				Farmer: They said they'd be back later. So stick around, and you might just get to ask them. 
+				Farmer: And if you're in the mood you can be an eyewitness if they get any funny ideas. 
+				- Will do. 
+				- I'd rather be somewhere else. 
+				Farmer: Suit yourself. 
+				=> Drake 
+		- Any clue where they are now?
+			Farmer: Gods know where they are. Said they'd back later to try again. I hope not. 
+			Farmer: But if you wanna stick around, they might actually keep their word. 
+			- Will do. 
+			- I'd rather not. 
+			Farmer: Suit yourself
+			=> Drake
 	- Where are they now?
 		Farmer: Gods know where they are. Said they'd back later to try again. I hope not. 
 		Farmer: But if you wanna stick around, they might actually keep their word. 
@@ -47,7 +70,90 @@ Farmer: What's with all the new faces? First those adventurers, then the Orc, no
 Farmer: Either way, you wanted something. Let's get it over with. 
 - I wanted to ask about that Drake.
 	Farmer: Okay? What about it?
+	- Just came here to look at it. 
+		Farmer: Alright, when you've finished your gawking, be on your way. 
+		=> END
+	- The Orc told me a story. Wanted to know if she told the truth. 
+		=> Story
 - Actually, I'll just leave you to it. 
-	Farmer: Thank you kindly. Pray the rest of the day will be just as peaceful. => END 
+	Farmer: Thank you kindly. Pray the rest of the day will be just as peaceful. 
+	=> END 
+
+~ Story
+Farmer: Whatever she told you is the truth. 
+- Are you hiding something?
+	Farmer: No. What would I be hiding?
+	- Then why so dodgy?
+		Farmer: Because... well... Ah dammit. 
+		Farmer: Is this like a test? She sent you to try and find out if I would betray her?
+		- No, but why would she?
+			Farmer: So you're not in league with her?
+			- Not at all. 
+			- I'm just interested in the truth 
+			Farmer: Alright so. Thing is, she didn't kill the drake. It kinda just flew into the windmill, and she took the opportunity
+			Farmer: It just pretty much died on it's own. I was the only one who saw it.
+			Farmer: So she went and told me that if I told a Soul, I'd be in trouble. 
+			- I get it now. 
+				Farmer: Alright, good. Can you leave now? I don't want her to see us together. 
+				- Do you know where she is now?
+					Farmer: Probably still in the tavern, making herself out to be a Hero.
+					=> END
+				- Sure.
+				=> END 
+			- Don't worry, she won't find out it was you.
+				Farmer: I'd hope so. Otherwise I'm gonna be coming after you. 
+				- Slow down with the threat there, buddy. 
+				- I'd like to see you try. 
+				Farmer: S-sorry. Nerves are getting to me. 
+				- Do you know where she is now?
+					Farmer: Probably still in the tavern, making herself out to be a Hero.
+					=> END
+				- Anything else you wanted to add?
+					Farmer: Nothing comes to mind. Oh! Maybe if you could chase the kids away? 
+					Farmer: I don't think being around a Dead Drake's body is a good influence. 
+					- Sure thing. 
+						=> END
+					- Do it yourself
+						=> END  
+		- yes, and you failed. 
+			Farmer: Dammit. Leave me alone! I didn't want this! I was just in the wrong place at the wrong time!
+			- Yeah, and I hope you know better now. 
+				Farmer: I do. Leave, go tell on me. 
+				- Actually, I'm just trying to figure out the truth. 
+					Farmer: Wait really? You just gave me a heartattack for what, for funsies?
+					- Sure I did. Was quite funny, no?
+						Farmer: You have a funny idea of funny.
+						- Don't be like that. 
+						- So what actually happened?
+					- Sorry about that. Could you tell me what actually happened?
+				- I will. You better prepare. 
+					=> END
+			- Okay, so what actually happened?
+				Farmer: Shouldn't you know already?
+				- I sure do. I want you to remind me.
+				- I mean, maybe. I'd still like to hear your side. 
+				Farmer: I mean. Really? Isn't this just a waste of both of our time?
+				- Just tell me what happened already. 
+					Farmer: You aren't actually in league with her, are you?
+					- Not at all. 
+						Farmer: Great waste of my time. 
+						Farmer: Goodbye
+						=> END
+					- Maybe a little bit.
+						Farmer: Great use of my time. 
+						Farmer: Good day. 
+						=> END 
+				- Fair enough, it is. 
+					Farmer: Glad to hear you come to reason. Now leave me alone. 
+					Farmer: I've got some preparations to make. 
+					=> END 
+				
+- Alright. I'll leave you to it then. 
+	Farmer: Thank you kindly. Pray the rest of the day will be just as peaceful. 
+	=> END 
+
+
+set GameStateHolder.SpokeToFarmerDayOneNoon = true
+
 	
 => END
