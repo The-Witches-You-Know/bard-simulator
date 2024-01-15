@@ -47,12 +47,20 @@ func initGameState():
 	
 	KnowsAboutOrcStory = savedData.safeGet("KnowsAboutOrcStory", false)
 	KnowsOrcLied = savedData.safeGet("KnowsOrcLied", false)
-	OrcLie = savedData.safeGet("OrcLie", false)
+	OrcLie = savedData.safeGet("OrcLie", false)	
 	
 func setSpokeToOrcDayOneMorning(newValue):
 	SpokeToOrcDayOneMorning = newValue
 	Day1PeopleSpokenTo[0][0] = true
 	SaveLoader.gameData.setOrPut("Day1.PeopleSpokenTo", Day1PeopleSpokenTo)
+	
+	#   ||      ||         ||
+	#   \/      \/         \/
+func setDay1StoryChoices(index,value): #please use this instead of setting values directly inside the Day1StoryChoices array
+	Day1StoryChoices[index] = value
+	SaveLoader.gameData.setOrPut("Day1.StoryChoices", Day1StoryChoices)
+	
+	
 	
 func setSpokeToOrcDayOneEvening(newValue):
 	SpokeToOrcDayOneEvening = newValue
