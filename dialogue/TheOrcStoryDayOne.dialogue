@@ -1,0 +1,74 @@
+~ start
+
+You've chosen to tell the Orc's story. 
+Where do you wish to tell it?
+- The Tavern
+	The Tavern lends itself well to humorous and uplifting stories. 
+	Are you sure? 
+	- Yes
+		=> ORCTAVERN
+	- No
+		=> start
+- Around the forest campfire
+	The Campfire is a place to share rumors, embesslished lies and maybe one or another entirely fabricated stories. 
+	Horror stories and the supernatural are also welcome.
+	Just be sure not to hog too much of the spotlight, the others there are just as much interesting in spreading their own tales as you are.
+	Are you sure?
+	- Yes
+		=> ORCFOREST
+	- No
+		=> start
+- On the Marketplace
+	The Marketplace also functions are the townsquare, and is used for either public announcements, or matter of fact stories.
+	Are you sure?
+	- Yes
+		=> ORCMARKET
+	- No
+		=> start
+
+~ ORCTAVERN
+How do you wish to tell the Orc's story
+- (If Orc morning conversation) Make the Orc out to be the Hero. 
+	The Tavern is still as loud as ever. 
+	You notice the Orc is one of the audience members, sitting alone at a corner table. Presumably not by choice.
+	- Speak up, and try to gather everyones attention. What you have to say is important. 
+		One or two conversations come to a close, and a couple of eyes turn to you. 
+	- Simply begin speaking your tale. 
+		One or two eyes turn to you, a conversation here or there comes to a close to pay more attention to you
+	The Tavern as a whole is still just as loud as before. 
+	- Begin your tale in the middle of the action, to try and capture the taverns attention
+	- Start slow and steady with exposition. 
+		As expected, not many turn to you. Their less, this payoff is going to be much better for it.
+		
+	- Come up with a devestating backstory for the Orc on the fly
+		The Orc herself glances your way dubiously, she seems to be confused by your words. 
+		The rest of the Tavern however pays you more and more attention. 
+		- Build up the dragon fight with some showboasting of both sides before the confrontation. 
+			The Orc nods along, she's getting into it
+			As seems to be the rest of the Tavern. 
+			- Nows your chance. Describe an epic clash of titanic forces! 
+			- Dial back the lies a tiny bit, and describe the quick but fatal end of the Dragon. 
+		- Keep it grounded and recall how the Orc described the start of the fight. 
+			The Orc is a bit confused, but satisfied you chose not to embellish the tale with more lies.
+			Only a whisper here or there is heard now. The tavern is trying to pay attention to every detail of your tale.
+			
+- (If KnowTruth = True) Let everyone know she claimed a kill not her own
+- (If ConversationOrcEvening = true) Make her out to be a superhero. 
+- (If KnowOfDisease = True) Tell Everyone the drake was infected, and the Orc might be as well now. 
+- (If KnowTruth = true) Tell a humorous tale of how a Drake flew into a windmill without mentioned the Orc was involved at all.
+
+~ ORCFOREST
+- (If Orc morning conversation) Make the Orc out to be the Hero. 
+- (If KnowTruth = True) Let everyone know she claimed a kill not her own
+- (If ConversationOrcEvening = true) Make her out to be a superhero. 
+- (If KnowOfDisease = True) Tell Everyone the drake was infected, and the Orc might be as well now. 
+- (If KnowTruth = true) Tell a humorous tale of how a Drake flew into a windmill without mentioned the Orc was involved at all.
+
+~ ORCMARKET
+- (If Orc morning conversation) Make the Orc out to be the Hero. 
+- (If KnowTruth = True) Let everyone know she claimed a kill not her own
+- (If ConversationOrcEvening = true) Make her out to be a superhero. 
+- (If KnowOfDisease = True) Tell Everyone the drake was infected, and the Orc might be as well now. 
+- (If KnowTruth = true) Tell a humorous tale of how a Drake flew into a windmill without mentioned the Orc was involved at all.
+
+=> END
