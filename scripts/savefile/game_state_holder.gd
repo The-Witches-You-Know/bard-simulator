@@ -21,15 +21,15 @@ var Day1PeopleSpokenTo = [
 		false, #orc
 	]
 ]
-var Day1StoryChoices = [ # If specific story choice chains not listed out - choices have little meaning
-	0, # [0|1|2|3|4]  - [Heroic Orc|Orc claimed kill|Orc Superhero|Drake Diseased|Drake flew into windmill] 
-	0, # [Heroic Orc] - [0|1|2] [Middle of action | Exposition | Tragic Backstory]
-	0, # [Heroic Orc] - [Middle of action] - [0|1] [Senseless action | Orc monologue]
-	   #                [Exposition] - [0|1] [Actual Beginning | Embellish]
-	   #                [Tragic Backstory] - [0|1] [Buildup | Close to truth]
-	0, # [Heroic Orc] - [Exposition, Embellish] or [Tragic Backstory, Buildup] - [0|1] [Epic clash, Cut the tension]
-	   #                [Tragic Backstory, Close to truth] - [0|1] [Remain true | Embellish the Ending]
-	0
+var Day1StoryChoices = [ # If specific story choice chains not listed out - choices have little meaning. -1 is default value
+	-1, # [0|1|2|3|4]  - [Heroic Orc|Orc claimed kill|Orc Superhero|Drake Diseased|Drake flew into windmill] 
+	-1, # [Heroic Orc] - [0|1|2] [Middle of action | Exposition | Tragic Backstory]
+	-1, # [Heroic Orc] - [Middle of action] - [0|1] [Senseless action | Orc monologue]
+		#                [Exposition] - [0|1] [Actual Beginning | Embellish]
+		#                [Tragic Backstory] - [0|1] [Buildup | Close to truth]
+	-1, # [Heroic Orc] - [Exposition, Embellish] or [Tragic Backstory, Buildup] - [0|1] [Epic clash, Cut the tension]
+		#                [Tragic Backstory, Close to truth] - [0|1] [Remain true | Embellish the Ending]
+	-1
 ]
 
 var SpokeToTavernkeepDayOneMorning: bool = false: set = setSpokeToTavernkeepDayOneMorning
@@ -38,6 +38,7 @@ var SpokeToOldBardDayOneMorning: bool = false: set = setSpokeToOldBardDayOneMorn
 func initGameState():
 	var savedData = Save_Loader.gameData
 	Day1PeopleSpokenTo = savedData.safeGet("Day1.PeopleSpokenTo", [[false,false,false],[],[false]])
+	Day1StoryChoices = savedData.safeGet("Day1.StoryChoices", [-1,-1,-1,-1,-1])
 	
 	SpokeToOrcDayOneMorning = Day1PeopleSpokenTo[0][0]
 	SpokeToTavernkeepDayOneMorning = Day1PeopleSpokenTo[0][1]
