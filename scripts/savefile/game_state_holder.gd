@@ -14,8 +14,9 @@ var Day1PeopleSpokenTo = [
 		false, #tavernkeep
 		false, #bard
 	],
-	[ #afternoon
-		
+	[ #noon
+		false, #forestkids
+		false, #tavernkeep
 	],
 	[ #evening
 		false, #orc
@@ -33,16 +34,24 @@ var Day1StoryChoices = [ # If specific story choice chains not listed out - choi
 ]
 
 var SpokeToTavernkeepDayOneMorning: bool = false: set = setSpokeToTavernkeepDayOneMorning
+var SpokeToTavernkeepDayOneNoon: bool = false: set = setSpokeToTavernkeepDayOneNoon
+
+var SpokeToKidsDayOneNoon: bool = false: set = setSpokeToKidsDayOneNoon
+
 var SpokeToOldBardDayOneMorning: bool = false: set = setSpokeToOldBardDayOneMorning
 
 func initGameState():
 	var savedData = Save_Loader.gameData
-	Day1PeopleSpokenTo = savedData.safeGet("Day1.PeopleSpokenTo", [[false,false,false],[],[false]])
+	Day1PeopleSpokenTo = savedData.safeGet("Day1.PeopleSpokenTo", [[false,false,false],[false, false],[false]])
 	Day1StoryChoices = savedData.safeGet("Day1.StoryChoices", [-1,-1,-1,-1,-1])
 	
 	SpokeToOrcDayOneMorning = Day1PeopleSpokenTo[0][0]
 	SpokeToTavernkeepDayOneMorning = Day1PeopleSpokenTo[0][1]
 	SpokeToOldBardDayOneMorning = Day1PeopleSpokenTo[0][2]
+	
+	SpokeToTavernkeepDayOneNoon = Day1PeopleSpokenTo[1][1]
+	SpokeToKidsDayOneNoon = Day1PeopleSpokenTo[1][0]
+	
 	SpokeToOrcDayOneEvening = Day1PeopleSpokenTo[2][0]
 	
 	KnowsAboutOrcStory = savedData.safeGet("KnowsAboutOrcStory", false)
@@ -51,7 +60,10 @@ func initGameState():
 	
 func setSpokeToOrcDayOneMorning(newValue):
 	SpokeToOrcDayOneMorning = newValue
-	Day1PeopleSpokenTo[0][0] = true
+	setDay1PeopleSpokenTo(0,0,true)
+	
+func setDay1PeopleSpokenTo(index1, index2, value):
+	Day1PeopleSpokenTo[index1][index2] = value
 	SaveLoader.gameData.setOrPut("Day1.PeopleSpokenTo", Day1PeopleSpokenTo)
 	
 	#   ||      ||         ||
@@ -64,8 +76,7 @@ func setDay1StoryChoices(index,value): #please use this instead of setting value
 	
 func setSpokeToOrcDayOneEvening(newValue):
 	SpokeToOrcDayOneEvening = newValue
-	Day1PeopleSpokenTo[2][0] = true
-	SaveLoader.gameData.setOrPut("Day1.PeopleSpokenTo", Day1PeopleSpokenTo)
+	setDay1PeopleSpokenTo(2,0,true)
 	
 func setKnowsAboutOrcStory(newValue):
 	KnowsAboutOrcStory = newValue
@@ -81,10 +92,16 @@ func setOrcLie(newValue):
 	
 func setSpokeToTavernkeepDayOneMorning(newValue):
 	SpokeToTavernkeepDayOneMorning = newValue
-	Day1PeopleSpokenTo[0][1] = true
-	SaveLoader.gameData.setOrPut("Day1.PeopleSpokenTo", Day1PeopleSpokenTo)
+	setDay1PeopleSpokenTo(0,1,true)
+	
+func setSpokeToTavernkeepDayOneNoon(newValue):
+	SpokeToTavernkeepDayOneNoon = newValue
+	setDay1PeopleSpokenTo(1,1,true)
+	
+func setSpokeToKidsDayOneNoon(newValue):
+	SpokeToKidsDayOneNoon = newValue
+	setDay1PeopleSpokenTo(1,0,true)
 	
 func setSpokeToOldBardDayOneMorning(newValue):
 	SpokeToOldBardDayOneMorning = newValue
-	Day1PeopleSpokenTo[0][2] = true
-	SaveLoader.gameData.setOrPut("Day1.PeopleSpokenTo", Day1PeopleSpokenTo)
+	setDay1PeopleSpokenTo(0,2,true)

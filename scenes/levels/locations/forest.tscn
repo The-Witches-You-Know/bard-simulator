@@ -1,0 +1,45 @@
+[gd_scene load_steps=7 format=3 uid="uid://20eg01liwra2"]
+
+[ext_resource type="PackedScene" uid="uid://by276q5li4uq4" path="res://scenes/levels/objects/exit_area.tscn" id="1_svyfn"]
+[ext_resource type="PackedScene" uid="uid://ddnkxck5qdfcv" path="res://scenes/agents/player.tscn" id="2_broqp"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_rqjrk"]
+a = Vector2(-500, -200)
+b = Vector2(2000, -200)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_pt5bv"]
+a = Vector2(-500, -200)
+b = Vector2(-500, 1200)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_b7hdi"]
+a = Vector2(-500, 1200)
+b = Vector2(2000, 1200)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_xqahs"]
+a = Vector2(2000, -200)
+b = Vector2(2000, 1200)
+
+[node name="graveyard" type="Node2D"]
+
+[node name="ExitArea" parent="." instance=ExtResource("1_svyfn")]
+position = Vector2(1233, 456)
+rotation = 1.5708
+
+[node name="player" parent="." instance=ExtResource("2_broqp")]
+position = Vector2(682, 521)
+
+[node name="RoomBoundary" type="Node" parent="."]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="RoomBoundary"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RoomBoundary/StaticBody2D"]
+shape = SubResource("SegmentShape2D_rqjrk")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="RoomBoundary/StaticBody2D"]
+shape = SubResource("SegmentShape2D_pt5bv")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="RoomBoundary/StaticBody2D"]
+shape = SubResource("SegmentShape2D_b7hdi")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="RoomBoundary/StaticBody2D"]
+shape = SubResource("SegmentShape2D_xqahs")

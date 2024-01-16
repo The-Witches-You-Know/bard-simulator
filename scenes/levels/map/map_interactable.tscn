@@ -1,9 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://b631gg2mdlrgq"]
+[gd_scene load_steps=6 format=3 uid="uid://b631gg2mdlrgq"]
 
 [ext_resource type="Script" path="res://scripts/levels/map/map_interactable.gd" id="1_yh4qo"]
 [ext_resource type="Shader" path="res://shaders/outline.gdshader" id="2_ifbqe"]
 [ext_resource type="Texture2D" uid="uid://cpu70ar8xuvnp" path="res://assets/placeholder/testsprite.png" id="3_4u5n8"]
-[ext_resource type="Texture2D" uid="uid://dnmgxt7fr45qo" path="res://assets/sprites/forest/sheet/forest.png" id="4_275ms"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ygfb0"]
 size = Vector2(128, 129)
@@ -25,12 +24,6 @@ shape = SubResource("RectangleShape2D_ygfb0")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_incsl")
 texture = ExtResource("3_4u5n8")
-
-[node name="Sprite2D2" type="Sprite2D" parent="."]
-position = Vector2(250, 0)
-texture = ExtResource("4_275ms")
-region_enabled = true
-region_rect = Rect2(0, 128, 128, 128)
 
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
