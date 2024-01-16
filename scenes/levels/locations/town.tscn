@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://djbuy4xg064kh"]
+[gd_scene load_steps=10 format=3 uid="uid://djbuy4xg064kh"]
 
 [ext_resource type="Texture2D" uid="uid://bwgxsltfsteal" path="res://icon.svg" id="1_bmsor"]
 [ext_resource type="PackedScene" uid="uid://ddnkxck5qdfcv" path="res://scenes/agents/player.tscn" id="2_kvnnx"]
@@ -7,6 +7,22 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uvnwh"]
 size = Vector2(70, 160)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_7ges5"]
+a = Vector2(-500, -200)
+b = Vector2(2000, -200)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_0o0st"]
+a = Vector2(-500, -200)
+b = Vector2(-500, 1200)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_e4spj"]
+a = Vector2(-500, 1200)
+b = Vector2(2000, 1200)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_xk5fu"]
+a = Vector2(2000, -200)
+b = Vector2(2000, 1200)
 
 [node name="Town" type="Node2D"]
 
@@ -25,3 +41,19 @@ position = Vector2(76, 541)
 [node name="speaker" parent="." instance=ExtResource("4_ex7mm")]
 position = Vector2(308.416, 79.8147)
 collider = SubResource("RectangleShape2D_uvnwh")
+
+[node name="RoomBoundary" type="Node" parent="."]
+
+[node name="BoundaryShape" type="StaticBody2D" parent="RoomBoundary"]
+
+[node name="Top" type="CollisionShape2D" parent="RoomBoundary/BoundaryShape"]
+shape = SubResource("SegmentShape2D_7ges5")
+
+[node name="Left" type="CollisionShape2D" parent="RoomBoundary/BoundaryShape"]
+shape = SubResource("SegmentShape2D_0o0st")
+
+[node name="Bottom" type="CollisionShape2D" parent="RoomBoundary/BoundaryShape"]
+shape = SubResource("SegmentShape2D_e4spj")
+
+[node name="Right" type="CollisionShape2D" parent="RoomBoundary/BoundaryShape"]
+shape = SubResource("SegmentShape2D_xk5fu")

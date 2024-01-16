@@ -15,6 +15,11 @@ position = Vector2(298, 422)
 location_name = "graveyard"
 texture = ExtResource("4_vwpk8")
 
+[node name="Forest" parent="." instance=ExtResource("2_jglfu")]
+position = Vector2(938, 418)
+location_name = "forest"
+texture = ExtResource("4_vwpk8")
+
 [node name="Town" parent="." instance=ExtResource("2_jglfu")]
 position = Vector2(985, 112)
 location_name = "town"

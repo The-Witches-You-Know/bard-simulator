@@ -42,6 +42,7 @@ var SpokeToOldBardDayOneMorning: bool = false: set = setSpokeToOldBardDayOneMorn
 
 func initGameState():
 	var savedData = Save_Loader.gameData
+	savedData.clear()
 	Day1PeopleSpokenTo = savedData.safeGet("Day1.PeopleSpokenTo", [[false,false,false],[false, false],[false]])
 	Day1StoryChoices = savedData.safeGet("Day1.StoryChoices", [-1,-1,-1,-1,-1])
 	
