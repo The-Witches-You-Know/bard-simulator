@@ -10,15 +10,15 @@ Where do you wish to tell it?
 		=> ORCTAVERN
 	- No
 		=> start
-#- Around the forest campfire
-#	The Campfire is a place to share rumors, embesslished lies and maybe one or another entirely fabricated stories. 
-#	Horror stories and the supernatural are also welcome.
-#	Just be sure not to hog too much of the spotlight, the others there are just as much interested in spreading their own tales as you are.
-#	Are you sure?
-#	- Yes
-#		=> ORCFOREST
-#	- No
-#		=> start
+- Around the forest campfire
+	The Campfire is a place to share rumors, embesslished lies and maybe one or another entirely fabricated stories. 
+	Horror stories and the supernatural are also welcome.
+	Just be sure not to hog too much of the spotlight, the others there are just as much interested in spreading their own tales as you are.
+	Are you sure?
+	- Yes
+		=> ORCFOREST
+	- No
+		=> start
 #- On the Marketplace
 #	The Marketplace also functions are the townsquare, and is used for either public announcements, or matter of fact stories.
 #	Are you sure?
@@ -127,24 +127,32 @@ How do you wish to tell the Orc's story
 				The night ends with everyone well and truly drunk, ready for the hangover the next day.
 				=> END 
 				
-			
-# - (If KnowTruth = True) Let everyone know she claimed a kill not her own
-#- (If ConversationOrcEvening = true) Make her out to be a superhero. 
-#- (If KnowOfDisease = True) Tell Everyone the drake was infected, and the Orc might be as well now. 
-#- (If KnowTruth = true) Tell a humorous tale of how a Drake flew into a windmill without mentioned the Orc was involved at all.
+- You'd rather spread this tale elsewhere
+	=> start
 
-#~ ORCFOREST
-#- (If Orc morning conversation) Make the Orc out to be the Hero. 
-#- (If KnowTruth = True) Let everyone know she claimed a kill not her own
-#- (If ConversationOrcEvening = true) Make her out to be a superhero. 
-#- (If KnowOfDisease = True) Tell Everyone the drake was infected, and the Orc might be as well now. 
-#- (If KnowTruth = true) Tell a humorous tale of how a Drake flew into a windmill without mentioned the Orc was involved at all.
+~ ORCFOREST
+- (If KnowTruth = True) Let everyone know she claimed a kill not her own
+	As you arrive at the forest's edge, the campfire is already roaring furiously. Hushed conversation is in full force, and nobody takes notice of you as you take a seat besides them. 
+	You can't recongize any faces, the safety of anonymity. 
+	The entire gathered audience is currently listening to a story about an old widow, whose late husbands grave has been seeing a lot of action. 
+	Someone else mentions that they saw the dead mans ghost visit his own grave once!
+	- Waste no time and immediatly let everyone know of the orc's deception
+		There's a few mumurs as you start talking, apparently out of turn. 
+		In the middle of your first sentence someone rams an elbow in your ribs, and a gruff voice whispers to you
+		Stranger: Wait, you idiot. You'll get your chance.
+	- Wait a bit for the right opportunity. 
+	Someone else agrees, and mentions how the Old Widow and the Old Bard have been around each other a lot more recently. 
+	An entirely different voice theorizes they might be a thing now. 
+	There's some rumbling and grumbling in the gathered crowd, but no one can refute the claim. 
+	- Maybe now they're willing to listen to rumors about the orc?
+	- Give it some more time. This is good material for other times. 
+- You'd rather spread this tale elsewhere
+	=> start
 
-#~ ORCMARKET
-#- (If Orc morning conversation = true) Make the Orc out to be the Hero. 
-#- (If KnowTruth = True) Let everyone know she claimed a kill not her own
-#- (If ConversationOrcEvening = true) Make her out to be a superhero. 
-#- (If KnowOfDisease = True) Tell Everyone the drake was infected, and the Orc might be as well now. 
-#- (If KnowTruth = true) Tell a humorous tale of how a Drake flew into a windmill without mentioned the Orc was involved at all.
+=> END
 
+~ ORCMARKET
+- (If KnowOfDisease = True) Tell Everyone the drake was infected, and the Orc might be as well now. 
+- You'd rather spread this tale elsewhere
+	=> start
 => END
