@@ -9,6 +9,8 @@ var current : Control
 func _ready():
 	$Paused.visible = false
 
+# Switch layer so pause appears in front of dialogue
+# Probably not the best way but hey it works
 func switch_ui_state(state):
 
 	if current != null:
@@ -19,11 +21,14 @@ func switch_ui_state(state):
 			$Paused.visible = false
 			current = Menu.instantiate()
 			add_child(current)
+			layer = 99
 		global.GAME_WORLD:
 			$Paused.visible = false
 			current = HUD.instantiate()
 			add_child(current)
+			layer = 99
 		global.PAUSED:
+			layer = 101
 			$Paused.visible = true
 
 func set_time(time):
