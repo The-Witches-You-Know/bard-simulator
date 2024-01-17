@@ -15,7 +15,10 @@ func _ready():
 func _process(_delta):
 	if Input.is_action_just_released("pause"):
 		var main = get_node("/root/Main") as Manager
-		main.switch_state(global.PAUSED)
+		if main.current_state == global.PAUSED:
+			main.switch_state(global.GAME_WORLD)
+		else:
+			main.switch_state(global.PAUSED)
 
 func switch_level(level):
 	if current != null:
