@@ -2,7 +2,7 @@ extends Node
 
 class_name SaveLoader
 
-static var gameData: GameData
+static var gameData: Game_Data
 static var settingsData = SettingsData.new()
 
 func _ready():
@@ -11,7 +11,7 @@ func _ready():
 
 #use to load saveFile
 func loadSaveFile():
-	gameData = GameData.new("savefile_0")
+	gameData = Game_Data.new("savefile_0")
 	gameData.loadFile()
 	GameStateHolder.initGameState()
 
