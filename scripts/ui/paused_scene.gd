@@ -15,6 +15,13 @@ func _on_options_button_up():
 
 func _on_exit_button_up():
 	# SAVE GAME HERE
+	
+	# Dialogue hack REFER TO THIS WHEN WE CHANGE THE BALLOON
+	var dialogue = get_node("/root/Main/ExampleBalloon")
+	
+	if dialogue != null:
+		dialogue.queue_free()
+	
 	var main = get_node("/root/Main") as Manager
 	main.switch_state(global.MENU)
 	
