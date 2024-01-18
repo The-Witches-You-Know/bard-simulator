@@ -42,7 +42,6 @@ position = Vector2(76, 541)
 position = Vector2(308.416, 79.8147)
 scale = Vector2(1, -1)
 actionName = "Dance"
-collisionDisabled = true
 defaultSprite = ExtResource("6_f8l1x")
 collider = SubResource("RectangleShape2D_uvnwh")
 

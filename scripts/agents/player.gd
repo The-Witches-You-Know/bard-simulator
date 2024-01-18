@@ -39,7 +39,6 @@ func _physics_process(_delta):
 		move_and_slide()
 	if get_slide_collision_count() > 0:
 		collisionDirection = get_slide_collision(0).get_normal() * -1
-		collisionDirection = velocity
 	else:
 		collisionDirection = Vector2(0,0)
 	if Input.is_action_just_pressed("interact") and speaker != null:
