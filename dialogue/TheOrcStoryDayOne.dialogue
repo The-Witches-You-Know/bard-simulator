@@ -138,21 +138,71 @@ How do you wish to tell the Orc's story
 	Someone else mentions that they saw the dead mans ghost visit his own grave once!
 	- Waste no time and immediatly let everyone know of the orc's deception
 		There's a few mumurs as you start talking, apparently out of turn. 
-		In the middle of your first sentence someone rams an elbow in your ribs, and a gruff voice whispers to you
+		No one seems to be interested as you mention the orc. 
+		In the middle of your second sentence someone rams an elbow in your ribs, and a gruff voice whispers to you
 		Stranger: Wait, you idiot. You'll get your chance.
 	- Wait a bit for the right opportunity. 
 	Someone else agrees, and mentions how the Old Widow and the Old Bard have been around each other a lot more recently. 
 	An entirely different voice theorizes they might be a thing now. 
 	There's some rumbling and grumbling in the gathered crowd, but no one can refute the claim. 
 	- Maybe now they're willing to listen to rumors about the orc?
+		As you open your mouth, a harsh gaze from across the campfire makes you reconsider. 
+		You feel as though magic was used to silence you. 
+		Upset them at your peril. 
 	- Give it some more time. This is good material for other times. 
+	A voice to your left brings up a new bard in town. 
+	They sound excited, mention how they hope that the new voice brings some new stories, not the same old same old that the previous bard was constantly spouting. 
+	Expectations for you seem to be high. 
+	- Surely they would listen to that selfsame bard speak of something new then?
+		No one silences you this time. 
+		You're free to speak of the Orc. 
+		- Get right to the Juicy bits, and regale the gathered group of her deception. She didn't kill the drake at all. 
+			Not everyone seems to have visited the tavern and listened to her. 
+			There's some silence as the other scratch their heads and whisper amongst each other, trying to figure out what you're talking about. 
+			Finally someone remembers, and with two succint sentences they catch the rest up on what happened. 
+			There's a loud ruckus now, as facts and ideas and rumors are thrown about. No one's too sure what the truth anymore. 
+			- Try to wrest back attention and control and set the story straight. 
+				As the one who brought up the topic, you do get most of the ones present to listen to you again. 
+				With quick explainers you catch everyone up, but with the mystery gone interest seems to have waned. 
+				Someone else mentions that their kids came with all red from the drakes body, and the conversation naturally flows into the new topic. 
+				The rest of the night is spent with various personal dramas as the center stage, most of which you do not understand. 
+				=> END
+			- Revel in the chaos and let them come up with whatever they want. 
+				Wild accusation are thrown about. 
+				Someone says the entire drake thing was just a hoax by the king, and they are making them come to the poor villages on purpose. 
+				Conspiracies and theories establish themselves entirely on their own, and the Orc drake and to an extent you, remain part of the night's conversations until the end
+				=> END
+		- Establish some backstory for those not in the know. Remind them of her claim to glory and set up the truth. 
+			There's some murmurs. 
+			Someone mentions how they didn't believe the orc in the first place. 
+			They're all waiting for you to spill the beans. 
+			- Tell them the truth of the drakes self inflicted death, but make it dramatic. 
+				You talk of the farmer, and spread what you heard from him. 
+				The drakes labored movements, it's lumbering into the windmill. The fact she stabbed it after. 
+				You leave out no detail, and make it just a tiny bit gruesome. 
+				As you finish, there's plenty of outrage at her lies. You get the sense you achieved your goal. 
+				Until the night ends the Orc and drake remaind the topic of conversation. 
+				Some are hostile, some don't care. One voice in particular calls for her exile. 
+				Opionions are split, and don't come to a conclusion until the enight comes to a close. 
+				=> END
+			- Retell the story with a bit of humor. 
+				You try to make it akin to a cartoon. 
+				A funny stumble, a few anecdotes. 
+				Still, at the end of the day the topic is a dead drake, and a pretty big lie. 
+				You get a labored laught here or there, but most of the troupe begins whispering about the consquences of this newly gained information. 
+				Someone laments that they'll have to bury the body, someone else joins in, and the mood is sufficiently ruined. 
+				The night ends soon after, and you're left to wonder if you're to blame. 
+				=> END 
+	- Stay silent for a while, listen to what the others have to say about you. 
+		Not much apparently. Someone else simply mentions how ridicolous the hat is, and then conversation moves on. 
+		
 - You'd rather spread this tale elsewhere
 	=> start
 
 => END
 
 ~ ORCMARKET
-- (If KnowOfDisease = True) Tell Everyone the drake was infected, and the Orc might be as well now. 
+- (If KnowOfDisease = True) Tell Everyone the drake was infected, and the Orc and kids might be as well now. 
 - You'd rather spread this tale elsewhere
 	=> start
 => END
