@@ -93,6 +93,7 @@ Farmer: Whatever she told you is the truth.
 			Farmer: Alright so. Thing is, she didn't kill the drake. It kinda just flew into the windmill, and she took the opportunity
 			Farmer: It just pretty much died on it's own. I was the only one who saw it.
 			Farmer: So she went and told me that if I told a Soul, I'd be in trouble. 
+			# Set "know truth" to true. Player can now go to campfire at night to tell rumors
 			- I get it now. 
 				Farmer: Alright, good. Can you leave now? I don't want her to see us together. 
 				- Do you know where she is now?
@@ -124,8 +125,19 @@ Farmer: Whatever she told you is the truth.
 					- Sure I did. Was quite funny, no?
 						Farmer: You have a funny idea of funny.
 						- Don't be like that. 
+							Farmer: I believe I will. I have nothing more to say to you. Goodbye.
+							=> END 
 						- So what actually happened?
+							Farmer: Oh, now you want to know. Too bad. 
+							Farmer: Goodbye. 
+							=> END
 					- Sorry about that. Could you tell me what actually happened?
+						Farmer: Alright so. Thing is, she didn't kill the drake. It kinda just flew into the windmill, and she took the opportunity
+						Farmer: It just pretty much died on it's own. I was the only one who saw it.
+						# Set "know truth" to true. Player can now go to campfire at night to tell rumors
+						- Thank you. I'll be on my way. 
+						=> END
+					
 				- I will. You better prepare. 
 					=> END
 			- Okay, so what actually happened?

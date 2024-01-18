@@ -1,0 +1,23 @@
+~ start
+
+[[insert Witch Description here]]
+She regards you with keen eyes, eyes that know more than they let on. 
+She appears like a bit of an outsider. perhaps she's looking for conversatoin?
+- What's a lovely lady like you doing out here?
+- What are you up to?
+	Witch: Taking a break from work. 
+	Her tone is cold, but not annoyed. 
+	Witch: Why do you ask?
+	- You're the kind of woman with a big story behing her. 
+		Witch: And you want to hear that story I assume?
+		Witch: Naturally, you're a bard. You want to hear every story. 
+		- So, you are going to tell it?
+			Witch: No, I don't think I will. 
+			Witch: Don't get me wrong, You're right to ask. You should, it's your profession after all. 
+			Witch: But I deal with powers beyond your understanding. 
+			Witch: And sometimes, understanding can be undoing, if you get what I mean. 
+			- I do, fully. 
+			- I do, I think. 
+			Witch: Good enough. 
+			Witch: Now, farewell. If you have need of me, you will know where to find me. 
+=> END
