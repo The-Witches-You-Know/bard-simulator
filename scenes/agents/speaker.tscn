@@ -1,8 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://cou5jrmy23vew"]
+[gd_scene load_steps=5 format=3 uid="uid://cou5jrmy23vew"]
 
 [ext_resource type="Script" path="res://scripts/agents/speaker.gd" id="1_siml4"]
 [ext_resource type="Resource" uid="uid://bijdg1ericjtl" path="res://dialogue/TavernkeepDayOneMorning.dialogue" id="2_o5qem"]
-[ext_resource type="Texture2D" uid="uid://csdpftn2u4j6t" path="res://assets/placeholder/shannon_placeholder.png" id="2_ybtke"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hrlk0"]
 size = Vector2(60, 149)
@@ -20,8 +19,6 @@ shape = SubResource("RectangleShape2D_hrlk0")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 rotation = -3.14159
-scale = Vector2(1, -1)
-texture = ExtResource("2_ybtke")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 
