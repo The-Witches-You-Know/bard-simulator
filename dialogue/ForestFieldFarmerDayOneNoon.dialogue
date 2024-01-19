@@ -1,3 +1,5 @@
+
+# Play this dialogue when first talking to the farmer, be it noon or dusk. 
 ~ start
 
 Farmer: What's with all the new faces? First those adventurers, then the Orc, now you.
@@ -23,14 +25,17 @@ Farmer: What's with all the new faces? First those adventurers, then the Orc, no
 				Farmer: It basically killed itself, and she is just claiming that she was the one to cause his death. Don't ask me, adventurers are weird like that. 
 				Farmer: Just don't tell her. She swore bad things would happen if I spilled the tea.
 				Farmer: Can you leave me alone now?
+# The player knows the truth about the drake now. 
 				- Sure 
 					=> END
 				- What happened to it?
 					Farmer: Flew into the windmill, impaled itself on the wood. She just stabbed it after so it looks like she did it.
 					Farmer: If she finds out I said that I'm dead meat. Go. I already said too much. 
+# The player knows the truth about the drake now. 
 					=> END
 		- Why weren't you supposed to say that?
 			Farmer: So, truth is, she didn't kill it. It flew into the windmill on its own and she stabbed it after. Claimed it as her kill, and then threatened me to never tell anyone. 
+			# The player knows the truth about the drake now. 
 	- She told me a story. I thought you might have some details to add. 
 - What adventurers?
 	Farmer: The trio of bumbling idiots that wanted to solve the drake idiot
@@ -42,13 +47,16 @@ Farmer: What's with all the new faces? First those adventurers, then the Orc, no
 		- So an incredibly suspicious crew. Understood. 
 			Farmer: Yeah. You don't have it out for them do you?
 			Farmer: They might have been a bit sketchy, but I would trust them to be much stronger than you
-			- No interest. 
+			- No interest in them
+					# Set player knows about advventurers to yes. 
+				=> Drake
 			- They could have some fun stories to tell. 
 				Farmer: They said they'd be back later. So stick around, and you might just get to ask them. 
 				Farmer: And if you're in the mood you can be an eyewitness if they get any funny ideas. 
 				- Will do. 
 				- I'd rather be somewhere else. 
 				Farmer: Suit yourself. 
+						# Set player knows about advventurers to yes. 
 				=> Drake 
 		- Any clue where they are now?
 			Farmer: Gods know where they are. Said they'd back later to try again. I hope not. 
@@ -56,6 +64,7 @@ Farmer: What's with all the new faces? First those adventurers, then the Orc, no
 			- Will do. 
 			- I'd rather not. 
 			Farmer: Suit yourself
+					# Set player knows about advventurers to yes. 
 			=> Drake
 	- Where are they now?
 		Farmer: Gods know where they are. Said they'd back later to try again. I hope not. 
@@ -63,6 +72,7 @@ Farmer: What's with all the new faces? First those adventurers, then the Orc, no
 		- Will do. 
 		- I'd rather not. 
 		Farmer: Suit yourself. 
+		# Set player knows about advventurers to yes. 
 		=> Drake
 
 
@@ -93,6 +103,7 @@ Farmer: Whatever she told you is the truth.
 			Farmer: Alright so. Thing is, she didn't kill the drake. It kinda just flew into the windmill, and she took the opportunity
 			Farmer: It just pretty much died on it's own. I was the only one who saw it.
 			Farmer: So she went and told me that if I told a Soul, I'd be in trouble. 
+			# The player knows the truth about the drake now. 
 			# Set "know truth" to true. Player can now go to campfire at night to tell rumors
 			- I get it now. 
 				Farmer: Alright, good. Can you leave now? I don't want her to see us together. 
@@ -117,6 +128,7 @@ Farmer: Whatever she told you is the truth.
 					- Do it yourself
 						=> END  
 		- yes, and you failed. 
+		# Set FarmerAngry to yes. The player has pissed him off and he won't talk to the player again.
 			Farmer: Dammit. Leave me alone! I didn't want this! I was just in the wrong place at the wrong time!
 			- Yeah, and I hope you know better now. 
 				Farmer: I do. Leave, go tell on me. 
@@ -169,3 +181,71 @@ set GameStateHolder.SpokeToFarmerDayOneNoon = true
 
 	
 => END
+
+#Play this dialogue if the player already talked to the farmer at noon and asked about the adventurers. 
+~ SecondStart
+Farmer: Back again? 
+Farmer: What do you need this time?
+- Here for the adventurers. You said they'd be around. 
+	Farmer: So why are you talking to me? They're around the corner. 
+	- Fair enough. See you around. 
+	 => END
+	- You don't seem to like them. 
+		Farmer: I don't. 
+		Farmer: But why do you care?
+		- Because surely there must be a reason?
+		- Because maybe there's a good story here!
+		Farmer: Not there isn't! They came here and threatened me. 
+		Farmer: Who in their right mind accuses a hard working citizen of attracting drakes to ruin the harvest
+		Farmer: This is the stuff we eat! Why would I ruin it. 
+		He shakes his head in annoyance and disbelief. 
+		- A good point. 
+		- Are you sure you didn't?
+			Farmer: Oh not you too! 
+			Farmer: Just leave me alone. 
+			- No I was asking like on accident!
+				Farmer: Oh...
+				Farmer: I mean, maybe?
+				Farmer: This is the first year we planted this new brown fruit. 
+				Farmer: But it grows entirely underground! Why would a drake want it?
+				- Good question. 
+					Farmer: Doesn't make sense. And I'm not happy they're back to annoy me even more. 
+					Farmer: Hey, you're a good liar, right?
+					- I mean kinda?
+						Farmer: Gots to be good enough. 
+					- (Lie really well) Never told a lie in my life.
+						He squints at you
+						Farmer: First time for anything. 
+					- Sure I am. 
+					Farmer: Could you tell them something that would make them leave maybe?
+					- I can try. 
+						Farmer: It would be highly appreciated. 
+						Farmer: On your way then!
+						=> END
+					- No, I'd rather not get myself in trouble for someone else. 
+						Farmer: Well... doesn't harm to ask, right?
+						Farmer: On your way then. 
+						=> END 
+				- Well, I'm out of guesses, good luck. 
+					=> END 
+			- Sure thing
+				=> END 
+
+#Play this dialogue if the Farmer is angry at the player. 
+~ FamerAngry
+Farmer: I don't have anything else to tell you. 
+Farmer: Good day. 
+=> END 
+
+#Play this dialogue if the farmer is not angry AND the player did not ask about the adventurers
+~ Clueless
+Farmer: Oh you again. 
+Farmer: Good day?
+- Yeah
+	Farmer: Wish I coudl say the same
+	=> END 
+- Not really. 
+	Farmer: Shame that. 
+	Farmer: Hope it gets better!
+	=> END 
+	
