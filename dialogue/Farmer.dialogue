@@ -37,6 +37,7 @@ Farmer: What's with all the new faces? First those adventurers, then the Orc, no
 			Farmer: So, truth is, she didn't kill it. It flew into the windmill on its own and she stabbed it after. Claimed it as her kill, and then threatened me to never tell anyone. 
 			# The player knows the truth about the drake now. 
 	- She told me a story. I thought you might have some details to add. 
+# If evening do not allow this option. 
 - What adventurers?
 	Farmer: The trio of bumbling idiots that wanted to solve the drake idiot
 	Farmer: Said they were from the guild, but when I asked if they could prove that they didn't show me anyhting
@@ -242,7 +243,7 @@ Farmer: Good day.
 Farmer: Oh you again. 
 Farmer: Good day?
 - Yeah
-	Farmer: Wish I coudl say the same
+	Farmer: Wish I could say the same
 	=> END 
 - Not really. 
 	Farmer: Shame that. 
