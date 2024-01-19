@@ -47,7 +47,7 @@ var Day1StoryChoices = [ # If specific story choice chains not listed out - choi
 	-1
 ]
 
-var currentDay: int = 0 : set = setCurrentDay
+var currentDay: int = 1 : set = setCurrentDay
 var timeOfDay: int = 0 : set = setTimeOfDay
 
 func initGameState():
@@ -68,7 +68,7 @@ func initGameState():
 	SpokeToOrcDayOneEvening = Day1PeopleSpokenTo[2][0]
 	SpokeToFarmerDayOneEvening = Day1PeopleSpokenTo[2][1]	
 	
-	currentDay = savedData.safeGet("CurrentDay", 0)
+	currentDay = savedData.safeGet("CurrentDay", 1)
 	timeOfDay = savedData.safeGet("TimeOfDay", 0)
 	
 	KnowsAboutOrcStory = savedData.safeGet("KnowsAboutOrcStory", false)

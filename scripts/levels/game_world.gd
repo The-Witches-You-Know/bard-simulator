@@ -11,6 +11,8 @@ var current : Node2D
 
 func _ready():
 	switch_level("map")
+	time = GameStateHolder.timeOfDay
+	day = GameStateHolder.currentDay
 
 func switch_level(level):
 	if current != null:
@@ -26,8 +28,10 @@ func pass_time():
 	if time == 3:
 		time = time_of_day.MORNING
 		day += 1
+		GameStateHolder.setCurrentDay(day)
 		ui.set_day(day)
 	else:
 		time += 1
-
+		
+	GameStateHolder.setTimeOfDay(time)
 	ui.set_time(time)
