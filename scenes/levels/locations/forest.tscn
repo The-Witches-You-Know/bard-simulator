@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://20eg01liwra2"]
+[gd_scene load_steps=20 format=3 uid="uid://20eg01liwra2"]
 
 [ext_resource type="PackedScene" uid="uid://by276q5li4uq4" path="res://scenes/levels/objects/exit_area.tscn" id="1_svyfn"]
 [ext_resource type="Script" path="res://scripts/levels/level.gd" id="1_u066t"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://iu2waht7x6xh" path="res://assets/spriteSheets/Marketplace.png" id="4_kykun"]
 [ext_resource type="Texture2D" uid="uid://dhdkhh02d8fav" path="res://assets/spriteSheets/Taverntrans.png" id="5_8by6x"]
 [ext_resource type="Texture2D" uid="uid://csgljlev1li35" path="res://assets/spriteSheets/Marketplace (2).png" id="6_ltoen"]
+[ext_resource type="PackedScene" uid="uid://pidiifaadxyf" path="res://scenes/sceneObjects/bonfire.tscn" id="9_mk4tn"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hyj83"]
 texture = ExtResource("2_5x54p")
@@ -1530,12 +1531,5 @@ shape = SubResource("SegmentShape2D_nqo0k")
 [node name="Right" type="CollisionShape2D" parent="RoomBoundary/BoundaryShape"]
 shape = SubResource("SegmentShape2D_dk2l3")
 
-[node name="Blockades" type="Node" parent="."]
-
-[node name="StaticBody2D" type="StaticBody2D" parent="Blockades"]
-visible = false
-z_index = 4
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Blockades/StaticBody2D"]
-build_mode = 1
-polygon = PackedVector2Array(850, 715, 850, 232, 1459, 232, 1459, 335, 944, 335, 944, 715)
+[node name="AnimatedSprite2D" parent="." instance=ExtResource("9_mk4tn")]
+position = Vector2(114, 219)

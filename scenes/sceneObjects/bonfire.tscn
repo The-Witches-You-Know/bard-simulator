@@ -1,7 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://pidiifaadxyf"]
+[gd_scene load_steps=6 format=3 uid="uid://pidiifaadxyf"]
 
 [ext_resource type="Texture2D" uid="uid://can0gokhosoyr" path="res://assets/spriteSheets/forest.png" id="1_dkbh4"]
-[ext_resource type="Script" path="res://scripts/agents/default_anim_animated_sprite.gd" id="2_vp178"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7qslo"]
 atlas = ExtResource("1_dkbh4")
@@ -26,6 +25,9 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_wxog7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ix7tv")
 }],
 "loop": true,
 "name": &"default",
@@ -34,5 +36,5 @@ animations = [{
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D"]
 sprite_frames = SubResource("SpriteFrames_ybyvd")
+autoplay = "default"
 frame_progress = 0.828612
-script = ExtResource("2_vp178")
