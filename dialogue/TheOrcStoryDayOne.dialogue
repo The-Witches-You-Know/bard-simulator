@@ -1,0 +1,208 @@
+~ start
+
+It's your time of day. Night has fallen
+Now is your chance to tell the story you gathered throughout the day.
+Where do you wish to tell it?
+- The Tavern
+	The Tavern lends itself well to humorous and uplifting stories. 
+	Are you sure? 
+	- Yes
+		=> ORCTAVERN
+	- No
+		=> start
+- Around the forest campfire
+	The Campfire is a place to share rumors, embesslished lies and maybe one or another entirely fabricated stories. 
+	Horror stories and the supernatural are also welcome.
+	Just be sure not to hog too much of the spotlight, the others there are just as much interested in spreading their own tales as you are.
+	Are you sure?
+	- Yes
+		=> ORCFOREST
+	- No
+		=> start
+#- On the Marketplace
+#	The Marketplace also functions are the townsquare, and is used for either public announcements, or matter of fact stories.
+#	Are you sure?
+#	- Yes
+#		=> ORCMARKET
+#	- No
+#		=> start
+
+~ ORCTAVERN
+How do you wish to tell the Orc's story
+- (If Orc morning conversation) Make the Orc out to be the Hero. 
+	The Tavern is still as loud as ever. 
+	You notice the Orc is one of the audience members, sitting alone at a corner table. Presumably not by choice.
+	- Speak up, and try to gather everyones attention. What you have to say is important. 
+		One or two conversations come to a close, and a couple of eyes turn to you. 
+	- Simply begin speaking your tale. 
+		One or two eyes turn to you, a conversation here or there comes to a close to pay more attention to you
+	The Tavern as a whole is still just as loud as before. 
+	- Begin your tale in the middle of the action
+		Confusion is abound. One or two patrons turn to their neighbours, a loudmouth asks a question into the room that doesn't get answered
+		Still, a few patrons don't really care. They hear action, and their attention is captured. 
+		- Lean into the senseless Action and draw out the fight for as long as you possible can.
+			Those that were already interested are compeltely drawn in by the descriptions of senseless violence. Every so often a singular cheer erupts from the crowd
+			Those who were not as interested however, have no chance of following alone. 
+			- Finally end the fight with as grand a finale as you can think of. 
+				There are cheers here and there. 
+				You managed to make a few peoples night, but were nothing but pleasent background noise for the rest
+				=> END 
+
+		- Pause and let the Orc monologue to explain the situation
+			You've chosen the worst of both worlds. Those with an interest in action tune out, and those who already didn't pay attention aren't interested anymore. 
+			- Continue to try and tell your story. 
+				You continue to be pleasent background noise for the tavern. No one in particular pays you much attention
+				But no one is offended by your presence either. 
+				- You consider this at least a mild success
+					=> END 
+				- You could have done so much better. You failed
+					=> END 
+
+			- Stop, you've done enough harm to your reputation. 
+	- Start slow and steady with exposition. 
+		As expected, not many turn to you. Their loss, this payoff is going to be much better for it.
+		You establish the dragon's backstory, it's terrorizing of harmless Farmers. The Orc is poised for a heroic tale.
+		- Describe the actual beginning of the fight. 
+		- Embellish the story a bit with some made up details
+			You let the Dragon perch on the windmill and furiously roar. 
+			The Orc Draws her weapon, which you've decided to be a broadsword. 
+			The Tavern is getting into it.
+			- Nows your chance. Describe an epic clash of titanic forces!
+				As you describe an entirely made up fight with slashes and swings and one liners galore, the Tavern begins cheering loudly
+				You have to almost scream your throat out to describe the last fatal stab, and your description of the Dragon tumbling into the windmill is drowned out by cheers and hoorays
+				You Succesfully told an uprorous story. 
+				As you sit back down, you see a few interested Patrons sit down next to the Orc, trying to be as close to the Hero of the hour as they can. 
+				You spend the rest of the night answering questions and adding some detail. 
+				Flagons upon flagons of Ale are purchased for the both of you, and the night comes to a high-spirited end. 
+				=> END 
+				
+			- Dial back the lies a tiny bit, and describe the quick but fatal end of the Dragon.
+				You cut the tension short, let the Orc spout one last one liner, and describe it's quick end. 
+				The Tavern cheers and laughs. 
+				An overly drunk patron lounges over to the Orc, and starts asking questions. 
+				You've made her at least a little bit more of a Hero. 
+				Someone buys you a mug of mead, and you enjoy your time in the spotlight for a while before it's time to end the night
+				=> END 
+			
+	- Come up with a devestating backstory for the Orc on the fly
+		The Orc herself glances your way dubiously, she seems to be confused by your words. 
+		The rest of the Tavern however pays you more and more attention. 
+		- Build up the dragon fight with some showboasting of both sides before the confrontation. 
+			The Orc nods along, she's getting into it
+			As seems to be the rest of the Tavern. 
+			- Nows your chance. Describe an epic clash of titanic forces! 
+				As you describe an entirely made up fight with slashes and swings and one liners galore, the Tavern begins cheering loudly
+				You have to almost scream your throat out to describe the last fatal stab, and your description of the Dragon tumbling into the windmill is drowned out by cheers and hoorays
+				You Succesfully told an uprorous story. 
+				As you sit back down, you see a few interested Patrons sit down next to the Orc, trying to be as close to the Hero of the hour as they can. 
+				You spend the rest of the night answering questions and adding some detail. 
+				Flagons upon flagons of Ale are purchased for the both of you, and the night comes to a high-spirited end. 
+				=> END 
+
+			- Dial back the lies a tiny bit, and describe the quick but fatal end of the Dragon. 
+				You cut the tension short, let the Orc spout one last one liner, and describe it's quick end. 
+				The Tavern cheers and laughs. 
+				An overly drunk patron lounges over to the Orc, and starts asking questions. 
+				You've made her at least a little bit more of a Hero. 
+				Someone buys you a mug of mead, and you enjoy your time in the spotlight for a while before it's time to end the night
+				=> END 
+				
+		- Keep it grounded and recall how the Orc described the start of the fight. 
+			The Orc is a bit confused, but satisfied you chose not to embellish the tale with more lies.
+			Only a whisper here or there is heard now. The tavern is trying to pay attention to every detail of your tale.
+			You've got them hook line and sinker.
+			- Keep to the truth, and tell of the drakes fatal wound that let to its failed attempt at flight
+				There's scattered cheering as you finish the story. 
+				Expectation seemed to be that there would be a grander finish.
+				Still, a story successfully told, and an Orc satisfied. 
+				You finish the night with the Orc buying a round of drinks for the whole tavern. 
+				=> END 
+				
+				
+			- Emebellish the story a tiny bit. Give the fight some back and forth. 
+				There's cheers and laughs abound!
+				Seems everyone really liked the tale, The Orc especially. 
+				There's a round of some kind of beverage given out
+				Then there's another one!
+				The night ends with everyone well and truly drunk, ready for the hangover the next day.
+				=> END 
+				
+- You'd rather spread this tale elsewhere
+	=> start
+
+~ ORCFOREST
+- (If KnowTruth = True) Let everyone know she claimed a kill not her own
+	As you arrive at the forest's edge, the campfire is already roaring furiously. Hushed conversation is in full force, and nobody takes notice of you as you take a seat besides them. 
+	You can't recongize any faces, the safety of anonymity. 
+	The entire gathered audience is currently listening to a story about an old widow, whose late husbands grave has been seeing a lot of action. 
+	Someone else mentions that they saw the dead mans ghost visit his own grave once!
+	- Waste no time and immediatly let everyone know of the orc's deception
+		There's a few mumurs as you start talking, apparently out of turn. 
+		No one seems to be interested as you mention the orc. 
+		In the middle of your second sentence someone rams an elbow in your ribs, and a gruff voice whispers to you
+		Stranger: Wait, you idiot. You'll get your chance.
+	- Wait a bit for the right opportunity. 
+	Someone else agrees, and mentions how the Old Widow and the Old Bard have been around each other a lot more recently. 
+	An entirely different voice theorizes they might be a thing now. 
+	There's some rumbling and grumbling in the gathered crowd, but no one can refute the claim. 
+	- Maybe now they're willing to listen to rumors about the orc?
+		As you open your mouth, a harsh gaze from across the campfire makes you reconsider. 
+		You feel as though magic was used to silence you. 
+		Upset them at your peril. 
+	- Give it some more time. This is good material for other times. 
+	A voice to your left brings up a new bard in town. 
+	They sound excited, mention how they hope that the new voice brings some new stories, not the same old same old that the previous bard was constantly spouting. 
+	Expectations for you seem to be high. 
+	- Surely they would listen to that selfsame bard speak of something new then?
+		No one silences you this time. 
+		You're free to speak of the Orc. 
+		- Get right to the Juicy bits, and regale the gathered group of her deception. She didn't kill the drake at all. 
+			Not everyone seems to have visited the tavern and listened to her. 
+			There's some silence as the other scratch their heads and whisper amongst each other, trying to figure out what you're talking about. 
+			Finally someone remembers, and with two succint sentences they catch the rest up on what happened. 
+			There's a loud ruckus now, as facts and ideas and rumors are thrown about. No one's too sure what the truth anymore. 
+			- Try to wrest back attention and control and set the story straight. 
+				As the one who brought up the topic, you do get most of the ones present to listen to you again. 
+				With quick explainers you catch everyone up, but with the mystery gone interest seems to have waned. 
+				Someone else mentions that their kids came with all red from the drakes body, and the conversation naturally flows into the new topic. 
+				The rest of the night is spent with various personal dramas as the center stage, most of which you do not understand. 
+				=> END
+			- Revel in the chaos and let them come up with whatever they want. 
+				Wild accusation are thrown about. 
+				Someone says the entire drake thing was just a hoax by the king, and they are making them come to the poor villages on purpose. 
+				Conspiracies and theories establish themselves entirely on their own, and the Orc drake and to an extent you, remain part of the night's conversations until the end
+				=> END
+		- Establish some backstory for those not in the know. Remind them of her claim to glory and set up the truth. 
+			There's some murmurs. 
+			Someone mentions how they didn't believe the orc in the first place. 
+			They're all waiting for you to spill the beans. 
+			- Tell them the truth of the drakes self inflicted death, but make it dramatic. 
+				You talk of the farmer, and spread what you heard from him. 
+				The drakes labored movements, it's lumbering into the windmill. The fact she stabbed it after. 
+				You leave out no detail, and make it just a tiny bit gruesome. 
+				As you finish, there's plenty of outrage at her lies. You get the sense you achieved your goal. 
+				Until the night ends the Orc and drake remaind the topic of conversation. 
+				Some are hostile, some don't care. One voice in particular calls for her exile. 
+				Opionions are split, and don't come to a conclusion until the enight comes to a close. 
+				=> END
+			- Retell the story with a bit of humor. 
+				You try to make it akin to a cartoon. 
+				A funny stumble, a few anecdotes. 
+				Still, at the end of the day the topic is a dead drake, and a pretty big lie. 
+				You get a labored laught here or there, but most of the troupe begins whispering about the consquences of this newly gained information. 
+				Someone laments that they'll have to bury the body, someone else joins in, and the mood is sufficiently ruined. 
+				The night ends soon after, and you're left to wonder if you're to blame. 
+				=> END 
+	- Stay silent for a while, listen to what the others have to say about you. 
+		Not much apparently. Someone else simply mentions how ridicolous the hat is, and then conversation moves on. 
+		
+- You'd rather spread this tale elsewhere
+	=> start
+
+=> END
+
+~ ORCMARKET
+- (If KnowOfDisease = True) Tell Everyone the drake was infected, and the Orc and kids might be as well now. 
+- You'd rather spread this tale elsewhere
+	=> start
+=> END
