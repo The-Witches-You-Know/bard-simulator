@@ -47,6 +47,8 @@ var Day1StoryChoices = [ # If specific story choice chains not listed out - choi
 	-1
 ]
 
+var currentDay: int = 0 : set = setCurrentDay
+var timeOfDay: int = 0 : set = setTimeOfDay
 
 func initGameState():
 	var savedData = Save_Loader.gameData
@@ -64,68 +66,80 @@ func initGameState():
 	SpokeToFarmerDayOneNoon = Day1PeopleSpokenTo[1][3]
 	
 	SpokeToOrcDayOneEvening = Day1PeopleSpokenTo[2][0]
-	SpokeToFarmerDayOneEvening = Day1PeopleSpokenTo[2][1]
+	SpokeToFarmerDayOneEvening = Day1PeopleSpokenTo[2][1]	
+	
+	currentDay = savedData.safeGet("CurrentDay", 0)
+	timeOfDay = savedData.safeGet("TimeOfDay", 0)
 	
 	KnowsAboutOrcStory = savedData.safeGet("KnowsAboutOrcStory", false)
 	KnowsOrcLied = savedData.safeGet("KnowsOrcLied", false)
 	OrcLie = savedData.safeGet("OrcLie", false)	
 	
-func setSpokeToOrcDayOneMorning(newValue):
+func setSpokeToOrcDayOneMorning(newValue: bool):
 	SpokeToOrcDayOneMorning = newValue
-	setDay1PeopleSpokenTo(0,0,true)
+	setDay1PeopleSpokenTo(0,0,newValue)
 	
-func setDay1PeopleSpokenTo(index1, index2, value):
+func setDay1PeopleSpokenTo(index1: int, index2: int, value: bool):
 	Day1PeopleSpokenTo[index1][index2] = value
 	SaveLoader.gameData.setOrPut("Day1.PeopleSpokenTo", Day1PeopleSpokenTo)
 	
 	#   ||      ||         ||
 	#   \/      \/         \/
-func setDay1StoryChoices(index,value): #please use this instead of setting values directly inside the Day1StoryChoices array
+func setDay1StoryChoices(index: int,value: bool): #please use this instead of setting values directly inside the Day1StoryChoices array
 	Day1StoryChoices[index] = value
 	SaveLoader.gameData.setOrPut("Day1.StoryChoices", Day1StoryChoices)
 	
 	
 	
-func setSpokeToOrcDayOneEvening(newValue):
+func setSpokeToOrcDayOneEvening(newValue: bool):
 	SpokeToOrcDayOneEvening = newValue
-	setDay1PeopleSpokenTo(2,0,true)
+	setDay1PeopleSpokenTo(2,0,newValue)
 	
-func setKnowsAboutOrcStory(newValue):
+func setKnowsAboutOrcStory(newValue: bool):
 	KnowsAboutOrcStory = newValue
 	SaveLoader.gameData.setOrPut("KnowsAboutOrcStory", newValue)
 	
-func setKnowsOrcLied(newValue):
+func setKnowsOrcLied(newValue: bool):
 	KnowsOrcLied = newValue
 	SaveLoader.gameData.setOrPut("KnowsOrcLied", newValue)
 	
-func setOrcLie(newValue):
+func setOrcLie(newValue: bool):
 	OrcLie = newValue
 	SaveLoader.gameData.setOrPut("OrcLie", newValue)
 	
-func setSpokeToTavernkeepDayOneMorning(newValue):
+func setSpokeToTavernkeepDayOneMorning(newValue: bool):
 	SpokeToTavernkeepDayOneMorning = newValue
-	setDay1PeopleSpokenTo(0,1,true)
+	setDay1PeopleSpokenTo(0,1,newValue)
 	
-func setSpokeToTavernkeepDayOneNoon(newValue):
+func setSpokeToTavernkeepDayOneNoon(newValue: bool):
 	SpokeToTavernkeepDayOneNoon = newValue
-	setDay1PeopleSpokenTo(1,1,true)
+	setDay1PeopleSpokenTo(1,1,newValue)
 	
-func setSpokeToKidsDayOneNoon(newValue):
+func setSpokeToKidsDayOneNoon(newValue: bool):
 	SpokeToKidsDayOneNoon = newValue
-	setDay1PeopleSpokenTo(1,0,true)
+	setDay1PeopleSpokenTo(1,0,newValue)
 	
-func setSpokeToOldBardDayOneMorning(newValue):
+func setSpokeToOldBardDayOneMorning(newValue: bool):
 	SpokeToOldBardDayOneMorning = newValue
-	setDay1PeopleSpokenTo(0,2,true)
+	setDay1PeopleSpokenTo(0,2,newValue)
 	
-func setSpokeToMarketWitchDayOneNoon(newValue):
+func setSpokeToMarketWitchDayOneNoon(newValue: bool):
 	SpokeToMarketWitchDayOneNoon = newValue
-	setDay1PeopleSpokenTo(1,2,true)
+	setDay1PeopleSpokenTo(1,2,newValue)
 	
-func setSpokeToFarmerDayOneNoon(newValue):
+func setSpokeToFarmerDayOneNoon(newValue: bool):
 	SpokeToFarmerDayOneNoon = newValue
-	setDay1PeopleSpokenTo(1,3,true)
+	setDay1PeopleSpokenTo(1,3,newValue)
 	
-func setSpokeToFarmerDayOneEvening(newValue):
+func setSpokeToFarmerDayOneEvening(newValue: bool):
 	SpokeToFarmerDayOneEvening = newValue
-	setDay1PeopleSpokenTo(2,1,true)
+	setDay1PeopleSpokenTo(2,1,newValue)
+	
+
+func setCurrentDay(newValue):
+	currentDay = newValue
+	SaveLoader.gameData.setOrPut("CurrentDay", newValue)
+
+func setTimeOfDay(newValue):
+	timeOfDay = newValue
+	SaveLoader.gameData.setOrPut("TimeOfDay", newValue)
