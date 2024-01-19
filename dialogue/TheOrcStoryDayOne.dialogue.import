@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_11"
+type="Resource"
+uid="uid://tdivcymn2y6i"
+path="res://.godot/imported/TheOrcStoryDayOne.dialogue-998bc4fb88d57344220da4f32d19c0b9.tres"
+
+[deps]
+
+source_file="res://dialogue/TheOrcStoryDayOne.dialogue"
+dest_files=["res://.godot/imported/TheOrcStoryDayOne.dialogue-998bc4fb88d57344220da4f32d19c0b9.tres"]
+
+[params]
+
+defaults=true

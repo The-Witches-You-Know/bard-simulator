@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_11"
+type="Resource"
+uid="uid://lgpsuw3mkajg"
+path="res://.godot/imported/MarketWitchDayOneNoon.dialogue-22507fc485a6c1ee1f1a0da0c72feb3d.tres"
+
+[deps]
+
+source_file="res://dialogue/MarketWitchDayOneNoon.dialogue"
+dest_files=["res://.godot/imported/MarketWitchDayOneNoon.dialogue-22507fc485a6c1ee1f1a0da0c72feb3d.tres"]
+
+[params]
+
+defaults=true
