@@ -50,7 +50,7 @@ var Day1StoryChoices = [ # If specific story choice chains not listed out - choi
 
 func initGameState():
 	var savedData = Save_Loader.gameData
-	savedData.clear()
+	
 	Day1PeopleSpokenTo = savedData.safeGet("Day1.PeopleSpokenTo", [[false,false,false],[false, false, false, false],[false, false]])
 	Day1StoryChoices = savedData.safeGet("Day1.StoryChoices", [-1,-1,-1,-1,-1])
 	
@@ -128,4 +128,4 @@ func setSpokeToFarmerDayOneNoon(newValue):
 	
 func setSpokeToFarmerDayOneEvening(newValue):
 	SpokeToFarmerDayOneEvening = newValue
-	setDay1PeopleSpokenTo(2,2,true)
+	setDay1PeopleSpokenTo(2,1,true)
