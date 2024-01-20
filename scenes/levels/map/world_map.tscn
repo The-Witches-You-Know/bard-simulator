@@ -11,8 +11,18 @@ position = Vector2(566, 307)
 texture = ExtResource("1_fn624")
 
 [node name="Graveyard" parent="." instance=ExtResource("2_jglfu")]
-position = Vector2(298, 422)
+position = Vector2(395, 511)
 location_name = "graveyard"
+texture = ExtResource("4_vwpk8")
+
+[node name="Tavern" parent="." instance=ExtResource("2_jglfu")]
+position = Vector2(249, 231)
+location_name = "tavern"
+texture = ExtResource("4_vwpk8")
+
+[node name="Forest" parent="." instance=ExtResource("2_jglfu")]
+position = Vector2(938, 418)
+location_name = "forest"
 texture = ExtResource("4_vwpk8")
 
 [node name="Town" parent="." instance=ExtResource("2_jglfu")]

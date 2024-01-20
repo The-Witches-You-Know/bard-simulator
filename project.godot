@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Bard Simulator"
-run/main_scene="res://test.tscn"
+run/main_scene="res://scenes/levels/main.tscn"
 config/features=PackedStringArray("4.2", "Mobile")
 config/icon="res://icon.svg"
 
@@ -21,10 +21,10 @@ buses/default_bus_layout="res://scripts/audioPlayer/audioBusLayout.tres"
 
 [autoload]
 
-DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
-GameStateHolder="*res://autoload/gameState.tscn"
-Audio_Player="*res://autoload/audioPlayer.tscn"
 Save_Loader="*res://autoload/saveLoader.tscn"
+DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
+Audio_Player="*res://autoload/audioPlayer.tscn"
+GameStateHolder="*res://autoload/gameState.tscn"
 CallbackHandler="*res://autoload/callback_handler.tscn"
 
 [editor_plugins]
@@ -65,8 +65,9 @@ interact={
 
 [internationalization]
 
-locale/translations_pot_files=PackedStringArray("res://dialogue/test.dialogue", "res://dialogue/OldBardDayOneMorning.dialogue", "res://dialogue/TavernkeepDayOneMorning.dialogue", "res://dialogue/OrcDayOneMorning.dialogue", "res://dialogue/confirm_travel.dialogue", "res://dialogue/confirm_return.dialogue", "res://dialogue/ForestFieldFarmerDayOneNoon.dialogue", "res://dialogue/TheOrcStoryDayOne.dialogue", "res://dialogue/ForestKidsDayOneNoon.dialogue", "res://dialogue/TavernTavernkeepDayOneNoon.dialogue", "res://dialogue/MarketWitchDayOneNoon.dialogue")
+locale/translations_pot_files=PackedStringArray("res://dialogue/test.dialogue", "res://dialogue/OldBardDayOneMorning.dialogue", "res://dialogue/TavernkeepDayOneMorning.dialogue", "res://dialogue/OrcDayOneMorning.dialogue", "res://dialogue/confirm_travel.dialogue", "res://dialogue/confirm_return.dialogue", "res://dialogue/TheOrcStoryDayOne.dialogue", "res://dialogue/ForestKidsDayOneNoon.dialogue", "res://dialogue/TavernTavernkeepDayOneNoon.dialogue", "res://dialogue/MarketWitchDayOneNoon.dialogue", "res://dialogue/Farmer.dialogue")
 
 [rendering]
 
 renderer/rendering_method="mobile"
+2d/snap/snap_2d_vertices_to_pixel=true

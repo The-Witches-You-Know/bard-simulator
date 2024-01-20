@@ -25,7 +25,7 @@ func setSpeaker(speaker: String):
 
 func _on_speech_player_finished():	
 	if isTalking:
-		triggerSpeechPlayer
+		triggerSpeechPlayer()
 		
 func setBalloonReference(balloon: Node):
 	balloonReference = balloon

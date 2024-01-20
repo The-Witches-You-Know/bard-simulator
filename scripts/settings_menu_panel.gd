@@ -10,8 +10,8 @@ extends Node
 func _ready():
 	masterVolumeSlider.value = Save_Loader.settingsData.getMasterVolume()
 	musicVolumeSlider.value = Save_Loader.settingsData.getMusicVolume()
-	ambientVolumeSlider.value = Save_Loader.settingsData.getSFXVolume()
-	SFXVolumeSlider.value = Save_Loader.settingsData.getAmbienceVolume()
+	ambientVolumeSlider.value = Save_Loader.settingsData.getAmbienceVolume()
+	SFXVolumeSlider.value = Save_Loader.settingsData.getSFXVolume()
 
 func _on_master_volume_slider_value_changed(value):
 	Save_Loader.settingsData.setMasterVolume(value)
