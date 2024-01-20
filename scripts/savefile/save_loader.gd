@@ -19,5 +19,10 @@ func loadSaveFile():
 func overwriteSaveFile(saveData: Dictionary):
 	gameData.overwrite(saveData)
 
+#use to save game
+func clearSaveFile():
+	gameData.clear()
+	GameStateHolder.initGameState()
+
 func restoreDefaultSettings():
 	settingsData.clear()

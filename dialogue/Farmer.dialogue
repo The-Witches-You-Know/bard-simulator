@@ -1,7 +1,7 @@
 ~ start
 if GameStateHolder.FarmerAngry:
 	=> FarmerAngry
-if GameStateHolder.getPlayerSpokeWithFarmer():
+elif (not GameStateHolder.getPlayerSpokeWithFarmer()):
 	Farmer: What's with all the new faces? First those adventurers, then the Orc, now you.
 	- What do you mean, "Now me"?
 		Farmer: Look at you. You look like trouble and nothing else. 
@@ -71,7 +71,7 @@ if GameStateHolder.getPlayerSpokeWithFarmer():
 			Farmer: Suit yourself. 
 			set GameStateHolder.KnowsAboutAdventurers = true
 			=> Drake
-else if (not GameStateHolder.SpokeToFarmerDayOneEvening) and GameStateHolder.timeOfDay == 2:
+else if ((not GameStateHolder.SpokeToFarmerDayOneEvening) and GameStateHolder.timeOfDay == 2):
 	=> SecondStart
 else:
 	=> Clueless

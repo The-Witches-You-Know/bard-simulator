@@ -14,7 +14,7 @@ func _on_new_game_button_up():
 
 func _on_confirmation_popup(response):
 	if(response):
-		# Clear the save file
+		Save_Loader.clearSaveFile()
 		var main = get_node("/root/Main") as Manager
 		main.switch_state(global.GAME_WORLD)
 	
