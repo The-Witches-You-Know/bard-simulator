@@ -1,0 +1,31 @@
+~ start
+
+You see a little girl scrambling with a crate. 
+It's hard to tell if she's supposed to be there or not since no one else is currently at the stall. 
+- Decide to adress her
+	She intially doesn't turn. 
+	Only once she has grabbed a couple of apples from their resting place does she look your way. 
+	Girl: Yes?
+	- Whatchu doing?
+		Girl: I needed something round!
+		Girl: There was this funny man here a few weeks ago
+		Girl: He had balls that he would throw around and catch again. 
+		- So you want to do that as well?
+			Girl: I do! I do!
+			Girl: Maybe people will cheer for me like they did for him!
+		- You mean juggling?
+			Girl: I think so. 
+			Girl: It looked super easy, but its not easy to do with dirt. 
+			Girl: I got yelled at by my mom cause I got dirty. 
+			Girl: So I tried mud next!
+			Girl: That was even worse...
+			- Well, apples are probably good for practicing. 
+			- Do those belong to you?
+	- Nevermind, carry on. 
+		Girl: Growns ups are so confusing...
+		She shakes her head and carries on, as expected. 
+		The girl leaves, without elaborating any further. 
+- Wait and see what happens. 
+
+
+=> END
