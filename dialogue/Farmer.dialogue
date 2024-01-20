@@ -24,12 +24,12 @@ elif (not GameStateHolder.getPlayerSpokeWithFarmer()):
 					Farmer: Can you leave me alone now?
 					set GameStateHolder.KnowsOrcLied = true
 					- Sure 
-						=> END
+						=> DialogueEnd
 					- What happened to it?
 						Farmer: Flew into the windmill, impaled itself on the wood. She just stabbed it after so it looks like she did it.
 						Farmer: If she finds out I said that I'm dead meat. Go. I already said too much. 
 						set GameStateHolder.KnowsOrcLied = true
-						=> END
+						=> DialogueEnd
 			- Why weren't you supposed to say that?
 				Farmer: So, truth is, she didn't kill it. It flew into the windmill on its own and she stabbed it after. Claimed it as her kill, and then threatened me to never tell anyone. 
 				set GameStateHolder.KnowsOrcLied = true
@@ -71,7 +71,7 @@ elif (not GameStateHolder.getPlayerSpokeWithFarmer()):
 			Farmer: Suit yourself. 
 			set GameStateHolder.KnowsAboutAdventurers = true
 			=> Drake
-else if ((not GameStateHolder.SpokeToFarmerDayOneEvening) and GameStateHolder.timeOfDay == 2):
+else if ((not GameStateHolder.SpokeToFarmerDayOneEvening) and GameStateHolder.KnowsAboutAdventurers and GameStateHolder.timeOfDay == 2):
 	=> SecondStart
 else:
 	=> Clueless
@@ -83,12 +83,12 @@ Farmer: Either way, you wanted something. Let's get it over with.
 	Farmer: Okay? What about it?
 	- Just came here to look at it. 
 		Farmer: Alright, when you've finished your gawking, be on your way. 
-		=> END
+		=> DialogueEnd
 	- The Orc told me a story. Wanted to know if she told the truth. 
 		=> Story
 - Actually, I'll just leave you to it. 
 	Farmer: Thank you kindly. Pray the rest of the day will be just as peaceful. 
-	=> END 
+	=> DialogueEnd 
 
 ~ Story
 Farmer: Whatever she told you is the truth. 
@@ -109,9 +109,9 @@ Farmer: Whatever she told you is the truth.
 				Farmer: Alright, good. Can you leave now? I don't want her to see us together. 
 				- Do you know where she is now?
 					Farmer: Probably still in the tavern, making herself out to be a Hero.
-					=> END
+					=> DialogueEnd
 				- Sure.
-				=> END 
+				=> DialogueEnd 
 			- Don't worry, she won't find out it was you.
 				Farmer: I'd hope so. Otherwise I'm gonna be coming after you. 
 				- Slow down with the threat there, buddy. 
@@ -119,14 +119,14 @@ Farmer: Whatever she told you is the truth.
 				Farmer: S-sorry. Nerves are getting to me. 
 				- Do you know where she is now?
 					Farmer: Probably still in the tavern, making herself out to be a Hero.
-					=> END
+					=> DialogueEnd
 				- Anything else you wanted to add?
 					Farmer: Nothing comes to mind. Oh! Maybe if you could chase the kids away? 
 					Farmer: I don't think being around a Dead Drake's body is a good influence. 
 					- Sure thing. 
-						=> END
+						=> DialogueEnd
 					- Do it yourself
-						=> END  
+						=> DialogueEnd  
 		- yes, and you failed. 
 			set GameStateHolder.FarmerAngry = true
 			Farmer: Dammit. Leave me alone! I didn't want this! I was just in the wrong place at the wrong time!
@@ -138,19 +138,19 @@ Farmer: Whatever she told you is the truth.
 						Farmer: You have a funny idea of funny.
 						- Don't be like that. 
 							Farmer: I believe I will. I have nothing more to say to you. Goodbye.
-							=> END 
+							=> DialogueEnd 
 						- So what actually happened?
 							Farmer: Oh, now you want to know. Too bad. 
 							Farmer: Goodbye. 
-							=> END
+							=> DialogueEnd
 					- Sorry about that. Could you tell me what actually happened?
 						Farmer: Alright so. Thing is, she didn't kill the drake. It kinda just flew into the windmill, and she took the opportunity
 						Farmer: It just pretty much died on it's own. I was the only one who saw it.
 						set GameStateHolder.KnowsOrcLied = true
 						- Thank you. I'll be on my way. 
-						=> END
+						=> DialogueEnd
 				- I will. You better prepare. 
-					=> END
+					=> DialogueEnd
 			- Okay, so what actually happened?
 				Farmer: Shouldn't you know already?
 				- I sure do. I want you to remind me.
@@ -161,24 +161,25 @@ Farmer: Whatever she told you is the truth.
 					- Not at all. 
 						Farmer: Great waste of my time. 
 						Farmer: Goodbye
-						=> END
+						=> DialogueEnd
 					- Maybe a little bit.
 						Farmer: Great use of my time. 
 						Farmer: Good day. 
-						=> END 
+						=> DialogueEnd 
 				- Fair enough, it is. 
 					Farmer: Glad to hear you come to reason. Now leave me alone. 
 					Farmer: I've got some preparations to make. 
-					=> END 
+					=> DialogueEnd 
 				
 - Alright. I'll leave you to it then. 
 	Farmer: Thank you kindly. Pray the rest of the day will be just as peaceful. 
-	=> END 
+	=> DialogueEnd 
 
-
-set GameStateHolder.SpokeToFarmerDayOneNoon = true
-
-	
+~ DialogueEnd
+if (GameStateHolder.timeOfDay == 2):
+	set GameStateHolder.SpokeToFarmerDayOneEvening = true
+else:
+	set GameStateHolder.SpokeToFarmerDayOneNoon = true	
 => END
 
 #Play this dialogue if the player already talked to the farmer at noon and asked about the adventurers. 
@@ -188,7 +189,7 @@ Farmer: What do you need this time?
 - Here for the adventurers. You said they'd be around. 
 	Farmer: So why are you talking to me? They're around the corner. 
 	- Fair enough. See you around. 
-	 => END
+	 => DialogueEnd
 	- You don't seem to like them. 
 		Farmer: I don't. 
 		Farmer: But why do you care?
@@ -220,21 +221,21 @@ Farmer: What do you need this time?
 					- I can try. 
 						Farmer: It would be highly appreciated. 
 						Farmer: On your way then!
-						=> END
+						=> DialogueEnd
 					- No, I'd rather not get myself in trouble for someone else. 
 						Farmer: Well... doesn't harm to ask, right?
 						Farmer: On your way then. 
-						=> END 
+						=> DialogueEnd 
 				- Well, I'm out of guesses, good luck. 
-					=> END 
+					=> DialogueEnd 
 			- Sure thing
-				=> END 
+				=> DialogueEnd 
 
 #Play this dialogue if the Farmer is angry at the player. 
 ~ FarmerAngry
 Farmer: I don't have anything else to tell you. 
 Farmer: Good day. 
-=> END 
+=> DialogueEnd 
 
 #Play this dialogue if the farmer is not angry AND the player did not ask about the adventurers
 ~ Clueless
@@ -242,9 +243,9 @@ Farmer: Oh you again.
 Farmer: Good day?
 - Yeah
 	Farmer: Wish I could say the same
-	=> END 
+	=> DialogueEnd 
 - Not really. 
 	Farmer: Shame that. 
 	Farmer: Hope it gets better!
-	=> END 
+	=> DialogueEnd 
 	
