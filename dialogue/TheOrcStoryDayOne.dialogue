@@ -29,7 +29,7 @@ Where do you wish to tell it?
 
 ~ ORCTAVERN
 How do you wish to tell the Orc's story
-- (If Orc morning conversation) Make the Orc out to be the Hero. 
+- Make the Orc out to be the Hero. [if GameStateHolder.SpokeToOrcDayOneMorning]
 	The Tavern is still as loud as ever. 
 	You notice the Orc is one of the audience members, sitting alone at a corner table. Presumably not by choice.
 	- Speak up, and try to gather everyones attention. What you have to say is important. 
@@ -131,7 +131,7 @@ How do you wish to tell the Orc's story
 	=> start
 
 ~ ORCFOREST
-- (If KnowTruth = True) Let everyone know she claimed a kill not her own
+- Let everyone know she claimed a kill not her own [if GameStateHolder.KnowsOrcLied]
 	As you arrive at the forest's edge, the campfire is already roaring furiously. Hushed conversation is in full force, and nobody takes notice of you as you take a seat besides them. 
 	You can't recongize any faces, the safety of anonymity. 
 	The entire gathered audience is currently listening to a story about an old widow, whose late husbands grave has been seeing a lot of action. 
