@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://20eg01liwra2"]
+[gd_scene load_steps=23 format=3 uid="uid://20eg01liwra2"]
 
 [ext_resource type="PackedScene" uid="uid://by276q5li4uq4" path="res://scenes/levels/objects/exit_area.tscn" id="1_svyfn"]
 [ext_resource type="Script" path="res://scripts/levels/level.gd" id="1_u066t"]
@@ -8,7 +8,9 @@
 [ext_resource type="Texture2D" uid="uid://iu2waht7x6xh" path="res://assets/spriteSheets/Marketplace.png" id="4_kykun"]
 [ext_resource type="Texture2D" uid="uid://dhdkhh02d8fav" path="res://assets/spriteSheets/Taverntrans.png" id="5_8by6x"]
 [ext_resource type="Texture2D" uid="uid://csgljlev1li35" path="res://assets/spriteSheets/Marketplace (2).png" id="6_ltoen"]
-[ext_resource type="PackedScene" uid="uid://pidiifaadxyf" path="res://scenes/sceneObjects/bonfire.tscn" id="9_mk4tn"]
+[ext_resource type="PackedScene" uid="uid://cou5jrmy23vew" path="res://scenes/agents/speaker.tscn" id="9_iqj0g"]
+[ext_resource type="Resource" uid="uid://div13srwwpvur" path="res://dialogue/Farmer.dialogue" id="10_eh7lq"]
+[ext_resource type="Texture2D" uid="uid://csdpftn2u4j6t" path="res://assets/placeholder/shannon_placeholder.png" id="11_empcy"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hyj83"]
 texture = ExtResource("2_5x54p")
@@ -1463,6 +1465,9 @@ b = Vector2(1900, 1250)
 a = Vector2(1900, -250)
 b = Vector2(1900, 1250)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bngqi"]
+size = Vector2(70, 160)
+
 [node name="forest" type="Node2D"]
 script = ExtResource("1_u066t")
 
@@ -1531,5 +1536,9 @@ shape = SubResource("SegmentShape2D_nqo0k")
 [node name="Right" type="CollisionShape2D" parent="RoomBoundary/BoundaryShape"]
 shape = SubResource("SegmentShape2D_dk2l3")
 
-[node name="AnimatedSprite2D" parent="." instance=ExtResource("9_mk4tn")]
-position = Vector2(114, 219)
+[node name="speaker" parent="." instance=ExtResource("9_iqj0g")]
+position = Vector2(308.416, 79.8147)
+actionName = "Talk"
+dialogue = ExtResource("10_eh7lq")
+defaultSprite = ExtResource("11_empcy")
+collider = SubResource("RectangleShape2D_bngqi")
