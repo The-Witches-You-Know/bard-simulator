@@ -1,0 +1,77 @@
+~ start
+
+
+Witch: You're a new face. 
+Witch: Let me introduce myself. 
+Witch: I am the resident witch. A purveyor of potions, magical spells, and whatever else your heart desires. 
+Witch: You will not learn my name. None have. So do not ask. 
+Witch: Now then, what ails you?
+#give this option if the player inspected the drake or talked in depth with the farmer.
+- Tell her of the weird drake. 
+	You spare no detail. The powdery scales, the urge to sneeze, the kids incessance to play with it. 
+	Witch: Worrying. 
+	Witch: I have heard of similar diseases before, but they were always contained to their specific species. 
+	Witch: They have yet to spread to others. That doesn't mean the kids are safe, the younger a mortal the weaker. 
+	- Mortal?
+		Witch: Did you really think me susceptible to death?
+		Witch: I expected better. 
+	# Offer this choice again if "mortal" was picked
+	- Should I go look for them?
+		Witch: Knowing those kids that's a fools errand. Just wait for them, they will come back to their homes whenever they grow hungry. 
+		Witch: However, I do ask that you warn the town not to touch the body. I myself will go take care of the issue at hand. 
+		Witch: That does mean your bardic talents are wasted for the night, but think of it as a worthy sacrifice for the towns sake. 
+		Witch: Can I count on you to inform them? You mustn't even move far, simply step onto the marketsplace central platform and announce it. 
+		Witch: You'll find the right words, I'm sure. 
+		- Sure, I'll do it. 
+		# If orc story heard
+		- There's this amazing Orc Hero that needs praising though
+			Witch: You would truly put a ballad above the wellbeing of the peopple?
+			- Sure I would. 
+				Witch: I thank you many times over. 
+				She hands you a little vial. 
+				Witch: Incase you're infected. 
+				Witch: If you have symptopms, this should stave them off long enough to reach me again, so I may properly purify you. 
+				Witch: Now, off with you!
+				=> END 
+			- On second thought...
+				Witch: Good. 
+				She hands you a little vial. 
+				Witch: Incase you're infected. 
+				Witch: If you have symptopms, this should stave them off long enough to reach me again, so I may properly purify you. 
+				Witch: Now, off with you!
+				=> END 
+		- Why not do it yourself?
+			Witch: Do you really think a being such as myself has any kind of rapport with the town and its folk?
+			Witch: I won't bat an eye if you let your talent for the dramatic take over. 
+			- Fine. 
+				Witch: Thank you kindly. 
+				She hands you a little vial. 
+				Witch: Incase you're infected. 
+				Witch: If you have symptopms, this should stave them off long enough to reach me again, so I may properly purify you. 
+				Witch: Now, off with you!
+				=> END 
+			- No, I don't have a horse in this race at all. 
+				Witch: Didn't you say you were close to it? 
+				Witch: You might already be infected. 
+				Witch: If you do not do as I ask of you, you shall not receive a cure.
+				Witch: Not from me at least. 
+				- You drive a hard bargain. Fine. 
+					Witch: Thank you. You will not regret it. 
+					=> END 
+				- Pah, try your extortion on someone else. 
+					Witch: Suit yourself. 
+					=> END 
+- Ask her to read your future. 
+	Witch: You would ask such a trivial task of me?
+- Ask why she can't share her name
+	Witch: My power comes from it. 
+	Witch: Should I ever share it, they too will be privy to it. 
+	Witch: And I am not interested in sharing. 
+	# loop back to the previous choice
+- Bid her a good day. 
+	Witch: Fare thee well. 
+	=> END
+
+
+
+=> END
