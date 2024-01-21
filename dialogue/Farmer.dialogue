@@ -180,6 +180,7 @@ if (GameStateHolder.timeOfDay == 2):
 	set GameStateHolder.SpokeToFarmerDayOneEvening = true
 else:
 	set GameStateHolder.SpokeToFarmerDayOneNoon = true	
+do GameStateHolder.currentSpeaker.onConversationFinished()
 => END
 
 #Play this dialogue if the player already talked to the farmer at noon and asked about the adventurers. 

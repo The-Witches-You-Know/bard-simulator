@@ -9,6 +9,8 @@ class_name Speaker
 @export var dialogue: DialogueResource
 @export var animationFrames: SpriteFrames = null : set = setSpriteFrames
 @export var collider: Shape2D = null : set = setCollisionShape
+@export var animatedSpriteTransformPosition: Vector2 = Vector2(0,0) : set = setAnimatedSpriteTransformPosition
+@export var colliderTransformPosition: Vector2 = Vector2(0,0) : set = setColliderTransformPosition
 
 @onready var talkPanel: Panel = $TalkPanel
 @onready var talkPanelLabel: Label = $TalkPanel/Label
@@ -18,17 +20,26 @@ var selectedAnimName = null
 
 func setSpriteFrames(newFrames: SpriteFrames):
 	animationFrames = newFrames
-	if (newFrames != null and animatedSprite != null):
-		animatedSprite.sprite_frames = animationFrames
+	if (newFrames != null):
+		$AnimatedSprite2D.sprite_frames = animationFrames
 
 func setCollisionDisabled(newValue: bool):
 	collisionDisabled = newValue
 	$CollisionShape2D.disabled = collisionDisabled
 
+func setAnimatedSpriteTransformPosition(newValue: Vector2):
+	animatedSpriteTransformPosition = newValue
+	$AnimatedSprite2D.position = animatedSpriteTransformPosition
+
 func setCollisionShape(newCollider: Shape2D):
 	collider = newCollider
 	$CollisionShape2D.shape = newCollider
 	$Area2D/CollisionShape2D.shape = newCollider
+
+func setColliderTransformPosition(newValue: Vector2):
+	colliderTransformPosition = newValue
+	$CollisionShape2D.position = colliderTransformPosition
+	$Area2D/CollisionShape2D.position = colliderTransformPosition
 
 func onAreaEntered():
 	talkPanel.visible = true	
@@ -44,6 +55,7 @@ func _ready():
 
 func onInteract():
 	GameStateHolder.setCurrentSpeaker(self)
+	onConversationStarted()
 	var balloon = DialogueManager.show_example_dialogue_balloon(dialogue, "start")
 	Audio_Player.setBalloonReference(balloon)
 	
@@ -52,7 +64,11 @@ func talk(speakerName: String):
 		animatedSprite.stop()
 		isTalking = true
 		if selectedAnimName not in animationFrames.animations:
-			selectedAnimName = animationFrames.animations.filter(func(x): return "talk" in x.name).pick_random().name
+			var talkAnimations = animationFrames.animations.filter(func(x): return "talk" in x.name)
+			if len(talkAnimations) > 0:
+				selectedAnimName = talkAnimations.pick_random().name
+			else:
+				selectedAnimName = "idle"
 		animatedSprite.play(selectedAnimName)
 	
 func idle():
@@ -60,5 +76,12 @@ func idle():
 	isTalking = false
 	selectedAnimName = null
 	animatedSprite.play("idle")
+	
+func onConversationStarted():
+	talkPanel.visible = false
+	
+func onConversationFinished():
+	talkPanel.visible = true
+	
 	
 
