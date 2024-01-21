@@ -28,6 +28,7 @@ func _on_speech_player_finished():
 		triggerSpeechPlayer()
 		
 func setBalloonReference(balloon: Node):
+	speechStreamResources = []
 	balloonReference = balloon
 	balloonDialogueLabel = balloonReference.dialogue_label
 	balloonDialogueLabel.paused_typing.connect(onTypingPaused)
@@ -36,14 +37,20 @@ func setBalloonReference(balloon: Node):
 	
 func onTypingStopped():
 	isTalking = false
+	if GameStateHolder.currentSpeaker != null:
+		GameStateHolder.currentSpeaker.idle()
 	
 func onTypingPaused(_delay):
 	isTalking = false
+	if GameStateHolder.currentSpeaker != null:
+		GameStateHolder.currentSpeaker.idle()
 	
 func onTypingStarted(_a, _b, _c):
 	if(!isTalking):
 		isTalking = true
 		_on_speech_player_finished()
+	if GameStateHolder.currentSpeaker != null:
+		GameStateHolder.currentSpeaker.talk()
 		
 func triggerSpeechPlayer():
 	if len(speechStreamResources) > 0:

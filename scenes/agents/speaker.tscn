@@ -1,10 +1,12 @@
-[gd_scene load_steps=5 format=3 uid="uid://cou5jrmy23vew"]
+[gd_scene load_steps=6 format=3 uid="uid://cou5jrmy23vew"]
 
 [ext_resource type="Script" path="res://scripts/agents/speaker.gd" id="1_siml4"]
 [ext_resource type="Resource" uid="uid://bijdg1ericjtl" path="res://dialogue/TavernkeepDayOneMorning.dialogue" id="2_o5qem"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hrlk0"]
 size = Vector2(60, 149)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pmlfd"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_gsp8t"]
 font_size = 24
@@ -16,6 +18,9 @@ dialogue = ExtResource("2_o5qem")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_hrlk0")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_pmlfd")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 

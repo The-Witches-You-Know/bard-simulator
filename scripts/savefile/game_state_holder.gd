@@ -21,6 +21,8 @@ var KnowsAboutAdventurers: bool = false: set = setKnowsAboutAdventurers
 
 var currentLevel: String = "tavern": set = setCurrentLevel
 
+var currentSpeaker: Speaker = null
+
 var Day1PeopleSpokenTo = [
 	[ #morning
 		false, #orc
@@ -55,7 +57,7 @@ var timeOfDay: int = 0 : set = setTimeOfDay
 
 func initGameState():
 	var savedData = Save_Loader.gameData
-	
+		
 	Day1PeopleSpokenTo = savedData.safeGet("Day1.PeopleSpokenTo", [[false,false,false],[false, false, false, false],[false, false]])
 	Day1StoryChoices = savedData.safeGet("Day1.StoryChoices", [-1,-1,-1,-1,-1])
 	
@@ -103,8 +105,6 @@ func setDay1StoryChoices(index: int,value: bool): #please use this instead of se
 func getPlayerSpokeWithFarmer() -> bool:
 	return SpokeToFarmerDayOneNoon or SpokeToFarmerDayOneEvening
 
-	
-	
 func setSpokeToOrcDayOneEvening(newValue: bool):
 	SpokeToOrcDayOneEvening = newValue
 	setDay1PeopleSpokenTo(2,0,newValue)
@@ -160,3 +160,6 @@ func setCurrentDay(newValue):
 func setTimeOfDay(newValue):
 	timeOfDay = newValue
 	SaveLoader.gameData.setOrPut("TimeOfDay", newValue)
+	
+func setCurrentSpeaker(speaker: Speaker):
+	currentSpeaker = speaker
