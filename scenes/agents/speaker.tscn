@@ -31,7 +31,7 @@ animation = &"idle"
 autoplay = "idle"
 
 [node name="TalkPanel" type="Panel" parent="."]
-z_index = 2
+z_index = 10
 y_sort_enabled = true
 offset_left = -60.0
 offset_top = -140.0
