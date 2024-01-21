@@ -1,10 +1,17 @@
 [gd_scene load_steps=5 format=3 uid="uid://cou5jrmy23vew"]
 
 [ext_resource type="Script" path="res://scripts/agents/speaker.gd" id="1_siml4"]
-[ext_resource type="Resource" uid="uid://bijdg1ericjtl" path="res://dialogue/TavernkeepDayOneMorning.dialogue" id="2_o5qem"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hrlk0"]
 size = Vector2(60, 149)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pmlfd"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
 
 [sub_resource type="LabelSettings" id="LabelSettings_gsp8t"]
 font_size = 24
@@ -12,17 +19,22 @@ font_size = 24
 [node name="speaker" type="StaticBody2D"]
 script = ExtResource("1_siml4")
 speakerName = "Test"
-dialogue = ExtResource("2_o5qem")
+dialogues = null
+animatedSpriteTransformPosition = null
+colliderTransformPosition = null
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_hrlk0")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_pmlfd")
+animation = &"idle"
+autoplay = "idle"
 
 [node name="TalkPanel" type="Panel" parent="."]
 visible = false
+z_index = 10
+y_sort_enabled = true
 offset_left = -60.0
 offset_top = -140.0
 offset_right = 60.0

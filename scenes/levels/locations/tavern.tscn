@@ -1,11 +1,15 @@
-[gd_scene load_steps=14 format=3 uid="uid://bywu72xv1pgx0"]
+[gd_scene load_steps=25 format=3 uid="uid://bywu72xv1pgx0"]
 
 [ext_resource type="Script" path="res://scripts/levels/level.gd" id="1_bmea0"]
 [ext_resource type="PackedScene" uid="uid://by276q5li4uq4" path="res://scenes/levels/objects/exit_area.tscn" id="2_kjn8m"]
 [ext_resource type="Texture2D" uid="uid://dhdkhh02d8fav" path="res://assets/spriteSheets/Taverntrans.png" id="2_wq1eb"]
 [ext_resource type="PackedScene" uid="uid://ddnkxck5qdfcv" path="res://scenes/agents/player.tscn" id="3_76q1e"]
 [ext_resource type="PackedScene" uid="uid://cou5jrmy23vew" path="res://scenes/agents/speaker.tscn" id="4_ycs7s"]
-[ext_resource type="Texture2D" uid="uid://csdpftn2u4j6t" path="res://assets/placeholder/shannon_placeholder.png" id="5_yliy6"]
+[ext_resource type="Resource" uid="uid://bijdg1ericjtl" path="res://dialogue/TavernkeepDayOneMorning.dialogue" id="6_fh7a7"]
+[ext_resource type="Texture2D" uid="uid://cn7eu58mgswuy" path="res://assets/spriteSheets/Tavern.png" id="6_j46gc"]
+[ext_resource type="Resource" uid="uid://prrvr227bm8x" path="res://dialogue/TavernTavernkeepDayOneNoon.dialogue" id="7_lflut"]
+[ext_resource type="SpriteFrames" uid="uid://bumodeeonmfgh" path="res://assets/animations/oldBard.tres" id="9_324ne"]
+[ext_resource type="Resource" uid="uid://ccrwlfuwohndh" path="res://dialogue/OldBardDayOneMorning.dialogue" id="9_wlmhq"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_58reg"]
 texture = ExtResource("2_wq1eb")
@@ -468,6 +472,66 @@ tile_size = Vector2i(128, 128)
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_58reg")
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_weaxt"]
+atlas = ExtResource("6_j46gc")
+region = Rect2(128, 128, 128, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tp6o1"]
+atlas = ExtResource("6_j46gc")
+region = Rect2(256, 128, 128, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p1wic"]
+atlas = ExtResource("6_j46gc")
+region = Rect2(384, 128, 128, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8ocrl"]
+atlas = ExtResource("6_j46gc")
+region = Rect2(512, 128, 128, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_18cyb"]
+atlas = ExtResource("6_j46gc")
+region = Rect2(128, 128, 128, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w4pdj"]
+atlas = ExtResource("6_j46gc")
+region = Rect2(256, 128, 128, 256)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_42n8p"]
+animations = [{
+"frames": [{
+"duration": 6.0,
+"texture": SubResource("AtlasTexture_weaxt")
+}, {
+"duration": 6.0,
+"texture": SubResource("AtlasTexture_tp6o1")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 4.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p1wic")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8ocrl")
+}],
+"loop": true,
+"name": &"laugh",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 6.0,
+"texture": SubResource("AtlasTexture_18cyb")
+}, {
+"duration": 6.0,
+"texture": SubResource("AtlasTexture_w4pdj")
+}],
+"loop": true,
+"name": &"talk",
+"speed": 4.0
+}]
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uvnwh"]
 size = Vector2(70, 160)
 
@@ -488,6 +552,7 @@ a = Vector2(1900, -250)
 b = Vector2(1900, 1250)
 
 [node name="Tavern" type="Node2D"]
+y_sort_enabled = true
 script = ExtResource("1_bmea0")
 
 [node name="TilemapHolder" type="Node" parent="."]
@@ -521,13 +586,31 @@ layer_6/tile_data = PackedInt32Array()
 position = Vector2(200, 1200)
 
 [node name="player" parent="." instance=ExtResource("3_76q1e")]
+y_sort_enabled = true
 position = Vector2(300, 1000)
 
-[node name="speaker" parent="." instance=ExtResource("4_ycs7s")]
+[node name="Tavernkeep" parent="." instance=ExtResource("4_ycs7s")]
+y_sort_enabled = true
 position = Vector2(308.416, 79.8147)
-actionName = "Dance"
-defaultSprite = ExtResource("5_yliy6")
+speakerName = "Tavernkeep"
+actionName = "Talk"
+dialogues = Array[Resource("res://addons/dialogue_manager/dialogue_resource.gd")]([ExtResource("6_fh7a7"), ExtResource("7_lflut"), null])
+animationFrames = SubResource("SpriteFrames_42n8p")
 collider = SubResource("RectangleShape2D_uvnwh")
+animatedSpriteTransformPosition = Vector2(0, 0)
+colliderTransformPosition = Vector2(0, 0)
+
+[node name="OldBard" parent="." instance=ExtResource("4_ycs7s")]
+z_index = -1
+y_sort_enabled = true
+position = Vector2(-830, 17)
+speakerName = "Tavernkeep"
+actionName = "Talk"
+dialogues = Array[Resource("res://addons/dialogue_manager/dialogue_resource.gd")]([ExtResource("9_wlmhq"), null, null])
+animationFrames = ExtResource("9_324ne")
+collider = SubResource("RectangleShape2D_uvnwh")
+animatedSpriteTransformPosition = Vector2(0, 0)
+colliderTransformPosition = Vector2(0, 0)
 
 [node name="RoomBoundary" type="Node" parent="."]
 

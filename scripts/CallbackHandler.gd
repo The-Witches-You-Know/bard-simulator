@@ -10,4 +10,5 @@ func LoadLocation():
 	
 func LoadMap():
 	var game_world = get_node("/root/Main/GameWorld") as GameWorld
+	game_world.pass_time()
 	game_world.switch_level("map")
