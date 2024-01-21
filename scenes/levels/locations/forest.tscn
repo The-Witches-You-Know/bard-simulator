@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://20eg01liwra2"]
+[gd_scene load_steps=30 format=3 uid="uid://20eg01liwra2"]
 
 [ext_resource type="PackedScene" uid="uid://by276q5li4uq4" path="res://scenes/levels/objects/exit_area.tscn" id="1_svyfn"]
 [ext_resource type="Script" path="res://scripts/levels/level.gd" id="1_u066t"]
@@ -10,7 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://csgljlev1li35" path="res://assets/spriteSheets/Marketplace (2).png" id="6_ltoen"]
 [ext_resource type="PackedScene" uid="uid://cou5jrmy23vew" path="res://scenes/agents/speaker.tscn" id="9_iqj0g"]
 [ext_resource type="Resource" uid="uid://div13srwwpvur" path="res://dialogue/Farmer.dialogue" id="10_eh7lq"]
-[ext_resource type="Texture2D" uid="uid://csdpftn2u4j6t" path="res://assets/placeholder/shannon_placeholder.png" id="11_empcy"]
+[ext_resource type="Texture2D" uid="uid://dd8r14n7pk8l" path="res://assets/spriteSheets/forestnpcs.png" id="11_w3imv"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hyj83"]
 texture = ExtResource("2_5x54p")
@@ -1465,10 +1465,71 @@ b = Vector2(1900, 1250)
 a = Vector2(1900, -250)
 b = Vector2(1900, 1250)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_wdf3r"]
+atlas = ExtResource("11_w3imv")
+region = Rect2(128, 128, 128, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vtb1x"]
+atlas = ExtResource("11_w3imv")
+region = Rect2(256, 128, 128, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_otsf4"]
+atlas = ExtResource("11_w3imv")
+region = Rect2(384, 128, 128, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vgt1i"]
+atlas = ExtResource("11_w3imv")
+region = Rect2(128, 128, 128, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7jk40"]
+atlas = ExtResource("11_w3imv")
+region = Rect2(512, 128, 128, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hkg4n"]
+atlas = ExtResource("11_w3imv")
+region = Rect2(256, 128, 128, 256)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_upmes"]
+animations = [{
+"frames": [{
+"duration": 6.0,
+"texture": SubResource("AtlasTexture_wdf3r")
+}, {
+"duration": 6.0,
+"texture": SubResource("AtlasTexture_vtb1x")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 4.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_otsf4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vgt1i")
+}],
+"loop": true,
+"name": &"talk_1",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7jk40")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hkg4n")
+}],
+"loop": true,
+"name": &"talk_2",
+"speed": 6.0
+}]
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bngqi"]
 size = Vector2(70, 160)
 
 [node name="forest" type="Node2D"]
+y_sort_enabled = true
 script = ExtResource("1_u066t")
 
 [node name="TilemapHolder" type="Node" parent="."]
@@ -1537,8 +1598,10 @@ shape = SubResource("SegmentShape2D_nqo0k")
 shape = SubResource("SegmentShape2D_dk2l3")
 
 [node name="speaker" parent="." instance=ExtResource("9_iqj0g")]
+y_sort_enabled = true
 position = Vector2(308.416, 79.8147)
+speakerName = "Farmer"
 actionName = "Talk"
 dialogue = ExtResource("10_eh7lq")
-defaultSprite = ExtResource("11_empcy")
+animationFrames = SubResource("SpriteFrames_upmes")
 collider = SubResource("RectangleShape2D_bngqi")

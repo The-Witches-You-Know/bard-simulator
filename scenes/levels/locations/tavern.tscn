@@ -1,11 +1,10 @@
-[gd_scene load_steps=14 format=3 uid="uid://bywu72xv1pgx0"]
+[gd_scene load_steps=13 format=3 uid="uid://bywu72xv1pgx0"]
 
 [ext_resource type="Script" path="res://scripts/levels/level.gd" id="1_bmea0"]
 [ext_resource type="PackedScene" uid="uid://by276q5li4uq4" path="res://scenes/levels/objects/exit_area.tscn" id="2_kjn8m"]
 [ext_resource type="Texture2D" uid="uid://dhdkhh02d8fav" path="res://assets/spriteSheets/Taverntrans.png" id="2_wq1eb"]
 [ext_resource type="PackedScene" uid="uid://ddnkxck5qdfcv" path="res://scenes/agents/player.tscn" id="3_76q1e"]
 [ext_resource type="PackedScene" uid="uid://cou5jrmy23vew" path="res://scenes/agents/speaker.tscn" id="4_ycs7s"]
-[ext_resource type="Texture2D" uid="uid://csdpftn2u4j6t" path="res://assets/placeholder/shannon_placeholder.png" id="5_yliy6"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_58reg"]
 texture = ExtResource("2_wq1eb")
@@ -526,7 +525,6 @@ position = Vector2(300, 1000)
 [node name="speaker" parent="." instance=ExtResource("4_ycs7s")]
 position = Vector2(308.416, 79.8147)
 actionName = "Dance"
-defaultSprite = ExtResource("5_yliy6")
 collider = SubResource("RectangleShape2D_uvnwh")
 
 [node name="RoomBoundary" type="Node" parent="."]

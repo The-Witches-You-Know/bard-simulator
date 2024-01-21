@@ -13,10 +13,13 @@ class_name Speaker
 @onready var talkPanel: Panel = $TalkPanel
 @onready var talkPanelLabel: Label = $TalkPanel/Label
 @onready var animatedSprite: AnimatedSprite2D = $AnimatedSprite2D
+var isTalking = false
+var selectedAnimName = null
 
 func setSpriteFrames(newFrames: SpriteFrames):
 	animationFrames = newFrames
-	animatedSprite.sprite_frames = animationFrames
+	if (newFrames != null and animatedSprite != null):
+		animatedSprite.sprite_frames = animationFrames
 
 func setCollisionDisabled(newValue: bool):
 	collisionDisabled = newValue
@@ -34,17 +37,28 @@ func onAreaEntered():
 		
 func onAreaExited():
 	talkPanel.visible = false
+	
+func _ready():	
+	setSpriteFrames(animationFrames)
+	animatedSprite.play("idle")
 
 func onInteract():
+	GameStateHolder.setCurrentSpeaker(self)
 	var balloon = DialogueManager.show_example_dialogue_balloon(dialogue, "start")
 	Audio_Player.setBalloonReference(balloon)
 	
 func talk():
-	animatedSprite.animation = "talk"
-	animatedSprite.speed_scale = 6
+	if !isTalking:
+		animatedSprite.stop()
+		isTalking = true
+		if selectedAnimName not in animationFrames.animations:
+			selectedAnimName = animationFrames.animations.filter(func(x): return "talk" in x.name).pick_random().name
+		animatedSprite.play(selectedAnimName)
 	
 func idle():
-	animatedSprite.animation = "idle"
-	animatedSprite.speed_scale = 1
+	animatedSprite.stop()
+	isTalking = false
+	selectedAnimName = null
+	animatedSprite.play("idle")
 	
 
