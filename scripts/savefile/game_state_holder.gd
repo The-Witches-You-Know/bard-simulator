@@ -16,8 +16,8 @@ var SpokeToFarmerDayOneEvening: bool = false: set = setSpokeToFarmerDayOneEvenin
 
 var KnowsAboutOrcStory: bool = false: set = setKnowsAboutOrcStory
 var KnowsOrcLied: bool = false: set = setKnowsOrcLied
-var FarmerAngry: bool = false
-var KnowsAboutAdventurers: bool = false
+var FarmerAngry: bool = false: set = setFarmerAngry
+var KnowsAboutAdventurers: bool = false: set = setKnowsAboutAdventurers
 
 var currentLevel: String = "tavern": set = setCurrentLevel
 
@@ -77,6 +77,9 @@ func initGameState():
 	KnowsAboutOrcStory = savedData.safeGet("KnowsAboutOrcStory", false)
 	KnowsOrcLied = savedData.safeGet("KnowsOrcLied", false)
 	
+	FarmerAngry = savedData.safeGet("FarmerAngry", false)
+	KnowsAboutAdventurers = savedData.safeGet("KnowsAboutAdventurers", false)
+	
 	currentLevel = savedData.safeGet("CurrentLevel", "tavern")
 	
 func setSpokeToOrcDayOneMorning(newValue: bool):
@@ -113,6 +116,14 @@ func setKnowsAboutOrcStory(newValue: bool):
 func setKnowsOrcLied(newValue: bool):
 	KnowsOrcLied = newValue
 	SaveLoader.gameData.setOrPut("KnowsOrcLied", newValue)
+	
+func setFarmerAngry(newValue: bool):
+	FarmerAngry = newValue
+	SaveLoader.gameData.setOrPut("FarmerAngry", newValue)
+	
+func setKnowsAboutAdventurers(newValue: bool):
+	KnowsAboutAdventurers = newValue
+	SaveLoader.gameData.setOrPut("KnowsAboutAdventurers", newValue)
 	
 func setSpokeToTavernkeepDayOneMorning(newValue: bool):
 	SpokeToTavernkeepDayOneMorning = newValue

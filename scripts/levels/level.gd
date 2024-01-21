@@ -14,8 +14,3 @@ func _ready():
 	boundaryMax.y = ((boundary.get_child(2) as CollisionShape2D).shape as SegmentShape2D).a.y
 	boundaryMax.x = ((boundary.get_child(3) as CollisionShape2D).shape as SegmentShape2D).a.x
 	player.setCameraLimit(boundaryMin, boundaryMax)
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
