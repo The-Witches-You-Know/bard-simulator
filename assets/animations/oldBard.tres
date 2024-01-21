@@ -1,0 +1,56 @@
+[gd_resource type="SpriteFrames" load_steps=7 format=3 uid="uid://bumodeeonmfgh"]
+
+[ext_resource type="Texture2D" uid="uid://cn7eu58mgswuy" path="res://assets/spriteSheets/Tavern.png" id="1_3pm3i"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iw456"]
+atlas = ExtResource("1_3pm3i")
+region = Rect2(128, 512, 128, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bcbky"]
+atlas = ExtResource("1_3pm3i")
+region = Rect2(256, 512, 128, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ex7vi"]
+atlas = ExtResource("1_3pm3i")
+region = Rect2(512, 512, 128, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w2kg5"]
+atlas = ExtResource("1_3pm3i")
+region = Rect2(384, 512, 128, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qda7h"]
+atlas = ExtResource("1_3pm3i")
+region = Rect2(512, 512, 128, 256)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 6.0,
+"texture": SubResource("AtlasTexture_iw456")
+}, {
+"duration": 6.0,
+"texture": SubResource("AtlasTexture_bcbky")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 4.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ex7vi")
+}],
+"loop": true,
+"name": &"silent",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w2kg5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qda7h")
+}],
+"loop": true,
+"name": &"talk",
+"speed": 6.0
+}]

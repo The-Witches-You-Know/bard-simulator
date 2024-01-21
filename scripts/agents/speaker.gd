@@ -49,15 +49,23 @@ func onAreaEntered():
 func onAreaExited():
 	talkPanel.visible = false
 	
-func _ready():	
-	setSpriteFrames(animationFrames)
-	animatedSprite.play("idle")
+func _ready():
+	if not Engine.is_editor_hint():
+		if (dialogues[(GameStateHolder.currentDay-1) * 3 + GameStateHolder.timeOfDay] != null):
+			visible = true
+			setCollisionDisabled(false)
+			setSpriteFrames(animationFrames)
+			animatedSprite.play("idle")
+		else:
+			visible = false
+			setCollisionDisabled(true)
 
 func onInteract():
-	GameStateHolder.setCurrentSpeaker(self)
-	onConversationStarted()
-	var balloon = DialogueManager.show_example_dialogue_balloon(dialogues[(GameStateHolder.currentDay-1) * 3 + GameStateHolder.timeOfDay], "start")
-	Audio_Player.setBalloonReference(balloon)
+	if(visible):
+		GameStateHolder.setCurrentSpeaker(self)
+		onConversationStarted()
+		var balloon = DialogueManager.show_example_dialogue_balloon(dialogues[(GameStateHolder.currentDay-1) * 3 + GameStateHolder.timeOfDay], "start")
+		Audio_Player.setBalloonReference(balloon)
 	
 func talk(speakerName: String):
 	if !isTalking:
@@ -72,7 +80,10 @@ func idle(resetAnimName: bool):
 	isTalking = false
 	if resetAnimName:
 		selectedAnimName = null
-	animatedSprite.play("idle")
+	if "silent" in animationFrames.animations.map(func(x): return x.name):
+		animatedSprite.play("silent")
+	else:
+		animatedSprite.play("idle")
 	
 func play(animationName):	
 	animatedSprite.stop()
@@ -84,6 +95,7 @@ func onConversationStarted():
 	
 func onConversationFinished():
 	talkPanel.visible = true
+	animatedSprite.play("idle")
 	
 	
 
