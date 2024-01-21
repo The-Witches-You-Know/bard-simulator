@@ -1,7 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://cou5jrmy23vew"]
+[gd_scene load_steps=5 format=3 uid="uid://cou5jrmy23vew"]
 
 [ext_resource type="Script" path="res://scripts/agents/speaker.gd" id="1_siml4"]
-[ext_resource type="Resource" uid="uid://bijdg1ericjtl" path="res://dialogue/TavernkeepDayOneMorning.dialogue" id="2_o5qem"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hrlk0"]
 size = Vector2(60, 149)
@@ -20,7 +19,7 @@ font_size = 24
 [node name="speaker" type="StaticBody2D"]
 script = ExtResource("1_siml4")
 speakerName = "Test"
-dialogue = ExtResource("2_o5qem")
+dialogues = null
 animatedSpriteTransformPosition = null
 colliderTransformPosition = null
 

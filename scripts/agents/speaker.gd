@@ -6,7 +6,7 @@ class_name Speaker
 @export var speakerName: String = ""
 @export var actionName: String = ""
 @export var collisionDisabled: bool = true : set = setCollisionDisabled
-@export var dialogue: DialogueResource
+@export var dialogues: Array[DialogueResource] = []
 @export var animationFrames: SpriteFrames = null : set = setSpriteFrames
 @export var collider: Shape2D = null : set = setCollisionShape
 @export var animatedSpriteTransformPosition: Vector2 = Vector2(0,0) : set = setAnimatedSpriteTransformPosition
@@ -56,7 +56,7 @@ func _ready():
 func onInteract():
 	GameStateHolder.setCurrentSpeaker(self)
 	onConversationStarted()
-	var balloon = DialogueManager.show_example_dialogue_balloon(dialogue, "start")
+	var balloon = DialogueManager.show_example_dialogue_balloon(dialogues[(GameStateHolder.currentDay-1) * 3 + GameStateHolder.timeOfDay], "start")
 	Audio_Player.setBalloonReference(balloon)
 	
 func talk(speakerName: String):
@@ -64,18 +64,20 @@ func talk(speakerName: String):
 		animatedSprite.stop()
 		isTalking = true
 		if selectedAnimName not in animationFrames.animations:
-			var talkAnimations = animationFrames.animations.filter(func(x): return "talk" in x.name)
-			if len(talkAnimations) > 0:
-				selectedAnimName = talkAnimations.pick_random().name
-			else:
-				selectedAnimName = "idle"
+			selectedAnimName = animationFrames.animations.filter(func(x): return "talk" in x.name).pick_random().name
 		animatedSprite.play(selectedAnimName)
 	
-func idle():
+func idle(resetAnimName: bool):
 	animatedSprite.stop()
 	isTalking = false
-	selectedAnimName = null
+	if resetAnimName:
+		selectedAnimName = null
 	animatedSprite.play("idle")
+	
+func play(animationName):	
+	animatedSprite.stop()
+	selectedAnimName = animationName
+	animatedSprite.play(selectedAnimName)
 	
 func onConversationStarted():
 	talkPanel.visible = false

@@ -38,12 +38,12 @@ func setBalloonReference(balloon: Node):
 func onTypingStopped():
 	isTalking = false
 	if GameStateHolder.currentSpeaker != null:
-		GameStateHolder.currentSpeaker.idle()
+		GameStateHolder.currentSpeaker.idle(true)
 	
 func onTypingPaused(_delay):
 	isTalking = false
 	if GameStateHolder.currentSpeaker != null:
-		GameStateHolder.currentSpeaker.idle()
+		GameStateHolder.currentSpeaker.idle(false)
 	
 func onTypingStarted(_a, _b, _c):
 	if(!isTalking):
