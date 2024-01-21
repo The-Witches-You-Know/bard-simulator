@@ -47,7 +47,7 @@ func onInteract():
 	var balloon = DialogueManager.show_example_dialogue_balloon(dialogue, "start")
 	Audio_Player.setBalloonReference(balloon)
 	
-func talk():
+func talk(speakerName: String):
 	if !isTalking:
 		animatedSprite.stop()
 		isTalking = true
