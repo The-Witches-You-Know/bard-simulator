@@ -38,3 +38,4 @@ func pass_time():
 		
 	GameStateHolder.setTimeOfDay(time)
 	ui.set_time(time)
+	GameStateHolder.currentLevelNode = null

@@ -855,7 +855,7 @@ y_sort_enabled = true
 position = Vector2(1223, 260)
 speakerName = "Adventurer1"
 actionName = "Talk"
-dialogues = Array[Resource("res://addons/dialogue_manager/dialogue_resource.gd")]([ExtResource("9_wlmhq"), null, null])
+dialogues = Array[Resource("res://addons/dialogue_manager/dialogue_resource.gd")]([null, null, null])
 animationFrames = SubResource("SpriteFrames_77dhs")
 collider = SubResource("RectangleShape2D_uvnwh")
 
@@ -865,7 +865,7 @@ y_sort_enabled = true
 position = Vector2(1619, 260)
 speakerName = "Adventurer2"
 actionName = "Talk"
-dialogues = Array[Resource("res://addons/dialogue_manager/dialogue_resource.gd")]([ExtResource("9_wlmhq"), null, null])
+dialogues = Array[Resource("res://addons/dialogue_manager/dialogue_resource.gd")]([null, null, null])
 animationFrames = SubResource("SpriteFrames_sc41a")
 collider = SubResource("RectangleShape2D_uvnwh")
 
