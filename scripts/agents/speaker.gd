@@ -17,6 +17,7 @@ class_name Speaker
 @onready var animatedSprite: AnimatedSprite2D = $AnimatedSprite2D
 var isTalking = false
 var selectedAnimName = null
+var alternateAnimationPlaying = false
 
 func setSpriteFrames(newFrames: SpriteFrames):
 	animationFrames = newFrames
@@ -77,20 +78,22 @@ func talk(nameInBalloon: String):
 		animatedSprite.play(selectedAnimName)
 	
 func idle(resetAnimName: bool):
-	animatedSprite.stop()
 	isTalking = false
 	Audio_Player.setSpeaker("")
 	if resetAnimName:
 		selectedAnimName = null
-	if "silent" in animationFrames.animations.map(func(x): return x.name):
-		animatedSprite.play("silent")
-	else:
-		animatedSprite.play("idle")
+	if(!alternateAnimationPlaying):
+		animatedSprite.stop()
+		if "silent" in animationFrames.animations.map(func(x): return x.name):
+			animatedSprite.play("silent")
+		else:
+			animatedSprite.play("idle")
 	
 func play(animationName):	
 	animatedSprite.stop()
 	selectedAnimName = animationName
 	animatedSprite.play(selectedAnimName)
+	alternateAnimationPlaying = true
 	
 func onConversationStarted():
 	talkPanel.visible = false

@@ -45,5 +45,5 @@ Old Bard: Now go, find your own stories. The people here are horribly interestin
 => DialogueEnd
 
 ~ DialogueEnd
-set SpokeToOldBardDayOneMorning = true
+set GameStateHolder.SpokeToOldBardDayOneMorning = true
 => END
