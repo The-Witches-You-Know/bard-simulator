@@ -21,12 +21,9 @@ func _ready():
 func onSpokenToStatusChanged():
 	var showExitArea = true
 	var currentDayStage = (GameStateHolder.currentDay-1) * 3 + GameStateHolder.timeOfDay
-	print(GameStateHolder.expectedSpokenToIndices[name][currentDayStage])
-	print(GameStateHolder.PeopleSpokenTo)
 	for expectedIndex in GameStateHolder.expectedSpokenToIndices[name][currentDayStage]:
 		if !GameStateHolder.PeopleSpokenTo[currentDayStage][expectedIndex]:
 			showExitArea = false
-			print("trigg")
 	print(showExitArea)
 	$ExitArea.visible = showExitArea
 	
