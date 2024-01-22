@@ -1528,7 +1528,7 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bngqi"]
 size = Vector2(70, 100)
 
-[node name="forest" type="Node2D"]
+[node name="Forest" type="Node2D"]
 y_sort_enabled = true
 script = ExtResource("1_u066t")
 
