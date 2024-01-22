@@ -24,6 +24,5 @@ func onSpokenToStatusChanged():
 	for expectedIndex in GameStateHolder.expectedSpokenToIndices[name][currentDayStage]:
 		if !GameStateHolder.PeopleSpokenTo[currentDayStage][expectedIndex]:
 			showExitArea = false
-	print(showExitArea)
 	$ExitArea.visible = showExitArea
 	
