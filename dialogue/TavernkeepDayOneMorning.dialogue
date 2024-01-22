@@ -58,8 +58,12 @@ Tavernkeep: If you're in desperate need of material, I could let you in on some 
 	- Laugh wholeheartedly 
 		He joins in your laughter. 
 	Tavernkeep: Feel free to use it yourself.
-	=> END
+	=> DialogueEnd
 - Please no. 
 	Tavernkeep: Suit yourself. 
 
+=> DialogueEnd
+
+~ DialogueEnd
+set SpokeToTavernkeepDayOneMorning = true
 => END

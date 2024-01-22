@@ -1,18 +1,16 @@
 ~ start
 
-
 Old Bard: So you are the new bard, eh? The new tale spreader?
-
 - Yes 
 	Old Bard: Good, good. I've been doing this for a little while. Would you like me to give you some pointers? Help a young grasshopper out, so to say?
 	- Yeah, why not?
 		Old Bard: Amazing! Lovely even. 
-	- No (Skip introduction) => END
+	- No (Skip introduction) => DialogueEnd
 - Maybe 
 	Old Bard: Got a bit of snark! I like that. Would you like me to give you some pointers? Help a young grasshopper out, so to say?
 	- Yeah, why not?
 		Old Bard: Amazing! Lovely even. 
-	- No (Skip introduction) => END 
+	- No (Skip introduction) => DialogueEnd 
 Old Bard: Your new profession is wordsmith. You are to either hear of or experience the extraordinary, and then let the common populace take part in the grandeur of your memory. Spread those stories, and don't be afraid of embellishing them a little. 
 - What about your stories?
 	Old Bard: My stories? Why do you just want to copy them and walk down the same road I walked? Isn't that horribly boring?
@@ -44,8 +42,8 @@ Old Bard: Your new profession is wordsmith. You are to either hear of or experie
 	Old Bard: There is a place for that kind of storytelling. Just don't expect to be heralded as a master storyteller. You'd be better off in some library, you'll see what I mean. Although... You could still say the truth, the ugly stuff that no one wants to hear. In the right ears spilled secrets make for great tools.
 	
 Old Bard: Now go, find your own stories. The people here are horribly interesting. I half regret choosing to retire here. I should have gone somewhere more boring. 
+=> DialogueEnd
 
-
-
-
+~ DialogueEnd
+set SpokeToOldBardDayOneMorning = true
 => END
