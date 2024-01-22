@@ -72,7 +72,7 @@ func talk(nameInBalloon: String):
 		Audio_Player.setSpeaker(speakerName)
 		animatedSprite.stop()
 		isTalking = true
-		if selectedAnimName not in animationFrames.animations:
+		if selectedAnimName not in animationFrames.animations.map(func(x): return x.name):
 			selectedAnimName = animationFrames.animations.filter(func(x): return "talk" in x.name).pick_random().name
 		animatedSprite.play(selectedAnimName)
 	

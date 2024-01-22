@@ -21,7 +21,7 @@ var speechStreamResources: Array[AudioStream] = []
 
 func setSpeaker(speaker: String):
 	speechStreamResources = []
-	if len(speaker) > 0:
+	if len(speaker) > 0 and speaker in speechStreamPaths.keys():
 		for path in speechStreamPaths[speaker]:
 			speechStreamResources.append(load(path))
 	if (isTalking):
