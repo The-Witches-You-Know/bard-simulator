@@ -67,8 +67,9 @@ func onInteract():
 		var balloon = DialogueManager.show_example_dialogue_balloon(dialogues[(GameStateHolder.currentDay-1) * 3 + GameStateHolder.timeOfDay], "start")
 		Audio_Player.setBalloonReference(balloon)
 	
-func talk(speakerName: String):
+func talk(nameInBalloon: String):
 	if !isTalking:
+		Audio_Player.setSpeaker(speakerName)
 		animatedSprite.stop()
 		isTalking = true
 		if selectedAnimName not in animationFrames.animations:
@@ -78,6 +79,7 @@ func talk(speakerName: String):
 func idle(resetAnimName: bool):
 	animatedSprite.stop()
 	isTalking = false
+	Audio_Player.setSpeaker("")
 	if resetAnimName:
 		selectedAnimName = null
 	if "silent" in animationFrames.animations.map(func(x): return x.name):

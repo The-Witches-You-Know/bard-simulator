@@ -1605,5 +1605,4 @@ actionName = "Talk"
 dialogues = Array[Resource("res://addons/dialogue_manager/dialogue_resource.gd")]([null, ExtResource("10_eh7lq"), ExtResource("10_eh7lq")])
 animationFrames = SubResource("SpriteFrames_upmes")
 collider = SubResource("RectangleShape2D_bngqi")
-animatedSpriteTransformPosition = Vector2(0, 0)
 colliderTransformPosition = Vector2(0, 30)

@@ -597,20 +597,15 @@ actionName = "Talk"
 dialogues = Array[Resource("res://addons/dialogue_manager/dialogue_resource.gd")]([ExtResource("6_fh7a7"), ExtResource("7_lflut"), null])
 animationFrames = SubResource("SpriteFrames_42n8p")
 collider = SubResource("RectangleShape2D_uvnwh")
-animatedSpriteTransformPosition = Vector2(0, 0)
-colliderTransformPosition = Vector2(0, 0)
 
 [node name="OldBard" parent="." instance=ExtResource("4_ycs7s")]
 z_index = -1
 y_sort_enabled = true
 position = Vector2(-830, 17)
-speakerName = "Tavernkeep"
 actionName = "Talk"
 dialogues = Array[Resource("res://addons/dialogue_manager/dialogue_resource.gd")]([ExtResource("9_wlmhq"), null, null])
 animationFrames = ExtResource("9_324ne")
 collider = SubResource("RectangleShape2D_uvnwh")
-animatedSpriteTransformPosition = Vector2(0, 0)
-colliderTransformPosition = Vector2(0, 0)
 
 [node name="RoomBoundary" type="Node" parent="."]
 
