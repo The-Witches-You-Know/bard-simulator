@@ -24,9 +24,13 @@ func onInteract():
 		Audio_Player.setBalloonReference(balloon)
 	
 func talk(nameInBalloon: String):
-	if (nameInBalloon != null and (currentSpeakerPart == null or currentSpeakerPart.speakerName != nameInBalloon)):
-		idle(true)
-		currentSpeakerPart = speakerParts[speakerParts.find(func(x): return x.speakerName == nameInBalloon)]
+	if (nameInBalloon != null):
+		if (currentSpeakerPart == null or currentSpeakerPart.speakerName != nameInBalloon):
+			idle(true)
+			var speakerIdx = speakerParts.map(func(x): return x.speakerName).find(nameInBalloon)
+			if (speakerIdx == -1):
+				return
+			currentSpeakerPart = speakerParts[speakerIdx]
 		currentSpeakerPart.talk(nameInBalloon)
 	
 func idle(resetAnimName: bool):
