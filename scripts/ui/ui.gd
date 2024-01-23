@@ -4,6 +4,8 @@ class_name interface
 @export var HUD : PackedScene
 @export var Menu : PackedScene
 
+@onready var LoadingSceneRef = $LoadingScene as LoadingScene
+
 var current : Control
 
 func _ready():
