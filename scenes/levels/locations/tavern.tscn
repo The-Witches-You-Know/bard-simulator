@@ -1,4 +1,4 @@
-[gd_scene load_steps=53 format=3 uid="uid://bywu72xv1pgx0"]
+[gd_scene load_steps=42 format=3 uid="uid://bywu72xv1pgx0"]
 
 [ext_resource type="Script" path="res://scripts/levels/level.gd" id="1_bmea0"]
 [ext_resource type="PackedScene" uid="uid://by276q5li4uq4" path="res://scenes/levels/objects/exit_area.tscn" id="2_kjn8m"]
@@ -11,6 +11,11 @@
 [ext_resource type="SpriteFrames" uid="uid://bumodeeonmfgh" path="res://assets/animations/oldBard.tres" id="9_324ne"]
 [ext_resource type="Resource" uid="uid://ccrwlfuwohndh" path="res://dialogue/OldBardDayOneMorning.dialogue" id="9_wlmhq"]
 [ext_resource type="Resource" uid="uid://bpmrpir7x7wiq" path="res://dialogue/OrcDayOneMorning.dialogue" id="11_0df84"]
+[ext_resource type="Script" path="res://scripts/agents/groupSpeaker.gd" id="11_5tiwi"]
+[ext_resource type="Resource" uid="uid://cxd5d6qtmvdph" path="res://dialogue/ForestKidsDayOneNoon.dialogue" id="12_c7oj3"]
+[ext_resource type="SpriteFrames" uid="uid://dpp8x4v6nirgq" path="res://assets/animations/adventurer1.tres" id="13_1n1pk"]
+[ext_resource type="Script" path="res://scripts/agents/groupSpeakerPart.gd" id="13_7001r"]
+[ext_resource type="SpriteFrames" uid="uid://dlwvbr6sikea0" path="res://assets/animations/adventurer2.tres" id="14_v41n7"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_58reg"]
 texture = ExtResource("2_wq1eb")
@@ -536,165 +541,11 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uvnwh"]
 size = Vector2(70, 160)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_s4xkx"]
-atlas = ExtResource("6_j46gc")
-region = Rect2(128, 1280, 128, 256)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jxqpu"]
+size = Vector2(70, 160)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_1vrio"]
-atlas = ExtResource("6_j46gc")
-region = Rect2(256, 1280, 128, 256)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_85psk"]
-atlas = ExtResource("6_j46gc")
-region = Rect2(384, 1280, 128, 256)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_753o8"]
-atlas = ExtResource("6_j46gc")
-region = Rect2(128, 1280, 128, 256)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_h2txp"]
-atlas = ExtResource("6_j46gc")
-region = Rect2(256, 1280, 128, 256)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_8jcuw"]
-atlas = ExtResource("6_j46gc")
-region = Rect2(512, 1280, 128, 256)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_a5ksx"]
-atlas = ExtResource("6_j46gc")
-region = Rect2(128, 1280, 128, 256)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_3fabs"]
-atlas = ExtResource("6_j46gc")
-region = Rect2(256, 1280, 128, 256)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_77dhs"]
-animations = [{
-"frames": [{
-"duration": 6.0,
-"texture": SubResource("AtlasTexture_s4xkx")
-}, {
-"duration": 6.0,
-"texture": SubResource("AtlasTexture_1vrio")
-}],
-"loop": true,
-"name": &"idle",
-"speed": 4.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_85psk")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_753o8")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_85psk")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_h2txp")
-}],
-"loop": true,
-"name": &"talk_1",
-"speed": 6.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_8jcuw")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_a5ksx")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_8jcuw")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_3fabs")
-}],
-"loop": true,
-"name": &"talk_2",
-"speed": 5.0
-}]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_pam15"]
-atlas = ExtResource("6_j46gc")
-region = Rect2(128, 1664, 128, 256)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_h1tbl"]
-atlas = ExtResource("6_j46gc")
-region = Rect2(256, 1664, 128, 256)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_qlilt"]
-atlas = ExtResource("6_j46gc")
-region = Rect2(384, 1664, 128, 256)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_p7jth"]
-atlas = ExtResource("6_j46gc")
-region = Rect2(128, 1664, 128, 256)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_kdvjs"]
-atlas = ExtResource("6_j46gc")
-region = Rect2(256, 1664, 128, 256)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_8ud1u"]
-atlas = ExtResource("6_j46gc")
-region = Rect2(512, 1664, 128, 256)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_4siiu"]
-atlas = ExtResource("6_j46gc")
-region = Rect2(128, 1664, 128, 256)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_winkw"]
-atlas = ExtResource("6_j46gc")
-region = Rect2(256, 1664, 128, 256)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_sc41a"]
-animations = [{
-"frames": [{
-"duration": 6.0,
-"texture": SubResource("AtlasTexture_pam15")
-}, {
-"duration": 6.0,
-"texture": SubResource("AtlasTexture_h1tbl")
-}],
-"loop": true,
-"name": &"idle",
-"speed": 4.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_qlilt")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_p7jth")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_qlilt")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_kdvjs")
-}],
-"loop": true,
-"name": &"talk_1",
-"speed": 6.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_8ud1u")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_4siiu")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_8ud1u")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_winkw")
-}],
-"loop": true,
-"name": &"talk_2",
-"speed": 6.0
-}]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_81tvr"]
+size = Vector2(70, 160)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nhrdw"]
 atlas = ExtResource("6_j46gc")
@@ -851,25 +702,31 @@ dialogues = Array[Resource("res://addons/dialogue_manager/dialogue_resource.gd")
 animationFrames = ExtResource("9_324ne")
 collider = SubResource("RectangleShape2D_uvnwh")
 
-[node name="Adventurer1" parent="." instance=ExtResource("4_ycs7s")]
+[node name="Adventurers" type="StaticBody2D" parent="." node_paths=PackedStringArray("speakerParts")]
+script = ExtResource("11_5tiwi")
+actionName = "Talk"
+dialogues = Array[Resource("res://addons/dialogue_manager/dialogue_resource.gd")]([ExtResource("12_c7oj3"), ExtResource("12_c7oj3"), ExtResource("12_c7oj3")])
+speakerParts = [NodePath("Adventurer1"), NodePath("Adventurer2")]
+
+[node name="Adventurer1" parent="Adventurers" node_paths=PackedStringArray("parent") instance=ExtResource("4_ycs7s")]
 z_index = -1
 y_sort_enabled = true
 position = Vector2(1223, 260)
+script = ExtResource("13_7001r")
 speakerName = "Adventurer1"
-actionName = "Talk"
-dialogues = Array[Resource("res://addons/dialogue_manager/dialogue_resource.gd")]([null, null, null])
-animationFrames = SubResource("SpriteFrames_77dhs")
-collider = SubResource("RectangleShape2D_uvnwh")
+animationFrames = ExtResource("13_1n1pk")
+collider = SubResource("RectangleShape2D_jxqpu")
+parent = NodePath("..")
 
-[node name="Adventurer2" parent="." instance=ExtResource("4_ycs7s")]
+[node name="Adventurer2" parent="Adventurers" node_paths=PackedStringArray("parent") instance=ExtResource("4_ycs7s")]
 z_index = -1
 y_sort_enabled = true
 position = Vector2(1619, 260)
+script = ExtResource("13_7001r")
 speakerName = "Adventurer2"
-actionName = "Talk"
-dialogues = Array[Resource("res://addons/dialogue_manager/dialogue_resource.gd")]([null, null, null])
-animationFrames = SubResource("SpriteFrames_sc41a")
-collider = SubResource("RectangleShape2D_uvnwh")
+animationFrames = ExtResource("14_v41n7")
+collider = SubResource("RectangleShape2D_81tvr")
+parent = NodePath("..")
 
 [node name="Orc" parent="." instance=ExtResource("4_ycs7s")]
 z_index = -1

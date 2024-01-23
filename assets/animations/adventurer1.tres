@@ -1,0 +1,83 @@
+[gd_resource type="SpriteFrames" load_steps=10 format=3 uid="uid://dpp8x4v6nirgq"]
+
+[ext_resource type="Texture2D" uid="uid://cn7eu58mgswuy" path="res://assets/spriteSheets/Tavern.png" id="1_br8vx"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s4xkx"]
+atlas = ExtResource("1_br8vx")
+region = Rect2(128, 1280, 128, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1vrio"]
+atlas = ExtResource("1_br8vx")
+region = Rect2(256, 1280, 128, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_85psk"]
+atlas = ExtResource("1_br8vx")
+region = Rect2(384, 1280, 128, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_753o8"]
+atlas = ExtResource("1_br8vx")
+region = Rect2(128, 1280, 128, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h2txp"]
+atlas = ExtResource("1_br8vx")
+region = Rect2(256, 1280, 128, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8jcuw"]
+atlas = ExtResource("1_br8vx")
+region = Rect2(512, 1280, 128, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a5ksx"]
+atlas = ExtResource("1_br8vx")
+region = Rect2(128, 1280, 128, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3fabs"]
+atlas = ExtResource("1_br8vx")
+region = Rect2(256, 1280, 128, 256)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 6.0,
+"texture": SubResource("AtlasTexture_s4xkx")
+}, {
+"duration": 6.0,
+"texture": SubResource("AtlasTexture_1vrio")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 4.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_85psk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_753o8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_85psk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h2txp")
+}],
+"loop": true,
+"name": &"talk_1",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8jcuw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a5ksx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8jcuw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3fabs")
+}],
+"loop": true,
+"name": &"talk_2",
+"speed": 5.0
+}]

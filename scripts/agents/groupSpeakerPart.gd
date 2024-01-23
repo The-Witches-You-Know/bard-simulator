@@ -3,6 +3,7 @@ extends Node2D
 
 class_name GroupSpeakerPart
 
+@export var speakerName : String = ""
 @export var animationFrames: SpriteFrames = null : set = setSpriteFrames
 @export var collider: Shape2D = null : set = setCollisionShape
 @export var animatedSpriteTransformPosition: Vector2 = Vector2(0,0) : set = setAnimatedSpriteTransformPosition
