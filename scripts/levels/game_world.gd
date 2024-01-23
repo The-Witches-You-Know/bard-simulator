@@ -10,6 +10,11 @@ var time : time_of_day = time_of_day.MORNING
 var day = 1
 var current : Node2D
 
+var level_to_load
+# Hack to avoid two transitions when we load straight from menu to
+# the tavern
+var skip = true
+
 func _ready():
 	ui = get_node("/root/Main/UI") as interface
 	switch_level(GameStateHolder.currentLevel)
@@ -23,9 +28,12 @@ func switch_level(level):
 		current.queue_free()
 
 	if level in dict:
-		current = load(dict[level]).instantiate()
-		add_child(current)
-		GameStateHolder.currentLevel = level
+		level_to_load = level
+		if skip:
+			skip = false
+			on_scene_load()
+		else:	
+			ui.LoadingSceneRef.play_transition("fade_out", Callable(self, "on_scene_load"), "fade_in")
 
 func pass_time():	
 	if time == 3:
@@ -38,3 +46,8 @@ func pass_time():
 		
 	GameStateHolder.setTimeOfDay(time)
 	ui.set_time(time)
+
+func on_scene_load():
+	current = load(dict[level_to_load]).instantiate()
+	add_child(current)
+	GameStateHolder.currentLevel = level_to_load
