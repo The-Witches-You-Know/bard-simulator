@@ -96,5 +96,6 @@ text = "Return"
 [connection signal="value_changed" from="MasterVolume/MasterVolumeSlider" to="." method="_on_master_volume_slider_value_changed"]
 [connection signal="value_changed" from="MusicVolume/MusicVolumeSlider" to="." method="_on_music_volume_slider_value_changed"]
 [connection signal="value_changed" from="AmbientVolume/AmbientVolumeSlider" to="." method="_on_ambient_volume_slider_value_changed"]
+[connection signal="drag_ended" from="SFXVolume/SFXVolumeSlider" to="." method="_on_sfx_volume_slider_drag_ended"]
 [connection signal="drag_started" from="SFXVolume/SFXVolumeSlider" to="." method="_on_sfx_volume_slider_drag_started"]
 [connection signal="value_changed" from="SFXVolume/SFXVolumeSlider" to="." method="_on_sfx_volume_slider_value_changed"]

@@ -23,6 +23,14 @@ func _ready():
 	ui.set_day(day)
 	ui.set_time(time)
 
+func _process(_delta):
+	if Input.is_action_just_released("pause"):
+		var main = get_node("/root/Main") as Manager
+		if main.current_state == global.PAUSED:
+			main.switch_state(global.GAME_WORLD)
+		else:
+			main.switch_state(global.PAUSED)
+
 func switch_level(level):
 	if current != null:
 		current.queue_free()
