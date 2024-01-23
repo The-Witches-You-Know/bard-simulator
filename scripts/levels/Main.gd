@@ -17,6 +17,8 @@ func switch_state(state):
 		global.MENU:
 			if current_state == global.GAME_WORLD:
 				ui.LoadingSceneRef.play_transition("fade_out", Callable(self, "transition_menu_callback"), "fade_in")
+			if current_state == global.CREDITS:
+				ui.LoadingSceneRef.play_transition("fade_out", Callable(self, "transition_menu_callback"), "fade_in")
 		global.GAME_WORLD:
 			ui.LoadingSceneRef.play_transition("fade_out", Callable(self, "transition_gameworld_callback"), "fade_in")
 		global.PAUSED:
@@ -35,4 +37,5 @@ func transition_gameworld_callback():
 
 func transition_menu_callback():
 	ui.switch_ui_state(current_state)
-	current.queue_free()
+	if current != null:
+		current.queue_free()

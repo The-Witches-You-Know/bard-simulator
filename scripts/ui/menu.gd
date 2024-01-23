@@ -20,7 +20,6 @@ func _on_confirmation_popup(response):
 	
 	$ConfirmationPopup.visible = false
 
-
 func _on_return_button_button_up():
 	$Panel/MarginContainer/VBoxContainer/SettingsMenuPanel.visible = false
 	$Panel/MarginContainer/VBoxContainer/MainMenuPanel.visible = true
