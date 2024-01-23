@@ -17,7 +17,7 @@ func _on_exit_button_up():
 	# SAVE GAME HERE
 	
 	# Dialogue hack REFER TO THIS WHEN WE CHANGE THE BALLOON
-	var dialogue = get_node("/root/Main/ExampleBalloon")
+	var dialogue = get_node_or_null("/root/Main/ExampleBalloon")
 	
 	if dialogue != null:
 		dialogue.queue_free()

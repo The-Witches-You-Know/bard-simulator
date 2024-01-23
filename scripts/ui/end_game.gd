@@ -1,4 +1,5 @@
 extends Control
+class_name EndGame
 
 var can_exit = false
 
@@ -11,7 +12,7 @@ func _unhandled_key_input(event):
 		main.switch_state(global.CREDITS)
 		can_exit = false
 
-func _ready():
+func load_endgame():
 	$AnimationPlayer.play("end_screen_continue")
 
 func _on_animation_finished(anim_name):

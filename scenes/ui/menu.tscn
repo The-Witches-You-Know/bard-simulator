@@ -86,8 +86,8 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_top = -104.0
-offset_bottom = -104.0
+offset_top = -144.0
+offset_bottom = -144.0
 message = "Are you sure you want to start a new game?"
 
 [connection signal="button_up" from="Panel/MarginContainer/VBoxContainer/MainMenuPanel/Continue" to="." method="_on_continue_button_up"]
