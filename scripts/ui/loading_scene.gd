@@ -5,6 +5,9 @@ var transition_callback : Callable
 var second_transition
 var skip_callback
 
+func _ready():
+	print("Ready")
+
 # Use null for transition2 if not needed
 func play_transition(transition, callback, transition2):
 	$AnimationPlayer.play(transition)

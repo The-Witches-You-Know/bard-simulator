@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://du2jglvtax72b"]
+[gd_scene load_steps=8 format=3 uid="uid://du2jglvtax72b"]
 
 [ext_resource type="Script" path="res://scripts/ui/loading_scene.gd" id="1_1dkrt"]
 [ext_resource type="Texture2D" uid="uid://dn6wcnyj430nf" path="res://assets/sprites/piratesoftware/JamSmall.png" id="2_y6ot4"]
@@ -107,10 +107,90 @@ tracks/3/keys = {
 "values": [0.0, 0.383972, 0.0]
 }
 
+[sub_resource type="Animation" id="Animation_0m6hq"]
+resource_name = "fade_in2"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("FadeInOut:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("FadeInOut:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("FadeInOut/TextureRect:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_awejs"]
+resource_name = "fade_out2"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("FadeInOut:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("FadeInOut:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("FadeInOut/TextureRect:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_uutpw"]
 _data = {
 "fade_in": SubResource("Animation_54tex"),
-"fade_out": SubResource("Animation_bmh1i")
+"fade_in2": SubResource("Animation_0m6hq"),
+"fade_out": SubResource("Animation_bmh1i"),
+"fade_out2": SubResource("Animation_awejs")
 }
 
 [node name="LoadingScene" type="Control"]
@@ -130,7 +210,7 @@ libraries = {
 
 [node name="FadeInOut" type="ColorRect" parent="."]
 visible = false
-self_modulate = Color(0, 0, 0, 0)
+self_modulate = Color(0, 0, 0, 1)
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -140,6 +220,7 @@ grow_vertical = 2
 mouse_filter = 1
 
 [node name="TextureRect" type="TextureRect" parent="FadeInOut"]
+visible = false
 custom_minimum_size = Vector2(189, 150)
 layout_mode = 1
 anchors_preset = 3
@@ -153,7 +234,7 @@ offset_right = -16.0
 offset_bottom = -16.0
 grow_horizontal = 0
 grow_vertical = 0
-scale = Vector2(1e-05, 1e-05)
+rotation = -0.383972
 pivot_offset = Vector2(94.5, 75)
 size_flags_horizontal = 8
 size_flags_vertical = 8
