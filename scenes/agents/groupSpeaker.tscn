@@ -1,0 +1,60 @@
+[gd_scene load_steps=5 format=3 uid="uid://c3oklu780nrw"]
+
+[ext_resource type="Script" path="res://scripts/agents/groupSpeaker.gd" id="1_yfsg7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hrlk0"]
+size = Vector2(60, 149)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pmlfd"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="LabelSettings" id="LabelSettings_gsp8t"]
+font_size = 24
+
+[node name="groupSpeaker" type="StaticBody2D"]
+script = ExtResource("1_yfsg7")
+speakerName = ""
+actionName = ""
+collisionDisabled = true
+dialogues = Array[Resource("res://addons/dialogue_manager/dialogue_resource.gd")]([])
+animationFrames = null
+collider = null
+animatedSpriteTransformPosition = Vector2(0, 0)
+colliderTransformPosition = Vector2(0, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_hrlk0")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_pmlfd")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="TalkPanel" type="Panel" parent="."]
+visible = false
+z_index = 10
+y_sort_enabled = true
+offset_left = -60.0
+offset_top = -140.0
+offset_right = 60.0
+offset_bottom = -100.0
+
+[node name="Label" type="Label" parent="TalkPanel"]
+layout_mode = 0
+offset_right = 120.0
+offset_bottom = 40.0
+text = "[X] Talk"
+label_settings = SubResource("LabelSettings_gsp8t")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Area2D" type="Area2D" parent="."]
+monitoring = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_hrlk0")

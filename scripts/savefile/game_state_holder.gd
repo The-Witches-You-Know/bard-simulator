@@ -21,7 +21,7 @@ var KnowsAboutAdventurers: bool = false: set = setKnowsAboutAdventurers
 
 var currentLevel: String = "tavern": set = setCurrentLevel
 
-var currentSpeaker: Speaker = null
+var currentSpeaker: ISpeaker = null
 var currentLevelNode: Level = null
 
 var expectedSpokenToIndices = {
@@ -183,5 +183,5 @@ func setTimeOfDay(newValue):
 	timeOfDay = newValue
 	SaveLoader.gameData.setOrPut("TimeOfDay", newValue)
 	
-func setCurrentSpeaker(speaker: Speaker):
+func setCurrentSpeaker(speaker: ISpeaker):
 	currentSpeaker = speaker
