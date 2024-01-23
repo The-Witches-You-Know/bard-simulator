@@ -12,6 +12,7 @@ class_name GroupSpeaker
 var isTalking = false
 var selectedAnimName = null
 var alternateAnimationPlaying = false
+var currentSpeakerPart: GroupSpeakerPart
 
 	
 func _ready():
@@ -26,19 +27,24 @@ func onInteract():
 		Audio_Player.setBalloonReference(balloon)
 	
 func talk(nameInBalloon: String):
-	pass
+	if (nameInBalloon != null and currentSpeakerPart.name != nameInBalloon):
+		idle(true)
+		currentSpeakerPart = speakerParts[speakerParts.find(func(x): return x.name == nameInBalloon)]
+		currentSpeakerPart.talk(nameInBalloon)
 	
 func idle(resetAnimName: bool):
-	pass
+	currentSpeakerPart.idle(resetAnimName)
 	
-func play(animationName):	
-	pass
+func play(animationName):
+	currentSpeakerPart.idle(animationName)
 	
 func onConversationStarted():
-	pass
+	for part in speakerParts:
+		part.onConversationStarted()
 	
 func onConversationFinished():
-	pass
+	for part in speakerParts:
+		part.onConversationFinished()
 	
 	
 

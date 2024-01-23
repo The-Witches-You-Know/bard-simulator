@@ -18,6 +18,7 @@ class_name GroupSpeakerPart
 var isTalking = false
 var selectedAnimName = null
 var alternateAnimationPlaying = false
+var shouldShowTalkPanel: bool = false
 
 func setCollisionDisabled(newValue: bool):
 	collisionDisabled = newValue
@@ -59,6 +60,7 @@ func _ready():
 
 
 func onInteract():
+	shouldShowTalkPanel = true
 	parent.onInteract()
 	
 func talk(nameInBalloon: String):
@@ -92,7 +94,8 @@ func onConversationStarted():
 	talkPanel.visible = false
 	
 func onConversationFinished():
-	talkPanel.visible = true
+	talkPanel.visible = shouldShowTalkPanel
+	shouldShowTalkPanel = false
 	animatedSprite.play("idle")
 	
 	
