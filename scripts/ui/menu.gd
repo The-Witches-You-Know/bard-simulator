@@ -25,7 +25,10 @@ func _on_return_button_button_up():
 	$Panel/MarginContainer/VBoxContainer/SettingsMenuPanel.visible = false
 	$Panel/MarginContainer/VBoxContainer/MainMenuPanel.visible = true
 
-
 func _on_options_button_up():
 	$Panel/MarginContainer/VBoxContainer/MainMenuPanel.visible = false
 	$Panel/MarginContainer/VBoxContainer/SettingsMenuPanel.visible = true
+
+func _on_credits_button_up():
+	var main = get_node("/root/Main") as Manager
+	main.switch_state(global.CREDITS)

@@ -21,6 +21,10 @@ func switch_state(state):
 			ui.LoadingSceneRef.play_transition("fade_out", Callable(self, "transition_gameworld_callback"), "fade_in")
 		global.PAUSED:
 			ui.switch_ui_state(state)
+		global.CREDITS:
+			ui.switch_ui_state(state)
+		global.END_GAME:
+			ui.switch_ui_state(state)
 	
 	current_state = state
 
