@@ -15,5 +15,5 @@ func _unhandled_key_input(event):
 func load_endgame():
 	$AnimationPlayer.play("end_screen_continue")
 
-func _on_animation_finished(anim_name):
+func _on_animation_finished(_anim_name):
 	can_exit = true

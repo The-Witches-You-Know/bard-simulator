@@ -5,7 +5,7 @@ func _ready():
 	# 1. Start credit animation
 	pass # Replace with function body.
 
-func _process(delta):
+func _process(_delta):
 	# 2. If player presses down speed up credits
 	# 2. up to reverse credits
 	pass

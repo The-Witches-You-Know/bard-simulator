@@ -6,7 +6,7 @@ var second_transition
 var skip_callback
 
 func _ready():
-	print("Ready")
+	$FadeInOut.visible = false
 
 # Use null for transition2 if not needed
 func play_transition(transition, callback, transition2):
@@ -21,7 +21,7 @@ func play_transition_no_callback(transition, transition2):
 	second_transition = transition2
 	skip_callback = true
 
-func _on_animation_finished(anim_name):
+func _on_animation_finished(_anim_name):
 	
 	if !skip_callback:
 		transition_callback.call()
