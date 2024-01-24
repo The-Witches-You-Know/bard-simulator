@@ -32,4 +32,3 @@ visible = false
 visible = false
 
 [node name="SplashScreen" parent="." instance=ExtResource("8_vuity")]
-visible = false
