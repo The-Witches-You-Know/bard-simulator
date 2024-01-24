@@ -32,14 +32,14 @@ Witch: Now then, what ails you?
 				Witch: Incase you're infected. 
 				Witch: If you have symptopms, this should stave them off long enough to reach me again, so I may properly purify you. 
 				Witch: Now, off with you!
-				=> END 
+				=> DialogueEnd 
 			- On second thought...
 				Witch: Good. 
 				She hands you a little vial. 
 				Witch: Incase you're infected. 
 				Witch: If you have symptopms, this should stave them off long enough to reach me again, so I may properly purify you. 
 				Witch: Now, off with you!
-				=> END 
+				=> DialogueEnd 
 		- Why not do it yourself?
 			Witch: Do you really think a being such as myself has any kind of rapport with the town and its folk?
 			Witch: I won't bat an eye if you let your talent for the dramatic take over. 
@@ -49,7 +49,7 @@ Witch: Now then, what ails you?
 				Witch: Incase you're infected. 
 				Witch: If you have symptopms, this should stave them off long enough to reach me again, so I may properly purify you. 
 				Witch: Now, off with you!
-				=> END 
+				=> DialogueEnd 
 			- No, I don't have a horse in this race at all. 
 				Witch: Didn't you say you were close to it? 
 				Witch: You might already be infected. 
@@ -57,10 +57,10 @@ Witch: Now then, what ails you?
 				Witch: Not from me at least. 
 				- You drive a hard bargain. Fine. 
 					Witch: Thank you. You will not regret it. 
-					=> END 
+					=> DialogueEnd 
 				- Pah, try your extortion on someone else. 
 					Witch: Suit yourself. 
-					=> END 
+					=> DialogueEnd 
 - Ask her to read your future. 
 	Witch: You would ask such a trivial task of me?
 - Ask why she can't share her name
@@ -70,7 +70,7 @@ Witch: Now then, what ails you?
 	# loop back to the previous choice
 - Bid her a good day. 
 	Witch: Fare thee well. 
-	=> END
+	=> DialogueEnd
 
 ~ DialogueEnd
 set GameStateHolder.SpokeToTavernkeepDayOneMorning = true
