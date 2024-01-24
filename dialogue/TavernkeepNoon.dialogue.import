@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_11"
+type="Resource"
+uid="uid://prrvr227bm8x"
+path="res://.godot/imported/TavernkeepNoon.dialogue-326d5a9d7bb939494fa576828716c1d6.tres"
+
+[deps]
+
+source_file="res://dialogue/TavernkeepNoon.dialogue"
+dest_files=["res://.godot/imported/TavernkeepNoon.dialogue-326d5a9d7bb939494fa576828716c1d6.tres"]
+
+[params]
+
+defaults=true

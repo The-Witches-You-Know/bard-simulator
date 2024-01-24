@@ -1,13 +1,34 @@
-[gd_scene load_steps=5 format=3 uid="uid://davjuaj1ffvtd"]
+[gd_scene load_steps=9 format=3 uid="uid://davjuaj1ffvtd"]
 
 [ext_resource type="Script" path="res://scripts/ui/ui.gd" id="1_oc1we"]
 [ext_resource type="PackedScene" uid="uid://sfddspa8dxiu" path="res://scenes/ui/hud.tscn" id="2_0xyo4"]
 [ext_resource type="PackedScene" uid="uid://gattw60noxps" path="res://scenes/ui/paused.tscn" id="3_pa1en"]
+[ext_resource type="PackedScene" uid="uid://du2jglvtax72b" path="res://scenes/ui/loading_scene.tscn" id="4_7d42s"]
 [ext_resource type="PackedScene" uid="uid://d4ael31b245pr" path="res://scenes/ui/menu.tscn" id="4_spail"]
+[ext_resource type="PackedScene" uid="uid://bbxk8m031fe31" path="res://scenes/ui/credits.tscn" id="6_vx705"]
+[ext_resource type="PackedScene" uid="uid://1cyg0df45inu" path="res://scenes/ui/end_game.tscn" id="7_oeurl"]
+[ext_resource type="PackedScene" uid="uid://b3u81jpwqcssx" path="res://scenes/ui/splash_screen.tscn" id="8_vuity"]
 
 [node name="UI" type="CanvasLayer"]
 script = ExtResource("1_oc1we")
 HUD = ExtResource("2_0xyo4")
 Menu = ExtResource("4_spail")
 
+[node name="LoadingScene" parent="." instance=ExtResource("4_7d42s")]
+z_index = 1
+
+[node name="Menu" parent="." instance=ExtResource("4_spail")]
+
+[node name="HUD" parent="." instance=ExtResource("2_0xyo4")]
+visible = false
+
 [node name="Paused" parent="." instance=ExtResource("3_pa1en")]
+visible = false
+
+[node name="Credits" parent="." instance=ExtResource("6_vx705")]
+visible = false
+
+[node name="EndGame" parent="." instance=ExtResource("7_oeurl")]
+visible = false
+
+[node name="SplashScreen" parent="." instance=ExtResource("8_vuity")]

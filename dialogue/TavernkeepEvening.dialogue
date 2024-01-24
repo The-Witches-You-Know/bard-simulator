@@ -1,0 +1,45 @@
+~ start
+
+#Play only if the player has talked to the tavnerkeep twice before. 
+#otherwise play noon dialogue here instead. 
+
+Tavernkeep: Third time's the charm, or what is it they say?
+Tavernkeep: Back for more jokes?
+- Please. I need more of them. 
+	Tavernkeep: What's brown and sticky?
+	Tavernkeep: Hm?
+	Tavernkeep: A stick!
+	- That's the stuff. I need more!
+		Tavernkeep: What do you call a fat psychic?
+		Tavernkeep: A four chin teller. 
+		- These are good. Keep them coming. 
+			Tavernkeep: How can you tell it's a dogwood tree?
+			Tavernkeep: By the bark. 
+			- Stop. I can't take it anymore!
+				Tavernkeep: Oh you think you can back out now?
+				Tavernkeep: No, you're staying. You'll hear all of them. 
+			- Oh, I like that one especially. 
+			Tavernkeep: When does a joke become a dad joke?
+			Tavernkeep: When it becomes... apparent. 
+			- Another!
+				Tavernkeep: You know, I used to hate facial hair. 
+				Tavernkeep: But then it grew on me. 
+				- More!
+					Tavernkeep: Sundays are always a little sad
+					Tavernkeep: But the day before is a sadder day. 
+					- Yes!
+						Tavernkeep: Justice is a dish best served cold
+						Tavernkeep: if it were served warm it would be just-water
+						- The finale!
+							Tavernkeep: Why do dads feel the need to tell such bad jokes?
+							Tavernkeep: They just want to help you become a groan up!
+							- That felt good. 
+							Tavernkeep: Come back tomorrow for more, you Bard. 
+							=> END 
+		- Enough! I've heard enough of them. 
+	- Groan and leave him to his devices. 
+- Gods no! I'll leave you alone.
+	Tavernkeep: Good. 
+	=> END 
+
+=> END

@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_11"
+type="Resource"
+uid="uid://bijdg1ericjtl"
+path="res://.godot/imported/TavernkeepMorning.dialogue-cbc7c816a3297e5cfb154695905e34be.tres"
+
+[deps]
+
+source_file="res://dialogue/TavernkeepMorning.dialogue"
+dest_files=["res://.godot/imported/TavernkeepMorning.dialogue-cbc7c816a3297e5cfb154695905e34be.tres"]
+
+[params]
+
+defaults=true

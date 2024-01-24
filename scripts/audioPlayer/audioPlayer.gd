@@ -9,6 +9,8 @@ var isTalking: bool
 var balloonReference: Node
 var balloonDialogueLabel: DialogueLabel
 
+var next_track
+
 var speechStreamPaths = {
 	"Test": [
 		"res://assets/audio/speakers/Voice_Test_-_Boh4.wav",
@@ -16,6 +18,28 @@ var speechStreamPaths = {
 		"res://assets/audio/speakers/Voice_Test_-_Zuh4.wav",
 		]
 }
+
+var musicStreams = {
+	"menu": preload("res://assets/audio/V_Basic_Cozy_Acoustic.wav") as AudioStream,
+	"tavern_day": preload("res://assets/audio/music/Tavern_Day_1.0.wav") as AudioStream,
+	"tavern_night": preload("res://assets/audio/music/Tavern_Day_1.0.wav") as AudioStream,
+	"forest_day": preload("res://assets/audio/music/Tavern_Day_1.0.wav") as AudioStream,
+	"forest_night": preload("res://assets/audio/music/Tavern_Day_1.0.wav") as AudioStream,
+	"market_day": preload("res://assets/audio/music/Tavern_Day_1.0.wav") as AudioStream,
+	"market_night": preload("res://assets/audio/music/Tavern_Day_1.0.wav") as AudioStream
+}
+
+func setMusic(id: String):
+	next_track = id
+	var prev_volume = $MusicPlayer.volume_db
+	var tween = get_tree().create_tween()
+	tween.tween_property($MusicPlayer, "volume_db", -50, 2)
+	tween.tween_callback(Callable(self, "on_fade"))
+	tween.tween_property($MusicPlayer, "volume_db", prev_volume, 3)
+
+func on_fade():
+	$MusicPlayer.stream = musicStreams[next_track]
+	$MusicPlayer.play()
 
 var speechStreamResources: Array[AudioStream] = []
 
@@ -61,5 +85,3 @@ func triggerSpeechPlayer():
 		speechPlayer.stream = speechStreamResources.pick_random()
 		speechPlayer.pitch_scale = randf_range(0.88, 1.15)
 		speechPlayer.play()
-	
-	

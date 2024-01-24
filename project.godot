@@ -62,12 +62,17 @@ interact={
 "events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":69,"key_label":0,"unicode":101,"echo":false,"script":null)
 ]
 }
+pause={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194305,"key_label":0,"unicode":0,"echo":false,"script":null)
+]
+}
 
 [internationalization]
+
 
 locale/translations_pot_files=PackedStringArray("res://dialogue/OldBardDayOneMorning.dialogue", "res://dialogue/TavernkeepDayOneMorning.dialogue", "res://dialogue/OrcDayOneMorning.dialogue", "res://dialogue/confirm_travel.dialogue", "res://dialogue/confirm_return.dialogue", "res://dialogue/TheOrcStoryDayOne.dialogue", "res://dialogue/ForestKidsDayOneNoon.dialogue", "res://dialogue/TavernTavernkeepDayOneNoon.dialogue", "res://dialogue/MarketWitchDayOneNoon.dialogue", "res://dialogue/Farmer.dialogue")
 
 [rendering]
 
-renderer/rendering_method="mobile"
 2d/snap/snap_2d_vertices_to_pixel=true
