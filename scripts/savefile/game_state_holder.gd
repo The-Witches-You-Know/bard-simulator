@@ -69,26 +69,32 @@ var PeopleSpokenTo = [
 		false, #witch
 	]
 ]
-var Day1StoryChoices = [ # If specific story choice chains not listed out - choices have little meaning. -1 is default value
-	-1, # [0|1|2|3|4]  - [Heroic Orc|Orc claimed kill|Orc Superhero|Drake Diseased|Drake flew into windmill] 
-	-1, # [Heroic Orc] - [0|1|2] [Middle of action | Exposition | Tragic Backstory]
-	-1, # [Heroic Orc] - [Middle of action] - [0|1] [Senseless action | Orc monologue]
-		#                [Exposition] - [0|1] [Actual Beginning | Embellish]
-		#                [Tragic Backstory] - [0|1] [Buildup | Close to truth]
-	-1, # [Heroic Orc] - [Exposition, Embellish] or [Tragic Backstory, Buildup] - [0|1] [Epic clash, Cut the tension]
-		#                [Tragic Backstory, Close to truth] - [0|1] [Remain true | Embellish the Ending]
-	-1
-]
+var Day1StoryEnding = "" 
+#[
+#InMediasRes
+#OrcMonologue
+#EpicClash
+#QuickFinish
+#GroundedInReality
+#Embellished
+#PersonalDramas
+#Conspiracies
+#OrcExile
+#RuinedMood
+#]
 
 var currentDay: int = 1 : set = setCurrentDay
 var timeOfDay: int = 0 : set = setTimeOfDay
 
 func initGameState():
 	var savedData = Save_Loader.gameData
-	savedData.clear()
 		
 	PeopleSpokenTo = savedData.safeGet("PeopleSpokenTo", [[false,false,false],[false, false, false, false, false, false, false],[false, false, false, false]])
-	Day1StoryChoices = savedData.safeGet("Day1.StoryChoices", [-1,-1,-1,-1,-1])
+	if PeopleSpokenTo.map(func(x): return len(x)) != [3,7,4]:
+		savedData.clear()
+		PeopleSpokenTo = savedData.safeGet("PeopleSpokenTo", [[false,false,false],[false, false, false, false, false, false, false],[false, false, false, false]])
+		
+	Day1StoryEnding = savedData.safeGet("Day1.StoryEnding", "")
 	
 	SpokeToOrcDayOneMorning = PeopleSpokenTo[0][0]
 	SpokeToTavernkeepDayOneMorning = PeopleSpokenTo[0][1]
