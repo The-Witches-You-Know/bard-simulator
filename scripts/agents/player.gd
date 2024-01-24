@@ -32,19 +32,24 @@ func _physics_process(_delta):
 	
 
 	if inputY == -1:
-		#$AnimationPlayer.play("up", 1, 4)
+		$AnimatedSprite2D.play("walk_up")
+		$AnimatedSprite2D.flip_h = false
 		pass
 	elif inputY == 1:
-		#$AnimationPlayer.play("down", 1, 4)
+		$AnimatedSprite2D.play("walk_down")
+		$AnimatedSprite2D.flip_h = false
 		pass
 	elif inputX == 1:
-		#$AnimationPlayer.play("right", 1, 4)
+		$AnimatedSprite2D.play("walk_right")
+		$AnimatedSprite2D.flip_h = false
 		pass
 	elif inputX == -1:
-		#$AnimationPlayer.play("left", 1, 4)
+		$AnimatedSprite2D.play("walk_right")
+		$AnimatedSprite2D.flip_h = true
 		pass
 	elif velocity == Vector2(0, 0):
-		#$AnimationPlayer.stop()
+		$AnimatedSprite2D.flip_h = false
+		$AnimatedSprite2D.play("idle")
 		pass
 	
 	# if collider is in the direction where the player is going, dont move and slide
