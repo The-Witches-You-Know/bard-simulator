@@ -9,6 +9,8 @@ var isTalking: bool
 var balloonReference: Node
 var balloonDialogueLabel: DialogueLabel
 
+var next_track
+
 var speechStreamPaths = {
 	"Test": [
 		"res://assets/audio/speakers/Voice_Test_-_Boh4.wav",
@@ -28,7 +30,14 @@ var musicStreams = {
 }
 
 func setMusic(id: String):
-	$MusicPlayer.stream = musicStreams[id]
+	next_track = id
+	var tween = get_tree().create_tween()
+	tween.tween_property($MusicPlayer, "volume_db", -50, 2)
+	tween.tween_callback(Callable(self, "on_fade"))
+	tween.tween_property($MusicPlayer, "volume_db", 0, 3)
+
+func on_fade():
+	$MusicPlayer.stream = musicStreams[next_track]
 	$MusicPlayer.play()
 
 var speechStreamResources: Array[AudioStream] = []
