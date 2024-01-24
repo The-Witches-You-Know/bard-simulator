@@ -46,5 +46,5 @@ At the very least it seems to be a strong pigment.
 		- Maybe. 
 			Older boy: Well... 
 			He sighs, and begins consoling his hurt sibling. 
-
+set GameStateHolder.SpokeToKidsDayOneNoon = true
 => END

@@ -47,6 +47,7 @@ Tavernkeep: If you're in desperate need of material, I could let you in on some 
 	Tavernkeep: Alright alright 
 	Tavernkeep: What did the scarecrow do to earn a promotion? 
 	Tavernkeep: Eh? 
+	do GameStateHolder.currentSpeaker.play("laugh")
 	Tavernkeep: It was out standing in its field!
 	Tavernkeep: Get it?
 	- I get it. 
@@ -56,9 +57,15 @@ Tavernkeep: If you're in desperate need of material, I could let you in on some 
 	- Groan
 		The Tavernkeep grins wide.
 	- Laugh wholeheartedly 
+		do GameStateHolder.currentSpeaker.play("laugh")
 		He joins in your laughter. 
-	Tavernkeep: Feel free to use it yourself. => END
+	Tavernkeep: Feel free to use it yourself. => DialogueEnd
 - Please no. 
 	Tavernkeep: Suit yourself. 
 
+=> DialogueEnd
+
+
+~ DialogueEnd
+set GameStateHolder.SpokeToTavernkeepDayOneMorning = true
 => END

@@ -72,6 +72,6 @@ Witch: Now then, what ails you?
 	Witch: Fare thee well. 
 	=> END
 
-
-
+~ DialogueEnd
+set GameStateHolder.SpokeToTavernkeepDayOneMorning = true
 => END

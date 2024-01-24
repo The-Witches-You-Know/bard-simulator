@@ -1,6 +1,6 @@
 extends SaveData
 
-class_name Game_Data
+class_name GameData
 
 func _init(_fileName: String):
 	fileName = _fileName

@@ -10,9 +10,13 @@ var SpokeToKidsDayOneNoon: bool = false: set = setSpokeToKidsDayOneNoon
 var SpokeToTavernkeepDayOneNoon: bool = false: set = setSpokeToTavernkeepDayOneNoon
 var SpokeToMarketWitchDayOneNoon: bool = false: set = setSpokeToMarketWitchDayOneNoon
 var SpokeToFarmerDayOneNoon: bool = false: set = setSpokeToFarmerDayOneNoon
+var SpokeToAdventurersDayOneNoon: bool = false: set = setSpokeToAdventurersDayOneNoon
+var SpokeToJugglingGirlDayOneNoon: bool = false: set = setSpokeToJugglingGirlDayOneNoon
 
 var SpokeToOrcDayOneEvening: bool = false: set = setSpokeToOrcDayOneEvening
 var SpokeToFarmerDayOneEvening: bool = false: set = setSpokeToFarmerDayOneEvening
+var SpokeToTavernkeepDayOneEvening: bool = false: set = setSpokeToTavernkeepDayOneEvening
+var SpokeToWitchDayOneEvening: bool = false: set = setSpokeToWitchDayOneEvening
 
 var KnowsAboutOrcStory: bool = false: set = setKnowsAboutOrcStory
 var KnowsOrcLied: bool = false: set = setKnowsOrcLied
@@ -27,8 +31,8 @@ var currentLevelNode: Level = null
 var expectedSpokenToIndices = {
 	"Tavern": [
 		[0,1,2],
-		[1],
-		[0]
+		[1,4],
+		[0,3]
 	],
 	"Forest": [
 		[],
@@ -37,8 +41,8 @@ var expectedSpokenToIndices = {
 	],
 	"Town": [
 		[],
-		[2],
-		[]
+		[2,5,6],
+		[3]
 	]
 }
 
@@ -53,12 +57,16 @@ var PeopleSpokenTo = [
 		false, #forestkids
 		false, #tavernkeep
 		false, #marketwitch
-		false, #farmer
-		
+		false, #farmer,
+		false, #adventurers
+		false, #juggling girl,
+		false, #outsider merchant
 	],
 	[ #day1 evening
 		false, #orc
-		false, #farmer
+		false, #farmer,
+		false, #tavernkeep,
+		false, #witch
 	]
 ]
 var Day1StoryChoices = [ # If specific story choice chains not listed out - choices have little meaning. -1 is default value
@@ -77,8 +85,9 @@ var timeOfDay: int = 0 : set = setTimeOfDay
 
 func initGameState():
 	var savedData = Save_Loader.gameData
+	savedData.clear()
 		
-	PeopleSpokenTo = savedData.safeGet("PeopleSpokenTo", [[false,false,false],[false, false, false, false],[false, false]])
+	PeopleSpokenTo = savedData.safeGet("PeopleSpokenTo", [[false,false,false],[false, false, false, false, false, false, false],[false, false, false, false]])
 	Day1StoryChoices = savedData.safeGet("Day1.StoryChoices", [-1,-1,-1,-1,-1])
 	
 	SpokeToOrcDayOneMorning = PeopleSpokenTo[0][0]
@@ -89,9 +98,13 @@ func initGameState():
 	SpokeToTavernkeepDayOneNoon = PeopleSpokenTo[1][1]
 	SpokeToMarketWitchDayOneNoon = PeopleSpokenTo[1][2]
 	SpokeToFarmerDayOneNoon = PeopleSpokenTo[1][3]
+	SpokeToAdventurersDayOneNoon = PeopleSpokenTo[1][4]
+	SpokeToJugglingGirlDayOneNoon = PeopleSpokenTo[1][5]
 	
 	SpokeToOrcDayOneEvening = PeopleSpokenTo[2][0]
 	SpokeToFarmerDayOneEvening = PeopleSpokenTo[2][1]	
+	SpokeToTavernkeepDayOneEvening = PeopleSpokenTo[2][2]	
+	SpokeToWitchDayOneEvening = PeopleSpokenTo[2][3]	
 	
 	currentDay = savedData.safeGet("CurrentDay", 1)
 	timeOfDay = savedData.safeGet("TimeOfDay", 0)
@@ -155,6 +168,14 @@ func setSpokeToTavernkeepDayOneNoon(newValue: bool):
 	SpokeToTavernkeepDayOneNoon = newValue
 	setDay1PeopleSpokenTo(1,1,newValue)
 	
+func setSpokeToAdventurersDayOneNoon(newValue: bool):
+	SpokeToAdventurersDayOneNoon = newValue
+	setDay1PeopleSpokenTo(1,3,newValue)
+	
+func setSpokeToJugglingGirlDayOneNoon(newValue: bool):
+	SpokeToJugglingGirlDayOneNoon = newValue
+	setDay1PeopleSpokenTo(1,5,newValue)
+	
 func setSpokeToKidsDayOneNoon(newValue: bool):
 	SpokeToKidsDayOneNoon = newValue
 	setDay1PeopleSpokenTo(1,0,newValue)
@@ -174,6 +195,14 @@ func setSpokeToFarmerDayOneNoon(newValue: bool):
 func setSpokeToFarmerDayOneEvening(newValue: bool):
 	SpokeToFarmerDayOneEvening = newValue
 	setDay1PeopleSpokenTo(2,1,newValue)	
+	
+func setSpokeToTavernkeepDayOneEvening(newValue: bool):
+	SpokeToTavernkeepDayOneEvening = newValue
+	setDay1PeopleSpokenTo(2,2,newValue)	
+	
+func setSpokeToWitchDayOneEvening(newValue: bool):
+	SpokeToWitchDayOneEvening = newValue
+	setDay1PeopleSpokenTo(2,4,newValue)	
 
 func setCurrentDay(newValue):
 	currentDay = newValue

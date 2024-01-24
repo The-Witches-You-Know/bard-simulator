@@ -1,20 +1,21 @@
-[gd_scene load_steps=42 format=3 uid="uid://bywu72xv1pgx0"]
+[gd_scene load_steps=43 format=3 uid="uid://bywu72xv1pgx0"]
 
 [ext_resource type="Script" path="res://scripts/levels/level.gd" id="1_bmea0"]
 [ext_resource type="PackedScene" uid="uid://by276q5li4uq4" path="res://scenes/levels/objects/exit_area.tscn" id="2_kjn8m"]
 [ext_resource type="Texture2D" uid="uid://dhdkhh02d8fav" path="res://assets/spriteSheets/Taverntrans.png" id="2_wq1eb"]
 [ext_resource type="PackedScene" uid="uid://ddnkxck5qdfcv" path="res://scenes/agents/player.tscn" id="3_76q1e"]
 [ext_resource type="PackedScene" uid="uid://cou5jrmy23vew" path="res://scenes/agents/speaker.tscn" id="4_ycs7s"]
-[ext_resource type="Resource" uid="uid://bijdg1ericjtl" path="res://dialogue/TavernkeepDayOneMorning.dialogue" id="6_fh7a7"]
+[ext_resource type="Resource" uid="uid://bijdg1ericjtl" path="res://dialogue/TavernkeepMorning.dialogue" id="6_fh7a7"]
 [ext_resource type="Texture2D" uid="uid://cn7eu58mgswuy" path="res://assets/spriteSheets/Tavern.png" id="6_j46gc"]
-[ext_resource type="Resource" uid="uid://prrvr227bm8x" path="res://dialogue/TavernTavernkeepDayOneNoon.dialogue" id="7_lflut"]
+[ext_resource type="Resource" uid="uid://prrvr227bm8x" path="res://dialogue/TavernkeepNoon.dialogue" id="7_lflut"]
+[ext_resource type="Resource" uid="uid://divva2ni6xxqg" path="res://dialogue/TavernkeepEvening.dialogue" id="8_qjmvo"]
 [ext_resource type="SpriteFrames" uid="uid://bumodeeonmfgh" path="res://assets/animations/oldBard.tres" id="9_324ne"]
 [ext_resource type="Resource" uid="uid://ccrwlfuwohndh" path="res://dialogue/OldBardDayOneMorning.dialogue" id="9_wlmhq"]
 [ext_resource type="Resource" uid="uid://bpmrpir7x7wiq" path="res://dialogue/OrcDayOneMorning.dialogue" id="11_0df84"]
 [ext_resource type="Script" path="res://scripts/agents/groupSpeaker.gd" id="11_5tiwi"]
-[ext_resource type="Resource" uid="uid://cxd5d6qtmvdph" path="res://dialogue/ForestKidsDayOneNoon.dialogue" id="12_c7oj3"]
 [ext_resource type="SpriteFrames" uid="uid://dpp8x4v6nirgq" path="res://assets/animations/adventurer1.tres" id="13_1n1pk"]
 [ext_resource type="Script" path="res://scripts/agents/groupSpeakerPart.gd" id="13_7001r"]
+[ext_resource type="Resource" uid="uid://bw7sly2qupojg" path="res://dialogue/TavernAdventurers.dialogue" id="13_fh77x"]
 [ext_resource type="SpriteFrames" uid="uid://dlwvbr6sikea0" path="res://assets/animations/adventurer2.tres" id="14_v41n7"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_58reg"]
@@ -688,7 +689,7 @@ y_sort_enabled = true
 position = Vector2(308.416, 79.8147)
 speakerName = "Tavernkeep"
 actionName = "Talk"
-dialogues = Array[Resource("res://addons/dialogue_manager/dialogue_resource.gd")]([ExtResource("6_fh7a7"), ExtResource("7_lflut"), null])
+dialogues = Array[Resource("res://addons/dialogue_manager/dialogue_resource.gd")]([ExtResource("6_fh7a7"), ExtResource("7_lflut"), ExtResource("8_qjmvo")])
 animationFrames = SubResource("SpriteFrames_42n8p")
 collider = SubResource("RectangleShape2D_uvnwh")
 
@@ -705,7 +706,7 @@ collider = SubResource("RectangleShape2D_uvnwh")
 [node name="Adventurers" type="StaticBody2D" parent="." node_paths=PackedStringArray("speakerParts")]
 script = ExtResource("11_5tiwi")
 actionName = "Talk"
-dialogues = Array[Resource("res://addons/dialogue_manager/dialogue_resource.gd")]([ExtResource("12_c7oj3"), ExtResource("12_c7oj3"), ExtResource("12_c7oj3")])
+dialogues = Array[Resource("res://addons/dialogue_manager/dialogue_resource.gd")]([null, ExtResource("13_fh77x"), null])
 speakerParts = [NodePath("Adventurer1"), NodePath("Adventurer2")]
 
 [node name="Adventurer1" parent="Adventurers" node_paths=PackedStringArray("parent") instance=ExtResource("4_ycs7s")]
@@ -713,7 +714,7 @@ z_index = -1
 y_sort_enabled = true
 position = Vector2(1223, 260)
 script = ExtResource("13_7001r")
-speakerName = "Girl"
+speakerName = "Woman"
 animationFrames = ExtResource("13_1n1pk")
 collider = SubResource("RectangleShape2D_jxqpu")
 parent = NodePath("..")
@@ -723,7 +724,7 @@ z_index = -1
 y_sort_enabled = true
 position = Vector2(1619, 260)
 script = ExtResource("13_7001r")
-speakerName = "Boy"
+speakerName = "Man"
 animationFrames = ExtResource("14_v41n7")
 collider = SubResource("RectangleShape2D_81tvr")
 parent = NodePath("..")
