@@ -1,0 +1,58 @@
+~ start
+
+
+Orc: Oh, it's you again. 
+Orc: What, you wanted to hear my story again or what?
+Orc: Can't remember all the details?
+# Only if player knows truth (from talking to the farmer)
+- No, I can. In fact, I know details you didn't want to share the first time around. 
+	Orc: That gods damned Farm boy simply couldn't keep his mouth shut, could he?
+	Orc: Damn it all. 
+	- Tell me why I shouldn't tell the whole town. 
+		Orc: Cause you'd be doing me a disservice!
+		Orc: Today's the first day I get to sit here, drink a drink. 
+		Orc: You've no idea how cruel these people are to those different than them. 
+		Orc: You get to prance around in your fine clothes and with a mentor to vouch for you. 
+		Orc: I had nothing. 
+		Orc: now I have something. 
+		Orc: You'd take that from me?
+		- Now that you put it that way... 
+			Orc: So, what will you, Bard?
+			- I'll let you keep your glory. 
+				Orc: Pah, what you call glory I call basic human decency. 
+				Orc: ...
+				Orc: But thank you. 
+				=> END 
+			- Lies are wrong, one way or the other. I'll tell them. 
+				The Orc merely sighs. 
+				End of conversation. 
+				=> END 
+			- I'll keep out of it. 
+				Orc: Whatever
+				=> END 
+		- You'd rather live off of lies?
+			Orc: Yes. 
+			Orc: Yes I would much rather live at all. 
+			- Well, I won't let you. 
+				Orc: Bitter bastard. 
+				The orc graps for the drink, apparently tempted to spill it all over you. 
+				=> END 
+			- Fine, but spread your tale on your own. 
+				Orc: I don't want your help anyways. 
+				=> END 
+			- I'll tell your tale as you told it, but only because that makes for a better story. 
+				Orc: Fine by me. 
+	- Thank you for confirming his tale as the truth then. 
+		Orc: Oh piss off. 
+		=> END
+- In fact, I did. Remind me of your glory. 
+	The Orc once again regales you of her glorious conquest, though a few of the finer details have been lost or changed in the meantime. 
+	To no ones harm though, it's clear she's had one too many drinks. 
+	Freshly reminded of her deeds, you feel confident that you could repeat them before an audience. 
+	=> END
+- No, just came to say hi. 
+Orc: Alright. 
+Orc: Bye. 
+=> END 
+
+=> END
