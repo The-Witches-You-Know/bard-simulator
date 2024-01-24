@@ -31,10 +31,11 @@ var musicStreams = {
 
 func setMusic(id: String):
 	next_track = id
+	var prev_volume = $MusicPlayer.volume_db
 	var tween = get_tree().create_tween()
 	tween.tween_property($MusicPlayer, "volume_db", -50, 2)
 	tween.tween_callback(Callable(self, "on_fade"))
-	tween.tween_property($MusicPlayer, "volume_db", 0, 3)
+	tween.tween_property($MusicPlayer, "volume_db", prev_volume, 3)
 
 func on_fade():
 	$MusicPlayer.stream = musicStreams[next_track]
