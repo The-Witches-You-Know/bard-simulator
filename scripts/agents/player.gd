@@ -6,6 +6,7 @@ const SPEED = 600.0
 var topColliderOffset: int = 30
 var collisionDirection: Vector2 = Vector2(0,0)
 
+var speaker: ISpeaker = null
 var paused = false
 
 func _ready():
@@ -18,8 +19,6 @@ func pause_entity():
 
 func unpause_entity():
 	paused = false
-
-var speaker: Speaker = null
 
 func _physics_process(_delta):
 
@@ -69,13 +68,16 @@ func setCameraLimit(boundaryMin: Vector2, boundaryMax: Vector2):
 
 func _on_area_2d_area_entered(area):
 	var parent = area.get_parent()
-	if parent is Speaker:
+	if parent is ISpeaker:
 		speaker = parent
-		speaker.onAreaEntered()
+		parent.onAreaEntered()
+	elif parent is GroupSpeakerPart:
+		speaker = parent.parent
+		parent.onAreaEntered()
 
 
 func _on_area_2d_area_exited(area):
-	var parent = area.get_parent()
-	if parent == speaker:
-		speaker.onAreaExited()
+	var parent = area.get_parent()	
+	if (parent is ISpeaker and parent == speaker) or (parent is GroupSpeakerPart and parent.parent == speaker):
+		parent.onAreaExited()
 		speaker = null

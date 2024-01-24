@@ -54,6 +54,7 @@ func pass_time():
 		
 	GameStateHolder.setTimeOfDay(time)
 	ui.set_time(time)
+	GameStateHolder.currentLevelNode = null
 
 func on_scene_load():
 	current = load(dict[level_to_load]).instantiate()

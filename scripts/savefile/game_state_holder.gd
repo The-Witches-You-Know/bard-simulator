@@ -21,22 +21,42 @@ var KnowsAboutAdventurers: bool = false: set = setKnowsAboutAdventurers
 
 var currentLevel: String = "tavern": set = setCurrentLevel
 
-var currentSpeaker: Speaker = null
+var currentSpeaker: ISpeaker = null
+var currentLevelNode: Level = null
 
-var Day1PeopleSpokenTo = [
-	[ #morning
+var expectedSpokenToIndices = {
+	"Tavern": [
+		[0,1,2],
+		[1],
+		[0]
+	],
+	"Forest": [
+		[],
+		[0,3],
+		[1]
+	],
+	"Town": [
+		[],
+		[2],
+		[]
+	]
+}
+
+
+var PeopleSpokenTo = [
+	[ #day1 morning
 		false, #orc
 		false, #tavernkeep
 		false, #bard
 	],
-	[ #noon
+	[ #day1 noon
 		false, #forestkids
 		false, #tavernkeep
 		false, #marketwitch
 		false, #farmer
 		
 	],
-	[ #evening
+	[ #day1 evening
 		false, #orc
 		false, #farmer
 	]
@@ -58,20 +78,20 @@ var timeOfDay: int = 0 : set = setTimeOfDay
 func initGameState():
 	var savedData = Save_Loader.gameData
 		
-	Day1PeopleSpokenTo = savedData.safeGet("Day1.PeopleSpokenTo", [[false,false,false],[false, false, false, false],[false, false]])
+	PeopleSpokenTo = savedData.safeGet("PeopleSpokenTo", [[false,false,false],[false, false, false, false],[false, false]])
 	Day1StoryChoices = savedData.safeGet("Day1.StoryChoices", [-1,-1,-1,-1,-1])
 	
-	SpokeToOrcDayOneMorning = Day1PeopleSpokenTo[0][0]
-	SpokeToTavernkeepDayOneMorning = Day1PeopleSpokenTo[0][1]
-	SpokeToOldBardDayOneMorning = Day1PeopleSpokenTo[0][2]
+	SpokeToOrcDayOneMorning = PeopleSpokenTo[0][0]
+	SpokeToTavernkeepDayOneMorning = PeopleSpokenTo[0][1]
+	SpokeToOldBardDayOneMorning = PeopleSpokenTo[0][2]
 	
-	SpokeToKidsDayOneNoon = Day1PeopleSpokenTo[1][0]
-	SpokeToTavernkeepDayOneNoon = Day1PeopleSpokenTo[1][1]
-	SpokeToMarketWitchDayOneNoon = Day1PeopleSpokenTo[1][2]
-	SpokeToFarmerDayOneNoon = Day1PeopleSpokenTo[1][3]
+	SpokeToKidsDayOneNoon = PeopleSpokenTo[1][0]
+	SpokeToTavernkeepDayOneNoon = PeopleSpokenTo[1][1]
+	SpokeToMarketWitchDayOneNoon = PeopleSpokenTo[1][2]
+	SpokeToFarmerDayOneNoon = PeopleSpokenTo[1][3]
 	
-	SpokeToOrcDayOneEvening = Day1PeopleSpokenTo[2][0]
-	SpokeToFarmerDayOneEvening = Day1PeopleSpokenTo[2][1]	
+	SpokeToOrcDayOneEvening = PeopleSpokenTo[2][0]
+	SpokeToFarmerDayOneEvening = PeopleSpokenTo[2][1]	
 	
 	currentDay = savedData.safeGet("CurrentDay", 1)
 	timeOfDay = savedData.safeGet("TimeOfDay", 0)
@@ -93,8 +113,10 @@ func setCurrentLevel(newValue: String):
 	SaveLoader.gameData.setOrPut("CurrentLevel", newValue)
 	
 func setDay1PeopleSpokenTo(index1: int, index2: int, value: bool):
-	Day1PeopleSpokenTo[index1][index2] = value
-	SaveLoader.gameData.setOrPut("Day1.PeopleSpokenTo", Day1PeopleSpokenTo)
+	PeopleSpokenTo[index1][index2] = value
+	if(currentLevelNode != null):
+		currentLevelNode.onSpokenToStatusChanged()
+	SaveLoader.gameData.setOrPut("PeopleSpokenTo", PeopleSpokenTo)
 	
 	#   ||      ||         ||
 	#   \/      \/         \/
@@ -161,5 +183,5 @@ func setTimeOfDay(newValue):
 	timeOfDay = newValue
 	SaveLoader.gameData.setOrPut("TimeOfDay", newValue)
 	
-func setCurrentSpeaker(speaker: Speaker):
+func setCurrentSpeaker(speaker: ISpeaker):
 	currentSpeaker = speaker

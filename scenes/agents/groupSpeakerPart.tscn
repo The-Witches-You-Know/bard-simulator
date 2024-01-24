@@ -1,6 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://cou5jrmy23vew"]
+[gd_scene load_steps=5 format=3 uid="uid://b1i6olwablh63"]
 
-[ext_resource type="Script" path="res://scripts/agents/speaker.gd" id="1_siml4"]
+[ext_resource type="Script" path="res://scripts/agents/groupSpeakerPart.gd" id="1_gklyy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hrlk0"]
 size = Vector2(60, 149)
@@ -16,9 +16,9 @@ animations = [{
 [sub_resource type="LabelSettings" id="LabelSettings_gsp8t"]
 font_size = 24
 
-[node name="speaker" type="StaticBody2D"]
-script = ExtResource("1_siml4")
-speakerName = "Test"
+[node name="groupSpeakerPart" type="StaticBody2D"]
+script = ExtResource("1_gklyy")
+speakerName = null
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_hrlk0")

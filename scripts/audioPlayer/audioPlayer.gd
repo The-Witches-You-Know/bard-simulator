@@ -44,8 +44,12 @@ func on_fade():
 var speechStreamResources: Array[AudioStream] = []
 
 func setSpeaker(speaker: String):
-	for path in speechStreamPaths[speaker]:
-		speechStreamResources.append(load(path))
+	speechStreamResources = []
+	if len(speaker) > 0 and speaker in speechStreamPaths.keys():
+		for path in speechStreamPaths[speaker]:
+			speechStreamResources.append(load(path))
+	if (isTalking):
+		_on_speech_player_finished()
 
 func _on_speech_player_finished():	
 	if isTalking:
