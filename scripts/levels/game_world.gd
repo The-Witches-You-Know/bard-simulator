@@ -59,14 +59,14 @@ func pass_time():
 func on_scene_load():
 	current = load(dict[level_to_load]).instantiate()
 	add_child(current)
-	print(level_to_load)
 	GameStateHolder.currentLevel = level_to_load
 	
 	if level_to_load == "map":
 		Audio_Player.setMusic("menu")
 	else:
+		Audio_Player.setSFX(level_to_load)
 		# After merging come back to this
 		if time == time_of_day.NIGHT:
-			Audio_Player.setMusic("tavern" + "_" + "night")
+			Audio_Player.setMusic(level_to_load + "_" + "night")
 		else:
-			Audio_Player.setMusic("tavern" + "_" + "day")
+			Audio_Player.setMusic(level_to_load + "_" + "day")

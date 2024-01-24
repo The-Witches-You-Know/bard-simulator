@@ -21,6 +21,7 @@ bus = &"Ambience"
 bus = &"SFX"
 
 [node name="SFXPlayer" type="AudioStreamPlayer" parent="."]
+volume_db = -10.0
 bus = &"SFX"
 
 [connection signal="finished" from="SpeechPlayer" to="." method="_on_speech_player_finished"]
