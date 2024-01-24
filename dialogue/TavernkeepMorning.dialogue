@@ -27,10 +27,8 @@ Tavernkeep: Howdy there Sport. What can I get you?
 	Tavernkeep: Who knows, maybe some schmucks out there haven't heard of me yet. 
 	- I just might
 		Tavernkeep: Do what you will.
-		=> Jokes
 	- I won't forget. 
 		Tavernkeep: Glad to hear it.
-		=> Jokes
 - You must hear plenty of rumors, anything juicy?
 	Tavernkeep: Oh I know stuff that could start civil wars around here. 
 	Tavernkeep: Don't take it the wrong way, I'm not gonna tell them to a stranger. 
@@ -44,7 +42,6 @@ Tavernkeep: Howdy there Sport. What can I get you?
 		- I have better places to be at night.
 			Tavernkeep: Suit yourself.
 
-~ Jokes
 Tavernkeep: If you're in desperate need of material, I could let you in on some of my jokes. Real Knee slappers those.
 - Sure! I love Jokes. 
 	Tavernkeep: Alright alright 
@@ -60,8 +57,7 @@ Tavernkeep: If you're in desperate need of material, I could let you in on some 
 		The Tavernkeep grins wide.
 	- Laugh wholeheartedly 
 		He joins in your laughter. 
-	Tavernkeep: Feel free to use it yourself.
-	=> END
+	Tavernkeep: Feel free to use it yourself. => END
 - Please no. 
 	Tavernkeep: Suit yourself. 
 

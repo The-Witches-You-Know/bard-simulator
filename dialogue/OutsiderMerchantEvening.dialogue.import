@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_11"
+type="Resource"
+uid="uid://ceu5s4xxd7nm0"
+path="res://.godot/imported/OutsiderMerchantEvening.dialogue-6e17a9fc41557f8df64edf26020ee4f0.tres"
+
+[deps]
+
+source_file="res://dialogue/OutsiderMerchantEvening.dialogue"
+dest_files=["res://.godot/imported/OutsiderMerchantEvening.dialogue-6e17a9fc41557f8df64edf26020ee4f0.tres"]
+
+[params]
+
+defaults=true

@@ -1,0 +1,112 @@
+~ start
+
+A troupe of three adventurers has gathered around a table
+Their adventuring profession is glear as day to glean
+The first, and presumably the leader, is a scrawny man in light clothes. He wears a hood though he has chosen to show his face at the current juncture. 
+The second is a woman of extraordinary magical ability. You have but a slight penchant for feeling it and she is positivly oozing with magic. Her gaze is focused on the table and the meager food in front of her however
+The third, if they can be called a person at all, is a giant suit of armor. There is no hole or imperfection in it that would show skin and confirm the identiy of those who presumably house within it. 
+- Wait for them to notice your presence. 
+	The armored one is the one to first look yor way. 
+	THey stare however, and do not speak. Neither to you nor to their companions about your presence. 
+	The leader and woman begin mumbling of something, still not aware that you are here. 
+	- Eavesdrop on them. Perhaps the big one is mute?
+		Armor: We are being watched. 
+		Both of the others turn, the man confused, the woman suspicious of you.
+		- Introduce yourself as the resident Bard. 
+			The Leader smiles and extends a hand. 
+			The other two simply regard you with cold gazes. 
+			Man: Ah! I should have recognized you as one. That ones on me. 
+			Man: Pray tell what can we do for you?
+			- Might you have a story or two to share?
+				Man: Wish I had. 
+				The woman sighs, her posture deflates. 
+				Man: No, unfortunatly not any that you'd like hearing. 
+				- Why would that be?
+					Man: We've not had much success. And you'd hardly want to hear our sorry tales, would you?
+					- A truth can always be told a little more excitingly. 
+						Man: Aye, I can relate to the desire to manipulate. 
+						Man: But please refrain from doing so. 
+						Man: I'll not share them this day. Maybe if some more times passes, and it becomes but an unpleasent memory, maybe then you'll get to hear what happened. 
+						Man: Until then, please leave us alone. 
+						=> END
+					- I understand. Still, a sufficient tragedy can be catharthic all the while!
+						The woman slams her hand on the table and turns to face you. 
+						Woman: They aren't tragedies, they're comedies! 
+						Woman: It's embarrasing the way these past ones have gone. No you won't hear them. 
+						Woman: Off with you. I came here for a good drink and a distraction, not to dredge this all back up again. 
+						Woman: Goodbye!
+						=> END 
+				- Well then, a good day to you either way. 
+					Man: Aye. Good day to you as well, Bard.
+					Man: Would that you find better luck elsewhere. 
+					=> END
+			- I'll be staying here a while, so I thought I'd get to know the resident adventurers. 
+				Man: Resident is a big far stretched. We too only wanted to pass by, but this town is so plagued by the supernatural that its hard to do so in good conscience. 
+				Man: You'll come to understand what I mean soon enough. 
+				# If Orc story heard
+				- Tell him of the Orc's tale. 
+					Man: Aye. We ourself could hardly believe it, but there truly is a dead draconic being in the fields. 
+					Man: It seems we have a true hero on our hands. 
+					The womans fist clenches and unclenches a few times in quick succession. 
+					Woman: Will you stop talking about it already?
+					Man: Apologies. 
+					Man: It's best if you leave us now. 
+					=> END 
+				- then you'll be off. You can't wait to find out. 
+					Man: Take care. 
+					=> END
+		- Excuse yourself. 
+			They pay a leaving bard no mind. 
+			=> END 
+	- Loudly clear your throat to get their attention. 
+		The Leader is startled at first, but then smiles and extends a hand. 
+		The other two simply regard you with cold gazes. 
+		Man: Ah! The new bard is finally in town. 
+		Man: Pray tell what can we do for you?
+		- Might you have a story or two to share?
+			Man: Wish I had. 
+			The woman sighs, her posture deflates. 
+			Man: No, unfortunatly not any that you'd like hearing. 
+			- Why would that be?
+				Man: We've not had much success. And you'd hardly want to hear our sorry tales, would you?
+				- A truth can always be told a little more excitingly. 
+					Man: Aye, I can relate to the desire to manipulate. 
+					Man: But please refrain from doing so. 
+					Man: I'll not share them this day. Maybe if some more times passes, and it becomes but an unpleasent memory, maybe then you'll get to hear what happened. 
+					Man: Until then, please leave us alone. 
+					=> END
+				- I understand. Still, a sufficient tragedy can be catharthic all the while!
+					The woman slams her hand on the table and turns to face you. 
+					Woman: They aren't tragedies, they're comedies! 
+					Woman: It's embarrasing the way these past ones have gone. No you won't hear them. 
+					Woman: Off with you. I came here for a good drink and a distraction, not to dredge this all back up again. 
+					Woman: Goodbye!
+					=> END 
+			- Well then, a good day to you either way. 
+				Man: Aye. Good day to you as well, Bard.
+				Man: Would that you find better luck elsewhere. 
+				=> END
+	- Walk away. You don't have a good feeling about them. 
+		They regard you with no words, and pay your leaving no mind. 
+		=> END 
+	
+- Adress them first, ask if they have been part of any heroic action!
+	The woman laughs for some odd reason. 
+	Woman: No. 
+	She turns away from you, and it seems that's all you're going to get from the trio. 
+	- Pry further. Why not?
+		Man: Well. It's a long story. 
+		Man: I'm not sure you'll want to hear it. 
+		- On the contrary! You Love long stories!
+		- Understand that he means to communicate that he'd rather not share it. Leave them
+			Man: Aye. 
+			Man: I hope you have better luck elsewhere. 
+			Man: A good day to you and yours. 
+			=> END 
+	- Let them sulk. Clearly something happened and they don't want to talk. 
+		=> END 
+- Walk away, you don't have a good feeling about this. 
+They regard you with no words, and pay your leaving no mind. 
+=> END 
+
+=> END

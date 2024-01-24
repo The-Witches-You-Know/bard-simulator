@@ -1,0 +1,81 @@
+~ start
+
+#Play this dialogue only if the player has talked to him morning. 
+Tavernkeep: Oh, back so soon?
+Tavernkeep: What brings you around this time?
+- I really liked that joke. Wanted to hear more. 
+	Tavernkeep: Far be it from me to deny you then!
+	Tavernkeep: Alright, What should you do if you get into a pillow fight with death?
+	Tavernkeep: Go on, guess?
+	- Aim for the eyes?
+	- Take his scythe?
+	- Stuff feathers down his throat?
+	Tavernkeep: No no!
+	Tavernkeep: You need to...
+	Tavernkeep: Prepare for Reaper Cushions!
+	- Groan
+		Tavernkeep: Hey you asked for it.
+	- Fake laugh
+		He looks a bit hurt, but chuckles alongside you
+	- Cheer
+		He seem very well pleased with himself, and you for that matter. 
+	Tavernkeep: Hey! I have another if you wanna hear it?
+	- Oh for sure!
+		Tavernkeep: Why do seagulls fly over the ocean?
+		Tavernkeep: Come on, you can get this one. 
+		- Because they are birds?
+		- Because they eat fish?
+		Tavernkeep: no!
+		Tavernkeep: Because if they flew over the bay, we'd call them bagels!
+		- Laugh out loud
+			Tavernkeep: Good one, right?
+		- Groan
+			Tavernkeep: Come on! 
+			Tavernkeep: It was good. 
+			- It was. I'm just still reeling from it. 
+				Tavernkeep: Well, if you're so inclined, you can always just work them into your stories. 
+				Tavernkeep: Although, maybe not here. 
+				Tavernkeep: No one else really wants to hear them anymore. 
+				- I'll try. 
+					Tavernkeep: Don't you worry, I'll be listening real close, so long you chose my establishment to tell your stories of course. 
+					Tavernkeep: Now off with you! You've been around here long enough. 
+					=> END 
+				- My standards for storytelling are higher than bad puns
+					Tavernkeep: Well then. 
+					Tavernkeep: On with you. If you won't use my jokes I've got better things to do. 
+					=> END 
+			- It was bad. So bad it was good again. 
+				Tavernkeep: You hurt me, Bard. 
+				Tavernkeep: I'll be the judge if your stories are better, hear me!
+				=> END 
+		- Leave
+		As you leave you hear some satisfied chuckling
+		=> END 
+	- Please no
+	He pouts, and seems to consider telling it anyways, but thinks better of it and just lets you off the hook. 
+	=> END 
+- I can well do as I please!
+	Tavernkeep: Right. Sure you can. 
+	He raises an eyebrow, unsure what you mean. 
+	- That means this is the most interesting spot in town. 
+	- I'm just not in the mood to move much. 
+		Tavernkeep: Ah. 
+		Tavernkeep: Well let me tell you, you're not going to find your stories just sitting around here. 
+		Tavernkeep: Might I suggest the market? 
+		Tavernkeep: No one would notice, or bat an eye, if you eavesdropped a little. 
+		- A good idea actually. 
+			Tavernkeep: Right?
+			Tavernkeep: I have plenty of those!
+			Tavernkeep: Now off with you. 
+			Tavernkeep: The evening drinks aren't gonna prepare themselves. 
+			=> END 
+		- I have standards good sir!
+			Tavernkeep: That'd be new. 
+			Tavernkeep: Last bard sure as heck didn't
+			Tavernkeep: But oh well. 
+			Tavernkeep: Suit yourself. 
+			=> END 
+- Nevermind. I'll be on my way. 
+	Tavernkeep: Sure thing bud. 
+
+=> END

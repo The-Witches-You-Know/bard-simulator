@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_11"
+type="Resource"
+uid="uid://bw7sly2qupojg"
+path="res://.godot/imported/TavernAdventurers.dialogue-bb99649ae11900ed756c76e7b9bcbcfc.tres"
+
+[deps]
+
+source_file="res://dialogue/TavernAdventurers.dialogue"
+dest_files=["res://.godot/imported/TavernAdventurers.dialogue-bb99649ae11900ed756c76e7b9bcbcfc.tres"]
+
+[params]
+
+defaults=true

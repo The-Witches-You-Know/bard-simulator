@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_11"
+type="Resource"
+uid="uid://c16rhfr4cbehj"
+path="res://.godot/imported/JugglingGirlMarket.dialogue-46242d094f705541fccb6ad18274b2ad.tres"
+
+[deps]
+
+source_file="res://dialogue/JugglingGirlMarket.dialogue"
+dest_files=["res://.godot/imported/JugglingGirlMarket.dialogue-46242d094f705541fccb6ad18274b2ad.tres"]
+
+[params]
+
+defaults=true

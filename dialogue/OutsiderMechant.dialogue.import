@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_11"
+type="Resource"
+uid="uid://db8xv1yt6e7sp"
+path="res://.godot/imported/OutsiderMechant.dialogue-a399a501ca9dcdadcad3fffc1262c57b.tres"
+
+[deps]
+
+source_file="res://dialogue/OutsiderMechant.dialogue"
+dest_files=["res://.godot/imported/OutsiderMechant.dialogue-a399a501ca9dcdadcad3fffc1262c57b.tres"]
+
+[params]
+
+defaults=true
