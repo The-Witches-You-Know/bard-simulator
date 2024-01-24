@@ -20,13 +20,13 @@ var speechStreamPaths = {
 }
 
 var musicStreams = {
-	"menu": "",
+	"menu": preload("res://assets/audio/V_Basic_Cozy_Acoustic.wav") as AudioStream,
 	"tavern_day": preload("res://assets/audio/music/Tavern_Day_1.0.wav") as AudioStream,
-	"tavern_night": "",
-	"forest_day": "",
-	"forest_night": "",
-	"market_day": "",
-	"market_night": ""
+	"tavern_night": preload("res://assets/audio/music/Tavern_Day_1.0.wav") as AudioStream,
+	"forest_day": preload("res://assets/audio/music/Tavern_Day_1.0.wav") as AudioStream,
+	"forest_night": preload("res://assets/audio/music/Tavern_Day_1.0.wav") as AudioStream,
+	"market_day": preload("res://assets/audio/music/Tavern_Day_1.0.wav") as AudioStream,
+	"market_night": preload("res://assets/audio/music/Tavern_Day_1.0.wav") as AudioStream
 }
 
 func setMusic(id: String):
