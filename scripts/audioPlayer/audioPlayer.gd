@@ -17,6 +17,20 @@ var speechStreamPaths = {
 		]
 }
 
+var musicStreams = {
+	"menu": "",
+	"tavern_day": preload("res://assets/audio/music/Tavern_Day_1.0.wav") as AudioStream,
+	"tavern_night": "",
+	"forest_day": "",
+	"forest_night": "",
+	"market_day": "",
+	"market_night": ""
+}
+
+func setMusic(id: String):
+	$MusicPlayer.stream = musicStreams[id]
+	$MusicPlayer.play()
+
 var speechStreamResources: Array[AudioStream] = []
 
 func setSpeaker(speaker: String):
@@ -57,5 +71,3 @@ func triggerSpeechPlayer():
 		speechPlayer.stream = speechStreamResources.pick_random()
 		speechPlayer.pitch_scale = randf_range(0.88, 1.15)
 		speechPlayer.play()
-	
-	

@@ -59,3 +59,4 @@ func on_scene_load():
 	current = load(dict[level_to_load]).instantiate()
 	add_child(current)
 	GameStateHolder.currentLevel = level_to_load
+	Audio_Player.setMusic("tavern_day")
