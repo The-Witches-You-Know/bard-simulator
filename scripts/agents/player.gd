@@ -29,23 +29,26 @@ func _physics_process(_delta):
 	var inputY = Input.get_axis ("character_up" , "character_down")
 	var input_direction = Vector2(inputX, inputY)
 	velocity = input_direction.normalized() * SPEED
-	
 
 	if inputY == -1:
-		#$AnimationPlayer.play("up", 1, 4)
-		pass
+		$AnimatedSprite2D.play("walk_up")
+		$AnimatedSprite2D.flip_h = false
+		Audio_Player.playSFX()
 	elif inputY == 1:
-		#$AnimationPlayer.play("down", 1, 4)
-		pass
+		$AnimatedSprite2D.play("walk_down")
+		$AnimatedSprite2D.flip_h = false
+		Audio_Player.playSFX()
 	elif inputX == 1:
-		#$AnimationPlayer.play("right", 1, 4)
-		pass
+		$AnimatedSprite2D.play("walk_right")
+		$AnimatedSprite2D.flip_h = false
+		Audio_Player.playSFX()
 	elif inputX == -1:
-		#$AnimationPlayer.play("left", 1, 4)
-		pass
+		$AnimatedSprite2D.play("walk_right")
+		$AnimatedSprite2D.flip_h = true
+		Audio_Player.playSFX()
 	elif velocity == Vector2(0, 0):
-		#$AnimationPlayer.stop()
-		pass
+		$AnimatedSprite2D.flip_h = false
+		$AnimatedSprite2D.play("idle")
 	
 	# if collider is in the direction where the player is going, dont move and slide
 	if (velocity == Vector2(0, 0) and collisionDirection != Vector2(0,0)):

@@ -12,6 +12,9 @@ func _on_options_button_up():
 	$MarginContainer/Panel/MarginContainer/VBoxContainer/OptionsLabel.visible = true
 	$MarginContainer/Panel/MarginContainer/VBoxContainer/MainPaused.visible = false
 	$MarginContainer/Panel/MarginContainer/VBoxContainer/SettingsMenuPanel.visible = true
+	
+	var sm = $MarginContainer/Panel/MarginContainer/VBoxContainer/SettingsMenuPanel as SettingsMenu
+	sm.update_values()
 
 func _on_exit_button_up():
 	# SAVE GAME HERE

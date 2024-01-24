@@ -1,7 +1,15 @@
-[gd_scene load_steps=3 format=3 uid="uid://gattw60noxps"]
+[gd_scene load_steps=5 format=3 uid="uid://gattw60noxps"]
 
 [ext_resource type="Script" path="res://scripts/ui/paused_scene.gd" id="1_b8f16"]
 [ext_resource type="PackedScene" uid="uid://daqlbvtppcfs" path="res://scenes/ui/settings_menu_panel.tscn" id="2_edxst"]
+[ext_resource type="Theme" uid="uid://dn1o6shwhi1wx" path="res://shaders-themes/main_theme.tres" id="2_ptnhr"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hbbt4"]
+bg_color = Color(0.176471, 0.176471, 0.176471, 0.886275)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
 
 [node name="Paused" type="Control"]
 layout_mode = 3
@@ -26,6 +34,8 @@ theme_override_constants/margin_bottom = 100
 
 [node name="Panel" type="Panel" parent="MarginContainer"]
 layout_mode = 2
+theme = ExtResource("2_ptnhr")
+theme_override_styles/panel = SubResource("StyleBoxFlat_hbbt4")
 
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer/Panel"]
 layout_mode = 1

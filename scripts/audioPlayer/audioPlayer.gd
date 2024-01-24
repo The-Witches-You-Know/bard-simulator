@@ -25,9 +25,26 @@ var musicStreams = {
 	"tavern_night": preload("res://assets/audio/music/Tavern_Day_1.0.wav") as AudioStream,
 	"forest_day": preload("res://assets/audio/music/Tavern_Day_1.0.wav") as AudioStream,
 	"forest_night": preload("res://assets/audio/music/Tavern_Day_1.0.wav") as AudioStream,
-	"market_day": preload("res://assets/audio/music/Tavern_Day_1.0.wav") as AudioStream,
-	"market_night": preload("res://assets/audio/music/Tavern_Day_1.0.wav") as AudioStream
+	"town_day": preload("res://assets/audio/music/Tavern_Day_1.0.wav") as AudioStream,
+	"town_night": preload("res://assets/audio/music/Tavern_Day_1.0.wav") as AudioStream
 }
+
+var playersfx = {
+	"tavern": preload("res://assets/audio/sfx/Running_on_Wood.wav") as AudioStream, # Wood
+	"town": preload("res://assets/audio/sfx/Running_on_Gravel.wav") as AudioStream, # Gravel
+	"forest": preload("res://assets/audio/sfx/Running_on_Grass.wav") as AudioStream # Grass
+}
+
+func setSFX(id: String):
+	$SFXPlayer.stream = playersfx[id]
+
+# pass stop to stop
+func playSFX():
+	
+	if $SFXPlayer.playing:
+		return
+	
+	$SFXPlayer.play()
 
 func setMusic(id: String):
 	next_track = id
