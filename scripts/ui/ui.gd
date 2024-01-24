@@ -6,6 +6,7 @@ class_name interface
 
 @onready var LoadingSceneRef = $LoadingScene as LoadingScene
 @onready var EndGameRef = $EndGame as EndGame
+@onready var CreditsRef = $Credits as Credits
 
 func switch_ui_state(state):
 

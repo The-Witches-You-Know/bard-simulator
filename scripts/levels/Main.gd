@@ -32,7 +32,7 @@ func switch_state(state):
 		global.PAUSED:
 			ui.switch_ui_state(state)
 		global.CREDITS:
-			ui.LoadingSceneRef.play_transition("fade_out", Callable(self, "transition_for_basic_ui"), "fade_in")
+			ui.LoadingSceneRef.play_transition("fade_out", Callable(self, "transition_for_credits"), "fade_in")
 		global.END_GAME:
 			ui.LoadingSceneRef.play_transition("fade_out", Callable(self, "transition_for_basic_ui"), "fade_in")
 			ui.EndGameRef.load_endgame()
@@ -53,3 +53,8 @@ func transition_menu_callback():
 
 func transition_for_basic_ui():
 	ui.switch_ui_state(current_state)
+	
+func transition_for_credits():
+	ui.switch_ui_state(current_state)
+	ui.CreditsRef.start()
+	
