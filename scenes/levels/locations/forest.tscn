@@ -11,10 +11,10 @@
 [ext_resource type="PackedScene" uid="uid://cou5jrmy23vew" path="res://scenes/agents/speaker.tscn" id="9_iqj0g"]
 [ext_resource type="Resource" uid="uid://div13srwwpvur" path="res://dialogue/Farmer.dialogue" id="10_eh7lq"]
 [ext_resource type="Texture2D" uid="uid://dd8r14n7pk8l" path="res://assets/spriteSheets/forestnpcs.png" id="11_w3imv"]
+[ext_resource type="Texture2D" uid="uid://62lkgkhno8gt" path="res://assets/sprites/forest/Drake.png" id="12_aoqwx"]
 [ext_resource type="Script" path="res://scripts/agents/groupSpeaker.gd" id="12_xbfko"]
 [ext_resource type="Resource" uid="uid://cxd5d6qtmvdph" path="res://dialogue/ForestKidsDayOneNoon.dialogue" id="13_iacr7"]
 [ext_resource type="Script" path="res://scripts/agents/groupSpeakerPart.gd" id="14_il4e0"]
-[ext_resource type="Texture2D" uid="uid://62lkgkhno8gt" path="res://assets/sprites/forest/Drake.png" id="12_aoqwx"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hyj83"]
 texture = ExtResource("2_5x54p")
@@ -1789,7 +1789,7 @@ texture = ExtResource("12_aoqwx")
 script = ExtResource("12_xbfko")
 actionName = "Talk"
 dialogues = Array[Resource("res://addons/dialogue_manager/dialogue_resource.gd")]([null, ExtResource("13_iacr7"), null])
-speakerParts = [NodePath(""), NodePath("")]
+speakerParts = [NodePath("Boy"), NodePath("Girl"), NodePath("Older boy")]
 
 [node name="Boy" parent="Kids" node_paths=PackedStringArray("parent") instance=ExtResource("9_iqj0g")]
 z_index = -1
@@ -1799,24 +1799,24 @@ script = ExtResource("14_il4e0")
 speakerName = "Boy"
 animationFrames = SubResource("SpriteFrames_tb7d5")
 collider = SubResource("RectangleShape2D_p8juv")
-parent = NodePath("")
+parent = NodePath("..")
 
 [node name="Girl" parent="Kids" node_paths=PackedStringArray("parent") instance=ExtResource("9_iqj0g")]
 z_index = -1
 y_sort_enabled = true
-position = Vector2(1214, 791)
+position = Vector2(1229, 778)
 script = ExtResource("14_il4e0")
 speakerName = "Girl"
 animationFrames = SubResource("SpriteFrames_q377f")
 collider = SubResource("RectangleShape2D_wct34")
-parent = NodePath("")
+parent = NodePath("..")
 
 [node name="Older boy" parent="Kids" node_paths=PackedStringArray("parent") instance=ExtResource("9_iqj0g")]
 z_index = -1
 y_sort_enabled = true
-position = Vector2(1498, 492)
+position = Vector2(1690, 736)
 script = ExtResource("14_il4e0")
 speakerName = "Older boy"
 animationFrames = SubResource("SpriteFrames_8ityp")
 collider = SubResource("RectangleShape2D_wct34")
-parent = NodePath("")
+parent = NodePath("..")

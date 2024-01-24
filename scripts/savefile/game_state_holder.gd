@@ -202,7 +202,7 @@ func setSpokeToTavernkeepDayOneEvening(newValue: bool):
 	
 func setSpokeToWitchDayOneEvening(newValue: bool):
 	SpokeToWitchDayOneEvening = newValue
-	setDay1PeopleSpokenTo(2,4,newValue)	
+	setDay1PeopleSpokenTo(2,3,newValue)	
 
 func setCurrentDay(newValue):
 	currentDay = newValue

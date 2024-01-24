@@ -22,7 +22,7 @@ func unpause_entity():
 
 func _physics_process(_delta):
 
-	if paused:
+	if paused or Audio_Player.balloonReference != null:
 		return
 
 	var inputX = Input.get_axis("character_left", "character_right")
@@ -60,6 +60,8 @@ func _physics_process(_delta):
 	else:
 		collisionDirection = Vector2(0,0)
 	if Input.is_action_just_pressed("interact") and speaker != null:
+		$AnimatedSprite2D.flip_h = false
+		$AnimatedSprite2D.play("idle")
 		speaker.onInteract()
 		
 func setCameraLimit(boundaryMin: Vector2, boundaryMax: Vector2):
