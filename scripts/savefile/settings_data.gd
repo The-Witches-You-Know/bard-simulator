@@ -9,8 +9,8 @@ func _init():
 func loadFile():
 	super.loadFile()
 	setMusicVolume(getMusicVolume())
-	setAmbienceVolume(getMasterVolume())
-	setMasterVolume(getAmbienceVolume())
+	setAmbienceVolume(getAmbienceVolume())
+	setMasterVolume(getMasterVolume())
 	setSFXVolume(getSFXVolume())
 
 # set SFX volume. Permitted values: 0 - 10

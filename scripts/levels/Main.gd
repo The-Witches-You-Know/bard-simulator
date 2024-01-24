@@ -18,13 +18,13 @@ func switch_state(state):
 	
 	ui.switch_ui_state(state)
 	
+	current_state = state
+	
 	match state:
 		global.MENU:
-			current_state = global.MENU
+			pass
 		global.GAME_WORLD:
-			current_state = global.GAME_WORLD
 			current = game_world_scene.instantiate()
 			add_child(current)
 		global.PAUSED:
-			current_state = global.PAUSED
 			pass

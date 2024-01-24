@@ -60,7 +60,8 @@ Tavernkeep: If you're in desperate need of material, I could let you in on some 
 		The Tavernkeep grins wide.
 	- Laugh wholeheartedly 
 		He joins in your laughter. 
-	Tavernkeep: Feel free to use it yourself. => END
+	Tavernkeep: Feel free to use it yourself.
+	=> END
 - Please no. 
 	Tavernkeep: Suit yourself. 
 
