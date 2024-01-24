@@ -18,16 +18,10 @@ var SpokeToFarmerDayOneEvening: bool = false: set = setSpokeToFarmerDayOneEvenin
 var SpokeToTavernkeepDayOneEvening: bool = false: set = setSpokeToTavernkeepDayOneEvening
 var SpokeToWitchDayOneEvening: bool = false: set = setSpokeToWitchDayOneEvening
 
-var KnowsAboutOrcStory: bool = false: set = setKnowsAboutOrcStory
 var KnowsOrcLied: bool = false: set = setKnowsOrcLied
 var FarmerAngry: bool = false: set = setFarmerAngry
 var KnowsAboutAdventurers: bool = false: set = setKnowsAboutAdventurers
 var DrakeInspected: bool = false: set = setDrakeInspected
-
-var currentLevel: String = "tavern": set = setCurrentLevel
-
-var currentSpeaker: ISpeaker = null
-var currentLevelNode: Level = null
 
 var expectedSpokenToIndices = {
 	"Tavern": [
@@ -87,6 +81,14 @@ var Day1StoryEnding = "" : set = setDay1StoryEnding
 var currentDay: int = 1 : set = setCurrentDay
 var timeOfDay: int = 0 : set = setTimeOfDay
 
+var currentLevel: String = "tavern": set = setCurrentLevel
+
+# temporary game state values, not to be saved
+
+var currentSpeaker: ISpeaker = null
+var currentLevelNode: Level = null
+var mortalPicked: bool = false
+
 func initGameState():
 	var savedData = Save_Loader.gameData
 		
@@ -117,7 +119,6 @@ func initGameState():
 	currentDay = savedData.safeGet("CurrentDay", 1)
 	timeOfDay = savedData.safeGet("TimeOfDay", 0)
 	
-	KnowsAboutOrcStory = savedData.safeGet("KnowsAboutOrcStory", false)
 	KnowsOrcLied = savedData.safeGet("KnowsOrcLied", false)
 	
 	FarmerAngry = savedData.safeGet("FarmerAngry", false)
@@ -150,10 +151,6 @@ func getPlayerSpokeWithFarmer() -> bool:
 func setSpokeToOrcDayOneEvening(newValue: bool):
 	SpokeToOrcDayOneEvening = newValue
 	setDay1PeopleSpokenTo(2,0,newValue)
-	
-func setKnowsAboutOrcStory(newValue: bool):
-	KnowsAboutOrcStory = newValue
-	SaveLoader.gameData.setOrPut("KnowsAboutOrcStory", newValue)
 	
 func setKnowsOrcLied(newValue: bool):
 	KnowsOrcLied = newValue

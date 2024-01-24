@@ -5,26 +5,27 @@ Witch: You're a new face.
 Witch: Let me introduce myself. 
 Witch: I am the resident witch. A purveyor of potions, magical spells, and whatever else your heart desires. 
 Witch: You will not learn my name. None have. So do not ask. 
+=> dialogueProper
+
+~ dialogueProper
 Witch: Now then, what ails you?
-#give this option if the player inspected the drake or talked in depth with the farmer.
-- Tell her of the weird drake. 
+- Tell her of the weird drake. [if GameStateHolder.KnowOrcLied or GameStateHolder.DrakeInspected]
 	You spare no detail. The powdery scales, the urge to sneeze, the kids incessance to play with it. 
 	Witch: Worrying. 
 	Witch: I have heard of similar diseases before, but they were always contained to their specific species. 
 	Witch: They have yet to spread to others. That doesn't mean the kids are safe, the younger a mortal the weaker. 
 	- Mortal?
+		set GameStateHolder.mortalPicked = true
 		Witch: Did you really think me susceptible to death?
 		Witch: I expected better. 
-	# Offer this choice again if "mortal" was picked
-	- Should I go look for them?
+	- Should I go look for them? [if GameStateHolder.mortalPicked]
 		Witch: Knowing those kids that's a fools errand. Just wait for them, they will come back to their homes whenever they grow hungry. 
 		Witch: However, I do ask that you warn the town not to touch the body. I myself will go take care of the issue at hand. 
 		Witch: That does mean your bardic talents are wasted for the night, but think of it as a worthy sacrifice for the towns sake. 
 		Witch: Can I count on you to inform them? You mustn't even move far, simply step onto the marketsplace central platform and announce it. 
 		Witch: You'll find the right words, I'm sure. 
 		- Sure, I'll do it. 
-		# If orc story heard
-		- There's this amazing Orc Hero that needs praising though
+		- There's this amazing Orc Hero that needs praising though [if GameStateHolder.SpokeToOrcDayOneMorning]
 			Witch: You would truly put a ballad above the wellbeing of the peopple?
 			- Sure I would. 
 				Witch: I thank you many times over. 
@@ -67,11 +68,11 @@ Witch: Now then, what ails you?
 	Witch: My power comes from it. 
 	Witch: Should I ever share it, they too will be privy to it. 
 	Witch: And I am not interested in sharing. 
-	# loop back to the previous choice
+	=> dialogueProper
 - Bid her a good day. 
 	Witch: Fare thee well. 
 	=> DialogueEnd
 
 ~ DialogueEnd
-set GameStateHolder.SpokeToTavernkeepDayOneMorning = true
+set GameStateHolder.SpokeToWitchDayOneEvening = true
 => END
