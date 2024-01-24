@@ -1,12 +1,15 @@
-[gd_scene load_steps=49 format=3 uid="uid://djbuy4xg064kh"]
+[gd_scene load_steps=52 format=3 uid="uid://djbuy4xg064kh"]
 
 [ext_resource type="Script" path="res://scripts/levels/level.gd" id="1_hg0ys"]
 [ext_resource type="PackedScene" uid="uid://ddnkxck5qdfcv" path="res://scenes/agents/player.tscn" id="2_kvnnx"]
 [ext_resource type="Texture2D" uid="uid://csgljlev1li35" path="res://assets/spriteSheets/Marketplace (2).png" id="2_ls6df"]
 [ext_resource type="PackedScene" uid="uid://by276q5li4uq4" path="res://scenes/levels/objects/exit_area.tscn" id="3_odhgs"]
 [ext_resource type="PackedScene" uid="uid://cou5jrmy23vew" path="res://scenes/agents/speaker.tscn" id="5_8vqie"]
+[ext_resource type="Resource" uid="uid://db8xv1yt6e7sp" path="res://dialogue/OutsiderMechant.dialogue" id="6_ov2m8"]
 [ext_resource type="Resource" uid="uid://lgpsuw3mkajg" path="res://dialogue/MarketWitchDayOneNoon.dialogue" id="6_q7vov"]
 [ext_resource type="Texture2D" uid="uid://clu1nr8yu7x5u" path="res://assets/spriteSheets/market.png" id="7_qh7ak"]
+[ext_resource type="Resource" uid="uid://cgpaqgyq0dxnf" path="res://dialogue/WitchEvening.dialogue" id="9_8xq48"]
+[ext_resource type="Resource" uid="uid://c16rhfr4cbehj" path="res://dialogue/JugglingGirlMarket.dialogue" id="10_7cyus"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ac2qs"]
 texture = ExtResource("2_ls6df")
@@ -671,7 +674,7 @@ y_sort_enabled = true
 position = Vector2(1114, 955)
 speakerName = "MerchantOutside"
 actionName = "Talk"
-dialogues = Array[Resource("res://addons/dialogue_manager/dialogue_resource.gd")]([null, ExtResource("6_q7vov"), null])
+dialogues = Array[Resource("res://addons/dialogue_manager/dialogue_resource.gd")]([null, ExtResource("6_ov2m8"), null])
 animationFrames = SubResource("SpriteFrames_b4mpn")
 collider = SubResource("RectangleShape2D_jbuee")
 colliderTransformPosition = Vector2(0, 60)
@@ -681,7 +684,7 @@ y_sort_enabled = true
 position = Vector2(-231, 146)
 speakerName = "MerchantLocal"
 actionName = "Talk"
-dialogues = Array[Resource("res://addons/dialogue_manager/dialogue_resource.gd")]([null, ExtResource("6_q7vov"), null])
+dialogues = Array[Resource("res://addons/dialogue_manager/dialogue_resource.gd")]([null, null, null])
 animationFrames = SubResource("SpriteFrames_7vih8")
 collider = SubResource("RectangleShape2D_jbuee")
 colliderTransformPosition = Vector2(0, 60)
@@ -691,7 +694,7 @@ y_sort_enabled = true
 position = Vector2(-312, 769)
 speakerName = "Witch"
 actionName = "Talk"
-dialogues = Array[Resource("res://addons/dialogue_manager/dialogue_resource.gd")]([null, ExtResource("6_q7vov"), null])
+dialogues = Array[Resource("res://addons/dialogue_manager/dialogue_resource.gd")]([null, ExtResource("6_q7vov"), ExtResource("9_8xq48")])
 animationFrames = SubResource("SpriteFrames_2x6m6")
 collider = SubResource("RectangleShape2D_jbuee")
 colliderTransformPosition = Vector2(0, 60)
@@ -701,7 +704,7 @@ y_sort_enabled = true
 position = Vector2(1435, 266)
 speakerName = "LittleGirl"
 actionName = "Talk"
-dialogues = Array[Resource("res://addons/dialogue_manager/dialogue_resource.gd")]([null, ExtResource("6_q7vov"), null])
+dialogues = Array[Resource("res://addons/dialogue_manager/dialogue_resource.gd")]([null, null, ExtResource("10_7cyus")])
 animationFrames = SubResource("SpriteFrames_35igg")
 collider = SubResource("RectangleShape2D_jbuee")
 colliderTransformPosition = Vector2(0, 60)

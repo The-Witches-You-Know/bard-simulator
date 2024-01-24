@@ -27,20 +27,23 @@ He hasn't yet noticed you.
 					Merchant: Yes, it was supposed to be. 
 					Merchant: Now, if you'll excuse me, I have a stall to set up. 
 					He turns, and regards you no more. 
-					=> END
+					=> DialogueEnd
 				- He, I get the joke.  
 					Merchant: What joke?
 					He squints at you, trying to figure out the deception. 
 					Then he rolls his eyes and turns away from you. 
-					=> END
+					=> DialogueEnd
 			- I'm not a therapist!
 				Merchant: You asked!
 				He turns away from you and grumbles something under his breath
-				=> END 
+				=> DialogueEnd 
 	- Oh, my mistake. I'll come back later. 
 		He huffs. 
-		=> END
+		=> DialogueEnd
 - Leave him to his affairs
-	=> END
+	=> DialogueEnd
 
+
+~ DialogueEnd
+set GameStateHolder.SpokeToOutsiderMerchant = true
 => END
