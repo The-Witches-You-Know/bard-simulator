@@ -1,4 +1,4 @@
-[gd_scene load_steps=55 format=3 uid="uid://20eg01liwra2"]
+[gd_scene load_steps=57 format=3 uid="uid://20eg01liwra2"]
 
 [ext_resource type="PackedScene" uid="uid://by276q5li4uq4" path="res://scenes/levels/objects/exit_area.tscn" id="1_svyfn"]
 [ext_resource type="Script" path="res://scripts/levels/level.gd" id="1_u066t"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://cou5jrmy23vew" path="res://scenes/agents/speaker.tscn" id="9_iqj0g"]
 [ext_resource type="Resource" uid="uid://div13srwwpvur" path="res://dialogue/Farmer.dialogue" id="10_eh7lq"]
 [ext_resource type="Texture2D" uid="uid://dd8r14n7pk8l" path="res://assets/spriteSheets/forestnpcs.png" id="11_w3imv"]
+[ext_resource type="Script" path="res://scripts/agents/drake.gd" id="12_65hq0"]
 [ext_resource type="Texture2D" uid="uid://62lkgkhno8gt" path="res://assets/sprites/forest/Drake.png" id="12_aoqwx"]
 [ext_resource type="Script" path="res://scripts/agents/groupSpeaker.gd" id="12_xbfko"]
 [ext_resource type="Resource" uid="uid://cxd5d6qtmvdph" path="res://dialogue/ForestKidsDayOneNoon.dialogue" id="13_iacr7"]
@@ -1532,8 +1533,11 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bngqi"]
 size = Vector2(70, 100)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j715k"]
+size = Vector2(700, 300)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_68jcp"]
-size = Vector2(741, 330.5)
+size = Vector2(800, 375)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_u1gp2"]
 atlas = ExtResource("11_w3imv")
@@ -1775,15 +1779,22 @@ colliderTransformPosition = Vector2(0, 30)
 
 [node name="Drake" type="StaticBody2D" parent="."]
 position = Vector2(1310, 471)
+script = ExtResource("12_65hq0")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Drake"]
 position = Vector2(46, 43.75)
-shape = SubResource("RectangleShape2D_68jcp")
+shape = SubResource("RectangleShape2D_j715k")
 
 [node name="Sprite2D" type="Sprite2D" parent="Drake"]
 position = Vector2(33, -31)
 scale = Vector2(0.75, 0.75)
 texture = ExtResource("12_aoqwx")
+
+[node name="Area2D" type="Area2D" parent="Drake"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Drake/Area2D"]
+position = Vector2(46, 43.75)
+shape = SubResource("RectangleShape2D_68jcp")
 
 [node name="Kids" type="StaticBody2D" parent="." node_paths=PackedStringArray("speakerParts")]
 script = ExtResource("12_xbfko")
@@ -1820,3 +1831,5 @@ speakerName = "Older boy"
 animationFrames = SubResource("SpriteFrames_8ityp")
 collider = SubResource("RectangleShape2D_wct34")
 parent = NodePath("..")
+
+[connection signal="area_entered" from="Drake/Area2D" to="Drake" method="_on_area_2d_area_entered"]

@@ -79,6 +79,8 @@ func _on_area_2d_area_entered(area):
 	elif parent is GroupSpeakerPart:
 		speaker = parent.parent
 		parent.onAreaEntered()
+	elif parent is Drake:
+		GameStateHolder.DrakeInspected = true
 
 
 func _on_area_2d_area_exited(area):
