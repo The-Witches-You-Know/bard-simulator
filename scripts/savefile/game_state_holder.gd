@@ -69,7 +69,7 @@ var PeopleSpokenTo = [
 		false, #witch
 	]
 ]
-var Day1StoryEnding = "" 
+var Day1StoryEnding = "" : set = setDay1StoryEnding
 #[
 #InMediasRes
 #OrcMonologue
@@ -92,6 +92,7 @@ func initGameState():
 	PeopleSpokenTo = savedData.safeGet("PeopleSpokenTo", [[false,false,false],[false, false, false, false, false, false, false],[false, false, false, false]])
 	if PeopleSpokenTo.map(func(x): return len(x)) != [3,7,4]:
 		savedData.clear()
+		
 		PeopleSpokenTo = savedData.safeGet("PeopleSpokenTo", [[false,false,false],[false, false, false, false, false, false, false],[false, false, false, false]])
 		
 	Day1StoryEnding = savedData.safeGet("Day1.StoryEnding", "")
@@ -137,11 +138,9 @@ func setDay1PeopleSpokenTo(index1: int, index2: int, value: bool):
 		currentLevelNode.onSpokenToStatusChanged()
 	SaveLoader.gameData.setOrPut("PeopleSpokenTo", PeopleSpokenTo)
 	
-	#   ||      ||         ||
-	#   \/      \/         \/
-func setDay1StoryChoices(index: int,value: bool): #please use this instead of setting values directly inside the Day1StoryChoices array
-	Day1StoryChoices[index] = value
-	SaveLoader.gameData.setOrPut("Day1.StoryChoices", Day1StoryChoices)
+func setDay1StoryEnding(newValue: String):
+	Day1StoryEnding = newValue
+	SaveLoader.gameData.setOrPut("Day1.StoryEnding", newValue)
 
 func getPlayerSpokeWithFarmer() -> bool:
 	return SpokeToFarmerDayOneNoon or SpokeToFarmerDayOneEvening

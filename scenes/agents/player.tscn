@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dpxqgr1bjfoqw" path="res://assets/spriteSheets/mc_spritesheet.png" id="2_rycnu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hrlk0"]
-size = Vector2(60, 120)
+size = Vector2(80, 180)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_b48eo"]
 atlas = ExtResource("2_rycnu")
@@ -149,13 +149,13 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mgwv0"]
-size = Vector2(200, 175)
+size = Vector2(250, 200)
 
 [node name="player" type="CharacterBody2D"]
 script = ExtResource("1_6450g")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(2, 15)
+position = Vector2(2, 30)
 shape = SubResource("RectangleShape2D_hrlk0")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
