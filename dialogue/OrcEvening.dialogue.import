@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_11"
+type="Resource"
+uid="uid://c560shfp3bmn4"
+path="res://.godot/imported/OrcEvening.dialogue-c3277b9cb7eb4e2eb3b9eaf04ddcc0f1.tres"
+
+[deps]
+
+source_file="res://dialogue/OrcEvening.dialogue"
+dest_files=["res://.godot/imported/OrcEvening.dialogue-c3277b9cb7eb4e2eb3b9eaf04ddcc0f1.tres"]
+
+[params]
+
+defaults=true
