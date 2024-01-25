@@ -644,7 +644,7 @@ actionName = "Talk"
 dialogues = Array[Resource("res://addons/dialogue_manager/dialogue_resource.gd")]([null, ExtResource("10_eh7lq"), ExtResource("10_eh7lq")])
 animationFrames = SubResource("SpriteFrames_upmes")
 collider = SubResource("RectangleShape2D_bngqi")
-colliderTransformPosition = Vector2(0, 30)
+colliderTransformPosition = Vector2(0, 60)
 
 [node name="Drake" type="StaticBody2D" parent="."]
 position = Vector2(1310, 471)
