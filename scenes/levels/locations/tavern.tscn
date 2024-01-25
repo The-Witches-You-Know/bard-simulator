@@ -614,13 +614,13 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uvnwh"]
-size = Vector2(70, 160)
+size = Vector2(70, 100)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jxqpu"]
-size = Vector2(70, 160)
+size = Vector2(70, 100)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_81tvr"]
-size = Vector2(70, 160)
+size = Vector2(70, 100)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nhrdw"]
 atlas = ExtResource("6_j46gc")
@@ -766,6 +766,7 @@ actionName = "Talk"
 dialogues = Array[Resource("res://addons/dialogue_manager/dialogue_resource.gd")]([ExtResource("6_fh7a7"), ExtResource("7_lflut"), ExtResource("8_qjmvo")])
 animationFrames = SubResource("SpriteFrames_42n8p")
 collider = SubResource("RectangleShape2D_uvnwh")
+colliderTransformPosition = Vector2(0, 60)
 
 [node name="OldBard" parent="." instance=ExtResource("4_ycs7s")]
 z_index = -1
@@ -776,31 +777,33 @@ actionName = "Talk"
 dialogues = Array[Resource("res://addons/dialogue_manager/dialogue_resource.gd")]([ExtResource("9_wlmhq"), null, null])
 animationFrames = ExtResource("9_324ne")
 collider = SubResource("RectangleShape2D_uvnwh")
+colliderTransformPosition = Vector2(0, 60)
 
 [node name="Adventurers" type="StaticBody2D" parent="." node_paths=PackedStringArray("speakerParts")]
+y_sort_enabled = true
 script = ExtResource("11_5tiwi")
 actionName = "Talk"
 dialogues = Array[Resource("res://addons/dialogue_manager/dialogue_resource.gd")]([null, ExtResource("13_fh77x"), null])
 speakerParts = [NodePath("Adventurer1"), NodePath("Adventurer2")]
 
 [node name="Adventurer1" parent="Adventurers" node_paths=PackedStringArray("parent") instance=ExtResource("4_ycs7s")]
-z_index = -1
 y_sort_enabled = true
 position = Vector2(1205, 281)
 script = ExtResource("13_7001r")
 speakerName = "Woman"
 animationFrames = ExtResource("13_1n1pk")
 collider = SubResource("RectangleShape2D_jxqpu")
+colliderTransformPosition = Vector2(0, 60)
 parent = NodePath("..")
 
 [node name="Adventurer2" parent="Adventurers" node_paths=PackedStringArray("parent") instance=ExtResource("4_ycs7s")]
-z_index = -1
 y_sort_enabled = true
 position = Vector2(1525, 283)
 script = ExtResource("13_7001r")
 speakerName = "Man"
 animationFrames = ExtResource("14_v41n7")
 collider = SubResource("RectangleShape2D_81tvr")
+colliderTransformPosition = Vector2(0, 60)
 parent = NodePath("..")
 
 [node name="Orc" parent="." instance=ExtResource("4_ycs7s")]
@@ -812,6 +815,7 @@ actionName = "Talk"
 dialogues = Array[Resource("res://addons/dialogue_manager/dialogue_resource.gd")]([ExtResource("11_0df84"), null, null])
 animationFrames = SubResource("SpriteFrames_2mpwg")
 collider = SubResource("RectangleShape2D_uvnwh")
+colliderTransformPosition = Vector2(0, 60)
 
 [node name="RoomBoundary" type="Node" parent="."]
 
