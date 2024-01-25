@@ -8,6 +8,8 @@ var collisionDirection: Vector2 = Vector2(0,0)
 
 var speaker: ISpeaker = null
 var paused = false
+var timeUntilSleepy = 10
+var currentTime = 0
 
 func _ready():
 	# add to entity group if you want these to be paused will require the below
@@ -20,7 +22,7 @@ func pause_entity():
 func unpause_entity():
 	paused = false
 
-func _physics_process(_delta):
+func _physics_process(delta):
 
 	if paused or Audio_Player.balloonReference != null:
 		return
@@ -33,22 +35,30 @@ func _physics_process(_delta):
 	if inputY == -1:
 		$AnimatedSprite2D.play("walk_up")
 		$AnimatedSprite2D.flip_h = false
-		Audio_Player.playSFX()
 	elif inputY == 1:
 		$AnimatedSprite2D.play("walk_down")
 		$AnimatedSprite2D.flip_h = false
-		Audio_Player.playSFX()
 	elif inputX == 1:
 		$AnimatedSprite2D.play("walk_right")
 		$AnimatedSprite2D.flip_h = false
-		Audio_Player.playSFX()
 	elif inputX == -1:
 		$AnimatedSprite2D.play("walk_right")
 		$AnimatedSprite2D.flip_h = true
-		Audio_Player.playSFX()
 	elif velocity == Vector2(0, 0):
 		$AnimatedSprite2D.flip_h = false
-		$AnimatedSprite2D.play("idle")
+		currentTime += delta
+		if currentTime > 0 and currentTime < timeUntilSleepy:
+			$AnimatedSprite2D.play("idle")
+		else:
+			$AnimatedSprite2D.play("eepy")
+			if (currentTime >= timeUntilSleepy):
+				currentTime = -11
+			
+		
+	if (velocity != Vector2(0,0)):
+		currentTime = 0
+		if $AnimatedSprite2D.frame in [0,2]:
+			Audio_Player.playSFX()
 	
 	# if collider is in the direction where the player is going, dont move and slide
 	if (velocity == Vector2(0, 0) and collisionDirection != Vector2(0,0)):
