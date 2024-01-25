@@ -111,4 +111,5 @@ They regard you with no words, and pay your leaving no mind.
 
 ~ DialogueEnd
 set GameStateHolder.SpokeToAdventurersDayOneNoon = true
+do GameStateHolder.currentSpeaker.onConversationFinished()
 => END

@@ -38,4 +38,5 @@ Orc: Oh, you're a new face. Wanna hear how I killed a Dragon?
 
 ~ DialogueEnd
 set GameStateHolder.SpokeToOrcDayOneMorning = true
+do GameStateHolder.currentSpeaker.onConversationFinished()
 => END

@@ -1,60 +1,64 @@
 ~ start
 
-#If already met this npc
-You see the selfsame man that you had met before
-He is bent over the taverns menu, a handful of coins besides it. 
-He's muttering something under his breath, and the tone of his whispers indicates a great degree of frustation. 
-- Approach him and ask what ails him
-	Merchant: Oh, it's you. 
-	Merchant: It's nothing really, just be on your way. 
-	- Inquire further
-		Merchant: You really wanna know huh?
-		Merchant: Fine. I don't have the money to afford both a meal and a drink. 
-		Merchant: I'm trying to think if I'd rather fall asleep sober or hungry. 
-		- Turn it around, would he rather be drunk or stuffed?
-			Merchant: I guess stuffed. 
-			Merchant: Oh it's not good this way or that way. 
-		- Offer to pay for his drink. That much you can afford. 
-			Merchant: I appreciate it, but I have to decline. 
-			Merchant: I'm in no position to take donations, and I'd rather not start. 
-			Merchant: That's a slipper slope. 
-		Merchant: I'll have to pack up tomorrow. Hope that my wares stay in decent condition until I reach the next village. 
-		Merchant: Find some other place to be outsider in. 
-		- Maybe a well told story could fix his ailings?
-			Merchant: You mean to tell the town that I am honest? 
-			Merchant: Dispell the rumors around me?
-			Merchant: But you are an outsider yourself! Who in their right mind would listen to you. 
-			Merchant: I appreciate the offer, but it does not help. 
-			- Try to inspire some confidence. 
-				Merchant: I suppose it's better than nothing. I could not pay you though, and I wish that you do not spread lies for the sake of helping my reputation. 
-				Merchant: Aye, it would help in the short term, but it would ruin me. 
-				Merchant: What say you we conspire tomorrow? 
-				Merchant: When a new day rises and I can see the world with new eyes. 
-				- Yes, though there still needs to be a story. 
-					Merchant: Of course. 
-					Merchant: I don't know what you plan to do, but I'm sure a talented bard such as you will find something to spin a tale about. 
-					Merchant: Now... leave me to my meal. I think I've chosen. 
-					You watch as he slides the coins onto a single meal, apparently having made his decision
-					=> END
-				- Wait until then, and meet him again. 
-					Merchant: On the morrow, by my stall. You know the one. 
-					=> END 
-			- If he is intent on being miserable, you will not force his hand. 
+if GameStateHolder.SpokeToOutsiderMerchant:
+	You see the selfsame man that you had met before
+	He is bent over the taverns menu, a handful of coins besides it. 
+	He's muttering something under his breath, and the tone of his whispers indicates a great degree of frustation. 
+	- Approach him and ask what ails him
+		Merchant: Oh, it's you. 
+		Merchant: It's nothing really, just be on your way. 
+		- Inquire further
+			Merchant: You really wanna know huh?
+			Merchant: Fine. I don't have the money to afford both a meal and a drink. 
+			Merchant: I'm trying to think if I'd rather fall asleep sober or hungry. 
+			- Turn it around, would he rather be drunk or stuffed?
+				Merchant: I guess stuffed. 
+				Merchant: Oh it's not good this way or that way. 
+			- Offer to pay for his drink. That much you can afford. 
+				Merchant: I appreciate it, but I have to decline. 
+				Merchant: I'm in no position to take donations, and I'd rather not start. 
+				Merchant: That's a slipper slope. 
+			Merchant: I'll have to pack up tomorrow. Hope that my wares stay in decent condition until I reach the next village. 
+			Merchant: Find some other place to be outsider in. 
+			- Maybe a well told story could fix his ailings?
+				Merchant: You mean to tell the town that I am honest? 
+				Merchant: Dispell the rumors around me?
+				Merchant: But you are an outsider yourself! Who in their right mind would listen to you. 
+				Merchant: I appreciate the offer, but it does not help. 
+				- Try to inspire some confidence. 
+					Merchant: I suppose it's better than nothing. I could not pay you though, and I wish that you do not spread lies for the sake of helping my reputation. 
+					Merchant: Aye, it would help in the short term, but it would ruin me. 
+					Merchant: What say you we conspire tomorrow? 
+					Merchant: When a new day rises and I can see the world with new eyes. 
+					- Yes, though there still needs to be a story. 
+						Merchant: Of course. 
+						Merchant: I don't know what you plan to do, but I'm sure a talented bard such as you will find something to spin a tale about. 
+						Merchant: Now... leave me to my meal. I think I've chosen. 
+						You watch as he slides the coins onto a single meal, apparently having made his decision
+						=> DialogueEnd
+					- Wait until then, and meet him again. 
+						Merchant: On the morrow, by my stall. You know the one. 
+						=> DialogueEnd 
+				- If he is intent on being miserable, you will not force his hand. 
+					You see him slide a few of the coins from the meals to the drinks section of the menu. 
+					Then he sighs, grabs his coin and leaves the tavern. 
+					=> DialogueEnd 
+			- You have no solution. Bid him farewell. 
 				You see him slide a few of the coins from the meals to the drinks section of the menu. 
 				Then he sighs, grabs his coin and leaves the tavern. 
-				=> END 
-		- You have no solution. Bid him farewell. 
-			You see him slide a few of the coins from the meals to the drinks section of the menu. 
-			Then he sighs, grabs his coin and leaves the tavern. 
-			=> END 
-	- Do as he says
-		=> END
-- Leave him to his mistery
-	=> END
-	
-	# If player has not met before. 
+				=> DialogueEnd 
+		- Do as he says
+			=> DialogueEnd
+	- Leave him to his mistery
+	=> DialogueEnd
+else:
 	Merchant: Leave me to my misery stranger. 
 	Merchant: I don't need another source of it. 
-	=> END 
+	=> DialogueEnd 
 
+=> DialogueEnd
+
+~ DialogueEnd
+set GameStateHolder.SpokeToOutsiderMerchantEvening = true
+do GameStateHolder.currentSpeaker.onConversationFinished()
 => END

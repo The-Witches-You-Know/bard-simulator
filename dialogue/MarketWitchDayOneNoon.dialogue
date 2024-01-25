@@ -28,4 +28,5 @@ Witch: Why do you ask?
 		Witch: And your kind tends to be horribly annoying as well. 
 		Witch: You have a talent for sticking your nose where it does not belong!
 set GameStateHolder.SpokeToMarketWitchDayOneNoon = true
+do GameStateHolder.currentSpeaker.onConversationFinished()
 => END

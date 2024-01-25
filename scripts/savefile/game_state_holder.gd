@@ -12,11 +12,13 @@ var SpokeToMarketWitchDayOneNoon: bool = false: set = setSpokeToMarketWitchDayOn
 var SpokeToFarmerDayOneNoon: bool = false: set = setSpokeToFarmerDayOneNoon
 var SpokeToAdventurersDayOneNoon: bool = false: set = setSpokeToAdventurersDayOneNoon
 var SpokeToJugglingGirlDayOneNoon: bool = false: set = setSpokeToJugglingGirlDayOneNoon
+var SpokeToOutsiderMerchantDayOneNoon: bool = false: set = setSpokeToOutsiderMerchantDayOneNoon
 
 var SpokeToOrcDayOneEvening: bool = false: set = setSpokeToOrcDayOneEvening
 var SpokeToFarmerDayOneEvening: bool = false: set = setSpokeToFarmerDayOneEvening
 var SpokeToTavernkeepDayOneEvening: bool = false: set = setSpokeToTavernkeepDayOneEvening
 var SpokeToWitchDayOneEvening: bool = false: set = setSpokeToWitchDayOneEvening
+var SpokeToOutsiderMerchantDayOneEvening: bool = false: set = setSpokeToOutsiderMerchantDayOneEvening
 
 var KnowsOrcLied: bool = false: set = setKnowsOrcLied
 var FarmerAngry: bool = false: set = setFarmerAngry
@@ -36,8 +38,8 @@ var expectedSpokenToIndices = {
 	],
 	"Town": [
 		[],
-		[2,5,6],
-		[3]
+		[2,5,6,7,8],
+		[3,4]
 	]
 }
 
@@ -62,6 +64,7 @@ var PeopleSpokenTo = [
 		false, #farmer,
 		false, #tavernkeep,
 		false, #witch
+		false, #outsider merchant
 	]
 ]
 var Day1StoryEnding = "" : set = setDay1StoryEnding
@@ -92,11 +95,11 @@ var mortalPicked: bool = false
 func initGameState():
 	var savedData = Save_Loader.gameData
 		
-	PeopleSpokenTo = savedData.safeGet("PeopleSpokenTo", [[false,false,false],[false, false, false, false, false, false, false],[false, false, false, false]])
-	if PeopleSpokenTo.map(func(x): return len(x)) != [3,7,4]:
+	PeopleSpokenTo = savedData.safeGet("PeopleSpokenTo", [[false,false,false],[false, false, false, false, false, false, false, false],[false, false, false, false, false]])
+	if PeopleSpokenTo.map(func(x): return len(x)) != [3,8,5]:
 		savedData.clear()
 		
-		PeopleSpokenTo = savedData.safeGet("PeopleSpokenTo", [[false,false,false],[false, false, false, false, false, false, false],[false, false, false, false]])
+		PeopleSpokenTo = savedData.safeGet("PeopleSpokenTo", [[false,false,false],[false, false, false, false, false, false, false, false],[false, false, false, false, false]])
 		
 	Day1StoryEnding = savedData.safeGet("Day1.StoryEnding", "")
 	
@@ -184,6 +187,10 @@ func setSpokeToJugglingGirlDayOneNoon(newValue: bool):
 	SpokeToJugglingGirlDayOneNoon = newValue
 	setDay1PeopleSpokenTo(1,5,newValue)
 	
+func setSpokeToOutsiderMerchantDayOneNoon(newValue: bool):
+	SpokeToOutsiderMerchantDayOneNoon = newValue
+	setDay1PeopleSpokenTo(1,6,newValue)
+	
 func setSpokeToKidsDayOneNoon(newValue: bool):
 	SpokeToKidsDayOneNoon = newValue
 	setDay1PeopleSpokenTo(1,0,newValue)
@@ -211,6 +218,10 @@ func setSpokeToTavernkeepDayOneEvening(newValue: bool):
 func setSpokeToWitchDayOneEvening(newValue: bool):
 	SpokeToWitchDayOneEvening = newValue
 	setDay1PeopleSpokenTo(2,3,newValue)	
+	
+func setSpokeToOutsiderMerchantDayOneEvening(newValue: bool):
+	SpokeToOutsiderMerchantDayOneEvening = newValue
+	setDay1PeopleSpokenTo(2,4,newValue)	
 
 func setCurrentDay(newValue):
 	currentDay = newValue

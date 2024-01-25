@@ -43,4 +43,5 @@ It's hard to tell if she's supposed to be there or not since no one else is curr
 
 ~ DialogueEnd
 set GameStateHolder.SpokeToJugglingGirlDayOneNoon = true
+do GameStateHolder.currentSpeaker.onConversationFinished()
 => END

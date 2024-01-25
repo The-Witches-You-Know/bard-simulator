@@ -46,4 +46,5 @@ He hasn't yet noticed you.
 
 ~ DialogueEnd
 set GameStateHolder.SpokeToOutsiderMerchant = true
+do GameStateHolder.currentSpeaker.onConversationFinished()
 => END

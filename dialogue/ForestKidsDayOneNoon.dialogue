@@ -47,4 +47,5 @@ At the very least it seems to be a strong pigment.
 			Older boy: Well... 
 			He sighs, and begins consoling his hurt sibling. 
 set GameStateHolder.SpokeToKidsDayOneNoon = true
+do GameStateHolder.currentSpeaker.onConversationFinished()
 => END

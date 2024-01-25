@@ -1,4 +1,4 @@
-[gd_scene load_steps=52 format=3 uid="uid://djbuy4xg064kh"]
+[gd_scene load_steps=53 format=3 uid="uid://djbuy4xg064kh"]
 
 [ext_resource type="Script" path="res://scripts/levels/level.gd" id="1_hg0ys"]
 [ext_resource type="PackedScene" uid="uid://ddnkxck5qdfcv" path="res://scenes/agents/player.tscn" id="2_kvnnx"]
@@ -8,6 +8,7 @@
 [ext_resource type="Resource" uid="uid://db8xv1yt6e7sp" path="res://dialogue/OutsiderMechant.dialogue" id="6_ov2m8"]
 [ext_resource type="Resource" uid="uid://lgpsuw3mkajg" path="res://dialogue/MarketWitchDayOneNoon.dialogue" id="6_q7vov"]
 [ext_resource type="Texture2D" uid="uid://clu1nr8yu7x5u" path="res://assets/spriteSheets/market.png" id="7_qh7ak"]
+[ext_resource type="Resource" uid="uid://ceu5s4xxd7nm0" path="res://dialogue/OutsiderMerchantEvening.dialogue" id="7_ty58r"]
 [ext_resource type="Resource" uid="uid://cgpaqgyq0dxnf" path="res://dialogue/WitchEvening.dialogue" id="9_8xq48"]
 [ext_resource type="Resource" uid="uid://c16rhfr4cbehj" path="res://dialogue/JugglingGirlMarket.dialogue" id="10_7cyus"]
 
@@ -674,12 +675,13 @@ y_sort_enabled = true
 position = Vector2(1114, 955)
 speakerName = "MerchantOutside"
 actionName = "Talk"
-dialogues = Array[Resource("res://addons/dialogue_manager/dialogue_resource.gd")]([null, ExtResource("6_ov2m8"), null])
+dialogues = Array[Resource("res://addons/dialogue_manager/dialogue_resource.gd")]([null, ExtResource("6_ov2m8"), ExtResource("7_ty58r")])
 animationFrames = SubResource("SpriteFrames_b4mpn")
 collider = SubResource("RectangleShape2D_jbuee")
 colliderTransformPosition = Vector2(0, 60)
 
 [node name="MerchantLocal" parent="." instance=ExtResource("5_8vqie")]
+visible = false
 y_sort_enabled = true
 position = Vector2(-231, 146)
 speakerName = "MerchantLocal"

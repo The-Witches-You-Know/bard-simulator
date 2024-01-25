@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=3 uid="uid://bywu72xv1pgx0"]
+[gd_scene load_steps=46 format=3 uid="uid://bywu72xv1pgx0"]
 
 [ext_resource type="Script" path="res://scripts/levels/level.gd" id="1_bmea0"]
 [ext_resource type="PackedScene" uid="uid://by276q5li4uq4" path="res://scenes/levels/objects/exit_area.tscn" id="2_kjn8m"]
@@ -18,6 +18,7 @@
 [ext_resource type="Script" path="res://scripts/agents/groupSpeakerPart.gd" id="13_7001r"]
 [ext_resource type="Resource" uid="uid://bw7sly2qupojg" path="res://dialogue/TavernAdventurers.dialogue" id="13_fh77x"]
 [ext_resource type="SpriteFrames" uid="uid://dlwvbr6sikea0" path="res://assets/animations/adventurer2.tres" id="14_v41n7"]
+[ext_resource type="Resource" uid="uid://c560shfp3bmn4" path="res://dialogue/OrcEvening.dialogue" id="19_ew1tc"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_58reg"]
 texture = ExtResource("2_wq1eb")
@@ -812,7 +813,7 @@ y_sort_enabled = true
 position = Vector2(-314, 273)
 speakerName = "Orc"
 actionName = "Talk"
-dialogues = Array[Resource("res://addons/dialogue_manager/dialogue_resource.gd")]([ExtResource("11_0df84"), null, null])
+dialogues = Array[Resource("res://addons/dialogue_manager/dialogue_resource.gd")]([ExtResource("11_0df84"), null, ExtResource("19_ew1tc")])
 animationFrames = SubResource("SpriteFrames_2mpwg")
 collider = SubResource("RectangleShape2D_uvnwh")
 colliderTransformPosition = Vector2(0, 60)
