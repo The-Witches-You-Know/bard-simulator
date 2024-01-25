@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=3 uid="uid://bywu72xv1pgx0"]
+[gd_scene load_steps=45 format=3 uid="uid://bywu72xv1pgx0"]
 
 [ext_resource type="Script" path="res://scripts/levels/level.gd" id="1_bmea0"]
 [ext_resource type="PackedScene" uid="uid://by276q5li4uq4" path="res://scenes/levels/objects/exit_area.tscn" id="2_kjn8m"]
@@ -9,7 +9,6 @@
 [ext_resource type="Resource" uid="uid://bijdg1ericjtl" path="res://dialogue/TavernkeepMorning.dialogue" id="6_fh7a7"]
 [ext_resource type="Texture2D" uid="uid://cn7eu58mgswuy" path="res://assets/spriteSheets/Tavern.png" id="6_j46gc"]
 [ext_resource type="Resource" uid="uid://prrvr227bm8x" path="res://dialogue/TavernkeepNoon.dialogue" id="7_lflut"]
-[ext_resource type="Resource" uid="uid://divva2ni6xxqg" path="res://dialogue/TavernkeepEvening.dialogue" id="8_qjmvo"]
 [ext_resource type="SpriteFrames" uid="uid://bumodeeonmfgh" path="res://assets/animations/oldBard.tres" id="9_324ne"]
 [ext_resource type="Resource" uid="uid://ccrwlfuwohndh" path="res://dialogue/OldBardDayOneMorning.dialogue" id="9_wlmhq"]
 [ext_resource type="Resource" uid="uid://bpmrpir7x7wiq" path="res://dialogue/OrcDayOneMorning.dialogue" id="11_0df84"]
@@ -764,13 +763,12 @@ y_sort_enabled = true
 position = Vector2(230, 145)
 speakerName = "Tavernkeep"
 actionName = "Talk"
-dialogues = Array[Resource("res://addons/dialogue_manager/dialogue_resource.gd")]([ExtResource("6_fh7a7"), ExtResource("7_lflut"), ExtResource("8_qjmvo")])
+dialogues = Array[Resource("res://addons/dialogue_manager/dialogue_resource.gd")]([ExtResource("6_fh7a7"), ExtResource("7_lflut"), ExtResource("7_lflut")])
 animationFrames = SubResource("SpriteFrames_42n8p")
 collider = SubResource("RectangleShape2D_uvnwh")
 colliderTransformPosition = Vector2(0, 60)
 
 [node name="OldBard" parent="." instance=ExtResource("4_ycs7s")]
-z_index = -1
 y_sort_enabled = true
 position = Vector2(715, 783)
 speakerName = "OldBard"
@@ -808,7 +806,6 @@ colliderTransformPosition = Vector2(0, 60)
 parent = NodePath("..")
 
 [node name="Orc" parent="." instance=ExtResource("4_ycs7s")]
-z_index = -1
 y_sort_enabled = true
 position = Vector2(-314, 273)
 speakerName = "Orc"
