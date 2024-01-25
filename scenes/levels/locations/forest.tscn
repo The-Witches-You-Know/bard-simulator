@@ -1815,7 +1815,7 @@ parent = NodePath("..")
 [node name="Girl" parent="Kids" node_paths=PackedStringArray("parent") instance=ExtResource("9_iqj0g")]
 z_index = -1
 y_sort_enabled = true
-position = Vector2(1229, 778)
+position = Vector2(1191, 773)
 script = ExtResource("14_il4e0")
 speakerName = "Girl"
 animationFrames = SubResource("SpriteFrames_q377f")
@@ -1825,7 +1825,7 @@ parent = NodePath("..")
 [node name="Older boy" parent="Kids" node_paths=PackedStringArray("parent") instance=ExtResource("9_iqj0g")]
 z_index = -1
 y_sort_enabled = true
-position = Vector2(1690, 736)
+position = Vector2(1531, 746)
 script = ExtResource("14_il4e0")
 speakerName = "Older boy"
 animationFrames = SubResource("SpriteFrames_8ityp")

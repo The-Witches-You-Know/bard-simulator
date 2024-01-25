@@ -701,7 +701,7 @@ colliderTransformPosition = Vector2(0, 60)
 
 [node name="LittleGirl" parent="." instance=ExtResource("5_8vqie")]
 y_sort_enabled = true
-position = Vector2(1435, 266)
+position = Vector2(1430, 282)
 speakerName = "LittleGirl"
 actionName = "Talk"
 dialogues = Array[Resource("res://addons/dialogue_manager/dialogue_resource.gd")]([null, null, ExtResource("10_7cyus")])

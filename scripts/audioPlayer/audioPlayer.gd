@@ -1,7 +1,6 @@
 extends Node
 
 @onready var musicPlayer: AudioStreamPlayer = $MusicPlayer
-@onready var ambiencePlayer: AudioStreamPlayer = $AmbiencePlayer
 @onready var speechPlayer: AudioStreamPlayer = $SpeechPlayer
 @onready var SFXPlayer: AudioStreamPlayer = $SFXPlayer
 
@@ -50,9 +49,9 @@ func setMusic(id: String):
 	next_track = id
 	var prev_volume = $MusicPlayer.volume_db
 	var tween = get_tree().create_tween()
-	tween.tween_property($MusicPlayer, "volume_db", -50, 2)
+	tween.tween_property($MusicPlayer, "volume_db", -50, 1.2)
 	tween.tween_callback(Callable(self, "on_fade"))
-	tween.tween_property($MusicPlayer, "volume_db", prev_volume, 3)
+	tween.tween_property($MusicPlayer, "volume_db", 0, 1.4)
 
 func on_fade():
 	$MusicPlayer.stream = musicStreams[next_track]

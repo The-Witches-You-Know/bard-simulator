@@ -17,6 +17,7 @@ animations = [{
 font_size = 24
 
 [node name="speaker" type="StaticBody2D"]
+scale = Vector2(0.85, 0.85)
 script = ExtResource("1_siml4")
 speakerName = "Test"
 
