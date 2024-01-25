@@ -646,7 +646,7 @@ metadata/_edit_group_ = true
 
 [node name="ExitArea" parent="." instance=ExtResource("3_odhgs")]
 z_index = -1
-position = Vector2(-78, 590)
+position = Vector2(386, 1230)
 
 [node name="player" parent="." instance=ExtResource("2_kvnnx")]
 y_sort_enabled = true

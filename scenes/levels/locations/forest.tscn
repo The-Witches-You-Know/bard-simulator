@@ -1742,7 +1742,7 @@ layer_10/tile_data = PackedInt32Array(-131079, 655361, 9, -65543, 655361, 10, -7
 
 [node name="ExitArea" parent="." instance=ExtResource("1_svyfn")]
 z_index = -1
-position = Vector2(-400, 456)
+position = Vector2(302, 1237)
 
 [node name="player" parent="." instance=ExtResource("2_broqp")]
 y_sort_enabled = true
