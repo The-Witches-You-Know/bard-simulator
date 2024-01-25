@@ -27,9 +27,15 @@ func switch_state(state):
 		global.GAME_WORLD:
 			if last_state == global.PAUSED:
 				ui.switch_ui_state(global.GAME_WORLD)
+				
+				for agents : PlayerBody in get_tree().get_nodes_in_group("entity"):
+					agents.unpause_entity()
 			else:
 				ui.LoadingSceneRef.play_transition("fade_out", Callable(self, "transition_gameworld_callback"), "fade_in")
 		global.PAUSED:
+			for agents : PlayerBody in get_tree().get_nodes_in_group("entity"):
+				agents.pause_entity()
+				
 			ui.switch_ui_state(state)
 		global.CREDITS:
 			ui.LoadingSceneRef.play_transition("fade_out", Callable(self, "transition_for_credits"), "fade_in")
