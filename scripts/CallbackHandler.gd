@@ -11,4 +11,8 @@ func LoadLocation():
 func LoadMap():
 	var game_world = get_node("/root/Main/GameWorld") as GameWorld
 	game_world.pass_time()
-	game_world.switch_level("map")
+	if (GameStateHolder.timeOfDay == 3):
+		game_world.switch_level("night_phase")
+	else:
+		game_world.switch_level("map")
+		

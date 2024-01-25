@@ -1,35 +1,26 @@
-[gd_scene load_steps=2 format=3 uid="uid://bnkohuub8o8g7"]
+[gd_scene load_steps=4 format=3 uid="uid://cfmbb1alyy4ct"]
 
+[ext_resource type="Texture2D" uid="uid://bwgxsltfsteal" path="res://icon.svg" id="1_xlvi3"]
+[ext_resource type="PackedScene" uid="uid://b631gg2mdlrgq" path="res://scenes/levels/map/map_interactable.tscn" id="2_v67ud"]
 [ext_resource type="Texture2D" uid="uid://cpu70ar8xuvnp" path="res://assets/placeholder/testsprite.png" id="4_vwpk8"]
 
-[node name="NightPhase" type="Control"]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
+[node name="WorldMap" type="Node2D"]
 
-[node name="LocationTextureRect" type="TextureRect" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("4_vwpk8")
-expand_mode = 3
-stretch_mode = 6
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(566, 307)
+texture = ExtResource("1_xlvi3")
 
-[node name="BlackoutTextureRect" type="TextureRect" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="Tavern" parent="." instance=ExtResource("2_v67ud")]
+position = Vector2(249, 231)
+location_name = "tavern"
 texture = ExtResource("4_vwpk8")
-expand_mode = 3
-stretch_mode = 6
+
+[node name="Forest" parent="." instance=ExtResource("2_v67ud")]
+position = Vector2(938, 418)
+location_name = "forest"
+texture = ExtResource("4_vwpk8")
+
+[node name="Town" parent="." instance=ExtResource("2_v67ud")]
+position = Vector2(985, 112)
+location_name = "town"
+texture = ExtResource("4_vwpk8")
