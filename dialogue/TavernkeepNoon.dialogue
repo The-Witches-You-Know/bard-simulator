@@ -122,8 +122,8 @@ else:
 
 ~ DialogueEnd
 if (GameStateHolder.timeOfDay == 2):
-	set GameStateHolder.SpokeToFarmerDayOneEvening = true
+	set GameStateHolder.SpokeToTavernkeepDayOneEvening = true
 else:
-	set GameStateHolder.SpokeToFarmerDayOneNoon = true	
+	set GameStateHolder.SpokeToTavernkeepDayOneNoon = true	
 do GameStateHolder.currentSpeaker.onConversationFinished()
 => END

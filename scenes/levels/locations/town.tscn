@@ -364,7 +364,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_jg17y")
 }],
 "loop": true,
-"name": &"new_animation",
+"name": &"talk",
 "speed": 4.0
 }]
 
@@ -672,7 +672,7 @@ shape = SubResource("SegmentShape2D_67ylo")
 
 [node name="MerchantOut" parent="." instance=ExtResource("5_8vqie")]
 y_sort_enabled = true
-position = Vector2(1114, 955)
+position = Vector2(1344, 803)
 speakerName = "MerchantOutside"
 actionName = "Talk"
 dialogues = Array[Resource("res://addons/dialogue_manager/dialogue_resource.gd")]([null, ExtResource("6_ov2m8"), ExtResource("7_ty58r")])
@@ -706,7 +706,7 @@ y_sort_enabled = true
 position = Vector2(1430, 282)
 speakerName = "LittleGirl"
 actionName = "Talk"
-dialogues = Array[Resource("res://addons/dialogue_manager/dialogue_resource.gd")]([null, null, ExtResource("10_7cyus")])
+dialogues = Array[Resource("res://addons/dialogue_manager/dialogue_resource.gd")]([null, ExtResource("10_7cyus"), null])
 animationFrames = SubResource("SpriteFrames_35igg")
 collider = SubResource("RectangleShape2D_jbuee")
 colliderTransformPosition = Vector2(0, 60)

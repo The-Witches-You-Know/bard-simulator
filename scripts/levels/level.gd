@@ -22,6 +22,8 @@ func _ready():
 func onSpokenToStatusChanged():
 	exitArea.can_leave = true
 	var currentDayStage = (GameStateHolder.currentDay-1) * 3 + GameStateHolder.timeOfDay
+	print(GameStateHolder.PeopleSpokenTo)
+	print(GameStateHolder.expectedSpokenToIndices[name][currentDayStage])
 	for expectedIndex in GameStateHolder.expectedSpokenToIndices[name][currentDayStage]:
 		if !GameStateHolder.PeopleSpokenTo[currentDayStage][expectedIndex]:
 			exitArea.can_leave = false

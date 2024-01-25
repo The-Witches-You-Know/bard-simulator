@@ -96,7 +96,7 @@ func initGameState():
 	var savedData = Save_Loader.gameData
 		
 	PeopleSpokenTo = savedData.safeGet("PeopleSpokenTo", [[false,false,false],[false, false, false, false, false, false, false],[false, false, false, false, false]])
-	if PeopleSpokenTo.map(func(x): return len(x)) != [3,8,5]:
+	if PeopleSpokenTo.map(func(x): return len(x)) != [3,7,5]:
 		savedData.clear()
 		
 		PeopleSpokenTo = savedData.safeGet("PeopleSpokenTo", [[false,false,false],[false, false, false, false, false, false, false],[false, false, false, false, false]])
@@ -113,6 +113,7 @@ func initGameState():
 	SpokeToFarmerDayOneNoon = PeopleSpokenTo[1][3]
 	SpokeToAdventurersDayOneNoon = PeopleSpokenTo[1][4]
 	SpokeToJugglingGirlDayOneNoon = PeopleSpokenTo[1][5]
+	SpokeToOutsiderMerchantDayOneNoon = PeopleSpokenTo[1][6]
 	
 	SpokeToOrcDayOneEvening = PeopleSpokenTo[2][0]
 	SpokeToFarmerDayOneEvening = PeopleSpokenTo[2][1]	
