@@ -1,7 +1,7 @@
 ~ start
 
 if !GameStateHolder.SpokeToFarmerDayOneNoon or GameStateHolder.timeOfDay == 1:
-#Play this dialogue only if the player has talked to him morning. 
+#play if noon, or if evening and player didn't talk to tavernkeep at noon. 
 	Tavernkeep: Oh, back so soon?
 	Tavernkeep: What brings you around this time?
 	- I really liked that joke. Wanted to hear more. 
@@ -118,7 +118,6 @@ else:
 	- Gods no! I'll leave you alone.
 		Tavernkeep: Good. 
 		=> DialogueEnd 
-
 	=> DialogueEnd
 
 ~ DialogueEnd

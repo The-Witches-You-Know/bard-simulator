@@ -62,7 +62,7 @@ func on_scene_load():
 	GameStateHolder.currentLevel = level_to_load
 	
 	if level_to_load == "map":
-		Audio_Player.setMusic("menu")
+		Audio_Player.setMusic("map")
 	else:
 		Audio_Player.setSFX(level_to_load)
 		# After merging come back to this

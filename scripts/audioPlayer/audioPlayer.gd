@@ -20,12 +20,13 @@ var speechStreamPaths = {
 
 var musicStreams = {
 	"menu": preload("res://assets/audio/V_Basic_Cozy_Acoustic.wav") as AudioStream,
+	"map": preload("res://assets/audio/music/Map_Theme_1.0.wav") as AudioStream,
 	"tavern_day": preload("res://assets/audio/music/Tavern_Day_1.0.wav") as AudioStream,
-	"tavern_night": preload("res://assets/audio/music/Tavern_Day_1.0.wav") as AudioStream,
-	"forest_day": preload("res://assets/audio/music/Tavern_Day_1.0.wav") as AudioStream,
-	"forest_night": preload("res://assets/audio/music/Tavern_Day_1.0.wav") as AudioStream,
-	"town_day": preload("res://assets/audio/music/Tavern_Day_1.0.wav") as AudioStream,
-	"town_night": preload("res://assets/audio/music/Tavern_Day_1.0.wav") as AudioStream
+	"tavern_night": preload("res://assets/audio/music/Tavern_Night_1.0.wav") as AudioStream,
+	"forest_day": preload("res://assets/audio/music/Forest_Day_1.1.wav") as AudioStream,
+	"forest_night": preload("res://assets/audio/music/Forest_Night_1.0.wav") as AudioStream,
+	"town_day": preload("res://assets/audio/music/Market_Day_1.0.wav") as AudioStream,
+	"town_night": null
 }
 
 var playersfx = {

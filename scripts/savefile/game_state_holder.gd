@@ -29,7 +29,7 @@ var expectedSpokenToIndices = {
 	"Tavern": [
 		[0,1,2],
 		[1,4],
-		[0,3]
+		[0,2]
 	],
 	"Forest": [
 		[],
@@ -38,7 +38,7 @@ var expectedSpokenToIndices = {
 	],
 	"Town": [
 		[],
-		[2,5,6,7,8],
+		[2,5,6],
 		[3,4]
 	]
 }
@@ -95,11 +95,11 @@ var mortalPicked: bool = false
 func initGameState():
 	var savedData = Save_Loader.gameData
 		
-	PeopleSpokenTo = savedData.safeGet("PeopleSpokenTo", [[false,false,false],[false, false, false, false, false, false, false, false],[false, false, false, false, false]])
+	PeopleSpokenTo = savedData.safeGet("PeopleSpokenTo", [[false,false,false],[false, false, false, false, false, false, false],[false, false, false, false, false]])
 	if PeopleSpokenTo.map(func(x): return len(x)) != [3,8,5]:
 		savedData.clear()
 		
-		PeopleSpokenTo = savedData.safeGet("PeopleSpokenTo", [[false,false,false],[false, false, false, false, false, false, false, false],[false, false, false, false, false]])
+		PeopleSpokenTo = savedData.safeGet("PeopleSpokenTo", [[false,false,false],[false, false, false, false, false, false, false],[false, false, false, false, false]])
 		
 	Day1StoryEnding = savedData.safeGet("Day1.StoryEnding", "")
 	
