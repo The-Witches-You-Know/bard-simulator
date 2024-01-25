@@ -7,6 +7,7 @@ var boundaryMax: Vector2 = Vector2()
 
 @onready var boundary: StaticBody2D = $RoomBoundary/BoundaryShape
 @onready var player: PlayerBody = $player
+@onready var exitArea: ExitArea = $ExitArea
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -19,10 +20,8 @@ func _ready():
 	player.setCameraLimit(boundaryMin, boundaryMax)
 	
 func onSpokenToStatusChanged():
-	var showExitArea = true
+	exitArea.can_leave = true
 	var currentDayStage = (GameStateHolder.currentDay-1) * 3 + GameStateHolder.timeOfDay
 	for expectedIndex in GameStateHolder.expectedSpokenToIndices[name][currentDayStage]:
 		if !GameStateHolder.PeopleSpokenTo[currentDayStage][expectedIndex]:
-			showExitArea = false
-	$ExitArea.visible = showExitArea
-	
+			exitArea.can_leave = false
