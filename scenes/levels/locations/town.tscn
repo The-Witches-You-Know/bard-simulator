@@ -232,7 +232,7 @@ texture_region_size = Vector2i(128, 128)
 9:8/0 = 0
 9:8/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 9:8/0/physics_layer_0/angular_velocity = 0.0
-9:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-48, -48, -48, -48, 48, -48, 48, 16, -48, 16)
+9:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-48, -64, -48, -64, 48, -64, 48, 32, -48, 32)
 0:9/0 = 0
 0:9/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:9/0/physics_layer_0/angular_velocity = 0.0
@@ -679,6 +679,7 @@ dialogues = Array[Resource("res://addons/dialogue_manager/dialogue_resource.gd")
 animationFrames = SubResource("SpriteFrames_b4mpn")
 collider = SubResource("RectangleShape2D_jbuee")
 colliderTransformPosition = Vector2(0, 60)
+indicesForChecking = Array[int]([-1, 6, 4])
 
 [node name="MerchantLocal" parent="." instance=ExtResource("5_8vqie")]
 visible = false
@@ -690,6 +691,7 @@ dialogues = Array[Resource("res://addons/dialogue_manager/dialogue_resource.gd")
 animationFrames = SubResource("SpriteFrames_7vih8")
 collider = SubResource("RectangleShape2D_jbuee")
 colliderTransformPosition = Vector2(0, 60)
+indicesForChecking = Array[int]([-1, -1, -1])
 
 [node name="Witch" parent="." instance=ExtResource("5_8vqie")]
 y_sort_enabled = true
@@ -700,6 +702,7 @@ dialogues = Array[Resource("res://addons/dialogue_manager/dialogue_resource.gd")
 animationFrames = SubResource("SpriteFrames_2x6m6")
 collider = SubResource("RectangleShape2D_jbuee")
 colliderTransformPosition = Vector2(0, 60)
+indicesForChecking = Array[int]([-1, 2, 3])
 
 [node name="LittleGirl" parent="." instance=ExtResource("5_8vqie")]
 y_sort_enabled = true
@@ -710,6 +713,7 @@ dialogues = Array[Resource("res://addons/dialogue_manager/dialogue_resource.gd")
 animationFrames = SubResource("SpriteFrames_35igg")
 collider = SubResource("RectangleShape2D_jbuee")
 colliderTransformPosition = Vector2(0, 60)
+indicesForChecking = Array[int]([-1, 5, -1])
 
 [node name="Rando1" type="Sprite2D" parent="."]
 z_index = -2

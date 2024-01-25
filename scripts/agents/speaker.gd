@@ -11,6 +11,7 @@ class_name Speaker
 @export var collider: Shape2D = null : set = setCollisionShape
 @export var animatedSpriteTransformPosition: Vector2 = Vector2(0,0) : set = setAnimatedSpriteTransformPosition
 @export var colliderTransformPosition: Vector2 = Vector2(0,0) : set = setColliderTransformPosition
+@export var indicesForChecking: Array[int] = []
 
 @onready var talkPanel: Panel = $TalkPanel
 @onready var talkPanelLabel: Label = $TalkPanel/Label
@@ -43,22 +44,25 @@ func setColliderTransformPosition(newValue: Vector2):
 	$Area2D/CollisionShape2D.position = colliderTransformPosition
 
 func onAreaEntered():
-	talkPanel.visible = true	
-	if not Engine.is_editor_hint():
-		talkPanelLabel.text = "["+InputMap.action_get_events("interact")[0].as_text().substr(0, 1)+"] "+actionName
+	if not (hasBeenSpokenTo):
+		talkPanel.visible = true	
+		if not Engine.is_editor_hint():
+			talkPanelLabel.text = "["+InputMap.action_get_events("interact")[0].as_text().substr(0, 1)+"] "+actionName
 		
 func onAreaExited():
 	talkPanel.visible = false
 	
 func _ready():
 	if not Engine.is_editor_hint():
-		visible = dialogues[(GameStateHolder.currentDay-1) * 3 + GameStateHolder.timeOfDay] != null
+		var currentDayPart = (GameStateHolder.currentDay-1) * 3 + GameStateHolder.timeOfDay
+		visible = dialogues[currentDayPart] != null
 		setCollisionDisabled(!visible)
 		setSpriteFrames(animationFrames)
 		animatedSprite.play("idle")
+		hasBeenSpokenTo = indicesForChecking[currentDayPart] == -1 or GameStateHolder.PeopleSpokenTo[currentDayPart][indicesForChecking[currentDayPart]]
 
 func onInteract():
-	if(visible):
+	if(visible and not hasBeenSpokenTo):
 		GameStateHolder.setCurrentSpeaker(self)
 		onConversationStarted()
 		var balloon = DialogueManager.show_example_dialogue_balloon(dialogues[(GameStateHolder.currentDay-1) * 3 + GameStateHolder.timeOfDay], "start")
@@ -95,7 +99,7 @@ func onConversationStarted():
 	talkPanel.visible = false
 	
 func onConversationFinished():
-	talkPanel.visible = true
+	hasBeenSpokenTo = true
 	animatedSprite.play("idle")
 	
 	

@@ -2,6 +2,7 @@
 extends StaticBody2D
 
 class_name ISpeaker
+var hasBeenSpokenTo: bool = false
 	
 func talk(nameInBalloon: String):
 	pass

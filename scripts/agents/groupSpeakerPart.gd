@@ -24,6 +24,7 @@ var shouldShowTalkPanel: bool = false
 func setCollisionDisabled(newValue: bool):
 	collisionDisabled = newValue
 	$CollisionShape2D.disabled = collisionDisabled
+	$Area2D/CollisionShape2D.disabled = collisionDisabled
 
 func setSpriteFrames(newFrames: SpriteFrames):
 	animationFrames = newFrames
@@ -45,9 +46,10 @@ func setColliderTransformPosition(newValue: Vector2):
 	$Area2D/CollisionShape2D.position = colliderTransformPosition
 
 func onAreaEntered():
-	talkPanel.visible = true	
-	if not Engine.is_editor_hint():
-		talkPanelLabel.text = "["+InputMap.action_get_events("interact")[0].as_text().substr(0, 1)+"] "+parent.actionName
+	if not parent.hasBeenSpokenTo:
+		talkPanel.visible = true	
+		if not Engine.is_editor_hint():
+			talkPanelLabel.text = "["+InputMap.action_get_events("interact")[0].as_text().substr(0, 1)+"] "+parent.actionName
 		
 func onAreaExited():
 	talkPanel.visible = false
@@ -57,7 +59,6 @@ func _ready():
 		visible = parent.visible		
 		setCollisionDisabled(!visible)
 		setSpriteFrames(animationFrames)
-		animatedSprite.play("idle")
 
 
 func onInteract():
