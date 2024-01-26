@@ -28,7 +28,8 @@ Where do you wish to tell it?
 		=> ORCFOREST
 	- No
 		=> start
-		
+- Chose not to tell any story. 
+	=> Nothing 
 	
 #- On the Marketplace
 #	The Marketplace also functions are the townsquare, and is used for either public announcements, or matter of fact stories.
@@ -220,9 +221,73 @@ Many new patrons are still entering, ordering or waiting, and conversation is bu
 - Make it known that you have something important to say. 
 	When a stranger, and Bard no less, announces such a thing, most tend to look.
 The attention is yours. 
-Now it is up to you, on how to prevent the threat of a possible but unlikely disease spreading through their ranks 
+Now it is up to you, on how to present the threat of a possible but unlikely disease spreading through their ranks 
 - Announce to the room directly, truthfully and without emeblishements the danger they are in. 
+	Which, as you yourself admit freely, is not a great one, but a mere chance of one. 
+	You mention the kids potential infection, and what is assumed to be one of their parents rushes from the room. 
+	The rest stay, unimpressed. 
+	"What if the witch is lying?" A loud male voice somewhere in the back yells out. 
+	- Snarkily respond. If he wishes to trust fate, he is welcome. 
+		You manage to shut him up right quick. 
+		The Orc, who you didn't see on a first glance rises to their feet. 
+		"I slew the beast, I am most risk. I will go, whoever still has doubts may follow me."
+		- Nod the Orcs way, thankful
+		- Let silence speak for you. 
+		The Orc leaves, and a handful of fearful peasents follow behind. 
+		=> END 
+	- Consider his concern as mute and merely shrug. 
+		A few more join in on the chorus of doubtful whispers. 
+		"You're just an outsider in league with her." A woman calls out from just a few feet away from you. 
+		She bears a striking resemblance to the girl you saw near the drake. 
+		- Assume. Call her out on risking her daughters fate. 
+			You assume correctly. She opens her mouth to protest, but thinks better of it. 
+			Someone whispers to her, you hope sound advice to see the witch about her daughter, and she does storm off. 
+			Hushed conversation about what this means for the town begins. 
+			- Leave them to it. You have done what you need to. 
+			 => END
+		- Making them listen was not part of the arrangement. Roll your eyes and leave. 
+			Your leaving only fans the fires of doubt. From the outside you hear fierce arguing. 
+			Apparently you became a player in an old conflict. 
+			Only time can tell whether those affected care enough to see the potentially infected are seen to. 
+			=> END
 - A bit of panic never hurt. Make it seem more dangerous, more certain even. 
+	Whispers break out. 
+	For every voice claiming your story is a fad, another impresses on them the memory of just a recent infection. 
+	For everyone who wants to follow your sound advice, another reminds them of the witches nature, and your status as outsider. 
+	- Impress on them with great importance that the villages demise might be at hand
+		A grave prediction, and one not handled lightly. 
+		You can be glad that your profession is wordsmith, not anyone suspects you of a lie. 
+		They merely wish for a different truth. 
+		Some of the villages residents push past you to seek out the witch, and the ones that remain are hard pressed to talk about anything else. 
+		After a moments pause the Tavernkeep approaches you. 
+		Tavernkeep: Thank you for telling us. You have saved lives this day. 
+		- Be glad of your lies. They have earned your glory. 
+		- Feel the tinge of regret at your lies consequence. 
+		Tavernkeep: I do wish that you leave however. Buisness is bad enough without a mounting doom on the horizon. 
+		Tavernkeep: Pray, next time, inform them gentler. Think of yourself of a shepherd. 
+		Tavernkeep: You would not push them too far for fear of hurting each other. 
+		=> END 
+	- Adress the few who already believe you. They are right to fear. 
+		You succesfull stoke their fire. 
+		Fear is easily perpetuated, and emotions easily abused. It takes but a couple of words. 
+		It's not long until most of the taverns patrons have left for the witch, and the ones that remain only do so to finish food and drink. 
+		The tavernkeep however seems dismayed at this turn of events. 
+		Tavernkeep: Buisness was bad enough already. 
+		Tavernkeep: We didn't need a crisis 
+		Tavernkeep: But, you have saved lives this day. You can be proud of that. 
+		- Be glad of your lies. They have earned your glory. 
+		- Feel the tinge of regret at your lies consequence. 
+		=> END 
+		
+~ Nothing
+Are you sure you wish to let this night pass by without telling a story?
+- yes
+	Be it for lack of ambition, lack of trying, or simply because you are not interested in telling these particular tales, you have chosen to remain silent this night. 
+	You spend a peaceful night, one away from all the fears and ambitions, away from the people. 
+	You sleep deeply, untroubled. 
+	=> END 
+- no
+	=> start 
 
 
 => END
