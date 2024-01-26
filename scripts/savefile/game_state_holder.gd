@@ -19,6 +19,7 @@ var SpokeToFarmerDayOneEvening: bool = false: set = setSpokeToFarmerDayOneEvenin
 var SpokeToTavernkeepDayOneEvening: bool = false: set = setSpokeToTavernkeepDayOneEvening
 var SpokeToWitchDayOneEvening: bool = false: set = setSpokeToWitchDayOneEvening
 var SpokeToOutsiderMerchantDayOneEvening: bool = false: set = setSpokeToOutsiderMerchantDayOneEvening
+var SpokeToAdventurersDay1Evening: bool = false: set = setSpokeToAdventurersDay1Evening
 
 var KnowsOrcLied: bool = false: set = setKnowsOrcLied
 var FarmerAngry: bool = false: set = setFarmerAngry
@@ -66,6 +67,7 @@ var PeopleSpokenTo = [
 		false, #tavernkeep,
 		false, #witch
 		false, #outsider merchant
+		false, #adventurers
 	]
 ]
 var Day1StoryEnding = "" : set = setDay1StoryEnding
@@ -224,6 +226,10 @@ func setSpokeToWitchDayOneEvening(newValue: bool):
 func setSpokeToOutsiderMerchantDayOneEvening(newValue: bool):
 	SpokeToOutsiderMerchantDayOneEvening = newValue
 	setDay1PeopleSpokenTo(2,4,newValue)	
+	
+func setSpokeToAdventurersDay1Evening(newValue: bool):
+	SpokeToAdventurersDay1Evening = newValue
+	setDay1PeopleSpokenTo(2,5,newValue)	
 
 func setCurrentDay(newValue):
 	currentDay = newValue

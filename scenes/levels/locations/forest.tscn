@@ -10,7 +10,7 @@
 [ext_resource type="Script" path="res://scripts/agents/drake.gd" id="12_65hq0"]
 [ext_resource type="Texture2D" uid="uid://62lkgkhno8gt" path="res://assets/sprites/forest/Drake.png" id="12_aoqwx"]
 [ext_resource type="Script" path="res://scripts/agents/groupSpeaker.gd" id="12_xbfko"]
-[ext_resource type="Resource" uid="uid://bw7sly2qupojg" path="res://dialogue/TavernAdventurers.dialogue" id="13_0ljbg"]
+[ext_resource type="Resource" uid="uid://cgdx12mou1lx2" path="res://dialogue/Adventurers evening.dialogue" id="13_6ln6w"]
 [ext_resource type="Resource" uid="uid://cxd5d6qtmvdph" path="res://dialogue/ForestKidsNoon.dialogue" id="13_iacr7"]
 [ext_resource type="SpriteFrames" uid="uid://dpp8x4v6nirgq" path="res://assets/animations/adventurer1.tres" id="14_fcsmn"]
 [ext_resource type="Script" path="res://scripts/agents/groupSpeakerPart.gd" id="14_il4e0"]
@@ -763,7 +763,7 @@ y_sort_enabled = true
 position = Vector2(38, -370)
 script = ExtResource("12_xbfko")
 actionName = "Talk"
-dialogues = Array[Resource("res://addons/dialogue_manager/dialogue_resource.gd")]([null, null, ExtResource("13_0ljbg")])
+dialogues = Array[Resource("res://addons/dialogue_manager/dialogue_resource.gd")]([null, null, ExtResource("13_6ln6w")])
 speakerParts = [NodePath("Adventurer1"), NodePath("Adventurer2"), NodePath("Adventurer3")]
 indicesForChecking = Array[int]([-1, -1, -1])
 

@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_11"
+type="Resource"
+uid="uid://cgdx12mou1lx2"
+path="res://.godot/imported/Adventurers evening.dialogue-abd09de2646f87e895e0639532b6aac4.tres"
+
+[deps]
+
+source_file="res://dialogue/Adventurers evening.dialogue"
+dest_files=["res://.godot/imported/Adventurers evening.dialogue-abd09de2646f87e895e0639532b6aac4.tres"]
+
+[params]
+
+defaults=true
