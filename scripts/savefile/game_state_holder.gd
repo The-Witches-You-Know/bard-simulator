@@ -184,7 +184,7 @@ func setSpokeToTavernkeepDayOneNoon(newValue: bool):
 	
 func setSpokeToAdventurersDayOneNoon(newValue: bool):
 	SpokeToAdventurersDayOneNoon = newValue
-	setDay1PeopleSpokenTo(1,3,newValue)
+	setDay1PeopleSpokenTo(1,4,newValue)
 	
 func setSpokeToJugglingGirlDayOneNoon(newValue: bool):
 	SpokeToJugglingGirlDayOneNoon = newValue

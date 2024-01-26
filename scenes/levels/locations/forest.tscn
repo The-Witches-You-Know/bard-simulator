@@ -763,7 +763,7 @@ y_sort_enabled = true
 position = Vector2(38, -370)
 script = ExtResource("12_xbfko")
 actionName = "Talk"
-dialogues = Array[Resource("res://addons/dialogue_manager/dialogue_resource.gd")]([null, ExtResource("13_0ljbg"), ExtResource("13_0ljbg")])
+dialogues = Array[Resource("res://addons/dialogue_manager/dialogue_resource.gd")]([null, null, ExtResource("13_0ljbg")])
 speakerParts = [NodePath("Adventurer1"), NodePath("Adventurer2"), NodePath("Adventurer3")]
 indicesForChecking = Array[int]([-1, -1, -1])
 
