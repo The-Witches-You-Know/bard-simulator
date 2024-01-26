@@ -20,9 +20,15 @@ Witch: Now then, what ails you?
 		Witch: Knowing those kids that's a fools errand. Just wait for them, they will come back to their homes whenever they grow hungry. 
 		Witch: However, I do ask that you warn the town not to touch the body. I myself will go take care of the issue at hand. 
 		Witch: That does mean your bardic talents are wasted for the night, but think of it as a worthy sacrifice for the towns sake. 
-		Witch: Can I count on you to inform them? You mustn't even move far, simply step onto the marketsplace central platform and announce it. 
+		Witch: Can I count on you to inform them? You mustn't even move far, simply step into the tavern yonder and announce it. 
 		Witch: You'll find the right words, I'm sure. 
 		- Sure, I'll do it. 
+			Witch: Thank you many times over. 
+			She hands you a little vial. 
+			Witch: Incase you're infected. 
+			Witch: If you have symptopms, this should stave them off long enough to reach me again, so I may properly purify you. 
+			Witch: Now, off with you!
+			=> END 
 		# If orc story heard
 		- There's this amazing Orc Hero that needs praising though
 			Witch: You would truly put a ballad above the wellbeing of the peopple?

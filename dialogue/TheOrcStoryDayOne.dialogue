@@ -3,6 +3,15 @@
 It's your time of day. Night has fallen
 Now is your chance to tell the story you gathered throughout the day.
 Where do you wish to tell it?
+#only offer if Talked to witch evening, and "know of disease" are true. 
+- Inform the town of the disease, as the witch asked of you. 
+	The Tavern does not lend itself well to bad messages and dreary futures. 
+	But what must be done, must be done. 
+	are you sure?
+	- Yes
+		=> Disease
+	- No
+	 => start
 - The Tavern
 	The Tavern lends itself well to humorous and uplifting stories. 
 	Are you sure? 
@@ -19,6 +28,8 @@ Where do you wish to tell it?
 		=> ORCFOREST
 	- No
 		=> start
+		
+	
 #- On the Marketplace
 #	The Marketplace also functions are the townsquare, and is used for either public announcements, or matter of fact stories.
 #	Are you sure?
@@ -201,8 +212,18 @@ How do you wish to tell the Orc's story
 
 => END
 
-~ ORCMARKET
-- (If KnowOfDisease = True) Tell Everyone the drake was infected, and the Orc and kids might be as well now. 
-- You'd rather spread this tale elsewhere
-	=> start
+~ Disease
+Luckily for you it is the early evening of the tavern hours. 
+Many new patrons are still entering, ordering or waiting, and conversation is but a sprouting bud. 
+- Clear your throat loudly, to try and get their attention. 
+	You had to clear your throat a few times, almost threatening to clear yourself hoarse. But, after the fifth or sixth attempt, even the last doubtful eye rests on you now .
+- Make it known that you have something important to say. 
+	When a stranger, and Bard no less, announces such a thing, most tend to look.
+The attention is yours. 
+Now it is up to you, on how to prevent the threat of a possible but unlikely disease spreading through their ranks 
+- Announce to the room directly, truthfully and without emeblishements the danger they are in. 
+- A bit of panic never hurt. Make it seem more dangerous, more certain even. 
+
+
 => END
+
