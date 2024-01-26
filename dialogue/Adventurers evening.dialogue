@@ -1,0 +1,17 @@
+~ start
+
+A tourpe of three is gathered, whispering and muttering amongst themselves. 
+They seem engrossed in something. 
+- Try and listen in. 
+	Whispers: Not a dragon. 
+	Whispers: Yeah. Drake. I think. 
+	Whispers: Why is it red?
+	Whispers: Dunno. 
+	Whispers: I think it's sick. 
+	Whispers: Weird wound in the chest. 
+	One of them notices you, and squints your way. 
+	best leave them to their devices. 
+	=> END 
+- Leave them to whatever they are done
+
+=> END
