@@ -38,8 +38,12 @@ func switch_state(state):
 				
 			ui.switch_ui_state(state)
 		global.CREDITS:
+			
+			Audio_Player.setMusic("epilogue")
 			ui.LoadingSceneRef.play_transition("fade_out", Callable(self, "transition_for_credits"), "fade_in")
 		global.END_GAME:
+			
+			Audio_Player.setMusic("epilogue")
 			ui.LoadingSceneRef.play_transition("fade_out", Callable(self, "transition_for_basic_ui"), "fade_in")
 			ui.EndGameRef.load_endgame()
 
@@ -53,7 +57,7 @@ func transition_gameworld_callback():
 
 func transition_menu_callback():
 	ui.switch_ui_state(current_state)
-	Audio_Player.setMusic("menu")
+	Audio_Player.setMusic("opening")
 	if current != null:
 		current.queue_free()
 

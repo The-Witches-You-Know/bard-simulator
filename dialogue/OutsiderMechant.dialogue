@@ -13,13 +13,13 @@ He hasn't yet noticed you.
 			Merchant: Oh. You're a bard. Should have noticed. 
 			Merchant: You can go ask the other merchants about. They seem to have plenty of stories about me. 
 			- Good stories?
-				Merchan: I wish. 
+				Merchant: I wish.
 			- Bad stories?
 				Merchant: The worst
 			Merchant: Just because I am outsider, I am at fault when anything goes wrong. 
 			Merchant: "Oh this fruit is bad, must be the one I bought from that guy."
 			Merchant: "Oh my customers aren't buying as much! Must be that outsider taking all of them away."
-			Merchant: If they saw my numbers they'd know better than to accuse me of stealing their buisness. I'm struggling just as much!
+			Merchant: If they saw my numbers they'd know better than to accuse me of stealing their business. I'm struggling just as much!
 			- May I ask why?
 				Merchant: Why what? Why they accuse me of things? Because I'm different, they don't need a reason. 
 				Merchant: I'm surprised you even have to ask, seeing as you're probably the most different person I've met yet. 
@@ -45,5 +45,6 @@ He hasn't yet noticed you.
 
 
 ~ DialogueEnd
-set GameStateHolder.SpokeToOutsiderMerchant = true
+set GameStateHolder.SpokeToOutsiderMerchantDayOneNoon = true
+do GameStateHolder.currentSpeaker.onConversationFinished()
 => END

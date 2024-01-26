@@ -8,7 +8,7 @@ class_name SettingsMenu
 #@onready var ambientVolumeSlider: HSlider = $AmbientVolume/AmbientVolumeSlider
 @onready var SFXVolumeSlider: HSlider = $SFXVolume/SFXVolumeSlider
 
-@onready var returnButton: Button = $ReturnButton
+@onready var returnButton: TextureButton = $ReturnButton
 
 func _ready():
 	update_values()

@@ -3,7 +3,7 @@
 Tavernkeep: Howdy there Sport. What can I get you?
 - Something strong
 	Tavernkeep: Coming right up!
-	He places a beermug with a red liquid in it in front of you, which you assume to be Wine.
+	He places a beer mug with a red liquid in it in front of you, which you assume to be Wine.
 	- Thanks! 
 		Tavnerkeep: Of course. 
 		=> ToTheStories

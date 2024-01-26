@@ -59,7 +59,8 @@ Tavernkeep: If you're in desperate need of material, I could let you in on some 
 	- Laugh wholeheartedly 
 		do GameStateHolder.currentSpeaker.play("laugh")
 		He joins in your laughter. 
-	Tavernkeep: Feel free to use it yourself. => DialogueEnd
+	Tavernkeep: Feel free to use it yourself.
+	=> DialogueEnd
 - Please no. 
 	Tavernkeep: Suit yourself. 
 
@@ -68,4 +69,5 @@ Tavernkeep: If you're in desperate need of material, I could let you in on some 
 
 ~ DialogueEnd
 set GameStateHolder.SpokeToTavernkeepDayOneMorning = true
+do GameStateHolder.currentSpeaker.onConversationFinished()
 => END

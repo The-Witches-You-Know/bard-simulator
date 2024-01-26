@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://bbxk8m031fe31"]
+[gd_scene load_steps=5 format=3 uid="uid://bbxk8m031fe31"]
 
 [ext_resource type="Script" path="res://scripts/ui/credits.gd" id="1_yc4hq"]
+[ext_resource type="Theme" uid="uid://dn1o6shwhi1wx" path="res://shaders-themes/main_theme.tres" id="2_yww1i"]
 
 [sub_resource type="Animation" id="Animation_eceux"]
 resource_name = "reveal_skip_button"
@@ -62,6 +63,7 @@ offset_right = 20.0
 offset_bottom = -15.0
 grow_horizontal = 2
 grow_vertical = 0
+theme = ExtResource("2_yww1i")
 horizontal_alignment = 1
 vertical_alignment = 1
 

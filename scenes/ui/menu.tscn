@@ -1,9 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://d4ael31b245pr"]
+[gd_scene load_steps=9 format=3 uid="uid://d4ael31b245pr"]
 
 [ext_resource type="Script" path="res://scripts/ui/menu.gd" id="1_n0sgf"]
+[ext_resource type="Texture2D" uid="uid://cdpjxbep044ft" path="res://assets/sprites/ui/alt.jpg" id="2_pdmev"]
 [ext_resource type="PackedScene" uid="uid://dvy7hwe5bmrsd" path="res://scenes/ui/confirmation_popup.tscn" id="2_sjupi"]
-[ext_resource type="Texture2D" uid="uid://bwgxsltfsteal" path="res://icon.svg" id="3_d8ulh"]
+[ext_resource type="Theme" uid="uid://dn1o6shwhi1wx" path="res://shaders-themes/main_theme.tres" id="3_5pk8l"]
 [ext_resource type="PackedScene" uid="uid://daqlbvtppcfs" path="res://scenes/ui/settings_menu_panel.tscn" id="3_n6igi"]
+[ext_resource type="Texture2D" uid="uid://b8tej6ortppkj" path="res://assets/sprites/ui/button_press.png" id="4_2cbgn"]
+[ext_resource type="Texture2D" uid="uid://b6yqh52f8k6bv" path="res://assets/sprites/ui/button_hover.png" id="5_advms"]
+[ext_resource type="LabelSettings" uid="uid://bma68305bgflc" path="res://assets/new_label_settings.tres" id="5_noijb"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -14,11 +18,25 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_n0sgf")
 
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_pdmev")
+expand_mode = 3
+stretch_mode = 6
+
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_top = 275.0
+offset_right = -452.0
+offset_bottom = 2.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -27,6 +45,8 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_top = 25.0
+offset_bottom = 29.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/margin_left = 50
@@ -37,61 +57,125 @@ theme_override_constants/margin_bottom = 50
 [node name="VBoxContainer" type="VBoxContainer" parent="Panel/MarginContainer"]
 layout_mode = 2
 
-[node name="NinePatchRect" type="NinePatchRect" parent="Panel/MarginContainer/VBoxContainer"]
-custom_minimum_size = Vector2(50, 50)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-texture = ExtResource("3_d8ulh")
-
 [node name="MainMenuPanel" type="VBoxContainer" parent="Panel/MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 6
 
-[node name="Continue" type="Button" parent="Panel/MarginContainer/VBoxContainer/MainMenuPanel"]
+[node name="Continue" type="TextureButton" parent="Panel/MarginContainer/VBoxContainer/MainMenuPanel"]
 custom_minimum_size = Vector2(200, 50)
 layout_mode = 2
-size_flags_vertical = 4
+size_flags_vertical = 3
+theme = ExtResource("3_5pk8l")
+texture_normal = ExtResource("4_2cbgn")
+texture_pressed = ExtResource("4_2cbgn")
+texture_hover = ExtResource("5_advms")
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="Panel/MarginContainer/VBoxContainer/MainMenuPanel/Continue"]
+layout_mode = 0
+offset_right = 200.0
+offset_bottom = 50.0
 text = "Continue"
+label_settings = ExtResource("5_noijb")
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="NewGame" type="Button" parent="Panel/MarginContainer/VBoxContainer/MainMenuPanel"]
+[node name="NewGame" type="TextureButton" parent="Panel/MarginContainer/VBoxContainer/MainMenuPanel"]
 custom_minimum_size = Vector2(200, 50)
 layout_mode = 2
-text = "New Game"
+texture_normal = ExtResource("4_2cbgn")
+texture_pressed = ExtResource("4_2cbgn")
+texture_hover = ExtResource("5_advms")
+stretch_mode = 0
 
-[node name="Options" type="Button" parent="Panel/MarginContainer/VBoxContainer/MainMenuPanel"]
+[node name="Label" type="Label" parent="Panel/MarginContainer/VBoxContainer/MainMenuPanel/NewGame"]
+layout_mode = 0
+offset_right = 200.0
+offset_bottom = 50.0
+theme = ExtResource("3_5pk8l")
+text = "New Game
+"
+label_settings = ExtResource("5_noijb")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Options" type="TextureButton" parent="Panel/MarginContainer/VBoxContainer/MainMenuPanel"]
 custom_minimum_size = Vector2(200, 50)
 layout_mode = 2
-text = "Options"
+texture_normal = ExtResource("4_2cbgn")
+texture_pressed = ExtResource("4_2cbgn")
+texture_hover = ExtResource("5_advms")
+stretch_mode = 0
 
-[node name="Credits" type="Button" parent="Panel/MarginContainer/VBoxContainer/MainMenuPanel"]
+[node name="Label" type="Label" parent="Panel/MarginContainer/VBoxContainer/MainMenuPanel/Options"]
+layout_mode = 0
+offset_right = 200.0
+offset_bottom = 50.0
+theme = ExtResource("3_5pk8l")
+text = "Options
+"
+label_settings = ExtResource("5_noijb")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Credits" type="TextureButton" parent="Panel/MarginContainer/VBoxContainer/MainMenuPanel"]
 custom_minimum_size = Vector2(200, 50)
 layout_mode = 2
-text = "Credits"
+texture_normal = ExtResource("4_2cbgn")
+texture_pressed = ExtResource("4_2cbgn")
+texture_hover = ExtResource("5_advms")
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="Panel/MarginContainer/VBoxContainer/MainMenuPanel/Credits"]
+layout_mode = 0
+offset_right = 200.0
+offset_bottom = 50.0
+theme = ExtResource("3_5pk8l")
+text = "Credits
+"
+label_settings = ExtResource("5_noijb")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ExitGame" type="TextureButton" parent="Panel/MarginContainer/VBoxContainer/MainMenuPanel"]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+texture_normal = ExtResource("4_2cbgn")
+texture_pressed = ExtResource("4_2cbgn")
+texture_hover = ExtResource("5_advms")
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="Panel/MarginContainer/VBoxContainer/MainMenuPanel/ExitGame"]
+layout_mode = 0
+offset_right = 200.0
+offset_bottom = 50.0
+theme = ExtResource("3_5pk8l")
+text = "Exit Game
+"
+label_settings = ExtResource("5_noijb")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="SettingsMenuPanel" parent="Panel/MarginContainer/VBoxContainer" instance=ExtResource("3_n6igi")]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="Panel/MarginContainer/VBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 0
-text = "ver 0.0.1"
-
 [node name="ConfirmationPopup" parent="." instance=ExtResource("2_sjupi")]
-visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_top = -144.0
-offset_bottom = -144.0
+offset_left = -226.0
+offset_top = -4.0
+offset_right = -226.0
+offset_bottom = -4.0
 message = "Are you sure you want to start a new game?"
 
 [connection signal="button_up" from="Panel/MarginContainer/VBoxContainer/MainMenuPanel/Continue" to="." method="_on_continue_button_up"]
 [connection signal="button_up" from="Panel/MarginContainer/VBoxContainer/MainMenuPanel/NewGame" to="." method="_on_new_game_button_up"]
 [connection signal="button_up" from="Panel/MarginContainer/VBoxContainer/MainMenuPanel/Options" to="." method="_on_options_button_up"]
 [connection signal="button_up" from="Panel/MarginContainer/VBoxContainer/MainMenuPanel/Credits" to="." method="_on_credits_button_up"]
+[connection signal="button_up" from="Panel/MarginContainer/VBoxContainer/MainMenuPanel/ExitGame" to="." method="_on_exit_game_button_up"]
 [connection signal="_on_confirmation_popup" from="ConfirmationPopup" to="." method="_on_confirmation_popup"]
