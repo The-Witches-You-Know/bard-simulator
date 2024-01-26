@@ -11,7 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://62lkgkhno8gt" path="res://assets/sprites/forest/Drake.png" id="12_aoqwx"]
 [ext_resource type="Script" path="res://scripts/agents/groupSpeaker.gd" id="12_xbfko"]
 [ext_resource type="Resource" uid="uid://bw7sly2qupojg" path="res://dialogue/TavernAdventurers.dialogue" id="13_0ljbg"]
-[ext_resource type="Resource" uid="uid://cxd5d6qtmvdph" path="res://dialogue/ForestKidsDayOneNoon.dialogue" id="13_iacr7"]
+[ext_resource type="Resource" uid="uid://cxd5d6qtmvdph" path="res://dialogue/ForestKidsNoon.dialogue" id="13_iacr7"]
 [ext_resource type="SpriteFrames" uid="uid://dpp8x4v6nirgq" path="res://assets/animations/adventurer1.tres" id="14_fcsmn"]
 [ext_resource type="Script" path="res://scripts/agents/groupSpeakerPart.gd" id="14_il4e0"]
 [ext_resource type="SpriteFrames" uid="uid://dlwvbr6sikea0" path="res://assets/animations/adventurer2.tres" id="15_6x210"]
