@@ -11,7 +11,7 @@ elif (not GameStateHolder.getPlayerSpokeWithFarmer()):
 			=> Drake
 	- The Orc actually sent me to you. 
 		Farmer: What did he do that for? 
-		- She's worried about you. 
+		- he's worried about you. 
 			Farmer: Is he now. Never thought him the caring type. he sure left in a hurry after he stabbed that drake. 
 			- Not the caring type?
 			- he told me he saved you.
@@ -97,7 +97,7 @@ Farmer: Whatever he told you is the truth.
 	- Then why so dodgy?
 		Farmer: Because... well... Ah dammit. 
 		Farmer: Is this like a test? he sent you to try and find out if I would betray her?
-		- No, but why would she?
+		- No, but why would he?
 			Farmer: So you're not in league with her?
 			- Not at all. 
 			- I'm just interested in the truth 
