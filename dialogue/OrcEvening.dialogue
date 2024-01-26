@@ -4,7 +4,7 @@ Orc: Oh, it's you again.
 Orc: What, you wanted to hear my story again or what?
 Orc: Can't remember all the details?
 - No, I can. In fact, I know details you didn't want to share the first time around. [if GameStateHolder.KnowsOrcLied]
-	Orc: That gods damned Farm boy simply couldn't keep his mouth shut, could he?
+	Orc: That gods damned farm boy simply couldn't keep his mouth shut, could he?
 	Orc: Damn it all. 
 	- Tell me why I shouldn't tell the whole town. 
 		Orc: Cause you'd be doing me a disservice!
@@ -12,7 +12,7 @@ Orc: Can't remember all the details?
 		Orc: You've no idea how cruel these people are to those different than them. 
 		Orc: You get to prance around in your fine clothes and with a mentor to vouch for you. 
 		Orc: I had nothing. 
-		Orc: now I have something. 
+		Orc: Now I have something.
 		Orc: You'd take that from me?
 		- Now that you put it that way... 
 			Orc: So, what will you, Bard?

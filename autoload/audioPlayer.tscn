@@ -10,6 +10,7 @@ autoplay = true
 bus = &"Music"
 
 [node name="SpeechPlayer" type="AudioStreamPlayer" parent="."]
+volume_db = -12.0
 bus = &"SFX"
 
 [node name="SFXPlayer" type="AudioStreamPlayer" parent="."]

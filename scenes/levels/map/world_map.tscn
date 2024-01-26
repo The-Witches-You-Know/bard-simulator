@@ -50,7 +50,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Town" parent="Control" instance=ExtResource("2_v67ud")]
-position = Vector2(806, 45)
+position = Vector2(862, 187)
 location_name = "town"
 texture = SubResource("AtlasTexture_w4mu3")
 
@@ -65,7 +65,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Forest" parent="Control3" instance=ExtResource("2_v67ud")]
-position = Vector2(434, 106)
+position = Vector2(138, 10)
 location_name = "forest"
 texture = SubResource("AtlasTexture_sxhyb")
 
@@ -80,7 +80,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Tavern" parent="Control2" instance=ExtResource("2_v67ud")]
-position = Vector2(778, 155)
+position = Vector2(776, 187)
 location_name = "tavern"
 texture = SubResource("AtlasTexture_1ty5h")
 

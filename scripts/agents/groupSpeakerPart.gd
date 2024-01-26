@@ -21,6 +21,7 @@ var isTalking = false
 var selectedAnimName = null
 var alternateAnimationPlaying = false
 var shouldShowTalkPanel: bool = false
+var conversationFinished = false
 
 func setCollisionDisabled(newValue: bool):
 	collisionDisabled = newValue
@@ -67,7 +68,7 @@ func onInteract():
 	parent.onInteract()
 	
 func talk(nameInBalloon: String):
-	if !isTalking:
+	if !isTalking and !conversationFinished:
 		Audio_Player.setSpeakerSound(speakerSound)
 		animatedSprite.stop()
 		isTalking = true
@@ -99,7 +100,9 @@ func onConversationStarted():
 func onConversationFinished():
 	talkPanel.visible = shouldShowTalkPanel
 	shouldShowTalkPanel = false
+	Audio_Player.setSpeaker("")
 	animatedSprite.play("idle")
+	conversationFinished = true
 	
 	
 

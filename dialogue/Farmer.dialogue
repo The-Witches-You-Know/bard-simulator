@@ -97,11 +97,11 @@ Farmer: Whatever he told you is the truth.
 	- Then why so dodgy?
 		Farmer: Because... well... Ah dammit. 
 		Farmer: Is this like a test? he sent you to try and find out if I would betray her?
-		- No, but why would she?
-			Farmer: So you're not in league with her?
+		- No, but why would he?
+			Farmer: So you're not in league with him?
 			- Not at all. 
 			- I'm just interested in the truth 
-			Farmer: Alright so. Thing is, he didn't kill the drake. It kinda just flew into the windmill, and he took the opportunity
+			Farmer: Alright so. Thing is, he didn't kill the drake. It kinda just flew into the windmill, and he took the opportunity.
 			Farmer: It just pretty much died on it's own. I was the only one who saw it.
 			Farmer: So he went and told me that if I told a Soul, I'd be in trouble.
 			set GameStateHolder.KnowsOrcLied = true
@@ -133,7 +133,7 @@ Farmer: Whatever he told you is the truth.
 			- Yeah, and I hope you know better now. 
 				Farmer: I do. Leave, go tell on me. 
 				- Actually, I'm just trying to figure out the truth. 
-					Farmer: Wait really? You just gave me a heartattack for what, for funsies?
+					Farmer: Wait really? You just gave me a heart attack for what, for funsies?
 					- Sure I did. Was quite funny, no?
 						Farmer: You have a funny idea of funny.
 						- Don't be like that. 
@@ -144,7 +144,7 @@ Farmer: Whatever he told you is the truth.
 							Farmer: Goodbye. 
 							=> DialogueEnd
 					- Sorry about that. Could you tell me what actually happened?
-						Farmer: Alright so. Thing is, he didn't kill the drake. It kinda just flew into the windmill, and he took the opportunity
+						Farmer: Alright so. Thing is, he didn't kill the drake. It kinda just flew into the windmill, and he took the opportunity.
 						Farmer: It just pretty much died on it's own. I was the only one who saw it.
 						set GameStateHolder.KnowsOrcLied = true
 						- Thank you. I'll be on my way. 
@@ -160,7 +160,7 @@ Farmer: Whatever he told you is the truth.
 					Farmer: You aren't actually in league with her, are you?
 					- Not at all. 
 						Farmer: Great waste of my time. 
-						Farmer: Goodbye
+						Farmer: Goodbye.
 						=> DialogueEnd
 					- Maybe a little bit.
 						Farmer: Great use of my time. 

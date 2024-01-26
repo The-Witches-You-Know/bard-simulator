@@ -20,6 +20,7 @@ class_name Speaker
 var isTalking = false
 var selectedAnimName = null
 var alternateAnimationPlaying = false
+var conversationFinished = false
 
 func setSpriteFrames(newFrames: SpriteFrames):
 	animationFrames = newFrames
@@ -70,7 +71,7 @@ func onInteract():
 		Audio_Player.setBalloonReference(balloon)
 	
 func talk(nameInBalloon: String):
-	if !isTalking:
+	if !isTalking and !conversationFinished:
 		Audio_Player.setSpeakerSound(speakerSound)
 		animatedSprite.stop()
 		isTalking = true
@@ -101,7 +102,9 @@ func onConversationStarted():
 	
 func onConversationFinished():
 	hasBeenSpokenTo = true
+	Audio_Player.setSpeaker("")
 	animatedSprite.play("idle")
+	conversationFinished = true
 	
 	
 
