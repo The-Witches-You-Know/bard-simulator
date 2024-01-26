@@ -6,31 +6,49 @@ const SPEED = 600.0
 var topColliderOffset: int = 30
 var collisionDirection: Vector2 = Vector2(0,0)
 
-var speaker: Speaker = null
+var speaker: ISpeaker = null
+var paused = false
+
+func _ready():
+	# add to entity group if you want these to be paused will require the below
+	# two functions probably move into inheritance instead
+	add_to_group("entity")
+
+func pause_entity():
+	paused = true
+
+func unpause_entity():
+	paused = false
 
 func _physics_process(_delta):
+
+	if paused or Audio_Player.balloonReference != null:
+		return
 
 	var inputX = Input.get_axis("character_left", "character_right")
 	var inputY = Input.get_axis ("character_up" , "character_down")
 	var input_direction = Vector2(inputX, inputY)
 	velocity = input_direction.normalized() * SPEED
-	
 
 	if inputY == -1:
-		#$AnimationPlayer.play("up", 1, 4)
-		pass
+		$AnimatedSprite2D.play("walk_up")
+		$AnimatedSprite2D.flip_h = false
+		Audio_Player.playSFX()
 	elif inputY == 1:
-		#$AnimationPlayer.play("down", 1, 4)
-		pass
+		$AnimatedSprite2D.play("walk_down")
+		$AnimatedSprite2D.flip_h = false
+		Audio_Player.playSFX()
 	elif inputX == 1:
-		#$AnimationPlayer.play("right", 1, 4)
-		pass
+		$AnimatedSprite2D.play("walk_right")
+		$AnimatedSprite2D.flip_h = false
+		Audio_Player.playSFX()
 	elif inputX == -1:
-		#$AnimationPlayer.play("left", 1, 4)
-		pass
+		$AnimatedSprite2D.play("walk_right")
+		$AnimatedSprite2D.flip_h = true
+		Audio_Player.playSFX()
 	elif velocity == Vector2(0, 0):
-		#$AnimationPlayer.stop()
-		pass
+		$AnimatedSprite2D.flip_h = false
+		$AnimatedSprite2D.play("idle")
 	
 	# if collider is in the direction where the player is going, dont move and slide
 	if (velocity == Vector2(0, 0) and collisionDirection != Vector2(0,0)):
@@ -42,6 +60,8 @@ func _physics_process(_delta):
 	else:
 		collisionDirection = Vector2(0,0)
 	if Input.is_action_just_pressed("interact") and speaker != null:
+		$AnimatedSprite2D.flip_h = false
+		$AnimatedSprite2D.play("idle")
 		speaker.onInteract()
 		
 func setCameraLimit(boundaryMin: Vector2, boundaryMax: Vector2):
@@ -53,13 +73,18 @@ func setCameraLimit(boundaryMin: Vector2, boundaryMax: Vector2):
 
 func _on_area_2d_area_entered(area):
 	var parent = area.get_parent()
-	if parent is Speaker:
+	if parent is ISpeaker:
 		speaker = parent
-		speaker.onAreaEntered()
+		parent.onAreaEntered()
+	elif parent is GroupSpeakerPart:
+		speaker = parent.parent
+		parent.onAreaEntered()
+	elif parent is Drake:
+		GameStateHolder.DrakeInspected = true
 
 
 func _on_area_2d_area_exited(area):
-	var parent = area.get_parent()
-	if parent == speaker:
-		speaker.onAreaExited()
+	var parent = area.get_parent()	
+	if (parent is ISpeaker and parent == speaker) or (parent is GroupSpeakerPart and parent.parent == speaker):
+		parent.onAreaExited()
 		speaker = null

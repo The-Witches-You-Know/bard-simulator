@@ -1,0 +1,83 @@
+[gd_resource type="SpriteFrames" load_steps=10 format=3 uid="uid://dlwvbr6sikea0"]
+
+[ext_resource type="Texture2D" uid="uid://cn7eu58mgswuy" path="res://assets/spriteSheets/Tavern.png" id="1_fiq3v"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pam15"]
+atlas = ExtResource("1_fiq3v")
+region = Rect2(128, 1664, 128, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h1tbl"]
+atlas = ExtResource("1_fiq3v")
+region = Rect2(256, 1664, 128, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qlilt"]
+atlas = ExtResource("1_fiq3v")
+region = Rect2(384, 1664, 128, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p7jth"]
+atlas = ExtResource("1_fiq3v")
+region = Rect2(128, 1664, 128, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kdvjs"]
+atlas = ExtResource("1_fiq3v")
+region = Rect2(256, 1664, 128, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8ud1u"]
+atlas = ExtResource("1_fiq3v")
+region = Rect2(512, 1664, 128, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4siiu"]
+atlas = ExtResource("1_fiq3v")
+region = Rect2(128, 1664, 128, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_winkw"]
+atlas = ExtResource("1_fiq3v")
+region = Rect2(256, 1664, 128, 256)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 6.0,
+"texture": SubResource("AtlasTexture_pam15")
+}, {
+"duration": 6.0,
+"texture": SubResource("AtlasTexture_h1tbl")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 4.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qlilt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p7jth")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qlilt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kdvjs")
+}],
+"loop": true,
+"name": &"talk_1",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8ud1u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4siiu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8ud1u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_winkw")
+}],
+"loop": true,
+"name": &"talk_2",
+"speed": 6.0
+}]

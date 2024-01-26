@@ -1,15 +1,22 @@
-[gd_scene load_steps=25 format=3 uid="uid://bywu72xv1pgx0"]
+[gd_scene load_steps=43 format=3 uid="uid://bywu72xv1pgx0"]
 
 [ext_resource type="Script" path="res://scripts/levels/level.gd" id="1_bmea0"]
 [ext_resource type="PackedScene" uid="uid://by276q5li4uq4" path="res://scenes/levels/objects/exit_area.tscn" id="2_kjn8m"]
 [ext_resource type="Texture2D" uid="uid://dhdkhh02d8fav" path="res://assets/spriteSheets/Taverntrans.png" id="2_wq1eb"]
 [ext_resource type="PackedScene" uid="uid://ddnkxck5qdfcv" path="res://scenes/agents/player.tscn" id="3_76q1e"]
 [ext_resource type="PackedScene" uid="uid://cou5jrmy23vew" path="res://scenes/agents/speaker.tscn" id="4_ycs7s"]
-[ext_resource type="Resource" uid="uid://bijdg1ericjtl" path="res://dialogue/TavernkeepDayOneMorning.dialogue" id="6_fh7a7"]
+[ext_resource type="Resource" uid="uid://bijdg1ericjtl" path="res://dialogue/TavernkeepMorning.dialogue" id="6_fh7a7"]
 [ext_resource type="Texture2D" uid="uid://cn7eu58mgswuy" path="res://assets/spriteSheets/Tavern.png" id="6_j46gc"]
-[ext_resource type="Resource" uid="uid://prrvr227bm8x" path="res://dialogue/TavernTavernkeepDayOneNoon.dialogue" id="7_lflut"]
+[ext_resource type="Resource" uid="uid://prrvr227bm8x" path="res://dialogue/TavernkeepNoon.dialogue" id="7_lflut"]
+[ext_resource type="Resource" uid="uid://divva2ni6xxqg" path="res://dialogue/TavernkeepEvening.dialogue" id="8_qjmvo"]
 [ext_resource type="SpriteFrames" uid="uid://bumodeeonmfgh" path="res://assets/animations/oldBard.tres" id="9_324ne"]
 [ext_resource type="Resource" uid="uid://ccrwlfuwohndh" path="res://dialogue/OldBardDayOneMorning.dialogue" id="9_wlmhq"]
+[ext_resource type="Resource" uid="uid://bpmrpir7x7wiq" path="res://dialogue/OrcDayOneMorning.dialogue" id="11_0df84"]
+[ext_resource type="Script" path="res://scripts/agents/groupSpeaker.gd" id="11_5tiwi"]
+[ext_resource type="SpriteFrames" uid="uid://dpp8x4v6nirgq" path="res://assets/animations/adventurer1.tres" id="13_1n1pk"]
+[ext_resource type="Script" path="res://scripts/agents/groupSpeakerPart.gd" id="13_7001r"]
+[ext_resource type="Resource" uid="uid://bw7sly2qupojg" path="res://dialogue/TavernAdventurers.dialogue" id="13_fh77x"]
+[ext_resource type="SpriteFrames" uid="uid://dlwvbr6sikea0" path="res://assets/animations/adventurer2.tres" id="14_v41n7"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_58reg"]
 texture = ExtResource("2_wq1eb")
@@ -518,7 +525,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"laugh",
-"speed": 6.0
+"speed": 3.0
 }, {
 "frames": [{
 "duration": 6.0,
@@ -534,6 +541,92 @@ animations = [{
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uvnwh"]
 size = Vector2(70, 160)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jxqpu"]
+size = Vector2(70, 160)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_81tvr"]
+size = Vector2(70, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nhrdw"]
+atlas = ExtResource("6_j46gc")
+region = Rect2(128, 896, 128, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eyrxg"]
+atlas = ExtResource("6_j46gc")
+region = Rect2(256, 896, 128, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_se56i"]
+atlas = ExtResource("6_j46gc")
+region = Rect2(384, 896, 128, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dpi80"]
+atlas = ExtResource("6_j46gc")
+region = Rect2(128, 896, 128, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iqphn"]
+atlas = ExtResource("6_j46gc")
+region = Rect2(256, 896, 128, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q574g"]
+atlas = ExtResource("6_j46gc")
+region = Rect2(512, 896, 128, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ajdf5"]
+atlas = ExtResource("6_j46gc")
+region = Rect2(128, 896, 128, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fxl8p"]
+atlas = ExtResource("6_j46gc")
+region = Rect2(256, 896, 128, 256)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2mpwg"]
+animations = [{
+"frames": [{
+"duration": 6.0,
+"texture": SubResource("AtlasTexture_nhrdw")
+}, {
+"duration": 6.0,
+"texture": SubResource("AtlasTexture_eyrxg")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 4.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_se56i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dpi80")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_se56i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iqphn")
+}],
+"loop": true,
+"name": &"talk_1",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q574g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ajdf5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q574g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fxl8p")
+}],
+"loop": true,
+"name": &"talk_2",
+"speed": 6.0
+}]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_lxt7h"]
 a = Vector2(-1000, -250)
@@ -583,7 +676,9 @@ layer_6/z_index = -2
 layer_6/tile_data = PackedInt32Array()
 
 [node name="ExitArea" parent="." instance=ExtResource("2_kjn8m")]
-position = Vector2(200, 1200)
+z_index = -1
+y_sort_enabled = true
+position = Vector2(259, 1236)
 
 [node name="player" parent="." instance=ExtResource("3_76q1e")]
 y_sort_enabled = true
@@ -594,23 +689,55 @@ y_sort_enabled = true
 position = Vector2(308.416, 79.8147)
 speakerName = "Tavernkeep"
 actionName = "Talk"
-dialogues = Array[Resource("res://addons/dialogue_manager/dialogue_resource.gd")]([ExtResource("6_fh7a7"), ExtResource("7_lflut"), null])
+dialogues = Array[Resource("res://addons/dialogue_manager/dialogue_resource.gd")]([ExtResource("6_fh7a7"), ExtResource("7_lflut"), ExtResource("8_qjmvo")])
 animationFrames = SubResource("SpriteFrames_42n8p")
 collider = SubResource("RectangleShape2D_uvnwh")
-animatedSpriteTransformPosition = Vector2(0, 0)
-colliderTransformPosition = Vector2(0, 0)
 
 [node name="OldBard" parent="." instance=ExtResource("4_ycs7s")]
 z_index = -1
 y_sort_enabled = true
-position = Vector2(-830, 17)
-speakerName = "Tavernkeep"
+position = Vector2(713, 766)
+speakerName = "OldBard"
 actionName = "Talk"
 dialogues = Array[Resource("res://addons/dialogue_manager/dialogue_resource.gd")]([ExtResource("9_wlmhq"), null, null])
 animationFrames = ExtResource("9_324ne")
 collider = SubResource("RectangleShape2D_uvnwh")
-animatedSpriteTransformPosition = Vector2(0, 0)
-colliderTransformPosition = Vector2(0, 0)
+
+[node name="Adventurers" type="StaticBody2D" parent="." node_paths=PackedStringArray("speakerParts")]
+script = ExtResource("11_5tiwi")
+actionName = "Talk"
+dialogues = Array[Resource("res://addons/dialogue_manager/dialogue_resource.gd")]([null, ExtResource("13_fh77x"), null])
+speakerParts = [NodePath("Adventurer1"), NodePath("Adventurer2")]
+
+[node name="Adventurer1" parent="Adventurers" node_paths=PackedStringArray("parent") instance=ExtResource("4_ycs7s")]
+z_index = -1
+y_sort_enabled = true
+position = Vector2(1223, 260)
+script = ExtResource("13_7001r")
+speakerName = "Woman"
+animationFrames = ExtResource("13_1n1pk")
+collider = SubResource("RectangleShape2D_jxqpu")
+parent = NodePath("..")
+
+[node name="Adventurer2" parent="Adventurers" node_paths=PackedStringArray("parent") instance=ExtResource("4_ycs7s")]
+z_index = -1
+y_sort_enabled = true
+position = Vector2(1619, 260)
+script = ExtResource("13_7001r")
+speakerName = "Man"
+animationFrames = ExtResource("14_v41n7")
+collider = SubResource("RectangleShape2D_81tvr")
+parent = NodePath("..")
+
+[node name="Orc" parent="." instance=ExtResource("4_ycs7s")]
+z_index = -1
+y_sort_enabled = true
+position = Vector2(-314, 260)
+speakerName = "Orc"
+actionName = "Talk"
+dialogues = Array[Resource("res://addons/dialogue_manager/dialogue_resource.gd")]([ExtResource("11_0df84"), null, null])
+animationFrames = SubResource("SpriteFrames_2mpwg")
+collider = SubResource("RectangleShape2D_uvnwh")
 
 [node name="RoomBoundary" type="Node" parent="."]
 

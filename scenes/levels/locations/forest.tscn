@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://20eg01liwra2"]
+[gd_scene load_steps=57 format=3 uid="uid://20eg01liwra2"]
 
 [ext_resource type="PackedScene" uid="uid://by276q5li4uq4" path="res://scenes/levels/objects/exit_area.tscn" id="1_svyfn"]
 [ext_resource type="Script" path="res://scripts/levels/level.gd" id="1_u066t"]
@@ -11,6 +11,11 @@
 [ext_resource type="PackedScene" uid="uid://cou5jrmy23vew" path="res://scenes/agents/speaker.tscn" id="9_iqj0g"]
 [ext_resource type="Resource" uid="uid://div13srwwpvur" path="res://dialogue/Farmer.dialogue" id="10_eh7lq"]
 [ext_resource type="Texture2D" uid="uid://dd8r14n7pk8l" path="res://assets/spriteSheets/forestnpcs.png" id="11_w3imv"]
+[ext_resource type="Script" path="res://scripts/agents/drake.gd" id="12_65hq0"]
+[ext_resource type="Texture2D" uid="uid://62lkgkhno8gt" path="res://assets/sprites/forest/Drake.png" id="12_aoqwx"]
+[ext_resource type="Script" path="res://scripts/agents/groupSpeaker.gd" id="12_xbfko"]
+[ext_resource type="Resource" uid="uid://cxd5d6qtmvdph" path="res://dialogue/ForestKidsDayOneNoon.dialogue" id="13_iacr7"]
+[ext_resource type="Script" path="res://scripts/agents/groupSpeakerPart.gd" id="14_il4e0"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hyj83"]
 texture = ExtResource("2_5x54p")
@@ -1528,7 +1533,171 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bngqi"]
 size = Vector2(70, 100)
 
-[node name="forest" type="Node2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j715k"]
+size = Vector2(700, 300)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_68jcp"]
+size = Vector2(800, 375)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u1gp2"]
+atlas = ExtResource("11_w3imv")
+region = Rect2(128, 512, 128, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fqwls"]
+atlas = ExtResource("11_w3imv")
+region = Rect2(256, 512, 128, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rekur"]
+atlas = ExtResource("11_w3imv")
+region = Rect2(384, 512, 128, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qcld2"]
+atlas = ExtResource("11_w3imv")
+region = Rect2(128, 512, 128, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r065v"]
+atlas = ExtResource("11_w3imv")
+region = Rect2(256, 512, 128, 256)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tb7d5"]
+animations = [{
+"frames": [{
+"duration": 6.0,
+"texture": SubResource("AtlasTexture_u1gp2")
+}, {
+"duration": 6.0,
+"texture": SubResource("AtlasTexture_fqwls")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 4.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rekur")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qcld2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rekur")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r065v")
+}],
+"loop": true,
+"name": &"talk",
+"speed": 6.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p8juv"]
+size = Vector2(70, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_svbu6"]
+atlas = ExtResource("11_w3imv")
+region = Rect2(128, 896, 128, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_26mpo"]
+atlas = ExtResource("11_w3imv")
+region = Rect2(256, 896, 128, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tr7y3"]
+atlas = ExtResource("11_w3imv")
+region = Rect2(128, 896, 128, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h0wuu"]
+atlas = ExtResource("11_w3imv")
+region = Rect2(256, 896, 128, 256)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_q377f"]
+animations = [{
+"frames": [{
+"duration": 6.0,
+"texture": SubResource("AtlasTexture_svbu6")
+}, {
+"duration": 6.0,
+"texture": SubResource("AtlasTexture_26mpo")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 4.0
+}, {
+"frames": [{
+"duration": 6.0,
+"texture": SubResource("AtlasTexture_tr7y3")
+}, {
+"duration": 6.0,
+"texture": SubResource("AtlasTexture_h0wuu")
+}],
+"loop": true,
+"name": &"talk",
+"speed": 4.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wct34"]
+size = Vector2(70, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7ir5v"]
+atlas = ExtResource("11_w3imv")
+region = Rect2(128, 1280, 128, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fqlh4"]
+atlas = ExtResource("11_w3imv")
+region = Rect2(256, 1280, 128, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8rq5f"]
+atlas = ExtResource("11_w3imv")
+region = Rect2(512, 1280, 128, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oj3on"]
+atlas = ExtResource("11_w3imv")
+region = Rect2(256, 1280, 128, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d310d"]
+atlas = ExtResource("11_w3imv")
+region = Rect2(384, 1280, 128, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qhvjb"]
+atlas = ExtResource("11_w3imv")
+region = Rect2(128, 1280, 128, 256)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8ityp"]
+animations = [{
+"frames": [{
+"duration": 6.0,
+"texture": SubResource("AtlasTexture_7ir5v")
+}, {
+"duration": 6.0,
+"texture": SubResource("AtlasTexture_fqlh4")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 4.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8rq5f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oj3on")
+}],
+"loop": true,
+"name": &"talk_1",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d310d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qhvjb")
+}],
+"loop": true,
+"name": &"talk_2",
+"speed": 6.0
+}]
+
+[node name="Forest" type="Node2D"]
 y_sort_enabled = true
 script = ExtResource("1_u066t")
 
@@ -1572,7 +1741,8 @@ layer_10/z_index = -2
 layer_10/tile_data = PackedInt32Array(-131079, 655361, 9, -65543, 655361, 10, -7, 655361, 11, -131078, 720897, 9, -65542, 720897, 10, -6, 720897, 11, -196595, 655361, 9, -131059, 655361, 10, -65523, 655361, 11, -196594, 720897, 9, -131058, 720897, 10, -65522, 720897, 11, -196601, 65537, 9, -131065, 65537, 10, -65529, 65537, 11, -196600, 131073, 9, -131064, 131073, 10, -65528, 131073, 11, -196605, 262145, 10, -131069, 262145, 11, -196604, 327681, 10, -131068, 327681, 11, -131077, 262145, 10, -65541, 262145, 11, -131076, 327681, 10, -65540, 327681, 11, -196597, 458753, 10, -131061, 458753, 11, -196596, 524289, 10, -131060, 524289, 11, -196607, 458753, 9, -131071, 458753, 10, -65535, 458753, 11, -196606, 524289, 9, -131070, 524289, 10, -65534, 524289, 11)
 
 [node name="ExitArea" parent="." instance=ExtResource("1_svyfn")]
-position = Vector2(-400, 456)
+z_index = -1
+position = Vector2(302, 1237)
 
 [node name="player" parent="." instance=ExtResource("2_broqp")]
 y_sort_enabled = true
@@ -1597,7 +1767,7 @@ shape = SubResource("SegmentShape2D_nqo0k")
 [node name="Right" type="CollisionShape2D" parent="RoomBoundary/BoundaryShape"]
 shape = SubResource("SegmentShape2D_dk2l3")
 
-[node name="speaker" parent="." instance=ExtResource("9_iqj0g")]
+[node name="Farmer" parent="." instance=ExtResource("9_iqj0g")]
 y_sort_enabled = true
 position = Vector2(308.416, 120)
 speakerName = "Farmer"
@@ -1605,5 +1775,61 @@ actionName = "Talk"
 dialogues = Array[Resource("res://addons/dialogue_manager/dialogue_resource.gd")]([null, ExtResource("10_eh7lq"), ExtResource("10_eh7lq")])
 animationFrames = SubResource("SpriteFrames_upmes")
 collider = SubResource("RectangleShape2D_bngqi")
-animatedSpriteTransformPosition = Vector2(0, 0)
 colliderTransformPosition = Vector2(0, 30)
+
+[node name="Drake" type="StaticBody2D" parent="."]
+position = Vector2(1310, 471)
+script = ExtResource("12_65hq0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Drake"]
+position = Vector2(46, 43.75)
+shape = SubResource("RectangleShape2D_j715k")
+
+[node name="Sprite2D" type="Sprite2D" parent="Drake"]
+position = Vector2(33, -31)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("12_aoqwx")
+
+[node name="Area2D" type="Area2D" parent="Drake"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Drake/Area2D"]
+position = Vector2(46, 43.75)
+shape = SubResource("RectangleShape2D_68jcp")
+
+[node name="Kids" type="StaticBody2D" parent="." node_paths=PackedStringArray("speakerParts")]
+script = ExtResource("12_xbfko")
+actionName = "Talk"
+dialogues = Array[Resource("res://addons/dialogue_manager/dialogue_resource.gd")]([null, ExtResource("13_iacr7"), null])
+speakerParts = [NodePath("Boy"), NodePath("Girl"), NodePath("Older boy")]
+
+[node name="Boy" parent="Kids" node_paths=PackedStringArray("parent") instance=ExtResource("9_iqj0g")]
+z_index = -1
+y_sort_enabled = true
+position = Vector2(847, 746)
+script = ExtResource("14_il4e0")
+speakerName = "Boy"
+animationFrames = SubResource("SpriteFrames_tb7d5")
+collider = SubResource("RectangleShape2D_p8juv")
+parent = NodePath("..")
+
+[node name="Girl" parent="Kids" node_paths=PackedStringArray("parent") instance=ExtResource("9_iqj0g")]
+z_index = -1
+y_sort_enabled = true
+position = Vector2(1229, 778)
+script = ExtResource("14_il4e0")
+speakerName = "Girl"
+animationFrames = SubResource("SpriteFrames_q377f")
+collider = SubResource("RectangleShape2D_wct34")
+parent = NodePath("..")
+
+[node name="Older boy" parent="Kids" node_paths=PackedStringArray("parent") instance=ExtResource("9_iqj0g")]
+z_index = -1
+y_sort_enabled = true
+position = Vector2(1690, 736)
+script = ExtResource("14_il4e0")
+speakerName = "Older boy"
+animationFrames = SubResource("SpriteFrames_8ityp")
+collider = SubResource("RectangleShape2D_wct34")
+parent = NodePath("..")
+
+[connection signal="area_entered" from="Drake/Area2D" to="Drake" method="_on_area_2d_area_entered"]

@@ -6,7 +6,7 @@ The first, and presumably the leader, is a scrawny man in light clothes. He wear
 The second is a woman of extraordinary magical ability. You have but a slight penchant for feeling it and she is positivly oozing with magic. Her gaze is focused on the table and the meager food in front of her however
 The third, if they can be called a person at all, is a giant suit of armor. There is no hole or imperfection in it that would show skin and confirm the identiy of those who presumably house within it. 
 - Wait for them to notice your presence. 
-	The armored one is the one to first look your way. 
+	The armored one is the one to first look your way.
 	THey stare however, and do not speak. Neither to you nor to their companions about your presence. 
 	The leader and woman begin mumbling of something, still not aware that you are here. 
 	- Eavesdrop on them. Perhaps the big one is mute?
@@ -28,18 +28,18 @@ The third, if they can be called a person at all, is a giant suit of armor. Ther
 						Man: But please refrain from doing so. 
 						Man: I'll not share them this day. Maybe if some more times passes, and it becomes but an unpleasent memory, maybe then you'll get to hear what happened. 
 						Man: Until then, please leave us alone. 
-						=> END
+						=> DialogueEnd
 					- I understand. Still, a sufficient tragedy can be catharthic all the while!
 						The woman slams her hand on the table and turns to face you. 
 						Woman: They aren't tragedies, they're comedies! 
 						Woman: It's embarrasing the way these past ones have gone. No you won't hear them. 
 						Woman: Off with you. I came here for a good drink and a distraction, not to dredge this all back up again. 
 						Woman: Goodbye!
-						=> END 
+						=> DialogueEnd
 				- Well then, a good day to you either way. 
 					Man: Aye. Good day to you as well, Bard.
 					Man: Would that you find better luck elsewhere. 
-					=> END
+					=> DialogueEnd
 			- I'll be staying here a while, so I thought I'd get to know the resident adventurers. 
 				Man: Resident is a big far stretched. We too only wanted to pass by, but this town is so plagued by the supernatural that its hard to do so in good conscience. 
 				Man: You'll come to understand what I mean soon enough. 
@@ -51,13 +51,13 @@ The third, if they can be called a person at all, is a giant suit of armor. Ther
 					Woman: Will you stop talking about it already?
 					Man: Apologies. 
 					Man: It's best if you leave us now. 
-					=> END 
+					=> DialogueEnd
 				- then you'll be off. You can't wait to find out. 
 					Man: Take care. 
-					=> END
+					=> DialogueEnd
 		- Excuse yourself. 
 			They pay a leaving bard no mind. 
-			=> END 
+			=> DialogueEnd
 	- Loudly clear your throat to get their attention. 
 		The Leader is startled at first, but then smiles and extends a hand. 
 		The other two simply regard you with cold gazes. 
@@ -74,21 +74,21 @@ The third, if they can be called a person at all, is a giant suit of armor. Ther
 					Man: But please refrain from doing so. 
 					Man: I'll not share them this day. Maybe if some more times passes, and it becomes but an unpleasent memory, maybe then you'll get to hear what happened. 
 					Man: Until then, please leave us alone. 
-					=> END
+					=> DialogueEnd
 				- I understand. Still, a sufficient tragedy can be catharthic all the while!
 					The woman slams her hand on the table and turns to face you. 
 					Woman: They aren't tragedies, they're comedies! 
 					Woman: It's embarrasing the way these past ones have gone. No you won't hear them. 
 					Woman: Off with you. I came here for a good drink and a distraction, not to dredge this all back up again. 
 					Woman: Goodbye!
-					=> END 
+					=> DialogueEnd
 			- Well then, a good day to you either way. 
 				Man: Aye. Good day to you as well, Bard.
 				Man: Would that you find better luck elsewhere. 
-				=> END
+				=> DialogueEnd
 	- Walk away. You don't have a good feeling about them. 
 		They regard you with no words, and pay your leaving no mind. 
-		=> END 
+		=> DialogueEnd
 	
 - Adress them first, ask if they have been part of any heroic action!
 	The woman laughs for some odd reason. 
@@ -102,12 +102,13 @@ The third, if they can be called a person at all, is a giant suit of armor. Ther
 			Man: Aye. 
 			Man: I hope you have better luck elsewhere. 
 			Man: A good day to you and yours. 
-			=> END 
+			=> DialogueEnd
 	- Let them sulk. Clearly something happened and they don't want to talk. 
-		=> END 
+		=> DialogueEnd
 - Walk away, you don't have a good feeling about this. 
 They regard you with no words, and pay your leaving no mind. 
-=> END 
+=> DialogueEnd
 
-
+~ DialogueEnd
+set GameStateHolder.SpokeToAdventurersDayOneNoon = true
 => END

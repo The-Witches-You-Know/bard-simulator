@@ -20,7 +20,7 @@ b = Vector2(1200, 1000)
 a = Vector2(1200, 0)
 b = Vector2(1200, 1000)
 
-[node name="graveyard" type="Node2D"]
+[node name="Graveyard" type="Node2D"]
 script = ExtResource("1_4rwex")
 
 [node name="ExitArea" parent="." instance=ExtResource("2_esgww")]

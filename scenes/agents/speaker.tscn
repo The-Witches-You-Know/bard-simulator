@@ -19,9 +19,6 @@ font_size = 24
 [node name="speaker" type="StaticBody2D"]
 script = ExtResource("1_siml4")
 speakerName = "Test"
-dialogues = null
-animatedSpriteTransformPosition = null
-colliderTransformPosition = null
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_hrlk0")

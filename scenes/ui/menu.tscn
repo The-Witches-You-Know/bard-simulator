@@ -65,6 +65,11 @@ custom_minimum_size = Vector2(200, 50)
 layout_mode = 2
 text = "Options"
 
+[node name="Credits" type="Button" parent="Panel/MarginContainer/VBoxContainer/MainMenuPanel"]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+text = "Credits"
+
 [node name="SettingsMenuPanel" parent="Panel/MarginContainer/VBoxContainer" instance=ExtResource("3_n6igi")]
 layout_mode = 2
 
@@ -81,11 +86,12 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_top = -104.0
-offset_bottom = -104.0
+offset_top = -144.0
+offset_bottom = -144.0
 message = "Are you sure you want to start a new game?"
 
 [connection signal="button_up" from="Panel/MarginContainer/VBoxContainer/MainMenuPanel/Continue" to="." method="_on_continue_button_up"]
 [connection signal="button_up" from="Panel/MarginContainer/VBoxContainer/MainMenuPanel/NewGame" to="." method="_on_new_game_button_up"]
 [connection signal="button_up" from="Panel/MarginContainer/VBoxContainer/MainMenuPanel/Options" to="." method="_on_options_button_up"]
+[connection signal="button_up" from="Panel/MarginContainer/VBoxContainer/MainMenuPanel/Credits" to="." method="_on_credits_button_up"]
 [connection signal="_on_confirmation_popup" from="ConfirmationPopup" to="." method="_on_confirmation_popup"]

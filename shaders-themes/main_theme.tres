@@ -1,0 +1,6 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://dn1o6shwhi1wx"]
+
+[ext_resource type="FontFile" uid="uid://0ee328kbk65f" path="res://shaders-themes/pixelFont.ttf" id="1_th8yr"]
+
+[resource]
+default_font = ExtResource("1_th8yr")

@@ -1,5 +1,5 @@
 @tool
-extends StaticBody2D
+extends ISpeaker
 
 class_name Speaker
 
@@ -17,6 +17,7 @@ class_name Speaker
 @onready var animatedSprite: AnimatedSprite2D = $AnimatedSprite2D
 var isTalking = false
 var selectedAnimName = null
+var alternateAnimationPlaying = false
 
 func setSpriteFrames(newFrames: SpriteFrames):
 	animationFrames = newFrames
@@ -51,14 +52,10 @@ func onAreaExited():
 	
 func _ready():
 	if not Engine.is_editor_hint():
-		if (dialogues[(GameStateHolder.currentDay-1) * 3 + GameStateHolder.timeOfDay] != null):
-			visible = true
-			setCollisionDisabled(false)
-			setSpriteFrames(animationFrames)
-			animatedSprite.play("idle")
-		else:
-			visible = false
-			setCollisionDisabled(true)
+		visible = dialogues[(GameStateHolder.currentDay-1) * 3 + GameStateHolder.timeOfDay] != null
+		setCollisionDisabled(!visible)
+		setSpriteFrames(animationFrames)
+		animatedSprite.play("idle")
 
 func onInteract():
 	if(visible):
@@ -67,28 +64,32 @@ func onInteract():
 		var balloon = DialogueManager.show_example_dialogue_balloon(dialogues[(GameStateHolder.currentDay-1) * 3 + GameStateHolder.timeOfDay], "start")
 		Audio_Player.setBalloonReference(balloon)
 	
-func talk(speakerName: String):
+func talk(nameInBalloon: String):
 	if !isTalking:
+		Audio_Player.setSpeaker(speakerName)
 		animatedSprite.stop()
 		isTalking = true
-		if selectedAnimName not in animationFrames.animations:
+		if selectedAnimName not in animationFrames.animations.map(func(x): return x.name):
 			selectedAnimName = animationFrames.animations.filter(func(x): return "talk" in x.name).pick_random().name
 		animatedSprite.play(selectedAnimName)
 	
 func idle(resetAnimName: bool):
-	animatedSprite.stop()
 	isTalking = false
+	Audio_Player.setSpeaker("")
 	if resetAnimName:
 		selectedAnimName = null
-	if "silent" in animationFrames.animations.map(func(x): return x.name):
-		animatedSprite.play("silent")
-	else:
-		animatedSprite.play("idle")
+	if(!alternateAnimationPlaying):
+		animatedSprite.stop()
+		if "silent" in animationFrames.animations.map(func(x): return x.name):
+			animatedSprite.play("silent")
+		else:
+			animatedSprite.play("idle")
 	
 func play(animationName):	
 	animatedSprite.stop()
 	selectedAnimName = animationName
 	animatedSprite.play(selectedAnimName)
+	alternateAnimationPlaying = true
 	
 func onConversationStarted():
 	talkPanel.visible = false

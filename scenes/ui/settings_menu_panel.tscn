@@ -46,25 +46,6 @@ offset_bottom = 25.0
 text = "Music Volume"
 horizontal_alignment = 1
 
-[node name="AmbientVolume" type="Control" parent="."]
-custom_minimum_size = Vector2(200, 50)
-layout_mode = 2
-
-[node name="AmbientVolumeSlider" type="HSlider" parent="AmbientVolume"]
-layout_mode = 2
-offset_top = 20.0
-offset_right = 200.0
-offset_bottom = 45.0
-max_value = 10.0
-
-[node name="Label" type="Label" parent="AmbientVolume"]
-custom_minimum_size = Vector2(0, 25)
-layout_mode = 0
-offset_right = 200.0
-offset_bottom = 25.0
-text = "Ambient Volume"
-horizontal_alignment = 1
-
 [node name="SFXVolume" type="Control" parent="."]
 custom_minimum_size = Vector2(200, 50)
 layout_mode = 2
@@ -95,6 +76,6 @@ text = "Return"
 
 [connection signal="value_changed" from="MasterVolume/MasterVolumeSlider" to="." method="_on_master_volume_slider_value_changed"]
 [connection signal="value_changed" from="MusicVolume/MusicVolumeSlider" to="." method="_on_music_volume_slider_value_changed"]
-[connection signal="value_changed" from="AmbientVolume/AmbientVolumeSlider" to="." method="_on_ambient_volume_slider_value_changed"]
+[connection signal="drag_ended" from="SFXVolume/SFXVolumeSlider" to="." method="_on_sfx_volume_slider_drag_ended"]
 [connection signal="drag_started" from="SFXVolume/SFXVolumeSlider" to="." method="_on_sfx_volume_slider_drag_started"]
 [connection signal="value_changed" from="SFXVolume/SFXVolumeSlider" to="." method="_on_sfx_volume_slider_value_changed"]
