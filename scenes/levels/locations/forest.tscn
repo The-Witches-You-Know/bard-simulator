@@ -14,7 +14,7 @@
 [ext_resource type="Script" path="res://scripts/agents/drake.gd" id="12_65hq0"]
 [ext_resource type="Texture2D" uid="uid://62lkgkhno8gt" path="res://assets/sprites/forest/Drake.png" id="12_aoqwx"]
 [ext_resource type="Script" path="res://scripts/agents/groupSpeaker.gd" id="12_xbfko"]
-[ext_resource type="Resource" uid="uid://cxd5d6qtmvdph" path="res://dialogue/ForestKidsDayOneNoon.dialogue" id="13_iacr7"]
+[ext_resource type="Resource" path="res://dialogue/ForestKidsNoon.dialogue" id="13_iacr7"]
 [ext_resource type="Script" path="res://scripts/agents/groupSpeakerPart.gd" id="14_il4e0"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hyj83"]
