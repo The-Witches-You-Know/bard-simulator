@@ -45,18 +45,18 @@ How do you wish to tell the Orc's story
 	- Begin your tale in the middle of the action
 		Confusion is abound. One or two patrons turn to their neighbours, a loudmouth asks a question into the room that doesn't get answered
 		Still, a few patrons don't really care. They hear action, and their attention is captured. 
-		- Lean into the senseless Action and draw out the fight for as long as you possible can.
+		- Draw out the fight for as long as you possibly can.
 			Those that were already interested are completely drawn in by the descriptions of senseless violence. Every so often a singular cheer erupts from the crowd
 			Those who were not as interested however, have no chance of following alone. 
 			- Finally end the fight with as grand a finale as you can think of. 
 				There are cheers here and there. 
-				You managed to make a few peoples night, but were nothing but please background noise for the rest
+				You managed to make a few people night, but were nothing but a pleasant background noise for the rest.
 				=> OrcHeroEnd
 
 		- Pause and let the Orc monologue to explain the situation
 			You've chosen the worst of both worlds. Those with an interest in action tune out, and those who already didn't pay attention aren't interested anymore. 
 			- Continue to try and tell your story. 
-				You continue to be a pleasant background noise for the tavern. No one in particular pays you much attention
+				You continue to be a pleasant background noise for the tavern. No one in particular pays you much attention.
 				But no one is offended by your presence either. 
 				- You consider this at least a mild success
 					=> OrcHeroEnd
@@ -144,7 +144,7 @@ How do you wish to tell the Orc's story
 				The night ends with everyone well and truly drunk, ready for the hangover the next day.
 				=> OrcHeroEnd
 				
-- You'd rather spread this tale elsewhere
+- You'd rather spread another tale
 	=> start
 
 ~ ORCFOREST
@@ -214,7 +214,7 @@ do GameStateHolder.nightPhaseView.loadPlace(1)
 	- Stay silent for a while, listen to what the others have to say about you. 
 		Not much apparently. Someone else simply mentions how ridiculous the hat is, and then conversation moves on.
 		
-- You'd rather spread this tale elsewhere
+- You'd rather spread another tale
 	=> start
 
 => END
@@ -227,16 +227,16 @@ Many new patrons are still entering, ordering or waiting, and conversation is bu
 	You had to clear your throat a few times, almost threatening to clear yourself hoarse. But, after the fifth or sixth attempt, even the last doubtful eye rests on you now.
 - Make it known that you have something important to say.
 	When a stranger, and Bard no less, announces such a thing, most tend to look.
-The attention is yours.
-Now it is up to you, on how to present the threat of a possible but unlikely disease spreading through their ranks
-- Announce to the room directly, truthfully and without embellishments the danger they are in.
-	Which, as you yourself admit freely, is not a great one, but a mere chance of one.
-	You mention the kids potential infection, and what is assumed to be one of their parents rushes from the room.
-	The rest stay, unimpressed.
-	"What if the witch is lying?" A loud male voice somewhere in the back yells out.
-	- Snarkily respond. If he wishes to trust fate, he is welcome.
-		You manage to shut him up right quick.
-		The Orc, who you didn't see on a first glance rises to their feet.
+The attention is yours. 
+Now it is up to you, on how to present the threat of a possible but unlikely disease spreading through their ranks.
+- Announce truthfully and without embellishments the danger they are in.
+	Which, as you yourself admit freely, is not a great one, but a mere chance of one. 
+	You mention the kids potential infection, and what is assumed to be one of their parents rushes from the room. 
+	The rest stay, unimpressed. 
+	"What if the witch is lying?" A loud male voice somewhere in the back yells out. 
+	- Snarkily respond. If he wishes to trust fate, he is welcome. 
+		You manage to shut him up right quick. 
+		The Orc, who you didn't see on a first glance rises to their feet. 
 		"I slew the beast, I am most risk. I will go, whoever still has doubts may follow me."
 		- Nod the Orcs way, thankful
 		- Let silence speak for you.
@@ -274,8 +274,8 @@ Now it is up to you, on how to present the threat of a possible but unlikely dis
 		Tavernkeep: Pray, next time, inform them gentler. Think of yourself of a shepherd.
 		Tavernkeep: You would not push them too far for fear of hurting each other.
 		=> DiseaseEnd
-	- Adress the few who already believe you. They are right to fear.
-		You succesfull stoke their fire.
+	- Address the few who already believe you. They are right to fear.
+		You successfully stoke their fire.
 		Fear is easily perpetuated, and emotions easily abused. It takes but a couple of words.
 		It's not long until most of the taverns patrons have left for the witch, and the ones that remain only do so to finish food and drink.
 		The tavernkeep however seems dismayed at this turn of events.
