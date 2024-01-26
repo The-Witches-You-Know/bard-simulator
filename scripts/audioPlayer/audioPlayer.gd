@@ -26,6 +26,8 @@ var musicStreams = {
 	"forest_day": preload("res://assets/audio/music/Forest_Day_Final.ogg") as AudioStream,
 	"forest_night": preload("res://assets/audio/music/Forest_Night_Final.ogg") as AudioStream,
 	"town_day": preload("res://assets/audio/music/Market_Day_Final.ogg") as AudioStream,
+	"opening": preload("res://assets/audio/music/Opening_Theme_Final.ogg") as AudioStream,
+	"closing": preload("res://assets/audio/music/Closing_Theme_Final.ogg") as AudioStream,
 	"town_night": null
 }
 
