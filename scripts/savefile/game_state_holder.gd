@@ -24,6 +24,7 @@ var KnowsOrcLied: bool = false: set = setKnowsOrcLied
 var FarmerAngry: bool = false: set = setFarmerAngry
 var KnowsAboutAdventurers: bool = false: set = setKnowsAboutAdventurers
 var DrakeInspected: bool = false: set = setDrakeInspected
+var KnowOfDisease: bool = false: set = setKnowOfDisease
 
 var expectedSpokenToIndices = {
 	"Tavern": [
@@ -69,16 +70,10 @@ var PeopleSpokenTo = [
 ]
 var Day1StoryEnding = "" : set = setDay1StoryEnding
 #[
-#InMediasRes
-#OrcMonologue
-#EpicClash
-#QuickFinish
-#GroundedInReality
-#Embellished
-#PersonalDramas
-#Conspiracies
-#OrcExile
-#RuinedMood
+#Disease
+#OrcHero
+#OrcLiar
+#Nothing
 #]
 
 var currentDay: int = 1 : set = setCurrentDay
@@ -125,11 +120,11 @@ func initGameState():
 	currentDay = savedData.safeGet("CurrentDay", 1)
 	timeOfDay = savedData.safeGet("TimeOfDay", 0)
 	
-	KnowsOrcLied = savedData.safeGet("KnowsOrcLied", false)
-	
+	KnowsOrcLied = savedData.safeGet("KnowsOrcLied", false)	
 	FarmerAngry = savedData.safeGet("FarmerAngry", false)
 	KnowsAboutAdventurers = savedData.safeGet("KnowsAboutAdventurers", false)
 	DrakeInspected = savedData.safeGet("DrakeInspected", false)
+	KnowOfDisease = savedData.safeGet("KnowOfDisease", false)
 	
 	currentLevel = savedData.safeGet("CurrentLevel", "tavern")
 	
@@ -173,6 +168,10 @@ func setKnowsAboutAdventurers(newValue: bool):
 func setDrakeInspected(newValue: bool):
 	DrakeInspected = newValue
 	SaveLoader.gameData.setOrPut("DrakeInspected", newValue)
+	
+func setKnowOfDisease(newValue: bool):
+	KnowOfDisease = newValue
+	SaveLoader.gameData.setOrPut("KnowOfDisease", newValue)
 	
 func setSpokeToTavernkeepDayOneMorning(newValue: bool):
 	SpokeToTavernkeepDayOneMorning = newValue

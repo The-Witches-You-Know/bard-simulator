@@ -4,8 +4,7 @@ do GameStateHolder.nightPhaseView.unloadPlace()
 It's your time of day. Night has fallen
 Now is your chance to tell the story you gathered throughout the day.
 Where do you wish to tell it?
-#only offer if Talked to witch evening, and "know of disease" are true.
-- Inform the town of the disease, as the witch asked of you.
+- Inform the town of the disease, as the witch asked of you. [if GameStateHolder.KnowOfDisease]
 	The Tavern does not lend itself well to bad messages and dreary futures.
 	But what must be done, must be done.
 	are you sure?
@@ -32,14 +31,6 @@ Where do you wish to tell it?
 - Chose not to tell any story.
 	=> Nothing
 
-#- On the Marketplace
-#	The Marketplace also functions are the townsquare, and is used for either public announcements, or matter of fact stories.
-#	Are you sure?
-#	- Yes
-#		=> ORCMARKET
-#	- No
-#		=> start
-
 ~ ORCTAVERN
 do GameStateHolder.nightPhaseView.loadPlace(0)
 How do you wish to tell the Orc's story
@@ -60,7 +51,7 @@ How do you wish to tell the Orc's story
 			- Finally end the fight with as grand a finale as you can think of. 
 				There are cheers here and there. 
 				You managed to make a few peoples night, but were nothing but pleasent background noise for the rest
-				=> END 
+				=> OrcHeroEnd 
 
 		- Pause and let the Orc monologue to explain the situation
 			You've chosen the worst of both worlds. Those with an interest in action tune out, and those who already didn't pay attention aren't interested anymore. 
@@ -68,9 +59,9 @@ How do you wish to tell the Orc's story
 				You continue to be pleasent background noise for the tavern. No one in particular pays you much attention
 				But no one is offended by your presence either. 
 				- You consider this at least a mild success
-					=> END 
+					=> OrcHeroEnd 
 				- You could have done so much better. You failed
-					=> END 
+					=> OrcHeroEnd 
 
 
 	- Start slow and steady with exposition. 
@@ -83,12 +74,12 @@ How do you wish to tell the Orc's story
 				Be that as it may, you've lost them.
 				None save for an enthralled and distracted child are paying you any mind.
 				A failure of a story.
-				=> END
+				=> OrcHeroEnd
 			- Admit that you should have made it more interesting.
 				Admitting ones fault is the path to become better.
 				There will be other stories to tell. Better ones.
 				And you're better for having tried tonight.
-				=> END
+				=> OrcHeroEnd
 		- Embellish the story a bit with some made up details
 			You let the Dragon perch on the windmill and furiously roar. 
 			The Orc Draws her weapon, which you've decided to be a broadsword. 
@@ -100,7 +91,7 @@ How do you wish to tell the Orc's story
 				As you sit back down, you see a few interested Patrons sit down next to the Orc, trying to be as close to the Hero of the hour as they can. 
 				You spend the rest of the night answering questions and adding some detail. 
 				Flagons upon flagons of Ale are purchased for the both of you, and the night comes to a high-spirited end. 
-				=> END 
+				=> OrcHeroEnd 
 				
 			- Dial back the lies a tiny bit, and describe the quick but fatal end of the Dragon.
 				You cut the tension short, let the Orc spout one last one liner, and describe it's quick end. 
@@ -108,7 +99,7 @@ How do you wish to tell the Orc's story
 				An overly drunk patron lounges over to the Orc, and starts asking questions. 
 				You've made her at least a little bit more of a Hero. 
 				Someone buys you a mug of mead, and you enjoy your time in the spotlight for a while before it's time to end the night
-				=> END 
+				=> OrcHeroEnd 
 			
 	- Come up with a devestating backstory for the Orc on the fly
 		The Orc herself glances your way dubiously, she seems to be confused by your words. 
@@ -123,7 +114,7 @@ How do you wish to tell the Orc's story
 				As you sit back down, you see a few interested Patrons sit down next to the Orc, trying to be as close to the Hero of the hour as they can. 
 				You spend the rest of the night answering questions and adding some detail. 
 				Flagons upon flagons of Ale are purchased for the both of you, and the night comes to a high-spirited end. 
-				=> END 
+				=> OrcHeroEnd 
 
 			- Dial back the lies a tiny bit, and describe the quick but fatal end of the Dragon. 
 				You cut the tension short, let the Orc spout one last one liner, and describe it's quick end. 
@@ -131,7 +122,7 @@ How do you wish to tell the Orc's story
 				An overly drunk patron lounges over to the Orc, and starts asking questions. 
 				You've made her at least a little bit more of a Hero. 
 				Someone buys you a mug of mead, and you enjoy your time in the spotlight for a while before it's time to end the night
-				=> END 
+				=> OrcHeroEnd 
 				
 		- Keep it grounded and recall how the Orc described the start of the fight. 
 			The Orc is a bit confused, but satisfied you chose not to embellish the tale with more lies.
@@ -142,7 +133,7 @@ How do you wish to tell the Orc's story
 				Expectation seemed to be that there would be a grander finish.
 				Still, a story successfully told, and an Orc satisfied. 
 				You finish the night with the Orc buying a round of drinks for the whole tavern. 
-				=> END 
+				=> OrcHeroEnd 
 				
 				
 			- Emebellish the story a tiny bit. Give the fight some back and forth. 
@@ -151,7 +142,7 @@ How do you wish to tell the Orc's story
 				There's a round of some kind of beverage given out
 				Then there's another one!
 				The night ends with everyone well and truly drunk, ready for the hangover the next day.
-				=> END 
+				=> OrcHeroEnd 
 				
 - You'd rather spread this tale elsewhere
 	=> start
@@ -193,12 +184,12 @@ do GameStateHolder.nightPhaseView.loadPlace(1)
 				With quick explainers you catch everyone up, but with the mystery gone interest seems to have waned. 
 				Someone else mentions that their kids came with all red from the drakes body, and the conversation naturally flows into the new topic. 
 				The rest of the night is spent with various personal dramas as the center stage, most of which you do not understand. 
-				=> END
+				=> OrcLiarEnd
 			- Revel in the chaos and let them come up with whatever they want. 
 				Wild accusation are thrown about. 
 				Someone says the entire drake thing was just a hoax by the king, and they are making them come to the poor villages on purpose. 
 				Conspiracies and theories establish themselves entirely on their own, and the Orc drake and to an extent you, remain part of the night's conversations until the end
-				=> END
+				=> OrcLiarEnd
 		- Establish some backstory for those not in the know. Remind them of her claim to glory and set up the truth. 
 			There's some murmurs. 
 			Someone mentions how they didn't believe the orc in the first place. 
@@ -211,7 +202,7 @@ do GameStateHolder.nightPhaseView.loadPlace(1)
 				Until the night ends the Orc and drake remaind the topic of conversation. 
 				Some are hostile, some don't care. One voice in particular calls for her exile. 
 				Opionions are split, and don't come to a conclusion until the enight comes to a close. 
-				=> END
+				=> OrcLiarEnd
 			- Retell the story with a bit of humor. 
 				You try to make it akin to a cartoon. 
 				A funny stumble, a few anecdotes. 
@@ -219,7 +210,7 @@ do GameStateHolder.nightPhaseView.loadPlace(1)
 				You get a labored laught here or there, but most of the troupe begins whispering about the consquences of this newly gained information. 
 				Someone laments that they'll have to bury the body, someone else joins in, and the mood is sufficiently ruined. 
 				The night ends soon after, and you're left to wonder if you're to blame. 
-				=> END 
+				=> OrcLiarEnd 
 	- Stay silent for a while, listen to what the others have to say about you. 
 		Not much apparently. Someone else simply mentions how ridicolous the hat is, and then conversation moves on. 
 		
@@ -229,6 +220,7 @@ do GameStateHolder.nightPhaseView.loadPlace(1)
 => END
 
 ~ Disease
+do GameStateHolder.nightPhaseView.loadPlace(0)
 Luckily for you it is the early evening of the tavern hours.
 Many new patrons are still entering, ordering or waiting, and conversation is but a sprouting bud.
 - Clear your throat loudly, to try and get their attention.
@@ -249,7 +241,7 @@ Now it is up to you, on how to present the threat of a possible but unlikely dis
 		- Nod the Orcs way, thankful
 		- Let silence speak for you.
 		The Orc leaves, and a handful of fearful peasents follow behind.
-		=> END
+		=> DiseaseEnd
 	- Consider his concern as mute and merely shrug.
 		A few more join in on the chorus of doubtful whispers.
 		"You're just an outsider in league with her." A woman calls out from just a few feet away from you.
@@ -259,12 +251,12 @@ Now it is up to you, on how to present the threat of a possible but unlikely dis
 			Someone whispers to her, you hope sound advice to see the witch about her daughter, and she does storm off.
 			Hushed conversation about what this means for the town begins.
 			- Leave them to it. You have done what you need to.
-			 => END
+			 => DiseaseEnd
 		- Making them listen was not part of the arrangement. Roll your eyes and leave.
 			Your leaving only fans the fires of doubt. From the outside you hear fierce arguing.
 			Apparently you became a player in an old conflict.
 			Only time can tell whether those affected care enough to see the potentially infected are seen to.
-			=> END
+			=> DiseaseEnd
 - A bit of panic never hurt. Make it seem more dangerous, more certain even.
 	Whispers break out.
 	For every voice claiming your story is a fad, another impresses on them the memory of just a recent infection.
@@ -281,7 +273,7 @@ Now it is up to you, on how to present the threat of a possible but unlikely dis
 		Tavernkeep: I do wish that you leave however. Buisness is bad enough without a mounting doom on the horizon.
 		Tavernkeep: Pray, next time, inform them gentler. Think of yourself of a shepherd.
 		Tavernkeep: You would not push them too far for fear of hurting each other.
-		=> END
+		=> DiseaseEnd
 	- Adress the few who already believe you. They are right to fear.
 		You succesfull stoke their fire.
 		Fear is easily perpetuated, and emotions easily abused. It takes but a couple of words.
@@ -292,7 +284,7 @@ Now it is up to you, on how to present the threat of a possible but unlikely dis
 		Tavernkeep: But, you have saved lives this day. You can be proud of that.
 		- Be glad of your lies. They have earned your glory.
 		- Feel the tinge of regret at your lies consequence.
-		=> END
+		=> DiseaseEnd
 
 ~ Nothing
 Are you sure you wish to let this night pass by without telling a story?
@@ -300,10 +292,28 @@ Are you sure you wish to let this night pass by without telling a story?
 	Be it for lack of ambition, lack of trying, or simply because you are not interested in telling these particular tales, you have chosen to remain silent this night.
 	You spend a peaceful night, one away from all the fears and ambitions, away from the people.
 	You sleep deeply, untroubled.
-	=> END
+	=> NothingEnd
 - no
 	=> start
 
-
 => END
 
+~ DiseaseEnd
+set GameStateHolder.Day1StoryEnding = "Disease"
+do GameStateHolder.nightPhaseView.onNightPhaseOver()
+=> END
+
+~ OrcHeroEnd
+set GameStateHolder.Day1StoryEnding = "OrcHero"
+do GameStateHolder.nightPhaseView.onNightPhaseOver()
+=> END
+
+~ OrcLiarEnd
+set GameStateHolder.Day1StoryEnding = "OrcLiar"
+do GameStateHolder.nightPhaseView.onNightPhaseOver()
+=> END
+
+~ NothingEnd
+set GameStateHolder.Day1StoryEnding = "Nothing"
+do GameStateHolder.nightPhaseView.onNightPhaseOver()
+=> END

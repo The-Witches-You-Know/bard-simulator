@@ -31,7 +31,7 @@ func onNightPhaseOver():
 		Audio_Player.setBalloonReference(DialogueManager.show_example_dialogue_balloon(load("res://dialogue/Epilogue.dialogue"), "start"))
 	).set_delay(2.0)
 	
-func onEpilogueOver():	
+func onEpilogueOver():
 	var main = get_node("/root/Main") as Manager
 	main.switch_state(global.END_GAME)
 	
