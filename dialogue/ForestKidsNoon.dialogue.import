@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_11"
+type="Resource"
+uid="uid://cxd5d6qtmvdph"
+path="res://.godot/imported/ForestKidsNoon.dialogue-30e0f28309e8798537b2d4f1a2c388cc.tres"
+
+[deps]
+
+source_file="res://dialogue/ForestKidsNoon.dialogue"
+dest_files=["res://.godot/imported/ForestKidsNoon.dialogue-30e0f28309e8798537b2d4f1a2c388cc.tres"]
+
+[params]
+
+defaults=true

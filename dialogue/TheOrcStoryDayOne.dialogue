@@ -4,6 +4,15 @@ do GameStateHolder.nightPhaseView.unloadPlace()
 It's your time of day. Night has fallen
 Now is your chance to tell the story you gathered throughout the day.
 Where do you wish to tell it?
+#only offer if Talked to witch evening, and "know of disease" are true.
+- Inform the town of the disease, as the witch asked of you.
+	The Tavern does not lend itself well to bad messages and dreary futures.
+	But what must be done, must be done.
+	are you sure?
+	- Yes
+		=> Disease
+	- No
+	 => start
 - The Tavern
 	The Tavern lends itself well to humorous and uplifting stories. 
 	Are you sure? 
@@ -20,6 +29,9 @@ Where do you wish to tell it?
 		=> ORCFOREST
 	- No
 		=> start
+- Chose not to tell any story.
+	=> Nothing
+
 #- On the Marketplace
 #	The Marketplace also functions are the townsquare, and is used for either public announcements, or matter of fact stories.
 #	Are you sure?
@@ -59,12 +71,24 @@ How do you wish to tell the Orc's story
 					=> END 
 				- You could have done so much better. You failed
 					=> END 
-					
-			- Stop, you've done enough harm to your reputation. 
+
+
 	- Start slow and steady with exposition. 
 		As expected, not many turn to you. Their loss, this payoff is going to be much better for it.
 		You establish the dragon's backstory, it's terrorizing of harmless Farmers. The Orc is poised for a heroic tale.
-		- Describe the actual beginning of the fight. 
+		- Describe the actual, rather dry, beginning of the fight.
+			The facts and lack of compelling narrative don't capture the attention of many.
+			Faces turn back to their table conversations, and your voice becomes drowned out once again.
+			- Curse them silently for their need of sensations.
+				Be that as it may, you've lost them.
+				None save for an enthralled and distracted child are paying you any mind.
+				A failure of a story.
+				=> END
+			- Admit that you should have made it more interesting.
+				Admitting ones fault is the path to become better.
+				There will be other stories to tell. Better ones.
+				And you're better for having tried tonight.
+				=> END
 		- Embellish the story a bit with some made up details
 			You let the Dragon perch on the windmill and furiously roar. 
 			The Orc Draws her weapon, which you've decided to be a broadsword. 
@@ -203,3 +227,83 @@ do GameStateHolder.nightPhaseView.loadPlace(1)
 	=> start
 
 => END
+
+~ Disease
+Luckily for you it is the early evening of the tavern hours.
+Many new patrons are still entering, ordering or waiting, and conversation is but a sprouting bud.
+- Clear your throat loudly, to try and get their attention.
+	You had to clear your throat a few times, almost threatening to clear yourself hoarse. But, after the fifth or sixth attempt, even the last doubtful eye rests on you now .
+- Make it known that you have something important to say.
+	When a stranger, and Bard no less, announces such a thing, most tend to look.
+The attention is yours.
+Now it is up to you, on how to present the threat of a possible but unlikely disease spreading through their ranks
+- Announce to the room directly, truthfully and without emeblishements the danger they are in.
+	Which, as you yourself admit freely, is not a great one, but a mere chance of one.
+	You mention the kids potential infection, and what is assumed to be one of their parents rushes from the room.
+	The rest stay, unimpressed.
+	"What if the witch is lying?" A loud male voice somewhere in the back yells out.
+	- Snarkily respond. If he wishes to trust fate, he is welcome.
+		You manage to shut him up right quick.
+		The Orc, who you didn't see on a first glance rises to their feet.
+		"I slew the beast, I am most risk. I will go, whoever still has doubts may follow me."
+		- Nod the Orcs way, thankful
+		- Let silence speak for you.
+		The Orc leaves, and a handful of fearful peasents follow behind.
+		=> END
+	- Consider his concern as mute and merely shrug.
+		A few more join in on the chorus of doubtful whispers.
+		"You're just an outsider in league with her." A woman calls out from just a few feet away from you.
+		She bears a striking resemblance to the girl you saw near the drake.
+		- Assume. Call her out on risking her daughters fate.
+			You assume correctly. She opens her mouth to protest, but thinks better of it.
+			Someone whispers to her, you hope sound advice to see the witch about her daughter, and she does storm off.
+			Hushed conversation about what this means for the town begins.
+			- Leave them to it. You have done what you need to.
+			 => END
+		- Making them listen was not part of the arrangement. Roll your eyes and leave.
+			Your leaving only fans the fires of doubt. From the outside you hear fierce arguing.
+			Apparently you became a player in an old conflict.
+			Only time can tell whether those affected care enough to see the potentially infected are seen to.
+			=> END
+- A bit of panic never hurt. Make it seem more dangerous, more certain even.
+	Whispers break out.
+	For every voice claiming your story is a fad, another impresses on them the memory of just a recent infection.
+	For everyone who wants to follow your sound advice, another reminds them of the witches nature, and your status as outsider.
+	- Impress on them with great importance that the villages demise might be at hand
+		A grave prediction, and one not handled lightly.
+		You can be glad that your profession is wordsmith, not anyone suspects you of a lie.
+		They merely wish for a different truth.
+		Some of the villages residents push past you to seek out the witch, and the ones that remain are hard pressed to talk about anything else.
+		After a moments pause the Tavernkeep approaches you.
+		Tavernkeep: Thank you for telling us. You have saved lives this day.
+		- Be glad of your lies. They have earned your glory.
+		- Feel the tinge of regret at your lies consequence.
+		Tavernkeep: I do wish that you leave however. Buisness is bad enough without a mounting doom on the horizon.
+		Tavernkeep: Pray, next time, inform them gentler. Think of yourself of a shepherd.
+		Tavernkeep: You would not push them too far for fear of hurting each other.
+		=> END
+	- Adress the few who already believe you. They are right to fear.
+		You succesfull stoke their fire.
+		Fear is easily perpetuated, and emotions easily abused. It takes but a couple of words.
+		It's not long until most of the taverns patrons have left for the witch, and the ones that remain only do so to finish food and drink.
+		The tavernkeep however seems dismayed at this turn of events.
+		Tavernkeep: Buisness was bad enough already.
+		Tavernkeep: We didn't need a crisis
+		Tavernkeep: But, you have saved lives this day. You can be proud of that.
+		- Be glad of your lies. They have earned your glory.
+		- Feel the tinge of regret at your lies consequence.
+		=> END
+
+~ Nothing
+Are you sure you wish to let this night pass by without telling a story?
+- yes
+	Be it for lack of ambition, lack of trying, or simply because you are not interested in telling these particular tales, you have chosen to remain silent this night.
+	You spend a peaceful night, one away from all the fears and ambitions, away from the people.
+	You sleep deeply, untroubled.
+	=> END
+- no
+	=> start
+
+
+=> END
+
