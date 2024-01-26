@@ -1,4 +1,4 @@
-[gd_scene load_steps=52 format=3 uid="uid://bywu72xv1pgx0"]
+[gd_scene load_steps=57 format=3 uid="uid://bywu72xv1pgx0"]
 
 [ext_resource type="Script" path="res://scripts/levels/level.gd" id="1_bmea0"]
 [ext_resource type="PackedScene" uid="uid://by276q5li4uq4" path="res://scenes/levels/objects/exit_area.tscn" id="2_kjn8m"]
@@ -11,14 +11,19 @@
 [ext_resource type="Resource" uid="uid://prrvr227bm8x" path="res://dialogue/TavernkeepNoon.dialogue" id="7_lflut"]
 [ext_resource type="SpriteFrames" uid="uid://bumodeeonmfgh" path="res://assets/animations/oldBard.tres" id="9_324ne"]
 [ext_resource type="Resource" uid="uid://ccrwlfuwohndh" path="res://dialogue/OldBardDayOneMorning.dialogue" id="9_wlmhq"]
+[ext_resource type="AudioStream" uid="uid://bpyoigybharif" path="res://assets/audio/speakers/Mid_Yu.wav" id="10_bx4bv"]
 [ext_resource type="Resource" uid="uid://bpmrpir7x7wiq" path="res://dialogue/OrcDayOneMorning.dialogue" id="11_0df84"]
 [ext_resource type="Script" path="res://scripts/agents/groupSpeaker.gd" id="11_5tiwi"]
 [ext_resource type="SpriteFrames" uid="uid://dpp8x4v6nirgq" path="res://assets/animations/adventurer1.tres" id="13_1n1pk"]
 [ext_resource type="Script" path="res://scripts/agents/groupSpeakerPart.gd" id="13_7001r"]
 [ext_resource type="Resource" uid="uid://bw7sly2qupojg" path="res://dialogue/TavernAdventurers.dialogue" id="13_fh77x"]
 [ext_resource type="SpriteFrames" uid="uid://dlwvbr6sikea0" path="res://assets/animations/adventurer2.tres" id="14_v41n7"]
+[ext_resource type="AudioStream" uid="uid://b36kwmrrbrmvc" path="res://assets/audio/speakers/High_Bu.wav" id="17_l6q80"]
 [ext_resource type="Texture2D" uid="uid://ddykm5okj0wd1" path="res://assets/spriteSheets/third_adventurer.png" id="17_ol5fb"]
 [ext_resource type="Resource" uid="uid://c560shfp3bmn4" path="res://dialogue/OrcEvening.dialogue" id="19_ew1tc"]
+[ext_resource type="AudioStream" uid="uid://bmi5cqx1ustvw" path="res://assets/audio/speakers/Mid_Oz.wav" id="19_fkfro"]
+[ext_resource type="AudioStream" uid="uid://fpxr3lc165jc" path="res://assets/audio/speakers/Low_Bi.wav" id="21_eijrf"]
+[ext_resource type="AudioStream" uid="uid://dpn0aomm3o2uq" path="res://assets/audio/speakers/Low_Yu.wav" id="24_rxl84"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_58reg"]
 texture = ExtResource("2_wq1eb")
@@ -812,6 +817,7 @@ collider = SubResource("RectangleShape2D_de3vn")
 animatedSpriteTransformPosition = Vector2(0, -100)
 colliderTransformPosition = Vector2(0, 10)
 indicesForChecking = Array[int]([1, 1, 2])
+speakerSound = ExtResource("10_bx4bv")
 
 [node name="OldBard" parent="." instance=ExtResource("4_ycs7s")]
 y_sort_enabled = true
@@ -823,6 +829,7 @@ animationFrames = ExtResource("9_324ne")
 collider = SubResource("RectangleShape2D_uvnwh")
 colliderTransformPosition = Vector2(0, 60)
 indicesForChecking = Array[int]([2, -1, -1])
+speakerSound = ExtResource("10_bx4bv")
 
 [node name="Adventurers" type="StaticBody2D" parent="." node_paths=PackedStringArray("speakerParts")]
 y_sort_enabled = true
@@ -840,6 +847,7 @@ speakerName = "Woman"
 animationFrames = ExtResource("13_1n1pk")
 collider = SubResource("RectangleShape2D_jxqpu")
 colliderTransformPosition = Vector2(0, 60)
+speakerSound = ExtResource("17_l6q80")
 parent = NodePath("..")
 
 [node name="Adventurer2" parent="Adventurers" node_paths=PackedStringArray("parent") instance=ExtResource("4_ycs7s")]
@@ -850,6 +858,7 @@ speakerName = "Man"
 animationFrames = ExtResource("14_v41n7")
 collider = SubResource("RectangleShape2D_81tvr")
 colliderTransformPosition = Vector2(0, 60)
+speakerSound = ExtResource("19_fkfro")
 parent = NodePath("..")
 
 [node name="Adventurer3" parent="Adventurers" node_paths=PackedStringArray("parent") instance=ExtResource("4_ycs7s")]
@@ -860,6 +869,7 @@ speakerName = "Armor"
 animationFrames = SubResource("SpriteFrames_v6w1j")
 collider = SubResource("RectangleShape2D_81tvr")
 colliderTransformPosition = Vector2(0, 60)
+speakerSound = ExtResource("21_eijrf")
 parent = NodePath("..")
 
 [node name="Orc" parent="." instance=ExtResource("4_ycs7s")]
@@ -872,6 +882,7 @@ animationFrames = SubResource("SpriteFrames_2mpwg")
 collider = SubResource("RectangleShape2D_uvnwh")
 colliderTransformPosition = Vector2(0, 60)
 indicesForChecking = Array[int]([0, -1, 0])
+speakerSound = ExtResource("24_rxl84")
 
 [node name="RoomBoundary" type="Node" parent="."]
 

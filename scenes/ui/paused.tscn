@@ -1,8 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://gattw60noxps"]
+[gd_scene load_steps=10 format=3 uid="uid://gattw60noxps"]
 
 [ext_resource type="Script" path="res://scripts/ui/paused_scene.gd" id="1_b8f16"]
 [ext_resource type="PackedScene" uid="uid://daqlbvtppcfs" path="res://scenes/ui/settings_menu_panel.tscn" id="2_edxst"]
 [ext_resource type="Theme" uid="uid://dn1o6shwhi1wx" path="res://shaders-themes/main_theme.tres" id="2_ptnhr"]
+[ext_resource type="Texture2D" uid="uid://b8tej6ortppkj" path="res://assets/sprites/ui/button_press.png" id="4_krdab"]
+[ext_resource type="Texture2D" uid="uid://b6yqh52f8k6bv" path="res://assets/sprites/ui/button_hover.png" id="5_23177"]
+[ext_resource type="LabelSettings" uid="uid://bma68305bgflc" path="res://assets/new_label_settings.tres" id="6_xdet4"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hbbt4"]
 bg_color = Color(0.176471, 0.176471, 0.176471, 0.886275)
@@ -10,6 +13,12 @@ corner_radius_top_left = 5
 corner_radius_top_right = 5
 corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
+
+[sub_resource type="LabelSettings" id="LabelSettings_g8e5p"]
+font_size = 48
+
+[sub_resource type="LabelSettings" id="LabelSettings_jjtpm"]
+font_size = 48
 
 [node name="Paused" type="Control"]
 layout_mode = 3
@@ -53,16 +62,20 @@ theme_override_constants/margin_bottom = 15
 layout_mode = 2
 
 [node name="PausedLabel" type="Label" parent="MarginContainer/Panel/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 size_flags_vertical = 0
 text = "PAUSED"
+label_settings = SubResource("LabelSettings_g8e5p")
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="OptionsLabel" type="Label" parent="MarginContainer/Panel/MarginContainer/VBoxContainer"]
 visible = false
+custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 text = "OPTIONS"
+label_settings = SubResource("LabelSettings_jjtpm")
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -74,20 +87,56 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 6
 
-[node name="Continue" type="Button" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/MainPaused"]
-custom_minimum_size = Vector2(150, 40)
+[node name="Continue" type="TextureButton" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/MainPaused"]
+custom_minimum_size = Vector2(200, 50)
 layout_mode = 2
+texture_normal = ExtResource("4_krdab")
+texture_pressed = ExtResource("4_krdab")
+texture_hover = ExtResource("5_23177")
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/MainPaused/Continue"]
+layout_mode = 0
+offset_right = 200.0
+offset_bottom = 50.0
 text = "Continue"
+label_settings = ExtResource("6_xdet4")
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="Options" type="Button" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/MainPaused"]
+[node name="Options" type="TextureButton" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/MainPaused"]
 custom_minimum_size = Vector2(150, 40)
 layout_mode = 2
+texture_normal = ExtResource("4_krdab")
+texture_pressed = ExtResource("4_krdab")
+texture_hover = ExtResource("5_23177")
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/MainPaused/Options"]
+layout_mode = 0
+offset_right = 200.0
+offset_bottom = 50.0
 text = "Options"
+label_settings = ExtResource("6_xdet4")
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="Exit" type="Button" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/MainPaused"]
+[node name="Exit" type="TextureButton" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/MainPaused"]
 custom_minimum_size = Vector2(150, 40)
 layout_mode = 2
-text = "Save & Exit"
+texture_normal = ExtResource("4_krdab")
+texture_pressed = ExtResource("4_krdab")
+texture_hover = ExtResource("5_23177")
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/MainPaused/Exit"]
+layout_mode = 0
+offset_right = 200.0
+offset_bottom = 50.0
+text = "Exit to Main Menu"
+label_settings = ExtResource("6_xdet4")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="button_up" from="MarginContainer/Panel/MarginContainer/VBoxContainer/MainPaused/Continue" to="." method="_on_continue_button_up"]
 [connection signal="button_up" from="MarginContainer/Panel/MarginContainer/VBoxContainer/MainPaused/Options" to="." method="_on_options_button_up"]

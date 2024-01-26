@@ -12,6 +12,7 @@ class_name Speaker
 @export var animatedSpriteTransformPosition: Vector2 = Vector2(0,0) : set = setAnimatedSpriteTransformPosition
 @export var colliderTransformPosition: Vector2 = Vector2(0,0) : set = setColliderTransformPosition
 @export var indicesForChecking: Array[int] = []
+@export var speakerSound: AudioStream
 
 @onready var talkPanel: Panel = $TalkPanel
 @onready var talkPanelLabel: Label = $TalkPanel/Label
@@ -70,7 +71,7 @@ func onInteract():
 	
 func talk(nameInBalloon: String):
 	if !isTalking:
-		Audio_Player.setSpeaker(speakerName)
+		Audio_Player.setSpeakerSound(speakerSound)
 		animatedSprite.stop()
 		isTalking = true
 		if selectedAnimName not in animationFrames.animations.map(func(x): return x.name):

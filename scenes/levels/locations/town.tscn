@@ -1,4 +1,4 @@
-[gd_scene load_steps=55 format=3 uid="uid://djbuy4xg064kh"]
+[gd_scene load_steps=57 format=3 uid="uid://djbuy4xg064kh"]
 
 [ext_resource type="Script" path="res://scripts/levels/level.gd" id="1_hg0ys"]
 [ext_resource type="PackedScene" uid="uid://ddnkxck5qdfcv" path="res://scenes/agents/player.tscn" id="2_kvnnx"]
@@ -12,6 +12,8 @@
 [ext_resource type="Resource" uid="uid://ceu5s4xxd7nm0" path="res://dialogue/OutsiderMerchantEvening.dialogue" id="7_ty58r"]
 [ext_resource type="Resource" uid="uid://cgpaqgyq0dxnf" path="res://dialogue/WitchEvening.dialogue" id="9_8xq48"]
 [ext_resource type="Resource" uid="uid://c16rhfr4cbehj" path="res://dialogue/JugglingGirlMarket.dialogue" id="10_7cyus"]
+[ext_resource type="AudioStream" uid="uid://bpyoigybharif" path="res://assets/audio/speakers/Mid_Yu.wav" id="10_r2hr3"]
+[ext_resource type="AudioStream" uid="uid://b36kwmrrbrmvc" path="res://assets/audio/speakers/High_Bu.wav" id="13_fab7v"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ac2qs"]
 texture = ExtResource("2_ls6df")
@@ -707,6 +709,7 @@ animationFrames = SubResource("SpriteFrames_b4mpn")
 collider = SubResource("RectangleShape2D_jbuee")
 colliderTransformPosition = Vector2(0, 60)
 indicesForChecking = Array[int]([-1, 6, 4])
+speakerSound = ExtResource("10_r2hr3")
 
 [node name="MerchantLocal" parent="." instance=ExtResource("5_8vqie")]
 visible = false
@@ -730,6 +733,7 @@ animationFrames = SubResource("SpriteFrames_2x6m6")
 collider = SubResource("RectangleShape2D_jbuee")
 colliderTransformPosition = Vector2(0, 60)
 indicesForChecking = Array[int]([-1, 2, 3])
+speakerSound = ExtResource("13_fab7v")
 
 [node name="LittleGirl" parent="." instance=ExtResource("5_8vqie")]
 y_sort_enabled = true
@@ -741,6 +745,7 @@ animationFrames = SubResource("SpriteFrames_35igg")
 collider = SubResource("RectangleShape2D_jbuee")
 colliderTransformPosition = Vector2(0, 60)
 indicesForChecking = Array[int]([-1, 5, -1])
+speakerSound = ExtResource("13_fab7v")
 
 [node name="Rando1" type="Sprite2D" parent="."]
 z_index = -2

@@ -93,11 +93,11 @@ var nightPhaseView: NightPhaseView = null
 func initGameState():
 	var savedData = Save_Loader.gameData
 		
-	PeopleSpokenTo = savedData.safeGet("PeopleSpokenTo", [[false,false,false],[false, false, false, false, false, false, false],[false, false, false, false, false]])
-	if PeopleSpokenTo.map(func(x): return len(x)) != [3,7,5]:
+	PeopleSpokenTo = savedData.safeGet("PeopleSpokenTo", [[false,false,false],[false, false, false, false, false, false, false],[false, false, false, false, false, false]])
+	if PeopleSpokenTo.map(func(x): return len(x)) != [3,7,6]:
 		savedData.clear()
 		
-		PeopleSpokenTo = savedData.safeGet("PeopleSpokenTo", [[false,false,false],[false, false, false, false, false, false, false],[false, false, false, false, false]])
+		PeopleSpokenTo = savedData.safeGet("PeopleSpokenTo", [[false,false,false],[false, false, false, false, false, false, false],[false, false, false, false, false, false]])
 		
 	Day1StoryEnding = savedData.safeGet("Day1.StoryEnding", "")
 	

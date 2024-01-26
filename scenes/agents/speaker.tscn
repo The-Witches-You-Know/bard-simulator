@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://cou5jrmy23vew"]
+[gd_scene load_steps=6 format=3 uid="uid://cou5jrmy23vew"]
 
 [ext_resource type="Script" path="res://scripts/agents/speaker.gd" id="1_siml4"]
+[ext_resource type="Theme" uid="uid://dn1o6shwhi1wx" path="res://shaders-themes/main_theme.tres" id="2_q3qqn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hrlk0"]
 size = Vector2(60, 149)
@@ -42,6 +43,7 @@ offset_bottom = -100.0
 layout_mode = 0
 offset_right = 120.0
 offset_bottom = 40.0
+theme = ExtResource("2_q3qqn")
 text = "[X] Talk"
 label_settings = SubResource("LabelSettings_gsp8t")
 horizontal_alignment = 1

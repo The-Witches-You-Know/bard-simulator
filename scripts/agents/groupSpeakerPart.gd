@@ -9,6 +9,7 @@ class_name GroupSpeakerPart
 @export var animatedSpriteTransformPosition: Vector2 = Vector2(0,0) : set = setAnimatedSpriteTransformPosition
 @export var colliderTransformPosition: Vector2 = Vector2(0,0) : set = setColliderTransformPosition
 @export var collisionDisabled: bool = true : set = setCollisionDisabled
+@export var speakerSound: AudioStream
 
 @export var parent: GroupSpeaker
 
@@ -67,7 +68,7 @@ func onInteract():
 	
 func talk(nameInBalloon: String):
 	if !isTalking:
-		Audio_Player.setSpeaker(nameInBalloon)
+		Audio_Player.setSpeakerSound(speakerSound)
 		animatedSprite.stop()
 		isTalking = true
 		if selectedAnimName not in animationFrames.animations.map(func(x): return x.name):

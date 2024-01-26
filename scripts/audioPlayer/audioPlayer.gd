@@ -12,9 +12,11 @@ var next_track
 
 var speechStreamPaths = {
 	"Test": [
-		"res://assets/audio/speakers/Voice_Test_-_Boh4.wav",
-		"res://assets/audio/speakers/Voice_Test_-_Ee4.wav",
-		"res://assets/audio/speakers/Voice_Test_-_Zuh4.wav",
+		"res://assets/audio/speakers/High_Bu.wav",
+		"res://assets/audio/speakers/Mid_Oos.wav",
+		"res://assets/audio/speakers/Mid_Yu.wav",
+		"res://assets/audio/speakers/Low_Yu.wav",
+		"res://assets/audio/speakers/Low_Bi.wav",
 		]
 }
 
@@ -84,6 +86,12 @@ func setSpeaker(speaker: String):
 			speechStreamResources.append(load(path))
 	if (isTalking):
 		_on_speech_player_finished()
+		
+func setSpeakerSound(sound: AudioStream):
+	speechStreamResources = [sound]
+	if (isTalking):
+		_on_speech_player_finished()
+	
 
 func _on_speech_player_finished():	
 	if isTalking:

@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://dvy7hwe5bmrsd"]
+[gd_scene load_steps=3 format=3 uid="uid://dvy7hwe5bmrsd"]
 
 [ext_resource type="Script" path="res://scripts/ui/confirmation_popup.gd" id="1_3m4mh"]
+[ext_resource type="Theme" uid="uid://dn1o6shwhi1wx" path="res://shaders-themes/main_theme.tres" id="2_o1u2b"]
 
 [node name="ConfirmationPopup" type="Control"]
 layout_mode = 3
@@ -36,6 +37,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("2_o1u2b")
 text = "Are you sure you want to do ___?"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -46,12 +48,14 @@ layout_mode = 2
 [node name="Confirm" type="Button" parent="VBoxContainer/HBoxContainer"]
 custom_minimum_size = Vector2(180, 30)
 layout_mode = 2
+theme = ExtResource("2_o1u2b")
 text = "Confirm
 "
 
 [node name="Cancel" type="Button" parent="VBoxContainer/HBoxContainer"]
 custom_minimum_size = Vector2(180, 30)
 layout_mode = 2
+theme = ExtResource("2_o1u2b")
 text = "Cancel"
 
 [connection signal="button_up" from="VBoxContainer/HBoxContainer/Confirm" to="." method="_on_confirm_button_up"]

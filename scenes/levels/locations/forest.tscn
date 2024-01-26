@@ -1,9 +1,10 @@
-[gd_scene load_steps=60 format=3 uid="uid://20eg01liwra2"]
+[gd_scene load_steps=65 format=3 uid="uid://20eg01liwra2"]
 
 [ext_resource type="PackedScene" uid="uid://by276q5li4uq4" path="res://scenes/levels/objects/exit_area.tscn" id="1_svyfn"]
 [ext_resource type="Script" path="res://scripts/levels/level.gd" id="1_u066t"]
 [ext_resource type="PackedScene" uid="uid://ddnkxck5qdfcv" path="res://scenes/agents/player.tscn" id="2_broqp"]
 [ext_resource type="Texture2D" uid="uid://can0gokhosoyr" path="res://assets/spriteSheets/forest.png" id="3_pwpo3"]
+[ext_resource type="AudioStream" uid="uid://bpyoigybharif" path="res://assets/audio/speakers/Mid_Yu.wav" id="8_t1k7e"]
 [ext_resource type="PackedScene" uid="uid://cou5jrmy23vew" path="res://scenes/agents/speaker.tscn" id="9_iqj0g"]
 [ext_resource type="Resource" uid="uid://div13srwwpvur" path="res://dialogue/Farmer.dialogue" id="10_eh7lq"]
 [ext_resource type="Texture2D" uid="uid://dd8r14n7pk8l" path="res://assets/spriteSheets/forestnpcs.png" id="11_w3imv"]
@@ -14,8 +15,12 @@
 [ext_resource type="Resource" uid="uid://cxd5d6qtmvdph" path="res://dialogue/ForestKidsNoon.dialogue" id="13_iacr7"]
 [ext_resource type="SpriteFrames" uid="uid://dpp8x4v6nirgq" path="res://assets/animations/adventurer1.tres" id="14_fcsmn"]
 [ext_resource type="Script" path="res://scripts/agents/groupSpeakerPart.gd" id="14_il4e0"]
+[ext_resource type="AudioStream" uid="uid://b1obox2hswoc4" path="res://assets/audio/speakers/Mid_Oos.wav" id="14_io6bl"]
+[ext_resource type="AudioStream" uid="uid://b36kwmrrbrmvc" path="res://assets/audio/speakers/High_Bu.wav" id="14_pmava"]
 [ext_resource type="SpriteFrames" uid="uid://dlwvbr6sikea0" path="res://assets/animations/adventurer2.tres" id="15_6x210"]
 [ext_resource type="Texture2D" uid="uid://ddykm5okj0wd1" path="res://assets/spriteSheets/third_adventurer.png" id="16_bo1ok"]
+[ext_resource type="AudioStream" uid="uid://bmi5cqx1ustvw" path="res://assets/audio/speakers/Mid_Oz.wav" id="19_juew6"]
+[ext_resource type="AudioStream" uid="uid://fpxr3lc165jc" path="res://assets/audio/speakers/Low_Bi.wav" id="21_lonsk"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rcmex"]
 texture = ExtResource("3_pwpo3")
@@ -700,6 +705,7 @@ animationFrames = SubResource("SpriteFrames_upmes")
 collider = SubResource("RectangleShape2D_bngqi")
 colliderTransformPosition = Vector2(0, 60)
 indicesForChecking = Array[int]([-1, 3, 1])
+speakerSound = ExtResource("8_t1k7e")
 
 [node name="Drake" type="StaticBody2D" parent="."]
 position = Vector2(1310, 471)
@@ -736,6 +742,7 @@ speakerName = "Boy"
 animationFrames = SubResource("SpriteFrames_tb7d5")
 collider = SubResource("RectangleShape2D_p8juv")
 colliderTransformPosition = Vector2(0, 60)
+speakerSound = ExtResource("14_io6bl")
 parent = NodePath("..")
 
 [node name="Girl" parent="Kids" node_paths=PackedStringArray("parent") instance=ExtResource("9_iqj0g")]
@@ -746,6 +753,7 @@ speakerName = "Girl"
 animationFrames = SubResource("SpriteFrames_q377f")
 collider = SubResource("RectangleShape2D_wct34")
 colliderTransformPosition = Vector2(0, 60)
+speakerSound = ExtResource("14_pmava")
 parent = NodePath("..")
 
 [node name="Older boy" parent="Kids" node_paths=PackedStringArray("parent") instance=ExtResource("9_iqj0g")]
@@ -756,6 +764,7 @@ speakerName = "Older boy"
 animationFrames = SubResource("SpriteFrames_8ityp")
 collider = SubResource("RectangleShape2D_wct34")
 colliderTransformPosition = Vector2(0, 60)
+speakerSound = ExtResource("8_t1k7e")
 parent = NodePath("..")
 
 [node name="Adventurers" type="StaticBody2D" parent="." node_paths=PackedStringArray("speakerParts")]
@@ -775,6 +784,7 @@ speakerName = "Woman"
 animationFrames = ExtResource("14_fcsmn")
 collider = SubResource("RectangleShape2D_d8ms8")
 colliderTransformPosition = Vector2(0, 60)
+speakerSound = ExtResource("14_pmava")
 parent = NodePath("..")
 
 [node name="Adventurer2" parent="Adventurers" node_paths=PackedStringArray("parent") instance=ExtResource("9_iqj0g")]
@@ -785,6 +795,7 @@ speakerName = "Man"
 animationFrames = ExtResource("15_6x210")
 collider = SubResource("RectangleShape2D_47x04")
 colliderTransformPosition = Vector2(0, 60)
+speakerSound = ExtResource("19_juew6")
 parent = NodePath("..")
 
 [node name="Adventurer3" parent="Adventurers" node_paths=PackedStringArray("parent") instance=ExtResource("9_iqj0g")]
@@ -795,6 +806,7 @@ speakerName = "Armor"
 animationFrames = SubResource("SpriteFrames_nkm3o")
 collider = SubResource("RectangleShape2D_47x04")
 colliderTransformPosition = Vector2(0, 60)
+speakerSound = ExtResource("21_lonsk")
 parent = NodePath("..")
 
 [connection signal="area_entered" from="Drake/Area2D" to="Drake" method="_on_area_2d_area_entered"]

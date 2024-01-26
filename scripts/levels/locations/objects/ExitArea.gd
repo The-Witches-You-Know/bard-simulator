@@ -11,7 +11,7 @@ func _ready():
 
 func _process(_delta):
 	if in_range:
-		if Input.is_action_just_released("interact"):
+		if Input.is_action_just_released("interact") and Audio_Player.balloonReference == null:
 			if can_leave:
 				Audio_Player.setBalloonReference(DialogueManager.show_example_dialogue_balloon(load("res://dialogue/confirm_return.dialogue"), "start"))
 			else:
