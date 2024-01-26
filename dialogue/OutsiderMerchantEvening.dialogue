@@ -1,6 +1,6 @@
 ~ start
 
-if GameStateHolder.SpokeToOutsiderMerchant:
+if GameStateHolder.SpokeToOutsiderMerchantDayOneNoon:
 	You see the selfsame man that you had met before
 	He is bent over the taverns menu, a handful of coins besides it. 
 	He's muttering something under his breath, and the tone of his whispers indicates a great degree of frustation. 
@@ -59,6 +59,6 @@ else:
 => DialogueEnd
 
 ~ DialogueEnd
-set GameStateHolder.SpokeToOutsiderMerchantEvening = true
+set GameStateHolder.SpokeToOutsiderMerchantDayOneEvening = true
 do GameStateHolder.currentSpeaker.onConversationFinished()
 => END

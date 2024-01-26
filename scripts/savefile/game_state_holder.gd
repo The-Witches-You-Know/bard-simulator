@@ -91,6 +91,7 @@ var currentLevel: String = "tavern": set = setCurrentLevel
 var currentSpeaker: ISpeaker = null
 var currentLevelNode: Level = null
 var mortalPicked: bool = false
+var nightPhaseView: NightPhaseView = null
 
 func initGameState():
 	var savedData = Save_Loader.gameData
@@ -119,6 +120,7 @@ func initGameState():
 	SpokeToFarmerDayOneEvening = PeopleSpokenTo[2][1]	
 	SpokeToTavernkeepDayOneEvening = PeopleSpokenTo[2][2]	
 	SpokeToWitchDayOneEvening = PeopleSpokenTo[2][3]	
+	SpokeToOutsiderMerchantDayOneEvening = PeopleSpokenTo[2][4]	
 	
 	currentDay = savedData.safeGet("CurrentDay", 1)
 	timeOfDay = savedData.safeGet("TimeOfDay", 0)

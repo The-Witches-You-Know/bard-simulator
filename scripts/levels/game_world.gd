@@ -8,7 +8,7 @@ enum time_of_day { MORNING = 0, DAYTIME = 1, EVENING = 2, NIGHT = 3 }
 
 var time : time_of_day = time_of_day.MORNING
 var day = 1
-var current : Node2D
+var current : Node
 
 var level_to_load
 # Hack to avoid two transitions when we load straight from menu to
@@ -17,11 +17,12 @@ var skip = true
 
 func _ready():
 	ui = get_node("/root/Main/UI") as interface
-	switch_level(GameStateHolder.currentLevel)
 	time = GameStateHolder.timeOfDay
 	day = GameStateHolder.currentDay
+	switch_level(GameStateHolder.currentLevel)
 	ui.set_day(day)
 	ui.set_time(time)
+	
 
 func _process(_delta):
 	if Input.is_action_just_released("pause"):
@@ -67,6 +68,6 @@ func on_scene_load():
 		Audio_Player.setSFX(level_to_load)
 		# After merging come back to this
 		if time == time_of_day.NIGHT:
-			Audio_Player.setMusic(level_to_load + "_" + "night")
+			Audio_Player.muteMusic()
 		else:
 			Audio_Player.setMusic(level_to_load + "_" + "day")

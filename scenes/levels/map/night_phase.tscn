@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://bnkohuub8o8g7"]
+[gd_scene load_steps=5 format=3 uid="uid://bnkohuub8o8g7"]
 
 [ext_resource type="Script" path="res://scripts/levels/night_phase.gd" id="1_jp55v"]
+[ext_resource type="Texture2D" uid="uid://dahlfst14yhox" path="res://assets/sprites/night/tavern_day1_n.png" id="2_gag0f"]
 [ext_resource type="Texture2D" uid="uid://v5fem6n0fnw5" path="res://assets/sprites/night/forest_day1_n.png" id="2_xbfjk"]
 [ext_resource type="Texture2D" uid="uid://c1sgkghnn01wx" path="res://assets/sprites/night/blackout.png" id="3_jcoi3"]
 
@@ -14,6 +15,8 @@ grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource("1_jp55v")
+locationTextures = Array[Texture2D]([ExtResource("2_gag0f"), ExtResource("2_xbfjk")])
+locationMusic = Array[String](["tavern_night", "forest_night"])
 
 [node name="LocationTextureRect" type="TextureRect" parent="."]
 layout_mode = 1

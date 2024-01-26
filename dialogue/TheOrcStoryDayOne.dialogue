@@ -1,5 +1,6 @@
 ~ start
 
+do GameStateHolder.nightPhaseView.unloadPlace()
 It's your time of day. Night has fallen
 Now is your chance to tell the story you gathered throughout the day.
 Where do you wish to tell it?
@@ -28,6 +29,7 @@ Where do you wish to tell it?
 #		=> start
 
 ~ ORCTAVERN
+do GameStateHolder.nightPhaseView.loadPlace(0)
 How do you wish to tell the Orc's story
 - Make the Orc out to be the Hero. [if GameStateHolder.SpokeToOrcDayOneMorning]
 	The Tavern is still as loud as ever. 
@@ -131,6 +133,7 @@ How do you wish to tell the Orc's story
 	=> start
 
 ~ ORCFOREST
+do GameStateHolder.nightPhaseView.loadPlace(1)
 - Let everyone know she claimed a kill not her own [if GameStateHolder.KnowsOrcLied]
 	As you arrive at the forest's edge, the campfire is already roaring furiously. Hushed conversation is in full force, and nobody takes notice of you as you take a seat besides them. 
 	You can't recongize any faces, the safety of anonymity. 
@@ -199,10 +202,4 @@ How do you wish to tell the Orc's story
 - You'd rather spread this tale elsewhere
 	=> start
 
-=> END
-
-~ ORCMARKET
-- (If KnowOfDisease = True) Tell Everyone the drake was infected, and the Orc and kids might be as well now. 
-- You'd rather spread this tale elsewhere
-	=> start
 => END

@@ -36,7 +36,8 @@ var playersfx = {
 }
 
 func setSFX(id: String):
-	$SFXPlayer.stream = playersfx[id]
+	if id in playersfx.keys():
+		$SFXPlayer.stream = playersfx[id]
 
 # pass stop to stop
 func playSFX():
@@ -50,13 +51,27 @@ func setMusic(id: String):
 	next_track = id
 	var prev_volume = $MusicPlayer.volume_db
 	var tween = get_tree().create_tween()
-	tween.tween_property($MusicPlayer, "volume_db", -50, 1.2)
+	tween.tween_property($MusicPlayer, "volume_db", -50, 0.8)
 	tween.tween_callback(Callable(self, "on_fade"))
-	tween.tween_property($MusicPlayer, "volume_db", 0, 1.4)
+	tween.tween_property($MusicPlayer, "volume_db", 0, 0.8)
+
+func muteMusic():
+	var tween = get_tree().create_tween()
+	tween.tween_property($MusicPlayer, "volume_db", -50, 0.8)
+	
+
+func playMusic(id: String):
+	next_track = id
+	var tween = get_tree().create_tween()
+	tween.tween_callback(Callable(self, "on_fade"))
+	tween.tween_property($MusicPlayer, "volume_db", 0, 0.8)
+	
 
 func on_fade():
-	$MusicPlayer.stream = musicStreams[next_track]
-	$MusicPlayer.play()
+	if next_track in musicStreams.keys():
+		$MusicPlayer.stream = musicStreams[next_track]
+		$MusicPlayer.volume_db = linear_to_db(0.4)
+		$MusicPlayer.play()
 
 var speechStreamResources: Array[AudioStream] = []
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=3 uid="uid://bywu72xv1pgx0"]
+[gd_scene load_steps=52 format=3 uid="uid://bywu72xv1pgx0"]
 
 [ext_resource type="Script" path="res://scripts/levels/level.gd" id="1_bmea0"]
 [ext_resource type="PackedScene" uid="uid://by276q5li4uq4" path="res://scenes/levels/objects/exit_area.tscn" id="2_kjn8m"]
@@ -17,6 +17,7 @@
 [ext_resource type="Script" path="res://scripts/agents/groupSpeakerPart.gd" id="13_7001r"]
 [ext_resource type="Resource" uid="uid://bw7sly2qupojg" path="res://dialogue/TavernAdventurers.dialogue" id="13_fh77x"]
 [ext_resource type="SpriteFrames" uid="uid://dlwvbr6sikea0" path="res://assets/animations/adventurer2.tres" id="14_v41n7"]
+[ext_resource type="Texture2D" uid="uid://ddykm5okj0wd1" path="res://assets/spriteSheets/third_adventurer.png" id="17_ol5fb"]
 [ext_resource type="Resource" uid="uid://c560shfp3bmn4" path="res://dialogue/OrcEvening.dialogue" id="19_ew1tc"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_58reg"]
@@ -623,6 +624,47 @@ size = Vector2(70, 100)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_81tvr"]
 size = Vector2(70, 100)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_lbsif"]
+atlas = ExtResource("17_ol5fb")
+region = Rect2(128, 128, 128, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7454h"]
+atlas = ExtResource("17_ol5fb")
+region = Rect2(256, 128, 128, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_myq2a"]
+atlas = ExtResource("17_ol5fb")
+region = Rect2(128, 128, 128, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nricj"]
+atlas = ExtResource("17_ol5fb")
+region = Rect2(256, 128, 128, 256)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_v6w1j"]
+animations = [{
+"frames": [{
+"duration": 6.0,
+"texture": SubResource("AtlasTexture_lbsif")
+}, {
+"duration": 6.0,
+"texture": SubResource("AtlasTexture_7454h")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 4.0
+}, {
+"frames": [{
+"duration": 6.0,
+"texture": SubResource("AtlasTexture_myq2a")
+}, {
+"duration": 6.0,
+"texture": SubResource("AtlasTexture_nricj")
+}],
+"loop": true,
+"name": &"talk",
+"speed": 4.0
+}]
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_nhrdw"]
 atlas = ExtResource("6_j46gc")
 region = Rect2(128, 896, 128, 256)
@@ -787,7 +829,7 @@ y_sort_enabled = true
 script = ExtResource("11_5tiwi")
 actionName = "Talk"
 dialogues = Array[Resource("res://addons/dialogue_manager/dialogue_resource.gd")]([null, ExtResource("13_fh77x"), null])
-speakerParts = [NodePath("Adventurer1"), NodePath("Adventurer2")]
+speakerParts = [NodePath("Adventurer1"), NodePath("Adventurer2"), NodePath("Adventurer3")]
 indicesForChecking = Array[int]([-1, 4, -1])
 
 [node name="Adventurer1" parent="Adventurers" node_paths=PackedStringArray("parent") instance=ExtResource("4_ycs7s")]
@@ -806,6 +848,16 @@ position = Vector2(1525, 283)
 script = ExtResource("13_7001r")
 speakerName = "Man"
 animationFrames = ExtResource("14_v41n7")
+collider = SubResource("RectangleShape2D_81tvr")
+colliderTransformPosition = Vector2(0, 60)
+parent = NodePath("..")
+
+[node name="Adventurer3" parent="Adventurers" node_paths=PackedStringArray("parent") instance=ExtResource("4_ycs7s")]
+y_sort_enabled = true
+position = Vector2(1527, 474)
+script = ExtResource("13_7001r")
+speakerName = "Armor"
+animationFrames = SubResource("SpriteFrames_v6w1j")
 collider = SubResource("RectangleShape2D_81tvr")
 colliderTransformPosition = Vector2(0, 60)
 parent = NodePath("..")

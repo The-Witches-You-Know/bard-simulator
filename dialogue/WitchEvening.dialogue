@@ -18,6 +18,7 @@ Witch: Now then, what ails you?
 		set GameStateHolder.mortalPicked = true
 		Witch: Did you really think me susceptible to death?
 		Witch: I expected better. 
+		=> dialogueProper
 	- Should I go look for them? [if GameStateHolder.mortalPicked]
 		Witch: Knowing those kids that's a fools errand. Just wait for them, they will come back to their homes whenever they grow hungry. 
 		Witch: However, I do ask that you warn the town not to touch the body. I myself will go take care of the issue at hand. 
@@ -75,4 +76,5 @@ Witch: Now then, what ails you?
 
 ~ DialogueEnd
 set GameStateHolder.SpokeToWitchDayOneEvening = true
+do GameStateHolder.currentSpeaker.onConversationFinished()
 => END
