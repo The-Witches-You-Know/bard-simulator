@@ -64,11 +64,12 @@ layout_mode = 2
 [node name="WinnerLabel" type="Label" parent="Panel/MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 0
-text = "You Won"
+text = "You finished the Bard's Tale"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="PressAnyKey" type="Label" parent="Panel/MarginContainer/VBoxContainer"]
+self_modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 text = "Press any key to continue"
 horizontal_alignment = 1

@@ -1,7 +1,6 @@
 extends Node
 
 @onready var musicPlayer: AudioStreamPlayer = $MusicPlayer
-@onready var ambiencePlayer: AudioStreamPlayer = $AmbiencePlayer
 @onready var speechPlayer: AudioStreamPlayer = $SpeechPlayer
 @onready var SFXPlayer: AudioStreamPlayer = $SFXPlayer
 
@@ -13,20 +12,25 @@ var next_track
 
 var speechStreamPaths = {
 	"Test": [
-		"res://assets/audio/speakers/Voice_Test_-_Boh4.wav",
-		"res://assets/audio/speakers/Voice_Test_-_Ee4.wav",
-		"res://assets/audio/speakers/Voice_Test_-_Zuh4.wav",
+		"res://assets/audio/speakers/High_Bu.wav",
+		"res://assets/audio/speakers/Mid_Oos.wav",
+		"res://assets/audio/speakers/Mid_Yu.wav",
+		"res://assets/audio/speakers/Low_Yu.wav",
+		"res://assets/audio/speakers/Low_Bi.wav",
 		]
 }
 
 var musicStreams = {
 	"menu": preload("res://assets/audio/V_Basic_Cozy_Acoustic.wav") as AudioStream,
-	"tavern_day": preload("res://assets/audio/music/Tavern_Day_1.0.wav") as AudioStream,
-	"tavern_night": preload("res://assets/audio/music/Tavern_Day_1.0.wav") as AudioStream,
-	"forest_day": preload("res://assets/audio/music/Tavern_Day_1.0.wav") as AudioStream,
-	"forest_night": preload("res://assets/audio/music/Tavern_Day_1.0.wav") as AudioStream,
-	"town_day": preload("res://assets/audio/music/Tavern_Day_1.0.wav") as AudioStream,
-	"town_night": preload("res://assets/audio/music/Tavern_Day_1.0.wav") as AudioStream
+	"map": preload("res://assets/audio/music/Map_Theme_Final.ogg") as AudioStream,
+	"tavern_day": preload("res://assets/audio/music/Tavern_Day_Final.ogg") as AudioStream,
+	"tavern_night": preload("res://assets/audio/music/Tavern_Night_Final.ogg") as AudioStream,
+	"forest_day": preload("res://assets/audio/music/Forest_Day_Final.ogg") as AudioStream,
+	"forest_night": preload("res://assets/audio/music/Forest_Night_Final.ogg") as AudioStream,
+	"town_day": preload("res://assets/audio/music/Market_Day_Final.ogg") as AudioStream,
+	"opening": preload("res://assets/audio/music/Opening_Theme_Final.ogg") as AudioStream,
+	"closing": preload("res://assets/audio/music/Closing_Theme_Final.ogg") as AudioStream,
+	"town_night": null
 }
 
 var playersfx = {
@@ -36,7 +40,8 @@ var playersfx = {
 }
 
 func setSFX(id: String):
-	$SFXPlayer.stream = playersfx[id]
+	if id in playersfx.keys():
+		$SFXPlayer.stream = playersfx[id]
 
 # pass stop to stop
 func playSFX():
@@ -50,13 +55,27 @@ func setMusic(id: String):
 	next_track = id
 	var prev_volume = $MusicPlayer.volume_db
 	var tween = get_tree().create_tween()
-	tween.tween_property($MusicPlayer, "volume_db", -50, 2)
+	tween.tween_property($MusicPlayer, "volume_db", -50, 0.8)
 	tween.tween_callback(Callable(self, "on_fade"))
-	tween.tween_property($MusicPlayer, "volume_db", prev_volume, 3)
+	tween.tween_property($MusicPlayer, "volume_db", 0, 0.8)
+
+func muteMusic():
+	var tween = get_tree().create_tween()
+	tween.tween_property($MusicPlayer, "volume_db", -50, 0.8)
+	
+
+func playMusic(id: String):
+	next_track = id
+	var tween = get_tree().create_tween()
+	tween.tween_callback(Callable(self, "on_fade"))
+	tween.tween_property($MusicPlayer, "volume_db", 0, 0.8)
+	
 
 func on_fade():
-	$MusicPlayer.stream = musicStreams[next_track]
-	$MusicPlayer.play()
+	if next_track in musicStreams.keys():
+		$MusicPlayer.stream = musicStreams[next_track]
+		$MusicPlayer.volume_db = linear_to_db(0.4)
+		$MusicPlayer.play()
 
 var speechStreamResources: Array[AudioStream] = []
 
@@ -67,6 +86,12 @@ func setSpeaker(speaker: String):
 			speechStreamResources.append(load(path))
 	if (isTalking):
 		_on_speech_player_finished()
+		
+func setSpeakerSound(sound: AudioStream):
+	speechStreamResources = [sound]
+	if (isTalking):
+		_on_speech_player_finished()
+	
 
 func _on_speech_player_finished():	
 	if isTalking:

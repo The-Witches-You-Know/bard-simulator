@@ -1,6 +1,6 @@
 ~ start
 
-Narrator: Are you sure you want to leave (doing so will pass time)
+Narrator: Are you sure you want to leave? (Time will advance forward if you do so)
 
 - Yes 
 	Narrator: [next=auto]Good travels... [do CallbackHandler.LoadMap()]

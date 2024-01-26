@@ -1,26 +1,87 @@
-[gd_scene load_steps=4 format=3 uid="uid://bnkohuub8o8g7"]
+[gd_scene load_steps=8 format=3 uid="uid://ckdc54vyflstt"]
 
-[ext_resource type="Texture2D" uid="uid://bwgxsltfsteal" path="res://icon.svg" id="1_fn624"]
-[ext_resource type="PackedScene" uid="uid://b631gg2mdlrgq" path="res://scenes/levels/map/map_interactable.tscn" id="2_jglfu"]
-[ext_resource type="Texture2D" uid="uid://cpu70ar8xuvnp" path="res://assets/placeholder/testsprite.png" id="4_vwpk8"]
+[ext_resource type="Texture2D" uid="uid://ccqwxxm5ue5wq" path="res://assets/sprites/ui/map2.png" id="1_38opp"]
+[ext_resource type="Script" path="res://scripts/levels/map/map.gd" id="1_41few"]
+[ext_resource type="PackedScene" uid="uid://b631gg2mdlrgq" path="res://scenes/levels/map/map_interactable.tscn" id="2_v67ud"]
+[ext_resource type="Texture2D" uid="uid://ccrnksic3yxs" path="res://assets/sprites/ui/map_markers.png" id="3_4a7hg"]
 
-[node name="WorldMap" type="Node2D"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_w4mu3"]
+atlas = ExtResource("3_4a7hg")
+region = Rect2(264, 48, 168, 168)
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(566, 307)
-texture = ExtResource("1_fn624")
+[sub_resource type="AtlasTexture" id="AtlasTexture_sxhyb"]
+atlas = ExtResource("3_4a7hg")
+region = Rect2(264, 768, 168, 168)
 
-[node name="Tavern" parent="." instance=ExtResource("2_jglfu")]
-position = Vector2(249, 231)
-location_name = "tavern"
-texture = ExtResource("4_vwpk8")
+[sub_resource type="AtlasTexture" id="AtlasTexture_1ty5h"]
+atlas = ExtResource("3_4a7hg")
+region = Rect2(264, 384, 168, 168)
 
-[node name="Forest" parent="." instance=ExtResource("2_jglfu")]
-position = Vector2(938, 418)
-location_name = "forest"
-texture = ExtResource("4_vwpk8")
+[node name="WorldMap2" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 2
+script = ExtResource("1_41few")
 
-[node name="Town" parent="." instance=ExtResource("2_jglfu")]
-position = Vector2(985, 112)
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_38opp")
+stretch_mode = 6
+
+[node name="Control" type="Control" parent="."]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+anchors_preset = 0
+offset_top = -1.0
+offset_right = 1152.0
+offset_bottom = 199.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Town" parent="Control" instance=ExtResource("2_v67ud")]
+position = Vector2(806, 45)
 location_name = "town"
-texture = ExtResource("4_vwpk8")
+texture = SubResource("AtlasTexture_w4mu3")
+
+[node name="Control3" type="Control" parent="."]
+custom_minimum_size = Vector2(0, 192)
+layout_mode = 2
+anchors_preset = 0
+offset_top = 203.0
+offset_right = 1152.0
+offset_bottom = 395.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Forest" parent="Control3" instance=ExtResource("2_v67ud")]
+position = Vector2(434, 106)
+location_name = "forest"
+texture = SubResource("AtlasTexture_sxhyb")
+
+[node name="Control2" type="Control" parent="."]
+custom_minimum_size = Vector2(0, 250)
+layout_mode = 2
+anchors_preset = 0
+offset_top = 399.0
+offset_right = 1152.0
+offset_bottom = 649.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Tavern" parent="Control2" instance=ExtResource("2_v67ud")]
+position = Vector2(778, 155)
+location_name = "tavern"
+texture = SubResource("AtlasTexture_1ty5h")
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]

@@ -13,6 +13,7 @@ func _unhandled_key_input(event):
 		can_exit = false
 
 func load_endgame():
+	Save_Loader.gameData.clear()
 	$AnimationPlayer.play("end_screen_continue")
 
 func _on_animation_finished(_anim_name):

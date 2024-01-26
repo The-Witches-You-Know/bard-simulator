@@ -37,7 +37,7 @@ var credits_text = [
 	"",
 	"",
 	"Credit to:",
-	"x for DialogueManager"
+	"nathanhoad for DialogueManager Plugin for Godot 4"
 ]
 
 var credits

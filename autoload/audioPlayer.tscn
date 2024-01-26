@@ -1,13 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://duvrwlngmodgp"]
+[gd_scene load_steps=2 format=3 uid="uid://duvrwlngmodgp"]
 
 [ext_resource type="Script" path="res://scripts/audioPlayer/audioPlayer.gd" id="1_ayfqj"]
-[ext_resource type="AudioStream" uid="uid://bknvlvdrb7tqu" path="res://assets/audio/V_Basic_Cozy_Acoustic.wav" id="2_aeqfu"]
 
 [node name="AudioPlayer" type="Node"]
 script = ExtResource("1_ayfqj")
 
 [node name="MusicPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("2_aeqfu")
 autoplay = true
 bus = &"Music"
 

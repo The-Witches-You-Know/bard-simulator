@@ -3,7 +3,7 @@
 You see a little girl scrambling with a crate. 
 It's hard to tell if she's supposed to be there or not since no one else is currently at the stall. 
 - Decide to address her
-	She intially doesn't turn. 
+	She initially doesn't turn.
 	Only once she has grabbed a couple of apples from their resting place does she look your way. 
 	Girl: Yes?
 	- Whatchu doing?
@@ -34,8 +34,8 @@ It's hard to tell if she's supposed to be there or not since no one else is curr
 					Girl: No! 
 					Girl: And he doesn't need to either
 					She sticks out her tongue, then leaves before you can try to lecture her otherwise. 
-	- Nevermind, carry on. 
-		Girl: Growns ups are so confusing...
+	- Never mind, carry on.
+		Girl: Grown ups are so confusing...
 		She shakes her head and carries on, as expected. 
 		The girl leaves, without elaborating any further. 
 		=> DialogueEnd
@@ -48,4 +48,5 @@ It's hard to tell if she's supposed to be there or not since no one else is curr
 
 ~ DialogueEnd
 set GameStateHolder.SpokeToJugglingGirlDayOneNoon = true
+do GameStateHolder.currentSpeaker.onConversationFinished()
 => END

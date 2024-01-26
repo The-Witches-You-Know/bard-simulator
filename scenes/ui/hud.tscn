@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://sfddspa8dxiu"]
+[gd_scene load_steps=3 format=3 uid="uid://sfddspa8dxiu"]
 
 [ext_resource type="Script" path="res://scripts/ui/hud.gd" id="1_pw7qp"]
+[ext_resource type="Theme" uid="uid://dn1o6shwhi1wx" path="res://shaders-themes/main_theme.tres" id="2_edan5"]
 
 [node name="HUD" type="Control"]
 layout_mode = 3
@@ -31,4 +32,5 @@ layout_mode = 2
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 0
+theme = ExtResource("2_edan5")
 text = "Day 1 - Morning"

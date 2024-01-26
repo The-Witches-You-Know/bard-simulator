@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://b3u81jpwqcssx"]
+[gd_scene load_steps=6 format=3 uid="uid://b3u81jpwqcssx"]
 
 [ext_resource type="Script" path="res://scripts/ui/splash_screen.gd" id="1_bhoh2"]
 [ext_resource type="Texture2D" uid="uid://c0na2uos8quv8" path="res://assets/sprites/piratesoftware/game_jam_splash.png" id="1_xahhs"]
+[ext_resource type="Theme" uid="uid://dn1o6shwhi1wx" path="res://shaders-themes/main_theme.tres" id="3_rcyir"]
 
 [sub_resource type="Animation" id="Animation_fr833"]
 resource_name = "welcome"
@@ -13,10 +14,10 @@ tracks/0/path = NodePath("ColorRect:self_modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(2.5, 3.5),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(2.5, 3.5, 4.5),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 0)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -112,6 +113,7 @@ layout_mode = 2
 [node name="Label" type="Label" parent="ColorRect/MarginContainer/VBoxContainer"]
 self_modulate = Color(1, 1, 1, 0)
 layout_mode = 2
+theme = ExtResource("3_rcyir")
 text = "Team: Witches You Know"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -125,6 +127,7 @@ size_flags_vertical = 6
 self_modulate = Color(1, 1, 1, 0)
 custom_minimum_size = Vector2(200, 200)
 layout_mode = 2
+theme = ExtResource("3_rcyir")
 bbcode_enabled = true
 text = "Created by:
 Agnes
@@ -136,6 +139,7 @@ Robert"
 [node name="Label" type="Label" parent="ColorRect/MarginContainer"]
 self_modulate = Color(1, 1, 1, 0)
 layout_mode = 2
+theme = ExtResource("3_rcyir")
 text = "BUILT FOR"
 horizontal_alignment = 1
 vertical_alignment = 1

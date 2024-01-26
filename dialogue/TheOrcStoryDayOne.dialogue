@@ -1,12 +1,12 @@
 ~ start
 
+do GameStateHolder.nightPhaseView.unloadPlace()
 It's your time of day. Night has fallen
 Now is your chance to tell the story you gathered throughout the day.
 Where do you wish to tell it?
-#only offer if Talked to witch evening, and "know of disease" are true. 
-- Inform the town of the disease, as the witch asked of you. 
-	The Tavern does not lend itself well to bad messages and dreary futures. 
-	But what must be done, must be done. 
+- Inform the town of the disease, as the witch asked of you. [if GameStateHolder.KnowOfDisease]
+	The Tavern does not lend itself well to bad messages and dreary futures.
+	But what must be done, must be done.
 	are you sure?
 	- Yes
 		=> Disease
@@ -20,7 +20,7 @@ Where do you wish to tell it?
 	- No
 		=> start
 - Around the forest campfire
-	The Campfire is a place to share rumors, embesslished lies and maybe one or another entirely fabricated stories. 
+	The Campfire is a place to share rumors, embellished lies and maybe one or another entirely fabricated stories.
 	Horror stories and the supernatural are also welcome.
 	Just be sure not to hog too much of the spotlight, the others there are just as much interested in spreading their own tales as you are.
 	Are you sure?
@@ -28,23 +28,16 @@ Where do you wish to tell it?
 		=> ORCFOREST
 	- No
 		=> start
-- Chose not to tell any story. 
-	=> Nothing 
-	
-#- On the Marketplace
-#	The Marketplace also functions are the townsquare, and is used for either public announcements, or matter of fact stories.
-#	Are you sure?
-#	- Yes
-#		=> ORCMARKET
-#	- No
-#		=> start
+- Chose not to tell any story.
+	=> Nothing
 
 ~ ORCTAVERN
+do GameStateHolder.nightPhaseView.loadPlace(0)
 How do you wish to tell the Orc's story
 - Make the Orc out to be the Hero. [if GameStateHolder.SpokeToOrcDayOneMorning]
 	The Tavern is still as loud as ever. 
 	You notice the Orc is one of the audience members, sitting alone at a corner table. Presumably not by choice.
-	- Speak up, and try to gather everyones attention. What you have to say is important. 
+	- Speak up, and try to gather everyone's attention. What you have to say is important.
 		One or two conversations come to a close, and a couple of eyes turn to you. 
 	- Simply begin speaking your tale. 
 		One or two eyes turn to you, a conversation here or there comes to a close to pay more attention to you
@@ -52,84 +45,84 @@ How do you wish to tell the Orc's story
 	- Begin your tale in the middle of the action
 		Confusion is abound. One or two patrons turn to their neighbours, a loudmouth asks a question into the room that doesn't get answered
 		Still, a few patrons don't really care. They hear action, and their attention is captured. 
-		- Draw out the fight for as long as you possible can.
-			Those that were already interested are compeltely drawn in by the descriptions of senseless violence. Every so often a singular cheer erupts from the crowd
+		- Draw out the fight for as long as you possibly can.
+			Those that were already interested are completely drawn in by the descriptions of senseless violence. Every so often a singular cheer erupts from the crowd
 			Those who were not as interested however, have no chance of following alone. 
 			- Finally end the fight with as grand a finale as you can think of. 
 				There are cheers here and there. 
-				You managed to make a few peoples night, but were nothing but pleasent background noise for the rest
-				=> END 
+				You managed to make a few people night, but were nothing but a pleasant background noise for the rest.
+				=> OrcHeroEnd
 
 		- Pause and let the Orc monologue to explain the situation
 			You've chosen the worst of both worlds. Those with an interest in action tune out, and those who already didn't pay attention aren't interested anymore. 
 			- Continue to try and tell your story. 
-				You continue to be pleasent background noise for the tavern. No one in particular pays you much attention
+				You continue to be a pleasant background noise for the tavern. No one in particular pays you much attention.
 				But no one is offended by your presence either. 
 				- You consider this at least a mild success
-					=> END 
+					=> OrcHeroEnd
 				- You could have done so much better. You failed
-					=> END 
+					=> OrcHeroEnd
 
-			
+
 	- Start slow and steady with exposition. 
 		As expected, not many turn to you. Their loss, this payoff is going to be much better for it.
 		You establish the dragon's backstory, it's terrorizing of harmless Farmers. The Orc is poised for a heroic tale.
-		- Describe the actual, rather dry, beginning of the fight. 
-			The facts and lack of compelling narrative don't capture the attention of many. 
-			Faces turn back to their table conversations, and your voice becomes drowned out once again. 
-			- Curse them silently for their need of sensations. 
-				Be that as it may, you've lost them. 
-				None save for an enthralled and distracted child are paying you any mind. 
-				A failure of a story. 
-				=> END 
-			- Admit that you should have made it more interesting. 
-				Admitting ones fault is the path to become better. 
-				There will be other stories to tell. Better ones. 
-				And you're better for having tried tonight. 
-				=> END 
+		- Describe the actual, rather dry, beginning of the fight.
+			The facts and lack of compelling narrative don't capture the attention of many.
+			Faces turn back to their table conversations, and your voice becomes drowned out once again.
+			- Curse them silently for their need of sensations.
+				Be that as it may, you've lost them.
+				None save for an enthralled and distracted child are paying you any mind.
+				A failure of a story.
+				=> OrcHeroEnd
+			- Admit that you should have made it more interesting.
+				Admitting ones fault is the path to become better.
+				There will be other stories to tell. Better ones.
+				And you're better for having tried tonight.
+				=> OrcHeroEnd
 		- Embellish the story a bit with some made up details
 			You let the Dragon perch on the windmill and furiously roar. 
-			The Orc Draws his weapon, which you've decided to be a broadsword. 
+			The Orc Draws his weapon, which you've decided to be a broadsword.
 			The Tavern is getting into it.
-			- Nows your chance. Describe an epic clash of titanic forces!
+			- Now's your chance. Describe an epic clash of titanic forces!
 				As you describe an entirely made up fight with slashes and swings and one liners galore, the Tavern begins cheering loudly
 				You have to almost scream your throat out to describe the last fatal stab, and your description of the Dragon tumbling into the windmill is drowned out by cheers and hoorays
-				You Succesfully told an uprorous story. 
+				You successfully told an uproarious story.
 				As you sit back down, you see a few interested Patrons sit down next to the Orc, trying to be as close to the Hero of the hour as they can. 
 				You spend the rest of the night answering questions and adding some detail. 
 				Flagons upon flagons of Ale are purchased for the both of you, and the night comes to a high-spirited end. 
-				=> END 
+				=> OrcHeroEnd
 				
 			- Dial back the lies a tiny bit, and describe the quick but fatal end of the Dragon.
 				You cut the tension short, let the Orc spout one last one liner, and describe it's quick end. 
 				The Tavern cheers and laughs. 
 				An overly drunk patron lounges over to the Orc, and starts asking questions. 
-				You've made him at least a little bit more of a Hero. 
+				You've made him at least a little bit more of a Hero.
 				Someone buys you a mug of mead, and you enjoy your time in the spotlight for a while before it's time to end the night
-				=> END 
+				=> OrcHeroEnd
 			
-	- Come up with a devestating backstory for the Orc on the fly
-		The Orc herself glances your way dubiously, he seems to be confused by your words. 
+	- Come up with a devastating backstory for the Orc on the fly
+		The Orc herself glances your way dubiously, he seems to be confused by your words.
 		The rest of the Tavern however pays you more and more attention. 
-		- Build up the dragon fight with some showboasting of both sides before the confrontation. 
+		- Build up the dragon fight with some showboating of both sides before the confrontation.
 			The Orc nods along, she's getting into it
 			As seems to be the rest of the Tavern. 
-			- Nows your chance. Describe an epic clash of titanic forces! 
+			- Now's your chance. Describe an epic clash of titanic forces!
 				As you describe an entirely made up fight with slashes and swings and one liners galore, the Tavern begins cheering loudly
 				You have to almost scream your throat out to describe the last fatal stab, and your description of the Dragon tumbling into the windmill is drowned out by cheers and hoorays
-				You Succesfully told an uprorous story. 
+				You succesfully told an uproarious story.
 				As you sit back down, you see a few interested Patrons sit down next to the Orc, trying to be as close to the Hero of the hour as they can. 
 				You spend the rest of the night answering questions and adding some detail. 
 				Flagons upon flagons of Ale are purchased for the both of you, and the night comes to a high-spirited end. 
-				=> END 
+				=> OrcHeroEnd
 
 			- Dial back the lies a tiny bit, and describe the quick but fatal end of the Dragon. 
 				You cut the tension short, let the Orc spout one last one liner, and describe it's quick end. 
 				The Tavern cheers and laughs. 
 				An overly drunk patron lounges over to the Orc, and starts asking questions. 
-				You've made him at least a little bit more of a Hero. 
+				You've made him at least a little bit more of a Hero.
 				Someone buys you a mug of mead, and you enjoy your time in the spotlight for a while before it's time to end the night
-				=> END 
+				=> OrcHeroEnd
 				
 		- Keep it grounded and recall how the Orc described the start of the fight. 
 			The Orc is a bit confused, but satisfied you chose not to embellish the tale with more lies.
@@ -140,28 +133,29 @@ How do you wish to tell the Orc's story
 				Expectation seemed to be that there would be a grander finish.
 				Still, a story successfully told, and an Orc satisfied. 
 				You finish the night with the Orc buying a round of drinks for the whole tavern. 
-				=> END 
+				=> OrcHeroEnd
 				
 				
-			- Emebellish the story a tiny bit. Give the fight some back and forth. 
+			- Embellish the story a tiny bit. Give the fight some back and forth.
 				There's cheers and laughs abound!
 				Seems everyone really liked the tale, The Orc especially. 
 				There's a round of some kind of beverage given out
 				Then there's another one!
 				The night ends with everyone well and truly drunk, ready for the hangover the next day.
-				=> END 
+				=> OrcHeroEnd
 				
 - You'd rather spread another tale
 	=> start
 
 ~ ORCFOREST
+do GameStateHolder.nightPhaseView.loadPlace(1)
 - Let everyone know he claimed a kill not his own [if GameStateHolder.KnowsOrcLied]
-	As you arrive at the forest's edge, the campfire is already roaring furiously. Hushed conversation is in full force, and nobody takes notice of you as you take a seat besides them. 
-	You can't recongize any faces, the safety of anonymity. 
+	As you arrive at the forest's edge, the campfire is already roaring furiously. Hushed conversation is in full force, and nobody takes notice of you as you take a seat besides them.
+	You can't recognize any faces, the safety of anonymity.
 	The entire gathered audience is currently listening to a story about an old widow, whose late husbands grave has been seeing a lot of action. 
 	Someone else mentions that they saw the dead mans ghost visit his own grave once!
-	- Waste no time and immediatly let everyone know of the orc's deception
-		There's a few mumurs as you start talking, apparently out of turn. 
+	- Waste no time and immediately let everyone know of the orc's deception
+		There's a few murmurs as you start talking, apparently out of turn.
 		No one seems to be interested as you mention the orc. 
 		In the middle of your second sentence someone rams an elbow in your ribs, and a gruff voice whispers to you
 		Stranger: Wait, you idiot. You'll get your chance.
@@ -180,8 +174,8 @@ How do you wish to tell the Orc's story
 	- Surely they would listen to that selfsame bard speak of something new then?
 		No one silences you this time. 
 		You're free to speak of the Orc. 
-		- Get right to the Juicy bits, and regale the gathered group of his deception. he didn't kill the drake at all. 
-			Not everyone seems to have visited the tavern and listened to him 
+		- Get right to the Juicy bits, and regale the gathered group of his deception. he didn't kill the drake at all.
+			Not everyone seems to have visited the tavern and listened to him
 			There's some silence as the other scratch their heads and whisper amongst each other, trying to figure out what you're talking about. 
 			Finally someone remembers, and with two succint sentences they catch the rest up on what happened. 
 			There's a loud ruckus now, as facts and ideas and rumors are thrown about. No one's too sure what the truth anymore. 
@@ -190,35 +184,35 @@ How do you wish to tell the Orc's story
 				With quick explainers you catch everyone up, but with the mystery gone interest seems to have waned. 
 				Someone else mentions that their kids came with all red from the drakes body, and the conversation naturally flows into the new topic. 
 				The rest of the night is spent with various personal dramas as the center stage, most of which you do not understand. 
-				=> END
+				=> OrcLiarEnd
 			- Revel in the chaos and let them come up with whatever they want. 
 				Wild accusation are thrown about. 
 				Someone says the entire drake thing was just a hoax by the king, and they are making them come to the poor villages on purpose. 
 				Conspiracies and theories establish themselves entirely on their own, and the Orc drake and to an extent you, remain part of the night's conversations until the end
-				=> END
-		- Establish some backstory for those not in the know. Remind them of his claim to glory and set up the truth. 
+				=> OrcLiarEnd
+		- Establish some backstory for those not in the know. Remind them of his claim to glory and set up the truth.
 			There's some murmurs. 
 			Someone mentions how they didn't believe the orc in the first place. 
 			They're all waiting for you to spill the beans. 
 			- Tell them the truth of the drakes self inflicted death, but make it dramatic. 
 				You talk of the farmer, and spread what you heard from him. 
-				The drakes labored movements, it's lumbering into the windmill. The fact he stabbed it after. 
+				The drakes labored movements, it's lumbering into the windmill. The fact he stabbed it after.
 				You leave out no detail, and make it just a tiny bit gruesome. 
-				As you finish, there's plenty of outrage at his lies. You get the sense you achieved your goal. 
-				Until the night ends the Orc and drake remaind the topic of conversation. 
-				Some are hostile, some don't care. One voice in particular calls for his exile. 
-				Opionions are split, and don't come to a conclusion until the enight comes to a close. 
-				=> END
+				As you finish, there's plenty of outrage at his lies. You get the sense you achieved your goal.
+				Until the night ends the Orc and drake remained the topic of conversation.
+				Some are hostile, some don't care. One voice in particular calls for his exile.
+				Opinions are split, and don't come to a conclusion until the night comes to a close.
+				=> OrcLiarEnd
 			- Retell the story with a bit of humor. 
 				You try to make it akin to a cartoon. 
 				A funny stumble, a few anecdotes. 
 				Still, at the end of the day the topic is a dead drake, and a pretty big lie. 
-				You get a labored laught here or there, but most of the troupe begins whispering about the consquences of this newly gained information. 
+				You get a labored laugh here or there, but most of the troupe begins whispering about the consequences of this newly gained information.
 				Someone laments that they'll have to bury the body, someone else joins in, and the mood is sufficiently ruined. 
 				The night ends soon after, and you're left to wonder if you're to blame. 
-				=> END 
+				=> OrcLiarEnd
 	- Stay silent for a while, listen to what the others have to say about you. 
-		Not much apparently. Someone else simply mentions how ridicolous the hat is, and then conversation moves on. 
+		Not much apparently. Someone else simply mentions how ridiculous the hat is, and then conversation moves on.
 		
 - You'd rather spread another tale
 	=> start
@@ -226,15 +220,16 @@ How do you wish to tell the Orc's story
 => END
 
 ~ Disease
-Luckily for you it is the early evening of the tavern hours. 
-Many new patrons are still entering, ordering or waiting, and conversation is but a sprouting bud. 
-- Clear your throat loudly, to try and get their attention. 
-	You had to clear your throat a few times, almost threatening to clear yourself hoarse. But, after the fifth or sixth attempt, even the last doubtful eye rests on you now .
-- Make it known that you have something important to say. 
+do GameStateHolder.nightPhaseView.loadPlace(0)
+Luckily for you it is the early evening of the tavern hours.
+Many new patrons are still entering, ordering or waiting, and conversation is but a sprouting bud.
+- Clear your throat loudly, to try and get their attention.
+	You had to clear your throat a few times, almost threatening to clear yourself hoarse. But, after the fifth or sixth attempt, even the last doubtful eye rests on you now.
+- Make it known that you have something important to say.
 	When a stranger, and Bard no less, announces such a thing, most tend to look.
 The attention is yours. 
-Now it is up to you, on how to present the threat of a possible but unlikely disease spreading through their ranks 
-- Announce truthfully and without emeblishements the danger they are in. 
+Now it is up to you, on how to present the threat of a possible but unlikely disease spreading through their ranks.
+- Announce truthfully and without embellishments the danger they are in.
 	Which, as you yourself admit freely, is not a great one, but a mere chance of one. 
 	You mention the kids potential infection, and what is assumed to be one of their parents rushes from the room. 
 	The rest stay, unimpressed. 
@@ -244,63 +239,81 @@ Now it is up to you, on how to present the threat of a possible but unlikely dis
 		The Orc, who you didn't see on a first glance rises to their feet. 
 		"I slew the beast, I am most risk. I will go, whoever still has doubts may follow me."
 		- Nod the Orcs way, thankful
-		- Let silence speak for you. 
-		The Orc leaves, and a handful of fearful peasents follow behind. 
-		=> END 
-	- Consider his concern as mute and merely shrug. 
-		A few more join in on the chorus of doubtful whispers. 
-		"You're just an outsider in league with her." A woman calls out from just a few feet away from you. 
-		She bears a striking resemblance to the girl you saw near the drake. 
-		- Assume. Call her out on risking her daughters fate. 
-			You assume correctly. She opens her mouth to protest, but thinks better of it. 
-			Someone whispers to her, you hope sound advice to see the witch about her daughter, and she does storm off. 
-			Hushed conversation about what this means for the town begins. 
-			- Leave them to it. You have done what you need to. 
-			 => END
-		- Making them listen was not part of the arrangement. Roll your eyes and leave. 
-			Your leaving only fans the fires of doubt. From the outside you hear fierce arguing. 
-			Apparently you became a player in an old conflict. 
-			Only time can tell whether those affected care enough to see the potentially infected are seen to. 
-			=> END
-- A bit of panic never hurt. Make it seem more dangerous, more certain even. 
-	Whispers break out. 
-	For every voice claiming your story is a fad, another impresses on them the memory of just a recent infection. 
-	For everyone who wants to follow your sound advice, another reminds them of the witches nature, and your status as outsider. 
+		- Let silence speak for you.
+		The Orc leaves, and a handful of fearful peasants follow behind.
+		=> DiseaseEnd
+	- Consider his concern as mute and merely shrug.
+		A few more join in on the chorus of doubtful whispers.
+		"You're just an outsider in league with her." A woman calls out from just a few feet away from you.
+		She bears a striking resemblance to the girl you saw near the drake.
+		- Assume. Call her out on risking her daughters fate.
+			You assume correctly. She opens her mouth to protest, but thinks better of it.
+			Someone whispers to her, you hope sound advice to see the witch about her daughter, and she does storm off.
+			Hushed conversation about what this means for the town begins.
+			- Leave them to it. You have done what you need to.
+			 => DiseaseEnd
+		- Making them listen was not part of the arrangement. Roll your eyes and leave.
+			Your leaving only fans the fires of doubt. From the outside you hear fierce arguing.
+			Apparently you became a player in an old conflict.
+			Only time can tell whether those affected care enough to see the potentially infected are seen to.
+			=> DiseaseEnd
+- A bit of panic never hurt. Make it seem more dangerous, more certain even.
+	Whispers break out.
+	For every voice claiming your story is a fad, another impresses on them the memory of just a recent infection.
+	For everyone who wants to follow your sound advice, another reminds them of the witches nature, and your status as outsider.
 	- Impress on them with great importance that the villages demise might be at hand
-		A grave prediction, and one not handled lightly. 
-		You can be glad that your profession is wordsmith, not anyone suspects you of a lie. 
-		They merely wish for a different truth. 
-		Some of the villages residents push past you to seek out the witch, and the ones that remain are hard pressed to talk about anything else. 
-		After a moments pause the Tavernkeep approaches you. 
-		Tavernkeep: Thank you for telling us. You have saved lives this day. 
-		- Be glad of your lies. They have earned your glory. 
-		- Feel the tinge of regret at your lies consequence. 
-		Tavernkeep: I do wish that you leave however. Buisness is bad enough without a mounting doom on the horizon. 
-		Tavernkeep: Pray, next time, inform them gentler. Think of yourself of a shepherd. 
-		Tavernkeep: You would not push them too far for fear of hurting each other. 
-		=> END 
-	- Adress the few who already believe you. They are right to fear. 
-		You succesfull stoke their fire. 
-		Fear is easily perpetuated, and emotions easily abused. It takes but a couple of words. 
-		It's not long until most of the taverns patrons have left for the witch, and the ones that remain only do so to finish food and drink. 
-		The tavernkeep however seems dismayed at this turn of events. 
-		Tavernkeep: Buisness was bad enough already. 
-		Tavernkeep: We didn't need a crisis 
-		Tavernkeep: But, you have saved lives this day. You can be proud of that. 
-		- Be glad of your lies. They have earned your glory. 
-		- Feel the tinge of regret at your lies consequence. 
-		=> END 
-		
+		A grave prediction, and one not handled lightly.
+		You can be glad that your profession is wordsmith, not anyone suspects you of a lie.
+		They merely wish for a different truth.
+		Some of the villages residents push past you to seek out the witch, and the ones that remain are hard pressed to talk about anything else.
+		After a moments pause the Tavernkeep approaches you.
+		Tavernkeep: Thank you for telling us. You have saved lives this day.
+		- Be glad of your lies. They have earned your glory.
+		- Feel the tinge of regret at your lies consequence.
+		Tavernkeep: I do wish that you leave however. Business is bad enough without a mounting doom on the horizon.
+		Tavernkeep: Pray, next time, inform them gentler. Think of yourself of a shepherd.
+		Tavernkeep: You would not push them too far for fear of hurting each other.
+		=> DiseaseEnd
+	- Address the few who already believe you. They are right to fear.
+		You successfully stoke their fire.
+		Fear is easily perpetuated, and emotions easily abused. It takes but a couple of words.
+		It's not long until most of the taverns patrons have left for the witch, and the ones that remain only do so to finish food and drink.
+		The tavernkeep however seems dismayed at this turn of events.
+		Tavernkeep: Business was bad enough already.
+		Tavernkeep: We didn't need a crisis
+		Tavernkeep: But, you have saved lives this day. You can be proud of that.
+		- Be glad of your lies. They have earned your glory.
+		- Feel the tinge of regret at your lies consequence.
+		=> DiseaseEnd
+
 ~ Nothing
 Are you sure you wish to let this night pass by without telling a story?
 - yes
-	Be it for lack of ambition, lack of trying, or simply because you are not interested in telling these particular tales, you have chosen to remain silent this night. 
-	You spend a peaceful night, one away from all the fears and ambitions, away from the people. 
-	You sleep deeply, untroubled. 
-	=> END 
+	Be it for lack of ambition, lack of trying, or simply because you are not interested in telling these particular tales, you have chosen to remain silent this night.
+	You spend a peaceful night, one away from all the fears and ambitions, away from the people.
+	You sleep deeply, untroubled.
+	=> NothingEnd
 - no
-	=> start 
-
+	=> start
 
 => END
 
+~ DiseaseEnd
+set GameStateHolder.Day1StoryEnding = "Disease"
+do GameStateHolder.nightPhaseView.onNightPhaseOver()
+=> END
+
+~ OrcHeroEnd
+set GameStateHolder.Day1StoryEnding = "OrcHero"
+do GameStateHolder.nightPhaseView.onNightPhaseOver()
+=> END
+
+~ OrcLiarEnd
+set GameStateHolder.Day1StoryEnding = "OrcLiar"
+do GameStateHolder.nightPhaseView.onNightPhaseOver()
+=> END
+
+~ NothingEnd
+set GameStateHolder.Day1StoryEnding = "Nothing"
+do GameStateHolder.nightPhaseView.onNightPhaseOver()
+=> END

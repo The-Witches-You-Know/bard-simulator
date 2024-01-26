@@ -2,6 +2,7 @@ extends Control
 
 func _ready():
 	$AnimationPlayer.play("welcome")
+	Audio_Player.playMusic("opening")
 
 func _on_animation_finished(_anim_name):
 	var ui = get_node("/root/Main/UI") as interface

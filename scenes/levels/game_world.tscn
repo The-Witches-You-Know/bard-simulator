@@ -8,6 +8,7 @@ dict = {
 "forest": "res://scenes/levels/locations/forest.tscn",
 "graveyard": "res://scenes/levels/locations/graveyard.tscn",
 "map": "res://scenes/levels/map/world_map.tscn",
+"night_phase": "res://scenes/levels/map/night_phase.tscn",
 "tavern": "res://scenes/levels/locations/tavern.tscn",
 "town": "res://scenes/levels/locations/town.tscn"
 }

@@ -9,6 +9,7 @@ class_name GroupSpeakerPart
 @export var animatedSpriteTransformPosition: Vector2 = Vector2(0,0) : set = setAnimatedSpriteTransformPosition
 @export var colliderTransformPosition: Vector2 = Vector2(0,0) : set = setColliderTransformPosition
 @export var collisionDisabled: bool = true : set = setCollisionDisabled
+@export var speakerSound: AudioStream
 
 @export var parent: GroupSpeaker
 
@@ -24,6 +25,7 @@ var shouldShowTalkPanel: bool = false
 func setCollisionDisabled(newValue: bool):
 	collisionDisabled = newValue
 	$CollisionShape2D.disabled = collisionDisabled
+	$Area2D/CollisionShape2D.disabled = collisionDisabled
 
 func setSpriteFrames(newFrames: SpriteFrames):
 	animationFrames = newFrames
@@ -45,9 +47,10 @@ func setColliderTransformPosition(newValue: Vector2):
 	$Area2D/CollisionShape2D.position = colliderTransformPosition
 
 func onAreaEntered():
-	talkPanel.visible = true	
-	if not Engine.is_editor_hint():
-		talkPanelLabel.text = "["+InputMap.action_get_events("interact")[0].as_text().substr(0, 1)+"] "+parent.actionName
+	if not parent.hasBeenSpokenTo:
+		talkPanel.visible = true	
+		if not Engine.is_editor_hint():
+			talkPanelLabel.text = "["+InputMap.action_get_events("interact")[0].as_text().substr(0, 1)+"] "+parent.actionName
 		
 func onAreaExited():
 	talkPanel.visible = false
@@ -57,7 +60,6 @@ func _ready():
 		visible = parent.visible		
 		setCollisionDisabled(!visible)
 		setSpriteFrames(animationFrames)
-		animatedSprite.play("idle")
 
 
 func onInteract():
@@ -66,7 +68,7 @@ func onInteract():
 	
 func talk(nameInBalloon: String):
 	if !isTalking:
-		Audio_Player.setSpeaker(nameInBalloon)
+		Audio_Player.setSpeakerSound(speakerSound)
 		animatedSprite.stop()
 		isTalking = true
 		if selectedAnimName not in animationFrames.animations.map(func(x): return x.name):
