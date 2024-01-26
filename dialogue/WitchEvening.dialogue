@@ -9,7 +9,7 @@ Witch: You will not learn my name. None have. So do not ask.
 
 ~ dialogueProper
 Witch: Now then, what ails you?
-- Tell her of the weird drake. [if GameStateHolder.KnowOrcLied or GameStateHolder.DrakeInspected]
+- Tell her of the weird drake. [if GameStateHolder.SpokeToKidsDayOneNoon]
 	You spare no detail. The powdery scales, the urge to sneeze, the kids incessant urge to play with it.
 	Witch: Worrying. 
 	Witch: I have heard of similar diseases before, but they were always contained to their specific species. 
