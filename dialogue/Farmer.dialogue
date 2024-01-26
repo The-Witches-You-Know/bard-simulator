@@ -10,32 +10,32 @@ elif (not GameStateHolder.getPlayerSpokeWithFarmer()):
 		- Fair
 			=> Drake
 	- The Orc actually sent me to you. 
-		Farmer: What did she do that for? 
+		Farmer: What did he do that for? 
 		- She's worried about you. 
-			Farmer: Is she now. Never thought her the caring type. She sure left in a hurry after she stabbed that drake. 
+			Farmer: Is he now. Never thought him the caring type. he sure left in a hurry after he stabbed that drake. 
 			- Not the caring type?
-			- She told me she saved you.
+			- he told me he saved you.
 			Farmer: Dammit, I probably wasn't supposed to say that. Actually... 
 			- Go on. 
-				Farmer: She didn't kill it. 
+				Farmer: he didn't kill it. 
 				- What do you mean?
-					Farmer: It basically killed itself, and she is just claiming that she was the one to cause his death. Don't ask me, adventurers are weird like that. 
-					Farmer: Just don't tell her. She swore bad things would happen if I spilled the tea.
+					Farmer: It basically killed itself, and he is just claiming that he was the one to cause its death. Don't ask me, adventurers are weird like that. 
+					Farmer: Just don't tell him he swore bad things would happen if I spilled the tea.
 					Farmer: Can you leave me alone now?
 					set GameStateHolder.KnowsOrcLied = true
 					- Sure 
 						=> DialogueEnd
 					- What happened to it?
-						Farmer: Flew into the windmill, impaled itself on the wood. She just stabbed it after so it looks like she did it.
-						Farmer: If she finds out I said that I'm dead meat. Go. I already said too much. 
+						Farmer: Flew into the windmill, impaled itself on the wood. he just stabbed it after so it looks like he did it.
+						Farmer: If he finds out I said that I'm dead meat. Go. I already said too much. 
 						set GameStateHolder.KnowsOrcLied = true
 						=> DialogueEnd
 			- Why weren't you supposed to say that?
-				Farmer: So, truth is, she didn't kill it. It flew into the windmill on its own and she stabbed it after. Claimed it as her kill, and then threatened me to never tell anyone. 
+				Farmer: So, truth is, he didn't kill it. It flew into the windmill on its own and he stabbed it after. Claimed it as his kill, and then threatened me to never tell anyone. 
 				set GameStateHolder.KnowsOrcLied = true
-		- She told me a story. I thought you might have some details to add. 
+		- he told me a story. I thought you might have some details to add. 
 	- What adventurers? [if GameStateHolder.timeOfDay != 2]
-		Farmer: The trio of bumbling idiots that wanted to solve the drake idiot
+		Farmer: The trio of bumbling idiots that wanted to solve the drake problem
 		Farmer: Said they were from the guild, but when I asked if they could prove that they didn't show me anyhting
 		- What did they look like?
 			Farmer: One large man in armor so heavy not three of me could lift it. 
@@ -84,40 +84,40 @@ Farmer: Either way, you wanted something. Let's get it over with.
 	- Just came here to look at it. 
 		Farmer: Alright, when you've finished your gawking, be on your way. 
 		=> DialogueEnd
-	- The Orc told me a story. Wanted to know if she told the truth. 
+	- The Orc told me a story. Wanted to know if he told the truth. 
 		=> Story
 - Actually, I'll just leave you to it. 
 	Farmer: Thank you kindly. Pray the rest of the day will be just as peaceful. 
 	=> DialogueEnd 
 
 ~ Story
-Farmer: Whatever she told you is the truth. 
+Farmer: Whatever he told you is the truth. 
 - Are you hiding something?
 	Farmer: No. What would I be hiding?
 	- Then why so dodgy?
 		Farmer: Because... well... Ah dammit. 
-		Farmer: Is this like a test? She sent you to try and find out if I would betray her?
+		Farmer: Is this like a test? he sent you to try and find out if I would betray her?
 		- No, but why would she?
 			Farmer: So you're not in league with her?
 			- Not at all. 
 			- I'm just interested in the truth 
-			Farmer: Alright so. Thing is, she didn't kill the drake. It kinda just flew into the windmill, and she took the opportunity
+			Farmer: Alright so. Thing is, he didn't kill the drake. It kinda just flew into the windmill, and he took the opportunity
 			Farmer: It just pretty much died on it's own. I was the only one who saw it.
-			Farmer: So she went and told me that if I told a Soul, I'd be in trouble.
+			Farmer: So he went and told me that if I told a Soul, I'd be in trouble.
 			set GameStateHolder.KnowsOrcLied = true
 			- I get it now. 
-				Farmer: Alright, good. Can you leave now? I don't want her to see us together. 
-				- Do you know where she is now?
+				Farmer: Alright, good. Can you leave now? I don't want him to see us together. 
+				- Do you know where he is now?
 					Farmer: Probably still in the tavern, making herself out to be a Hero.
 					=> DialogueEnd
 				- Sure.
 				=> DialogueEnd 
-			- Don't worry, she won't find out it was you.
+			- Don't worry, he won't find out it was you.
 				Farmer: I'd hope so. Otherwise I'm gonna be coming after you. 
 				- Slow down with the threat there, buddy. 
 				- I'd like to see you try. 
 				Farmer: S-sorry. Nerves are getting to me. 
-				- Do you know where she is now?
+				- Do you know where he is now?
 					Farmer: Probably still in the tavern, making herself out to be a Hero.
 					=> DialogueEnd
 				- Anything else you wanted to add?
@@ -144,7 +144,7 @@ Farmer: Whatever she told you is the truth.
 							Farmer: Goodbye. 
 							=> DialogueEnd
 					- Sorry about that. Could you tell me what actually happened?
-						Farmer: Alright so. Thing is, she didn't kill the drake. It kinda just flew into the windmill, and she took the opportunity
+						Farmer: Alright so. Thing is, he didn't kill the drake. It kinda just flew into the windmill, and he took the opportunity
 						Farmer: It just pretty much died on it's own. I was the only one who saw it.
 						set GameStateHolder.KnowsOrcLied = true
 						- Thank you. I'll be on my way. 

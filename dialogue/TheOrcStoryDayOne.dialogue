@@ -89,7 +89,7 @@ How do you wish to tell the Orc's story
 				=> END 
 		- Embellish the story a bit with some made up details
 			You let the Dragon perch on the windmill and furiously roar. 
-			The Orc Draws her weapon, which you've decided to be a broadsword. 
+			The Orc Draws his weapon, which you've decided to be a broadsword. 
 			The Tavern is getting into it.
 			- Nows your chance. Describe an epic clash of titanic forces!
 				As you describe an entirely made up fight with slashes and swings and one liners galore, the Tavern begins cheering loudly
@@ -104,12 +104,12 @@ How do you wish to tell the Orc's story
 				You cut the tension short, let the Orc spout one last one liner, and describe it's quick end. 
 				The Tavern cheers and laughs. 
 				An overly drunk patron lounges over to the Orc, and starts asking questions. 
-				You've made her at least a little bit more of a Hero. 
+				You've made him at least a little bit more of a Hero. 
 				Someone buys you a mug of mead, and you enjoy your time in the spotlight for a while before it's time to end the night
 				=> END 
 			
 	- Come up with a devestating backstory for the Orc on the fly
-		The Orc herself glances your way dubiously, she seems to be confused by your words. 
+		The Orc herself glances your way dubiously, he seems to be confused by your words. 
 		The rest of the Tavern however pays you more and more attention. 
 		- Build up the dragon fight with some showboasting of both sides before the confrontation. 
 			The Orc nods along, she's getting into it
@@ -127,7 +127,7 @@ How do you wish to tell the Orc's story
 				You cut the tension short, let the Orc spout one last one liner, and describe it's quick end. 
 				The Tavern cheers and laughs. 
 				An overly drunk patron lounges over to the Orc, and starts asking questions. 
-				You've made her at least a little bit more of a Hero. 
+				You've made him at least a little bit more of a Hero. 
 				Someone buys you a mug of mead, and you enjoy your time in the spotlight for a while before it's time to end the night
 				=> END 
 				
@@ -155,7 +155,7 @@ How do you wish to tell the Orc's story
 	=> start
 
 ~ ORCFOREST
-- Let everyone know she claimed a kill not her own [if GameStateHolder.KnowsOrcLied]
+- Let everyone know he claimed a kill not his own [if GameStateHolder.KnowsOrcLied]
 	As you arrive at the forest's edge, the campfire is already roaring furiously. Hushed conversation is in full force, and nobody takes notice of you as you take a seat besides them. 
 	You can't recongize any faces, the safety of anonymity. 
 	The entire gathered audience is currently listening to a story about an old widow, whose late husbands grave has been seeing a lot of action. 
@@ -180,8 +180,8 @@ How do you wish to tell the Orc's story
 	- Surely they would listen to that selfsame bard speak of something new then?
 		No one silences you this time. 
 		You're free to speak of the Orc. 
-		- Get right to the Juicy bits, and regale the gathered group of her deception. She didn't kill the drake at all. 
-			Not everyone seems to have visited the tavern and listened to her. 
+		- Get right to the Juicy bits, and regale the gathered group of his deception. he didn't kill the drake at all. 
+			Not everyone seems to have visited the tavern and listened to him 
 			There's some silence as the other scratch their heads and whisper amongst each other, trying to figure out what you're talking about. 
 			Finally someone remembers, and with two succint sentences they catch the rest up on what happened. 
 			There's a loud ruckus now, as facts and ideas and rumors are thrown about. No one's too sure what the truth anymore. 
@@ -196,17 +196,17 @@ How do you wish to tell the Orc's story
 				Someone says the entire drake thing was just a hoax by the king, and they are making them come to the poor villages on purpose. 
 				Conspiracies and theories establish themselves entirely on their own, and the Orc drake and to an extent you, remain part of the night's conversations until the end
 				=> END
-		- Establish some backstory for those not in the know. Remind them of her claim to glory and set up the truth. 
+		- Establish some backstory for those not in the know. Remind them of his claim to glory and set up the truth. 
 			There's some murmurs. 
 			Someone mentions how they didn't believe the orc in the first place. 
 			They're all waiting for you to spill the beans. 
 			- Tell them the truth of the drakes self inflicted death, but make it dramatic. 
 				You talk of the farmer, and spread what you heard from him. 
-				The drakes labored movements, it's lumbering into the windmill. The fact she stabbed it after. 
+				The drakes labored movements, it's lumbering into the windmill. The fact he stabbed it after. 
 				You leave out no detail, and make it just a tiny bit gruesome. 
-				As you finish, there's plenty of outrage at her lies. You get the sense you achieved your goal. 
+				As you finish, there's plenty of outrage at his lies. You get the sense you achieved your goal. 
 				Until the night ends the Orc and drake remaind the topic of conversation. 
-				Some are hostile, some don't care. One voice in particular calls for her exile. 
+				Some are hostile, some don't care. One voice in particular calls for his exile. 
 				Opionions are split, and don't come to a conclusion until the enight comes to a close. 
 				=> END
 			- Retell the story with a bit of humor. 

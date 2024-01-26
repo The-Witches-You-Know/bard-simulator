@@ -1,7 +1,8 @@
 ~ start
 
+
 She regards you with keen eyes, eyes that know more than they let on. 
-She appears like a bit of an outsider. perhaps she's looking for conversatoin?
+She appears like a bit of an outsider. perhaps she's looking for conversation?
 - What's a lovely lady like you doing out here?
 	Witch: Save your pretty words for someone else
 	Witch: I'm not interested in bonding with a mortal. 
@@ -23,8 +24,9 @@ Witch: Why do you ask?
 		Witch: Good enough. 
 		Witch: Now, farewell. If you have need of me, you will know where to find me. 
 	- Why, you make it sound like something is wrong with that. 
-		Witch: The mere pursuit of everything is vein and despicable in itself. 
-		Witch: And your kind tends to be horribly annoying as well. 
-		Witch: You have a talent for sticking your nose where it does not belong!
+		Witch: The mere pursuit of knowing everything is vein and despicable in itself. 
+		Witch: You cannot possibly hope to be able to tell everyones story. 
+		Witch: I know your kind. 
+		Witch: You tend to be horribly annoying, what with your talent for sticking your nose where it does not belong!
 set GameStateHolder.SpokeToMarketWitchDayOneNoon = true
 => END

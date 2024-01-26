@@ -38,7 +38,12 @@ It's hard to tell if she's supposed to be there or not since no one else is curr
 		Girl: Growns ups are so confusing...
 		She shakes her head and carries on, as expected. 
 		The girl leaves, without elaborating any further. 
+		=> DialogueEnd
 - Wait and see what happens. 
+	She pays you no mind, and just reaches for a crate of apples. One, two, three, she grabs a total of four of them. 
+	Struggling to hold on to them, she tumbles away, and drops one of them in the process. 
+	Whether she didn't notice, or decides to leave it behind is hard to tell. 
+	She leaves, leaving you none the wiser. 
 => DialogueEnd
 
 ~ DialogueEnd
