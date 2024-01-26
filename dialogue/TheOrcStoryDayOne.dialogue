@@ -52,7 +52,7 @@ How do you wish to tell the Orc's story
 	- Begin your tale in the middle of the action
 		Confusion is abound. One or two patrons turn to their neighbours, a loudmouth asks a question into the room that doesn't get answered
 		Still, a few patrons don't really care. They hear action, and their attention is captured. 
-		- Lean into the senseless Action and draw out the fight for as long as you possible can.
+		- Draw out the fight for as long as you possible can.
 			Those that were already interested are compeltely drawn in by the descriptions of senseless violence. Every so often a singular cheer erupts from the crowd
 			Those who were not as interested however, have no chance of following alone. 
 			- Finally end the fight with as grand a finale as you can think of. 
@@ -151,7 +151,7 @@ How do you wish to tell the Orc's story
 				The night ends with everyone well and truly drunk, ready for the hangover the next day.
 				=> END 
 				
-- You'd rather spread this tale elsewhere
+- You'd rather spread another tale
 	=> start
 
 ~ ORCFOREST
@@ -220,7 +220,7 @@ How do you wish to tell the Orc's story
 	- Stay silent for a while, listen to what the others have to say about you. 
 		Not much apparently. Someone else simply mentions how ridicolous the hat is, and then conversation moves on. 
 		
-- You'd rather spread this tale elsewhere
+- You'd rather spread another tale
 	=> start
 
 => END
@@ -234,7 +234,7 @@ Many new patrons are still entering, ordering or waiting, and conversation is bu
 	When a stranger, and Bard no less, announces such a thing, most tend to look.
 The attention is yours. 
 Now it is up to you, on how to present the threat of a possible but unlikely disease spreading through their ranks 
-- Announce to the room directly, truthfully and without emeblishements the danger they are in. 
+- Announce truthfully and without emeblishements the danger they are in. 
 	Which, as you yourself admit freely, is not a great one, but a mere chance of one. 
 	You mention the kids potential infection, and what is assumed to be one of their parents rushes from the room. 
 	The rest stay, unimpressed. 
