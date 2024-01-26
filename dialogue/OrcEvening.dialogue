@@ -33,7 +33,7 @@ Orc: Can't remember all the details?
 			Orc: Yes I would much rather live at all. 
 			- Well, I won't let you. 
 				Orc: Bitter bastard. 
-				The orc graps for the drink, apparently tempted to spill it all over you. 
+				The orc reaches for the drink, apparently tempted to spill it all over you.
 				=> DialogueEnd 
 			- Fine, but spread your tale on your own. 
 				Orc: I don't want your help anyways. 

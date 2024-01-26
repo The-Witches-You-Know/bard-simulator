@@ -1,10 +1,10 @@
 ~ start
 
-Narrator: Are you sure you want to travel to {{CallbackHandler.location_to_load}}
+Narrator: Are you sure you want to travel to the {{CallbackHandler.location_to_load}}?
 
 - Yes 
 	Narrator: [next=auto]Good travels... [do CallbackHandler.LoadLocation()]
 - No 
-	Narrator: [next=auto]Alright then suit yourself...
+	Narrator: [next=auto]Alright then, suit yourself...
 
 => END

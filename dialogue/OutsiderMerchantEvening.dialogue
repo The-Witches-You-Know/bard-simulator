@@ -3,7 +3,7 @@
 if GameStateHolder.SpokeToOutsiderMerchantDayOneNoon:
 	You see the selfsame man that you had met before
 	He is bent over the taverns menu, a handful of coins besides it. 
-	He's muttering something under his breath, and the tone of his whispers indicates a great degree of frustation. 
+	He's muttering something under his breath, and the tone of his whispers indicates a great degree of frustration.
 	- Approach him and ask what ails him
 		Merchant: Oh, it's you. 
 		Merchant: It's nothing really, just be on your way. 
@@ -22,7 +22,7 @@ if GameStateHolder.SpokeToOutsiderMerchantDayOneNoon:
 			Merchant: Find some other place to be outsider in. 
 			- Maybe a well told story could fix his ailings?
 				Merchant: You mean to tell the town that I am honest? 
-				Merchant: Dispell the rumors around me?
+				Merchant: Dispel the rumors around me?
 				Merchant: But you are an outsider yourself! Who in their right mind would listen to you. 
 				Merchant: I appreciate the offer, but it does not help. 
 				- Try to inspire some confidence. 
@@ -49,7 +49,7 @@ if GameStateHolder.SpokeToOutsiderMerchantDayOneNoon:
 				=> DialogueEnd 
 		- Do as he says
 			=> DialogueEnd
-	- Leave him to his mistery
+	- Leave him to his misery
 	=> DialogueEnd
 else:
 	Merchant: Leave me to my misery stranger. 

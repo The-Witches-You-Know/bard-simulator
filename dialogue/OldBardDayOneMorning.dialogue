@@ -16,9 +16,8 @@ Old Bard: Your new profession is wordsmith. You are to either hear of or experie
 	Old Bard: My stories? Why do you just want to copy them and walk down the same road I walked? Isn't that horribly boring?
 	- I'd still like to hear one
 		Old Bard: I suppose just one couldn't hurt... 
-		Old Bard: The bard regales you of two lovers, princess and her knight. The two lovebirds had ran away from home, and happened on a dragon's lair. The princess fell madly in love with the dragon, and in an attempt at revenge the Knight tried to saly the horrid beast. 
-		Old Bard: For better or worse he failed, and moped away. The princess and dragon, as far as she knows, are still happily together.The bard regales you of two lovers, princess and her knight. The two lovebirds had ran away from home, and happened on a dragon's lair. 
-		Old Bard: The princess fell madly in love with the dragon, and in an attempt at revenge the Knight tried to saly the horrid beast. For better or worse he failed, and moped away. The princess and dragon, as far as she knows, are still happily together.
+		Old Bard: The bard regales you of two lovers, princess and her knight. The two lovebirds had ran away from home, and happened on a dragon's lair. The princess fell madly in love with the dragon, and in an attempt at revenge the Knight tried to slay the horrid beast.
+		Old Bard: For better or worse he failed, and moped away. The princess and dragon, as far as she knows, are still happily together.
 		- What a lovely story
 			Old Bard: I'm glad you think so, but you really shouldn't mope around with just me all day. There are other perspectives that might just be more interesting out there. 
 		- What a horrid fabrication
@@ -29,19 +28,21 @@ Old Bard: Your new profession is wordsmith. You are to either hear of or experie
 		Old Bard: Sure sure, but those ones have been told many times over. And besides, if they have been forgotten, then I'm not half the bard I think I am. 
 		- I'd still like to hear one. 
 			Old Bard: I suppose just one couldn't hurt... 
-			Old Bard: The bard regales you of two lovers, princess and her knight. The two lovebirds had ran away from home, and happened on a dragon's lair. The princess fell madly in love with the dragon, and in an attempt at revenge the Knight tried to saly the horrid beast. For better or worse he failed, and moped away. The princess and dragon, as far as she knows, are still happily together.The bard regales you of two lovers, princess and her knight. The two lovebirds had ran away from home, and happened on a dragon's lair. The princess fell madly in love with the dragon, and in an attempt at revenge the Knight tried to saly the horrid beast. For better or worse he failed, and moped away. The princess and dragon, as far as she knows, are still happily together.
+			Old Bard: The bard regales you of two lovers, princess and her knight. The two lovebirds had ran away from home, and happened on a dragon's lair. The princess fell madly in love with the dragon, and in an attempt at revenge the Knight tried to slay the horrid beast.
+			Old Bard: For better or worse he failed, and moped away. The princess and dragon, as far as she knows, are still happily together.
 			- What a lovely story
 				Old Bard: I'm glad you think so, but you really shouldn't mope around with just me all day. There are other perspectives that might just be more interesting out there. 
 			- What a horrid fabrication
 				Old Bard: Ah, not hard to tell that one was made up. But don't underestimate the power of a made up tale! Sometimes fantasy can be more interesting than reality. 
 			- Tell me more!
 				Old Bard: I'm flattered you like my storytelling so much, but you wanted to become a spreader of stories, not a consumer of them! 
-	- Nevermind
+	- Never mind
 - Where do I start?
 	Old Bard: See that orc over there?
-	Old Bard: She's been on some kind of adventure recently. Tells everyone who comes within earshot about it. Real hungry for attention that one. Give her your ear and you'll hear wonderous things. Just don't trust everything she says. or anyone, for that matter. Not even me. 
+	Old Bard: She's been on some kind of adventure recently. Tells everyone who comes within earshot about it. Real hungry for attention that one. Give her your ear and you'll hear wondrous things. Just don't trust everything she says. or anyone, for that matter. Not even me.
 - I'd rather stick to the truth. 
-	Old Bard: There is a place for that kind of storytelling. Just don't expect to be heralded as a master storyteller. You'd be better off in some library, you'll see what I mean. Although... You could still say the truth, the ugly stuff that no one wants to hear. In the right ears spilled secrets make for great tools.
+	Old Bard: There is a place for that kind of storytelling. Just don't expect to be heralded as a master storyteller. You'd be better off in some library, you'll see what I mean.
+	Old Bard: Although... You could still say the truth, the ugly stuff that no one wants to hear. In the right ears spilled secrets make for great tools.
 	
 Old Bard: Now go, find your own stories. The people here are horribly interesting. I half regret choosing to retire here. I should have gone somewhere more boring. 
 => DialogueEnd

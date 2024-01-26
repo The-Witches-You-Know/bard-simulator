@@ -1,10 +1,10 @@
 ~ start
 
 A troupe of three adventurers has gathered around a table
-Their adventuring profession is glear as day to glean
+Their adventuring profession is clear as day to glean
 The first, and presumably the leader, is a scrawny man in light clothes. He wears a hood though he has chosen to show his face at the current juncture. 
-The second is a woman of extraordinary magical ability. You have but a slight penchant for feeling it and she is positivly oozing with magic. Her gaze is focused on the table and the meager food in front of her however
-The third, if they can be called a person at all, is a giant suit of armor. There is no hole or imperfection in it that would show skin and confirm the identiy of those who presumably house within it. 
+The second is a woman of extraordinary magical ability. You have but a slight penchant for feeling it and she is positively oozing with magic. Her gaze is focused on the table and the meager food in front of her however
+The third, if they can be called a person at all, is a giant suit of armor. There is no hole or imperfection in it that would show skin and confirm the identity of those who presumably house within it.
 - Wait for them to notice your presence. 
 	The armored one is the one to first look your way.
 	They stare however, and do not speak. Neither to you nor to their companions about your presence. 
@@ -20,19 +20,19 @@ The third, if they can be called a person at all, is a giant suit of armor. Ther
 			- Might you have a story or two to share?
 				Man: Wish I had. 
 				The woman sighs, her posture deflates. 
-				Man: No, unfortunatly not any that you'd like hearing. 
+				Man: No, unfortunately not any that you'd like hearing.
 				- Why would that be?
 					Man: We've not had much success. And you'd hardly want to hear our sorry tales, would you?
 					- A truth can always be told a little more excitingly. 
 						Man: Aye, I can relate to the desire to manipulate. 
 						Man: But please refrain from doing so. 
-						Man: I'll not share them this day. Maybe if some more times passes, and it becomes but an unpleasent memory, maybe then you'll get to hear what happened. 
+						Man: I'll not share them this day. Maybe if some more times passes, and it becomes but an unpleasant memory, maybe then you'll get to hear what happened.
 						Man: Until then, please leave us alone. 
 						=> DialogueEnd
-					- I understand. Still, a sufficient tragedy can be catharthic all the while!
+					- I understand. Still, a sufficient tragedy can be cathartic all the while!
 						The woman slams her hand on the table and turns to face you. 
 						Woman: They aren't tragedies, they're comedies! 
-						Woman: It's embarrasing the way these past ones have gone. No you won't hear them. 
+						Woman: It's embarrassing the way these past ones have gone. No you won't hear them.
 						Woman: Off with you. I came here for a good drink and a distraction, not to dredge this all back up again. 
 						Woman: Goodbye!
 						=> DialogueEnd
@@ -47,7 +47,7 @@ The third, if they can be called a person at all, is a giant suit of armor. Ther
 				- Tell him of the Orc's tale. 
 					Man: Aye. We ourself could hardly believe it, but there truly is a dead draconic being in the fields. 
 					Man: It seems we have a true hero on our hands. 
-					The womans fist clenches and unclenches a few times in quick succession. 
+					The woman's fist clenches and unclenches a few times in quick succession.
 					Woman: Will you stop talking about it already?
 					Man: Apologies. 
 					Man: It's best if you leave us now. 
@@ -66,19 +66,19 @@ The third, if they can be called a person at all, is a giant suit of armor. Ther
 		- Might you have a story or two to share?
 			Man: Wish I had. 
 			The woman sighs, her posture deflates. 
-			Man: No, unfortunatly not any that you'd like hearing. 
+			Man: No, unfortunately not any that you'd like hearing.
 			- Why would that be?
 				Man: We've not had much success. And you'd hardly want to hear our sorry tales, would you?
 				- A truth can always be told a little more excitingly. 
 					Man: Aye, I can relate to the desire to manipulate. 
 					Man: But please refrain from doing so. 
-					Man: I'll not share them this day. Maybe if some more times passes, and it becomes but an unpleasent memory, maybe then you'll get to hear what happened. 
+					Man: I'll not share them this day. Maybe if some more times passes, and it becomes but an unpleasant memory, maybe then you'll get to hear what happened.
 					Man: Until then, please leave us alone. 
 					=> DialogueEnd
-				- I understand. Still, a sufficient tragedy can be catharthic all the while!
+				- I understand. Still, a sufficient tragedy can be cathartic all the while!
 					The woman slams her hand on the table and turns to face you. 
 					Woman: They aren't tragedies, they're comedies! 
-					Woman: It's embarrasing the way these past ones have gone. No you won't hear them. 
+					Woman: It's embarrassing the way these past ones have gone. No you won't hear them.
 					Woman: Off with you. I came here for a good drink and a distraction, not to dredge this all back up again. 
 					Woman: Goodbye!
 					=> DialogueEnd
